@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSWindowController">
+            <connections>
+                <outlet property="window" destination="16" id="20"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Celestia Help" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="16" userLabel="HelpWindow" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="185" y="155" width="604" height="608"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <value key="minSize" type="size" width="213" height="107"/>
+            <view key="contentView" id="17">
+                <rect key="frame" x="0.0" y="0.0" width="604" height="608"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="18">
+                        <rect key="frame" x="-16" y="0.0" width="620" height="608"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <clipView key="contentView" id="rlJ-Qk-cwd">
+                            <rect key="frame" x="0.0" y="0.0" width="605" height="608"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView editable="NO" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="19">
+                                    <rect key="frame" x="0.0" y="0.0" width="605" height="3441"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="minSize" width="605" height="608"/>
+                                    <size key="maxSize" width="737" height="10000000"/>
+                                    <attributedString key="textStorage">
+                                        <fragment>
+                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="user"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content" base64-UTF8="YES">
+CQoJA
+</string>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="user" size="13"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="C e l e s t i a   C o n t r o l s">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="19" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content">
+
+
+	This list of controls was current as of Celestia version 1.6.0. If you notice that a command
+	is missing or incorrect, please write a message in the Celestia Bugs forum, located at :
+
+	http://www.shatters.net/forum/viewforum.php?f=3
+
+	Thank you.
+
+
+
+	Enjoy your Celestial travels ...
+
+
+
+	-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+	</string>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="user"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="MOUSE CONTROLS  DESCRIPTION">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <mutableString key="content">
+
+
+	Left Drag ..............................................	Camera orientation--Up/Down/Left/Right (also Up &amp; Down
+  	                                                             	arrow keys, and 2/8/4/6 on the Number Pad with NumLock
+          	                                                      	enabled)
+	Right Drag ...........................................	Orbit selected object (Shift+Arrow keys)
+	Shift+Left Dbl Click on an object ......	Deselect and Center selected object
+	Left Click on an object .......................	Select object (Enter key -- by object name)
+	Left Click on no object .......................	Deselect currently selected object
+	Left Double Click on an object .........	Select and Center object
+	Right Click on an object ....................	Display object context menu if it has one
+	Scroll Wheel ........................................	Adjust distance to selection (Home/End)
+	Cmd+Left Drag ....................................	Adjust distance to selection (Home/End)
+	Shift+Left Drag ....................................	Field of View (FOV) adjust. (also . and ,)
+	Middle Button ......................................	Field of View (FOV) toggle -- between 45 degrees and
+          	                                                      	previous setting (Alt (option)+Left Click)
+
+
+
+
+
+	</mutableString>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="user"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="KEYBOARD CONTROLS  DESCRIPTION">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content" base64-UTF8="YES">
+CgoKA
+</string>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="user"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content">	Navigation</string>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <mutableString key="content">
+
+	1 ... 9 .................	Select planet #1... #9 around the nearest star
+	0 (zero) ............	Select parent star of current planet or system
+	Esc ...................	Cancel: scripts, Goto, Follow, Track, Lock, Sync Orbit
+	Cmd+L .............	Open Go To Object dialog box
+	Cmd+B .............	Open Browser
+	C .......................	Center the selected object on the display
+	Shift+C .............	Center/orbit--center the selected object without changing the position of
+	                           	the reference object.
+	" .........................	Chase selected object (orientation is based on the object's velocity)
+	Backspace ......	Select parent of current object or clear the selection:
+					- If selection is a location, select the parent object
+					- If selection is an object, select the parent object / star
+					- If selection is a star, clear the selection
+	F ........................	Follow selected object
+	G .......................	Goto selected object
+	Ctrl+G ...............	Goto surface of selected object
+	: .........................	Lock two objects together as one
+				(select object #1, press "f", select object #2, press ":")
+	Home ...............	Move closer to object
+	End ...................	Move further away from object
+	* ........................	Reverse view 180 degrees (look back)
+	H .......................	Select Sol, our sun (Home system)
+	Y .......................	Sync Orbit selected object at a rate synced to its rotation
+	T ........................	Track selected object (keep object centered on the display)
+
+
+
+	</mutableString>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="user"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="Navigation via Arrow Keys">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content">
+
+	Up Arrow ...................	Pitch down  (moves object Up)
+	Down Arrow .............	Pitch up  (moves object Down)
+	Left Arrow .................	Roll left  (rolls object Right)
+	Right Arrow ..............	Roll right  (rolls object Left)
+
+	Shift+Left Arrow .......	Orbit object: right  (rotates object Left)
+	Shift+Right Arrow ....	Orbit object: left  (rotates object Right)
+	Shift+Up Arrow ........	Orbit object: down  (rotates object Up)
+	Shift+Down Arrow ...	Orbit object: up  (rotates object Down)
+
+
+
+	</string>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="user"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="Navigation via number Pad Keys">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content"> (with NumLock active)
+
+	8 ................ Pitch down (moves object Up, also Down arrow)
+	2 ................ Pitch up  (moves object Down, also Up arrow)
+	7 ................ Roll left  (rolls object Right, also Left arrow)
+	9 ................ Roll right  (rolls object Left, also Right arrow)
+	5 ................ Stop rotation
+	4 ................ Yaw left
+	6 ................ Yaw right
+
+
+
+	</string>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="user"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="Motion">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <mutableString key="content"> (Spaceflight)
+
+	A ..............	Increase velocity
+	Z ...............	Decrease velocity
+	Q ..............	Reverse direction
+	X ..............	Set direction toward center of screen
+	S ..............	Stop motion
+	F1 ............	Stop motion
+	F2 ............	Set velocity to 1 km/second
+	F3 ............	Set velocity to 1,000 km/second
+	F4 ............	Set velocity to speed of light (1 c/second)
+	F5 ............	Set velocity to 10x the speed of light (c)
+	F6 ............	Set velocity to 1 AU/second
+	F7 ............	Set velocity to 1 light year/second
+
+
+
+	</mutableString>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="user"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="Time Control">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <mutableString key="content">
+
+	Spacebar ..................	Pause/Resume the flow of time and scripts (toggle)
+	Spacebar+Shift ....... 	Pause the flow of time only
+	J ................................. 	Reverse/Forward time (toggle)
+	\ ..................................	Set time: 1x forward (norm), cancels faster/slower x factors
+	L .................................	Set time: 10x faster
+	K .................................	Set time: 10x slower
+	! ..................................	Set time: to current date and time
+
+	? .................................	Display light-travel delay between observer / selected object
+	- (hyphen).................	Add / Subtract light-travel delay from current simulation time
+
+	Cmd+T ......................	Open Set Time dialog box
+
+
+
+	</mutableString>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="user"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="What Label to display ">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content">(on/off toggles)
+
+	W ......................	Asteroids (lower case w)
+	Shift+W ............	Comets
+	= ........................	Constellations
+	E .......................	Galaxies
+	Shift+E .............	Globulars
+	&amp; .......................	Locations
+	M .......................	Moons
+	Shift+M ............	Minor Moons
+	P .......................	Planets
+	Shift+P .............	Dwarf Planets
+	N .......................	Spacecraft
+	B .......................	Stars
+
+
+
+	</string>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="user"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="What Items to Render / Display">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <mutableString key="content"> (on/off toggles)
+
+	Ctrl+A ...............	Atmospheres
+	I .........................	Clouds
+	Ctrl+T ...............	Comet tails
+	Ctrl+B ..............	Constellation boundaries
+	/ .........................	Constellation diagrams
+	; .........................	Earth-based equatorial coordinate sphere
+	Ctrl+E ...............	Eclipse shadows
+	U .......................	Galaxies
+	Shift+U .............	Globulars
+	^ ........................	Nebulae
+	Ctrl+K ...............	Markers (placed on objects)
+	Ctrl+L ...............	Night side planet lights (light pollution)
+
+
+
+	</mutableString>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="user"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="What Orbits to Display">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content">
+
+	O .................................	Orbits (toggle ON/OFF ALL selected orbits in the Preferences/General dialog box)
+	Shift+Cmd+P ............	Planet orbits
+	Shift+Cmd+M ...........	Moon orbits
+	Shift+Cmd+A ........... Asteroid orbits
+	Shift+Cmd+C ...........	Comet orbits
+	Shift+Cmd+S ...........	Spacecraft orbits
+
+
+
+	</string>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="user"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="Render / Display Options">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <mutableString key="content">
+
+	{ ........................	Ambient Light (Decrease)
+	} ........................	Ambient Light (Increase)
+	Ctrl+X ..............	Antialias displayed lines (ie. orbits)
+	Ctrl+Y ...............	Auto Magnitude (toggle) Auto adaptation of star visibility to Field of View (FOV).
+				Works best with the 2 million star database add-on
+	( .........................	Galaxy Brightness (Dimmer)
+	) .........................	Galaxy Brightness (Brighter)
+	Cmd+F .............	Toggle full screen mode
+	, .........................	Field Of View [FOV] (Narrow, also Shift+Left Drag)
+	. .........................	Field Of View [FOV] (Widen,  also Shift+Left Drag)
+	[ .........................	Magnitude Limit (decrease):
+					- If AutoMag OFF: Decrease limiting magnitude (fewer stars)
+					- If AutoMag ON : Decrease limiting magnitude at 45 deg FOV
+	] .........................	Magnitude Limit (increase):
+					- If AutoMag OFF: Increase limiting magnitude (more stars)
+					- If AutoMag ON : Increase limiting magnitude at 45 deg FOV
+	Ctrl+P...............	Mark selected object (Marker display must be active -- Ctrl+K)
+	Ctrl+V ...............	OpenGL Render Paths -- Cycle through the paths supported on your graphics card
+	+ .......................	Planet Texture Type toggle (Artistic / Limit of Knowledge)
+	Ctrl+S ..............	Star Styles -- Cycle fuzzy points, points, and scaled discs
+	V .......................	Informational text verbosity control (None / Terse / Verbose)
+	Ctrl+W .............	Wireframe mode toggle
+
+
+
+	</mutableString>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="user"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="Multiview Options">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content">
+
+	Tab ...................	Cycle through all active views
+	Delete ..............	Delete active view
+	Ctrl+D ..............	Delete all views except active one (reset to Single view)
+	Ctrl+U ..............	Split view horizontally
+	Ctrl+R ...............	Split view vertically
+
+
+
+	</string>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="user"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content">Other Functions
+</string>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content">
+	Cmd+E ............	Open Eclipse Finder
+	Ctrl+F ...............	Alt-azimuth mode (toggle). Used with Ctrl-G (Goto surface). The Left &amp; Right Arrow
+				keys become Yaw Left / Yaw Right.
+	Cmd+C ............	Copy the cel:// URL of current position
+	Cmd+V ............ Paste last cel:// URL copied</string>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="user"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content" base64-UTF8="YES">
+Cgk
+</string>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <mutableString key="content">Cmd+D ............	Add selected object to Favorites
+	Shift+Cmd+D ..	Open Favorites dialog box
+	~ .......................	Display "file loading" information (toggle). Use to debug texture loading problems.
+				Up/Down arrow keys scroll list.
+	` .........................	Display "frames per second" (FPS) being rendered (toggle)
+	@ ......................	Edit Mode toggle (to assist in the placements of objects)
+	D .......................	Run demo script (demo.cel)
+	Cmd+] ..............	History (Forward)
+	Cmd+[ ..............	History (Backward)
+	Cmd+M ...........	Minimize Celestia window
+	Enter ................	Activate object/location name entry mode.
+					- Esc to exit.
+					- Type an object or location name and press Enter.
+					- Type a partial name then use Tab / Shift+Tab to highlight an item.
+					  Enter will then select the highlighted item.
+
+
+
+</mutableString>
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="user"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                </textView>
+                            </subviews>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="22">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="23">
+                            <rect key="frame" x="605" y="0.0" width="15" height="608"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                </subviews>
+            </view>
+        </window>
+    </objects>
+</document>

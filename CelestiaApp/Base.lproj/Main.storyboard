@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="F8w-LJ-0Tu">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="CelestiaApp" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="CelestiaApp" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About Celestia" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <action selector="presentSetting:" target="Voe-Tx-rLC" id="jDZ-pp-9tZ"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                                        <menuItem title="Run Demo" tag="100" keyEquivalent="d" id="auO-Ho-UsL">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="IqK-Lv-qgc"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="yNT-NW-gKV"/>
+                                        <menuItem title="Services" id="NMo-om-nkz">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
+                                        <menuItem title="Hide CelestiaApp" keyEquivalent="h" id="Olw-nP-bQN">
+                                            <connections>
+                                                <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="Kd2-mp-pUS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                                        <menuItem title="Quit CelestiaApp" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="File" id="dMs-cI-mzQ">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="File" id="bib-Uj-vzu">
+                                    <items>
+                                        <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
+                                            <connections>
+                                                <action selector="performClose:" target="Ady-hI-5gd" id="HmO-Ls-i7Q"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
+                                        <menuItem title="Run Script..." keyEquivalent="o" id="pxx-59-PXV">
+                                            <connections>
+                                                <action selector="runScriptWithSender:" target="Voe-Tx-rLC" id="GRZ-93-nNG"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Location" id="UEz-TY-h2F">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Location" id="uaH-YS-8hT">
+                                    <items>
+                                        <menuItem title="Go to Object..." keyEquivalent="l" id="1s0-j8-J8c">
+                                            <connections>
+                                                <action selector="presentGoto:" target="Voe-Tx-rLC" id="XGr-v9-ICp"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="DFH-1I-Qrp"/>
+                                        <menuItem title="Home (Sol)" tag="104" keyEquivalent="h" id="fCI-5h-emV">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="R8w-x8-syz"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Select" tag="13" id="Jad-EA-wOw">
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="LFU-DE-b3S"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Go to Selection" tag="103" keyEquivalent="g" id="mmW-EI-s5T">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="tfR-Ht-FS3"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="BvL-Ex-i3g"/>
+                                        <menuItem title="Follow" tag="102" keyEquivalent="f" id="iXk-hF-mVs">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="GdR-AM-4go"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Orbit Synchronously" tag="121" keyEquivalent="y" id="OwZ-pR-RlU">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="7PG-B4-01W"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Lock Phase" tag="58" keyEquivalent=":" id="wa3-Ph-4q0">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="uI5-gl-rag"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Chase" tag="34" keyEquivalent="&quot;" id="1Fg-rM-K1X">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="knP-sl-vpr"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="qcR-Pi-tf7"/>
+                                        <menuItem title="Move Closer       home" tag="-5" id="UB2-f7-3qY">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="Rph-cz-Jw6"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Move Farther        end" tag="-6" id="mZA-rL-kGa">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="M7x-sp-FNH"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="KjR-Qj-mwv"/>
+                                        <menuItem title="Browser" keyEquivalent="b" id="qGq-vv-xeo">
+                                            <connections>
+                                                <action selector="presentBrowser:" target="Voe-Tx-rLC" id="Zkb-IA-2Pm"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Eclipse Finder" keyEquivalent="e" id="xpJ-yk-m3E">
+                                            <connections>
+                                                <action selector="presentEclipseFinder:" target="Voe-Tx-rLC" id="lTe-8t-YYM"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Direction" id="frv-hl-h4P">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Direction" id="PW3-4h-6YE">
+                                    <items>
+                                        <menuItem title="Center Selection" tag="99" keyEquivalent="c" id="Dtu-J2-eY3">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="bcv-eV-F6o"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Track Selection" tag="116" keyEquivalent="t" id="Pja-kF-PfP">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="hK6-nl-PZ0"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Look Back" tag="42" keyEquivalent="*" id="Nid-e6-mhX">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="YbA-pd-1Eg"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="W9n-Mw-YW5"/>
+                                        <menuItem title="Pitch" id="s3c-M5-6zK">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Pitch" id="dBZ-It-qOe">
+                                                <items>
+                                                    <menuItem title="Up" tag="-26" keyEquivalent="2" id="aUD-b6-6F8">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="2Tg-V0-VoO"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                    <menuItem title="Down" tag="-32" keyEquivalent="8" id="vu1-Cw-mw8">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="M0q-yi-JxR"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
+                                        </menuItem>
+                                        <menuItem title="Yaw" id="iax-av-HRB">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Yaw" id="N4N-97-x8l">
+                                                <items>
+                                                    <menuItem title="Left" tag="-28" keyEquivalent="4" id="YpQ-2P-F9S">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="3AJ-XT-5LB"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                    <menuItem title="Right" tag="-30" keyEquivalent="6" id="tGC-s4-oTB">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="Dvz-fR-BwC"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
+                                        </menuItem>
+                                        <menuItem title="Roll" id="hn6-gp-xcH">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Roll" id="Jsw-dr-xAx">
+                                                <items>
+                                                    <menuItem title="Left" tag="-31" keyEquivalent="7" id="h80-fh-tKg">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="AEH-dx-sDn"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                    <menuItem title="Right" tag="-33" keyEquivalent="9" id="oJa-nc-zLK">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="i86-kx-Jfu"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Time" id="qhb-gd-Vg5">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Time" id="3oz-CR-8Ha">
+                                    <items>
+                                        <menuItem title="Pause " tag="32" keyEquivalent=" " id="7K5-gi-TCC">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="ftv-A9-Y1m"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Faster" tag="108" keyEquivalent="l" id="cZc-Gb-GcY">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="Ng0-2D-PYu"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Slower" tag="107" keyEquivalent="k" id="TZE-QC-N1I">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="Del-K7-26c"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Real Time" tag="92" keyEquivalent="\" id="b45-aI-aTq">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="EMd-Qa-Cd1"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Reverse" tag="106" keyEquivalent="j" id="vSX-oE-cbe">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="S3n-nq-q19"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="9aE-dZ-Gkb"/>
+                                        <menuItem title="Set Time..." keyEquivalent="t" id="hk9-cK-KHA">
+                                            <connections>
+                                                <action selector="presentSetTime:" target="Voe-Tx-rLC" id="BEh-d0-u8G"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Current Date" tag="33" keyEquivalent="!" id="b6J-EL-lFu">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="wqh-ED-2Uf"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="A3u-ZS-JSA"/>
+                                        <menuItem title="Display Light Travel Delay" tag="63" keyEquivalent="?" id="RP2-eb-4na">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="WE2-k5-r1Q"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Add/Subtract Light Travel Delay" tag="45" keyEquivalent="-" id="Fey-cs-Ash">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="pcU-DE-rCb"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Travel" id="zym-M9-bcX">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Travel" id="12g-pm-DH4">
+                                    <items>
+                                        <menuItem title="Stop" tag="115" keyEquivalent="s" id="DeD-DA-Z53">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="xFX-SL-Qeg"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Velocity" id="Jnc-rE-2pr">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Velocity" id="uos-Sa-3oj">
+                                                <items>
+                                                    <menuItem title="1 km/s" tag="-12" keyEquivalent="" id="16I-LC-lHZ">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                    <menuItem title="1000 km/s" tag="-13" keyEquivalent="" id="tpY-kq-jsC">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                    <menuItem title="c (lightspeed)" tag="-14" keyEquivalent="" id="MR7-ai-UAV">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                    <menuItem title="10c" tag="-15" keyEquivalent="" id="9Th-qo-VLf">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                    <menuItem title="1 AU/s" tag="-16" keyEquivalent="" id="qmL-n4-mUa">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                    <menuItem title="1 ly/s" tag="-17" keyEquivalent="" id="YjK-ls-5jg">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
+                                        </menuItem>
+                                        <menuItem title="Faster" tag="-97" keyEquivalent="a" id="5i4-Kb-uRd">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="vE4-Sl-2g0"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Slower" tag="-122" keyEquivalent="z" id="t1H-My-xCp">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="xRm-ZO-KkQ"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Ahead" tag="120" keyEquivalent="x" id="h1G-ky-D9v">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="Sxw-YZ-15V"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Reverse" tag="113" keyEquivalent="q" id="wbD-Cj-buD">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="6oh-Xg-K3o"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="View" id="H8h-7b-M4v">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="View" id="HyV-fh-RgO">
+                                    <items>
+                                        <menuItem title="Select Next View" tag="9" id="Sev-yl-dSY">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="2Ig-sQ-MpS"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Split Horizontally" tag="21" keyEquivalent="u" id="t8f-Tb-Pkf">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="zjF-ec-mAj"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Split Vertically" tag="18" keyEquivalent="r" id="xKB-fl-Qs2">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="kOM-dX-DQT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Delete Active View" tag="127" id="DH9-Bc-TZu">
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+CA
+</string>
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="H3E-K1-qaO"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Delete Other Views" tag="4" keyEquivalent="d" id="Lms-yX-7hw">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES"/>
+                                            <connections>
+                                                <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="4YH-o9-gUo"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="History" id="5QF-Oa-p0T">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="History" id="lLB-YO-isq">
+                                    <items>
+                                        <menuItem title="Forward" keyEquivalent="]" id="BoU-HP-H96">
+                                            <connections>
+                                                <action selector="forward:" target="Voe-Tx-rLC" id="bbR-jr-Fj6"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Back" keyEquivalent="[" id="yDt-6N-XGF">
+                                            <connections>
+                                                <action selector="back:" target="Voe-Tx-rLC" id="OIP-lQ-6FD"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Window" id="aUF-d1-5bR">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
+                                    <items>
+                                        <menuItem title="Minimize" keyEquivalent="m" id="OY7-WF-poV">
+                                            <connections>
+                                                <action selector="performMiniaturize:" target="Ady-hI-5gd" id="VwT-WD-YPe"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Zoom" id="R4o-n2-Eq4">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="performZoom:" target="Ady-hI-5gd" id="DIl-cC-cCs"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
+                                        <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="arrangeInFront:" target="Ady-hI-5gd" id="DRN-fu-gQh"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Help" id="wpr-3q-Mcd">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
+                                    <items>
+                                        <menuItem title="Celestia Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                            <connections>
+                                                <action selector="presentHelp:" target="Voe-Tx-rLC" id="FlE-W2-9KG"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="0Km-wA-A4o"/>
+                                        <menuItem title="OpenGL Info" id="T7W-dh-bzm">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="presentGLInfo:" target="Voe-Tx-rLC" id="nuk-rJ-uD9"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CelestiaApp" customModuleProvider="target"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="R2V-B0-nI4">
+            <objects>
+                <windowController storyboardIdentifier="Main" id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="Celestia" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="640" height="480"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                    </connections>
+                </windowController>
+                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="250"/>
+        </scene>
+        <!--Celestia View Controller-->
+        <scene sceneID="hIz-AP-VOD">
+            <objects>
+                <viewController id="XfG-lQ-9wD" customClass="CelestiaViewController" customModule="CelestiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <openGLView wantsLayer="YES" useAuxiliaryDepthBufferStencil="NO" allowOffline="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggi-fp-OSg" customClass="CelestiaGLView" customModule="CelestiaApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            </openGLView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ggi-fp-OSg" secondAttribute="trailing" id="3Td-Q5-lVr"/>
+                            <constraint firstItem="ggi-fp-OSg" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="c2r-w5-s6d"/>
+                            <constraint firstAttribute="bottom" secondItem="ggi-fp-OSg" secondAttribute="bottom" id="cLD-dK-wbC"/>
+                            <constraint firstItem="ggi-fp-OSg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="oaT-Yc-rLC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="glView" destination="ggi-fp-OSg" id="xpF-3o-x8V"/>
+                    </connections>
+                </viewController>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="655"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="IUu-rL-q7q">
+            <objects>
+                <windowController storyboardIdentifier="Splash" id="F8w-LJ-0Tu" sceneMemberID="viewController">
+                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hasShadow="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="CJl-PN-0jS" customClass="SplashWindow" customModule="CelestiaApp" customModuleProvider="target">
+                        <windowStyleMask key="styleMask" titled="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <connections>
+                            <outlet property="delegate" destination="F8w-LJ-0Tu" id="hb0-7T-h2B"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="pgm-02-z86" kind="relationship" relationship="window.shadowedContentViewController" id="M8B-hG-t8v"/>
+                    </connections>
+                </windowController>
+                <customObject id="LcZ-Ix-rXR" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="487" y="870"/>
+        </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="mOH-RW-GFt">
+            <objects>
+                <viewController id="pgm-02-z86" customClass="SplashViewController" customModule="CelestiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="odD-JU-Eac">
+                        <rect key="frame" x="0.0" y="0.0" width="674" height="530"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <view translatesAutoresizingMaskIntoConstraints="NO" id="ECa-DH-5SU">
+                                <rect key="frame" x="0.0" y="0.0" width="674" height="530"/>
+                                <subviews>
+                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hXZ-tL-cG0" customClass="SplashImageView" customModule="CelestiaApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="39" width="674" height="491"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="splash" id="e3z-jv-nHq"/>
+                                    </imageView>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dw5-XD-Uzb">
+                                        <rect key="frame" x="500" y="65" width="157" height="14"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="loading... " id="csL-Ov-fg4">
+                                            <font key="font" metaFont="menu" size="11"/>
+                                            <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hWj-ws-cYN">
+                                        <rect key="frame" x="500" y="81" width="157" height="14"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="right" title="VERSION" id="PVI-tP-Egi">
+                                            <font key="font" metaFont="menu" size="11"/>
+                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="530" id="P90-sr-RGg"/>
+                                    <constraint firstAttribute="width" constant="674" id="Ydc-pR-AHG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ECa-DH-5SU" secondAttribute="trailing" id="0dq-EM-4gU"/>
+                            <constraint firstAttribute="bottom" secondItem="ECa-DH-5SU" secondAttribute="bottom" id="gYp-K0-zVp"/>
+                            <constraint firstItem="ECa-DH-5SU" firstAttribute="top" secondItem="odD-JU-Eac" secondAttribute="top" id="tjN-1h-oCM"/>
+                            <constraint firstItem="ECa-DH-5SU" firstAttribute="leading" secondItem="odD-JU-Eac" secondAttribute="leading" id="uGp-uh-mYu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="statusLabel" destination="dw5-XD-Uzb" id="aGO-Jg-zdT"/>
+                        <outlet property="versionLabel" destination="hWj-ws-cYN" id="hNd-wg-Zo6"/>
+                    </connections>
+                </viewController>
+                <customObject id="muk-Uo-y9Y" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1194" y="845"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="splash" width="674" height="491"/>
+    </resources>
+</document>
