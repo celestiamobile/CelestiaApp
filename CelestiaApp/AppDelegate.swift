@@ -77,7 +77,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBAction func runScript(sender: AnyObject) {
         let panel = NSOpenPanel()
-        panel.allowedFileTypes = ["cel"]
+        panel.allowedFileTypes = ["cel", "celx"]
         panel.allowsMultipleSelection = false
         let result = panel.runModal()
         if result == .OK, let url = panel.url {

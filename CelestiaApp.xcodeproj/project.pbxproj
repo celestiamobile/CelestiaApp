@@ -505,7 +505,7 @@
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../../Downloads/celestialibs\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = cc.meowssage.CelestiaApp;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.meowssage.celestia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/CelestiaApp/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -528,7 +528,7 @@
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../../Downloads/celestialibs\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = cc.meowssage.CelestiaApp;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.meowssage.celestia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/CelestiaApp/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
