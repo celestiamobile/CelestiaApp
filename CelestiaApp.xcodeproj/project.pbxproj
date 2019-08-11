@@ -282,6 +282,9 @@
 					97F2518922FDB6E100067B06 = {
 						CreatedOnToolsVersion = 10.3;
 						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
@@ -499,6 +502,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 22NR5428TD;
+				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/../CelestiaCore";
 				INFOPLIST_FILE = CelestiaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -523,6 +527,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 22NR5428TD;
+				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/../CelestiaCore";
 				INFOPLIST_FILE = CelestiaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
