@@ -21,7 +21,7 @@ class GotoViewController: NSViewController {
         super.viewDidLoad()
 
         if let current = core.simulation.currentLocation {
-            objectNameTextField.stringValue = current.selection.name ?? ""
+            objectNameTextField.stringValue = current.selection.name
             longitudeTextField.doubleValue = current.longitude
             latitudeTextField.doubleValue = current.latitude
             distanceTextField.doubleValue = current.distance

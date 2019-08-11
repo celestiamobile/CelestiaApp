@@ -53,7 +53,7 @@ extension CelestiaSelection {
 
         var items: [NSMenuItem] = []
 
-        CelestiaSelection.nameItem.title = name ?? ""
+        CelestiaSelection.nameItem.title = name
 
         for group in CelestiaSelection.allGroups {
             if !group.isEmpty {
