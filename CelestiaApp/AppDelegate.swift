@@ -15,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return NSApp.delegate as! AppDelegate
     }
 
-    lazy var core = AppCore()
+    lazy var core = CelestiaAppCore()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
     }

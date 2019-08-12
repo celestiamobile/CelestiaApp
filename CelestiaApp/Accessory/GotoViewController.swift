@@ -9,7 +9,7 @@
 import Cocoa
 
 class GotoViewController: NSViewController {
-    private let core: AppCore = AppDelegate.shared.core
+    private let core: CelestiaAppCore = AppDelegate.shared.core
 
     @IBOutlet weak var objectNameTextField: NSTextField!
     @IBOutlet weak var latitudeTextField: NSTextField!

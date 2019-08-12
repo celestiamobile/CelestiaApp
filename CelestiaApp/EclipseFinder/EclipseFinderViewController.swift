@@ -10,7 +10,7 @@ import Cocoa
 
 class EclipseFinderViewController: NSViewController {
 
-    private let core: AppCore = AppDelegate.shared.core
+    private let core: CelestiaAppCore = AppDelegate.shared.core
 
     var currentSearcher: EclipseSearcher?
 

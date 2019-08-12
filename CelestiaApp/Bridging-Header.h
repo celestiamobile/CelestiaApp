@@ -9,8 +9,8 @@
 #ifndef BRIDGING_HEADER_H
 #define BRIDGING_HEADER_H
 
-#import "AppCore.h"
-#import "AppCore+Setting.h"
+#import "CelestiaAppCore.h"
+#import "CelestiaAppCore+Setting.h"
 #import "CelestiaStarBrowser.h"
 #import "NSOpenGLView+AASample.h"
 #import "BrowserItem.h"

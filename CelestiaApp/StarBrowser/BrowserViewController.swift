@@ -143,7 +143,7 @@ class BrowserViewController: NSViewController {
         return nil
     }
 
-    private let core: AppCore = AppDelegate.shared.core
+    private let core: CelestiaAppCore = AppDelegate.shared.core
 
     private var rootID: String = "solarSystem"
 

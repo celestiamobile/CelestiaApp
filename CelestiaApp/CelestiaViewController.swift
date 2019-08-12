@@ -12,7 +12,7 @@ class CelestiaViewController: NSViewController {
 
     @IBOutlet weak var glView: CelestiaGLView!
 
-    private let core: AppCore = AppDelegate.shared.core
+    private let core: CelestiaAppCore = AppDelegate.shared.core
 
     private var ready: Bool = false
     private var pendingScript: String?
@@ -25,7 +25,7 @@ class CelestiaViewController: NSViewController {
         glView.openGLContext?.makeCurrentContext()
 
         // init glew
-        guard AppCore.glewInit() else {
+        guard CelestiaAppCore.glewInit() else {
             NSAlert.fatalError(text: NSLocalizedString("Failed to start GLEW.", comment: ""))
         }
 
