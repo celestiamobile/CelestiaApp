@@ -9,16 +9,9 @@
 #ifndef BRIDGING_HEADER_H
 #define BRIDGING_HEADER_H
 
-#import "CelestiaAppCore.h"
-#import "CelestiaAppCore+Setting.h"
-#import "CelestiaStarBrowser.h"
 #import "NSOpenGLView+AASample.h"
-#import "BrowserItem.h"
-#import "CelestiaBody.h"
-#import "CelestiaPlanetarySystem.h"
-#import "CelestiaLocation.h"
-#import "EclipseSearcher.h"
 #import "CGLInfo.h"
-#import "Astro.h"
+
+#import <CelestiaCore/CelestiaCore.h>
 
 #endif /* BRIDGING_HEADER_H */

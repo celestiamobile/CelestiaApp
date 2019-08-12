@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		970DCE3A22FE786C0044F590 /* CelestiaSelectionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970DCE3922FE786C0044F590 /* CelestiaSelectionMenu.swift */; };
 		970DCE3D22FE8B550044F590 /* NSOpenGLView+AASample.m in Sources */ = {isa = PBXBuildFile; fileRef = 970DCE3C22FE8B550044F590 /* NSOpenGLView+AASample.m */; };
+		971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251A722FDB86E00067B06 /* libc++.tbd */; };
+		971A67472301A36C009E4EA1 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251BA22FDB9AD00067B06 /* libiconv.tbd */; };
+		971A67482301A370009E4EA1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251BC22FDB9BB00067B06 /* libz.tbd */; };
+		971A674A2301A376009E4EA1 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 971A67492301A376009E4EA1 /* OpenGL.framework */; };
 		972F39E022FEAD1D00CEDDAC /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F39DF22FEAD1D00CEDDAC /* BrowserViewController.swift */; };
 		972F3A1222FEF65300CEDDAC /* EclipseFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F3A1122FEF65300CEDDAC /* EclipseFinderViewController.swift */; };
 		972F3A2222FF96F000CEDDAC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F3A2122FF96F000CEDDAC /* SettingViewController.swift */; };
@@ -23,22 +27,12 @@
 		97DBBE6422FFE887003D1BAF /* CGLInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6222FFE887003D1BAF /* CGLInfo.m */; };
 		97DBBE6822FFF2AC003D1BAF /* SplashWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6722FFF2AC003D1BAF /* SplashWindow.swift */; };
 		97DBBE6C230003DC003D1BAF /* NSAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6B230003DC003D1BAF /* NSAlert.swift */; };
-		97DBBE6E23000EA8003D1BAF /* liblua53.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97DBBE6D23000EA8003D1BAF /* liblua53.a */; };
 		97DBBE7123000FAB003D1BAF /* CelestiaResources in CopyFiles */ = {isa = PBXBuildFile; fileRef = 97DBBE7023000FAB003D1BAF /* CelestiaResources */; };
 		97F2518E22FDB6E100067B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F2518D22FDB6E100067B06 /* AppDelegate.swift */; };
 		97F2519022FDB6E100067B06 /* CelestiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F2518F22FDB6E100067B06 /* CelestiaViewController.swift */; };
 		97F2519222FDB6E700067B06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97F2519122FDB6E700067B06 /* Assets.xcassets */; };
 		97F2519522FDB6E700067B06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97F2519322FDB6E700067B06 /* Main.storyboard */; };
 		97F251A622FDB79F00067B06 /* libCelestiaCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251A222FDB75400067B06 /* libCelestiaCore.a */; };
-		97F251A822FDB86E00067B06 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251A722FDB86E00067B06 /* libc++.tbd */; };
-		97F251B022FDB8D800067B06 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251AA22FDB8D800067B06 /* libGLEW.a */; };
-		97F251B122FDB8D800067B06 /* cspice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251AB22FDB8D800067B06 /* cspice.a */; };
-		97F251B222FDB8D800067B06 /* libfmt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251AC22FDB8D800067B06 /* libfmt.a */; };
-		97F251B322FDB8D800067B06 /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251AD22FDB8D800067B06 /* libintl.a */; };
-		97F251B422FDB8D800067B06 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251AE22FDB8D800067B06 /* libjpeg.a */; };
-		97F251B522FDB92900067B06 /* libpng16.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251A922FDB8D800067B06 /* libpng16.a */; };
-		97F251BB22FDB9AE00067B06 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251BA22FDB9AD00067B06 /* libiconv.tbd */; };
-		97F251BD22FDB9BB00067B06 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251BC22FDB9BB00067B06 /* libz.tbd */; };
 		97F251BF22FDBACA00067B06 /* CelestiaGLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F251BE22FDBACA00067B06 /* CelestiaGLView.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +64,7 @@
 		970DCE3922FE786C0044F590 /* CelestiaSelectionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestiaSelectionMenu.swift; sourceTree = "<group>"; };
 		970DCE3B22FE8B550044F590 /* NSOpenGLView+AASample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSOpenGLView+AASample.h"; sourceTree = "<group>"; };
 		970DCE3C22FE8B550044F590 /* NSOpenGLView+AASample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSOpenGLView+AASample.m"; sourceTree = "<group>"; };
+		971A67492301A376009E4EA1 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		972F39DF22FEAD1D00CEDDAC /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		972F3A1122FEF65300CEDDAC /* EclipseFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EclipseFinderViewController.swift; sourceTree = "<group>"; };
 		972F3A2122FF96F000CEDDAC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -113,17 +108,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97F251BD22FDB9BB00067B06 /* libz.tbd in Frameworks */,
-				97F251BB22FDB9AE00067B06 /* libiconv.tbd in Frameworks */,
-				97F251A822FDB86E00067B06 /* libc++.tbd in Frameworks */,
+				971A674A2301A376009E4EA1 /* OpenGL.framework in Frameworks */,
+				971A67482301A370009E4EA1 /* libz.tbd in Frameworks */,
+				971A67472301A36C009E4EA1 /* libiconv.tbd in Frameworks */,
+				971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */,
 				97F251A622FDB79F00067B06 /* libCelestiaCore.a in Frameworks */,
-				97F251B522FDB92900067B06 /* libpng16.a in Frameworks */,
-				97F251B022FDB8D800067B06 /* libGLEW.a in Frameworks */,
-				97F251B122FDB8D800067B06 /* cspice.a in Frameworks */,
-				97F251B222FDB8D800067B06 /* libfmt.a in Frameworks */,
-				97F251B322FDB8D800067B06 /* libintl.a in Frameworks */,
-				97DBBE6E23000EA8003D1BAF /* liblua53.a in Frameworks */,
-				97F251B422FDB8D800067B06 /* libjpeg.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +223,7 @@
 		97F251A522FDB79F00067B06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				971A67492301A376009E4EA1 /* OpenGL.framework */,
 				97DBBE6D23000EA8003D1BAF /* liblua53.a */,
 				97F251BC22FDB9BB00067B06 /* libz.tbd */,
 				97F251BA22FDB9AD00067B06 /* libiconv.tbd */,
@@ -503,13 +493,13 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 22NR5428TD;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/../CelestiaCore";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CelestiaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../../Downloads/celestialibs\"";
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.meowssage.celestia;
@@ -528,13 +518,13 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 22NR5428TD;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/../CelestiaCore";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CelestiaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../../Downloads/celestialibs\"";
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.meowssage.celestia;
