@@ -154,6 +154,26 @@ class CelestiaViewController: NSViewController {
         let panel = NSPanel(contentViewController: finder)
         panel.makeKeyAndOrderFront(self)
     }
+
+    @objc func copy(_ sender: Any) {
+        let pb = NSPasteboard.general
+        pb.declareTypes([.string], owner: self)
+        pb.setString(core.currentURL, forType: .string)
+    }
+
+    @objc func paste(_ sender: Any) {
+        let pb = NSPasteboard.general
+        // TODO: support other type
+        guard pb.availableType(from: [.string]) != nil else { return }
+
+        if let value = pb.string(forType: .string) {
+            if value.starts(with: "cel:") {
+                core.go(toURL: value)
+            } else {
+                AppDelegate.shared.scriptController.runScript(at: value)
+            }
+        }
+    }
 }
 
 extension CelestiaViewController {

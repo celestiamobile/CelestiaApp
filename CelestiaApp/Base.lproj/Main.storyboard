@@ -91,6 +91,17 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <menu key="submenu" title="Scripts" id="b55-CL-1HX"/>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="EMn-fN-e7d"/>
+                                        <menuItem title="Copy URL" keyEquivalent="c" id="AKb-oe-EhM">
+                                            <connections>
+                                                <action selector="copy:" target="Ady-hI-5gd" id="IOt-OW-tY2"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Paste URL" keyEquivalent="v" id="g0l-ux-AMa">
+                                            <connections>
+                                                <action selector="paste:" target="Ady-hI-5gd" id="HCs-AV-wUl"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -596,7 +607,7 @@ CA
                                         <rect key="frame" x="500" y="65" width="157" height="14"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="loading... " id="csL-Ov-fg4">
-                                            <font key="font" metaFont="message" size="11"/>
+                                            <font key="font" metaFont="controlContent" size="11"/>
                                             <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -605,7 +616,7 @@ CA
                                         <rect key="frame" x="500" y="81" width="157" height="14"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="right" title="VERSION" id="PVI-tP-Egi">
-                                            <font key="font" metaFont="message" size="11"/>
+                                            <font key="font" metaFont="controlContent" size="11"/>
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
