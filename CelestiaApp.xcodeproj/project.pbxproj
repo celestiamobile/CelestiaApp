@@ -13,6 +13,7 @@
 		971A67472301A36C009E4EA1 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251BA22FDB9AD00067B06 /* libiconv.tbd */; };
 		971A67482301A370009E4EA1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251BC22FDB9BB00067B06 /* libz.tbd */; };
 		971A674A2301A376009E4EA1 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 971A67492301A376009E4EA1 /* OpenGL.framework */; };
+		971A67502301A9D3009E4EA1 /* ScriptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971A674F2301A9D3009E4EA1 /* ScriptController.swift */; };
 		972F39E022FEAD1D00CEDDAC /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F39DF22FEAD1D00CEDDAC /* BrowserViewController.swift */; };
 		972F3A1222FEF65300CEDDAC /* EclipseFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F3A1122FEF65300CEDDAC /* EclipseFinderViewController.swift */; };
 		972F3A2222FF96F000CEDDAC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F3A2122FF96F000CEDDAC /* SettingViewController.swift */; };
@@ -65,6 +66,7 @@
 		970DCE3B22FE8B550044F590 /* NSOpenGLView+AASample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSOpenGLView+AASample.h"; sourceTree = "<group>"; };
 		970DCE3C22FE8B550044F590 /* NSOpenGLView+AASample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSOpenGLView+AASample.m"; sourceTree = "<group>"; };
 		971A67492301A376009E4EA1 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		971A674F2301A9D3009E4EA1 /* ScriptController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptController.swift; sourceTree = "<group>"; };
 		972F39DF22FEAD1D00CEDDAC /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		972F3A1122FEF65300CEDDAC /* EclipseFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EclipseFinderViewController.swift; sourceTree = "<group>"; };
 		972F3A2122FF96F000CEDDAC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				97DBBE6022FFE779003D1BAF /* GLInfoViewController.swift */,
 				97DBBE6722FFF2AC003D1BAF /* SplashWindow.swift */,
 				97DBBE6B230003DC003D1BAF /* NSAlert.swift */,
+				971A674F2301A9D3009E4EA1 /* ScriptController.swift */,
 			);
 			path = Accessory;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			files = (
 				97DBBE5922FFDDC4003D1BAF /* SetTimeViewController.swift in Sources */,
 				972F3A1222FEF65300CEDDAC /* EclipseFinderViewController.swift in Sources */,
+				971A67502301A9D3009E4EA1 /* ScriptController.swift in Sources */,
 				97DBBE6422FFE887003D1BAF /* CGLInfo.m in Sources */,
 				97DBBE6C230003DC003D1BAF /* NSAlert.swift in Sources */,
 				97DBBE6822FFF2AC003D1BAF /* SplashWindow.swift in Sources */,

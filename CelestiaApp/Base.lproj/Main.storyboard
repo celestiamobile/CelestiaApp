@@ -79,8 +79,17 @@
                                         <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
                                         <menuItem title="Run Script..." keyEquivalent="o" id="pxx-59-PXV">
                                             <connections>
-                                                <action selector="runScriptWithSender:" target="Voe-Tx-rLC" id="GRZ-93-nNG"/>
+                                                <action selector="runScriptWithSender:" target="DZN-cH-n8s" id="lgr-Tr-QTa"/>
                                             </connections>
+                                        </menuItem>
+                                        <menuItem title="Rerun Script" keyEquivalent="r" id="Ges-Xp-odz">
+                                            <connections>
+                                                <action selector="rerunScript:" target="DZN-cH-n8s" id="xv6-zZ-UiM"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Scripts" id="SzG-pz-Hut">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Scripts" id="b55-CL-1HX"/>
                                         </menuItem>
                                     </items>
                                 </menu>
@@ -482,7 +491,16 @@ CA
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CelestiaApp" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Celestia" customModuleProvider="target">
+                    <connections>
+                        <outlet property="scriptController" destination="DZN-cH-n8s" id="kii-tf-LQc"/>
+                    </connections>
+                </customObject>
+                <customObject id="DZN-cH-n8s" customClass="ScriptController" customModule="Celestia" customModuleProvider="target">
+                    <connections>
+                        <outlet property="scriptMenu" destination="b55-CL-1HX" id="jXX-SM-9Pq"/>
+                    </connections>
+                </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -513,12 +531,12 @@ CA
         <!--Celestia View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="CelestiaViewController" customModule="CelestiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="CelestiaViewController" customModule="Celestia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <openGLView wantsLayer="YES" useAuxiliaryDepthBufferStencil="NO" allowOffline="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggi-fp-OSg" customClass="CelestiaGLView" customModule="CelestiaApp" customModuleProvider="target">
+                            <openGLView wantsLayer="YES" useAuxiliaryDepthBufferStencil="NO" allowOffline="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggi-fp-OSg" customClass="CelestiaGLView" customModule="Celestia" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                             </openGLView>
                         </subviews>
@@ -541,7 +559,7 @@ CA
         <scene sceneID="IUu-rL-q7q">
             <objects>
                 <windowController storyboardIdentifier="Splash" id="F8w-LJ-0Tu" sceneMemberID="viewController">
-                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hasShadow="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="CJl-PN-0jS" customClass="SplashWindow" customModule="CelestiaApp" customModuleProvider="target">
+                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hasShadow="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="CJl-PN-0jS" customClass="SplashWindow" customModule="Celestia" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -561,7 +579,7 @@ CA
         <!--Splash View Controller-->
         <scene sceneID="mOH-RW-GFt">
             <objects>
-                <viewController id="pgm-02-z86" customClass="SplashViewController" customModule="CelestiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pgm-02-z86" customClass="SplashViewController" customModule="Celestia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="odD-JU-Eac">
                         <rect key="frame" x="0.0" y="0.0" width="674" height="530"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -569,7 +587,7 @@ CA
                             <view translatesAutoresizingMaskIntoConstraints="NO" id="ECa-DH-5SU">
                                 <rect key="frame" x="0.0" y="0.0" width="674" height="530"/>
                                 <subviews>
-                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hXZ-tL-cG0" customClass="SplashImageView" customModule="CelestiaApp" customModuleProvider="target">
+                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hXZ-tL-cG0" customClass="SplashImageView" customModule="Celestia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="39" width="674" height="491"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="splash" id="e3z-jv-nHq"/>
@@ -578,7 +596,7 @@ CA
                                         <rect key="frame" x="500" y="65" width="157" height="14"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="loading... " id="csL-Ov-fg4">
-                                            <font key="font" metaFont="menu" size="11"/>
+                                            <font key="font" metaFont="message" size="11"/>
                                             <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -587,7 +605,7 @@ CA
                                         <rect key="frame" x="500" y="81" width="157" height="14"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="right" title="VERSION" id="PVI-tP-Egi">
-                                            <font key="font" metaFont="menu" size="11"/>
+                                            <font key="font" metaFont="message" size="11"/>
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>

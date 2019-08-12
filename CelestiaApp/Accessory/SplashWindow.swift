@@ -32,6 +32,7 @@ class SplashViewController: NSViewController {
                 if !result {
                     NSAlert.fatalError(text: NSLocalizedString("Error loading data files. Celestia will now quit.", comment: ""))
                 }
+                AppDelegate.shared.scriptController.buildScriptMenu()
                 let wc = self?.storyboard?.instantiateController(withIdentifier: "Main") as! NSWindowController
                 wc.showWindow(nil)
                 self?.view.window?.close()

@@ -10,9 +10,14 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
     static var shared: AppDelegate {
         return NSApp.delegate as! AppDelegate
+    }
+
+    @IBOutlet var scriptController: ScriptController!
+
+    var celestiaViewController: CelestiaViewController? {
+        return NSApp.windows.first?.contentView?.nextResponder as? CelestiaViewController
     }
 
     lazy var core = CelestiaAppCore()
@@ -26,10 +31,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ aNotification: Notification) {
         core.storeUserDefaults()
-    }
-
-    private var celestiaViewController: CelestiaViewController? {
-        return NSApp.windows.first?.contentView?.nextResponder as? CelestiaViewController
     }
 
     @IBAction func forward(_ sender: Any) {
@@ -75,20 +76,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         panel.makeKeyAndOrderFront(self)
     }
 
-    @IBAction func runScript(sender: AnyObject) {
-        let panel = NSOpenPanel()
-        panel.allowedFileTypes = ["cel", "celx"]
-        panel.allowsMultipleSelection = false
-        let result = panel.runModal()
-        if result == .OK, let url = panel.url {
-            celestiaViewController?.runScript(at: url.path)
-        }
-    }
-
     func application(_ sender: NSApplication, openFile filename: String) -> Bool {
-        celestiaViewController?.runScript(at: filename)
+        scriptController.runScript(at: filename)
         return true
     }
-
 }
-
