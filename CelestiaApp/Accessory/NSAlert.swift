@@ -28,4 +28,24 @@ extension NSAlert {
         alert.addButton(withTitle: NSLocalizedString("OK", comment: ""))
         alert.runModal()
     }
+
+    class func selection(message: String, selections: [String]) -> Int? {
+        let alert = NSAlert()
+        alert.messageText = message
+
+        let popup = NSPopUpButton(frame: CGRect(x: 0, y: 0, width: 180, height: 20), pullsDown: false)
+        popup.addItems(withTitles: selections)
+        popup.sizeToFit()
+
+        alert.accessoryView = popup
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: NSLocalizedString("OK", comment: ""))
+        alert.addButton(withTitle: NSLocalizedString("Cancel", comment: ""))
+        alert.layout()
+        if alert.runModal() != .alertFirstButtonReturn {
+            return nil
+        }
+        return popup.indexOfSelectedItem
+    }
+
 }

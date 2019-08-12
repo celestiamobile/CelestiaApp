@@ -33,6 +33,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         core.storeUserDefaults()
     }
 
+    @IBAction func captureMovie(_ sender: Any) {
+        celestiaViewController?.showVideoCapture()
+    }
+
     @IBAction func forward(_ sender: Any) {
         celestiaViewController?.forward()
     }
