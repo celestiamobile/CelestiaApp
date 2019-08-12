@@ -168,7 +168,7 @@ class CelestiaViewController: NSViewController {
 
         if let value = pb.string(forType: .string) {
             if value.starts(with: "cel:") {
-                core.go(toURL: value)
+                core.go(to: value)
             } else {
                 AppDelegate.shared.scriptController.runScript(at: value)
             }
