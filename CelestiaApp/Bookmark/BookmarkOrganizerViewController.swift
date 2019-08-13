@@ -14,6 +14,7 @@ class BookmarkOrganizerViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
 }

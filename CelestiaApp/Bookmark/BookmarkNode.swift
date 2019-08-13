@@ -8,14 +8,16 @@
 
 import Cocoa
 
-class BookmarkNode: NSObject {
+final class BookmarkNode: NSObject {
     let isFolder: Bool
 
     @objc var name: String
+    @objc var url: String
     @objc var children: [BookmarkNode]
 
-    init(name: String, isFolder: Bool, children: [BookmarkNode] = []) {
+    init(name: String, url: String, isFolder: Bool, children: [BookmarkNode] = []) {
         self.name = name
+        self.url = url
         self.isFolder = isFolder
         self.children = children
         super.init()
@@ -24,4 +26,7 @@ class BookmarkNode: NSObject {
     @objc func isLeaf() -> Bool {
         return !isFolder
     }
+}
+
+extension BookmarkNode: Codable {
 }
