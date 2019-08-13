@@ -17,6 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBOutlet var scriptController: ScriptController!
+    @IBOutlet var bookmarkController: BookmarkController!
 
     var celestiaViewController: CelestiaViewController? {
         return NSApp.windows.first?.contentView?.nextResponder as? CelestiaViewController

@@ -22,6 +22,9 @@
 		972F3A2E22FFC5BA00CEDDAC /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 972F3A2D22FFC5BA00CEDDAC /* Setting.storyboard */; };
 		972F3A3522FFC6E400CEDDAC /* Accessory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 972F3A3422FFC6E400CEDDAC /* Accessory.storyboard */; };
 		972F3A3822FFC70C00CEDDAC /* GotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F3A3622FFC70C00CEDDAC /* GotoViewController.swift */; };
+		974D26F52302ACD300FDFBC0 /* Bookmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 974D26F42302ACD300FDFBC0 /* Bookmark.storyboard */; };
+		974D26F72302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F62302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift */; };
+		974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */; };
 		97DBBE5922FFDDC4003D1BAF /* SetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE5722FFDDC4003D1BAF /* SetTimeViewController.swift */; };
 		97DBBE5F22FFE571003D1BAF /* HelpWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 97DBBE5E22FFE571003D1BAF /* HelpWindow.nib */; };
 		97DBBE6122FFE779003D1BAF /* GLInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6022FFE779003D1BAF /* GLInfoViewController.swift */; };
@@ -33,7 +36,7 @@
 		97F2519022FDB6E100067B06 /* CelestiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F2518F22FDB6E100067B06 /* CelestiaViewController.swift */; };
 		97F2519222FDB6E700067B06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97F2519122FDB6E700067B06 /* Assets.xcassets */; };
 		97F2519522FDB6E700067B06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97F2519322FDB6E700067B06 /* Main.storyboard */; };
-		97F251A622FDB79F00067B06 /* libCelestiaCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251A222FDB75400067B06 /* libCelestiaCore.a */; };
+		97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251A222FDB75400067B06 /* CelestiaCore.framework */; };
 		97F251BF22FDBACA00067B06 /* CelestiaGLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F251BE22FDBACA00067B06 /* CelestiaGLView.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +78,9 @@
 		972F3A2D22FFC5BA00CEDDAC /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		972F3A3422FFC6E400CEDDAC /* Accessory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Accessory.storyboard; sourceTree = "<group>"; };
 		972F3A3622FFC70C00CEDDAC /* GotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotoViewController.swift; sourceTree = "<group>"; };
+		974D26F42302ACD300FDFBC0 /* Bookmark.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bookmark.storyboard; sourceTree = "<group>"; };
+		974D26F62302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkOrganizerViewController.swift; sourceTree = "<group>"; };
+		974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkController.swift; sourceTree = "<group>"; };
 		976BC22C23002B7700D2BF29 /* Celestia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Celestia.entitlements; sourceTree = "<group>"; };
 		97DBBE5722FFDDC4003D1BAF /* SetTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimeViewController.swift; sourceTree = "<group>"; };
 		97DBBE5E22FFE571003D1BAF /* HelpWindow.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = HelpWindow.nib; sourceTree = "<group>"; };
@@ -114,7 +120,7 @@
 				971A67482301A370009E4EA1 /* libz.tbd in Frameworks */,
 				971A67472301A36C009E4EA1 /* libiconv.tbd in Frameworks */,
 				971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */,
-				97F251A622FDB79F00067B06 /* libCelestiaCore.a in Frameworks */,
+				97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +181,16 @@
 			path = Accessory;
 			sourceTree = "<group>";
 		};
+		974D26F22302ACBF00FDFBC0 /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				974D26F42302ACD300FDFBC0 /* Bookmark.storyboard */,
+				974D26F62302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift */,
+				974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */,
+			);
+			path = Bookmark;
+			sourceTree = "<group>";
+		};
 		97F2518122FDB6E000067B06 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +214,7 @@
 		97F2518C22FDB6E100067B06 /* CelestiaApp */ = {
 			isa = PBXGroup;
 			children = (
+				974D26F22302ACBF00FDFBC0 /* Bookmark */,
 				972F3A3322FFC6D700CEDDAC /* Accessory */,
 				972F3A3222FFC67100CEDDAC /* OpenGL */,
 				972F3A3122FFC66100CEDDAC /* StarBrowser */,
@@ -218,7 +235,7 @@
 		97F2519E22FDB75400067B06 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				97F251A222FDB75400067B06 /* libCelestiaCore.a */,
+				97F251A222FDB75400067B06 /* CelestiaCore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -310,10 +327,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		97F251A222FDB75400067B06 /* libCelestiaCore.a */ = {
+		97F251A222FDB75400067B06 /* CelestiaCore.framework */ = {
 			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libCelestiaCore.a;
+			fileType = wrapper.framework;
+			path = CelestiaCore.framework;
 			remoteRef = 97F251A122FDB75400067B06 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -324,6 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				974D26F52302ACD300FDFBC0 /* Bookmark.storyboard in Resources */,
 				972F3A2A22FFC57700CEDDAC /* EclipseFinder.storyboard in Resources */,
 				972F3A3522FFC6E400CEDDAC /* Accessory.storyboard in Resources */,
 				97F2519222FDB6E700067B06 /* Assets.xcassets in Resources */,
@@ -347,6 +365,7 @@
 				97DBBE6422FFE887003D1BAF /* CGLInfo.m in Sources */,
 				97DBBE6C230003DC003D1BAF /* NSAlert.swift in Sources */,
 				97DBBE6822FFF2AC003D1BAF /* SplashWindow.swift in Sources */,
+				974D26F72302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift in Sources */,
 				97DBBE6122FFE779003D1BAF /* GLInfoViewController.swift in Sources */,
 				97F251BF22FDBACA00067B06 /* CelestiaGLView.swift in Sources */,
 				972F39E022FEAD1D00CEDDAC /* BrowserViewController.swift in Sources */,
@@ -355,6 +374,7 @@
 				97F2519022FDB6E100067B06 /* CelestiaViewController.swift in Sources */,
 				97F2518E22FDB6E100067B06 /* AppDelegate.swift in Sources */,
 				972F3A3822FFC70C00CEDDAC /* GotoViewController.swift in Sources */,
+				974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */,
 				970DCE3A22FE786C0044F590 /* CelestiaSelectionMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

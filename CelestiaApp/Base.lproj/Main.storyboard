@@ -442,6 +442,23 @@ CA
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Favorites" id="DSV-Iu-4uA">
+                                <menu key="submenu" title="Favorites" id="yMS-sF-iBG">
+                                    <items>
+                                        <menuItem title="Add Bookmark" keyEquivalent="d" id="zn3-mu-omy">
+                                            <connections>
+                                                <action selector="addBookmark:" target="c27-0I-7lW" id="G73-0t-1b8"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Organize Bookmarks…" keyEquivalent="D" id="olp-mX-lWB">
+                                            <connections>
+                                                <action selector="organizeBookmarks:" target="c27-0I-7lW" id="hKh-jw-ZXX"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title=" " id="Hyi-8W-wB3"/>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="History" id="5QF-Oa-p0T">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="History" id="lLB-YO-isq">
@@ -511,6 +528,7 @@ CA
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Celestia" customModuleProvider="target">
                     <connections>
+                        <outlet property="bookmarkController" destination="c27-0I-7lW" id="YcF-Wy-JQ8"/>
                         <outlet property="scriptController" destination="DZN-cH-n8s" id="kii-tf-LQc"/>
                     </connections>
                 </customObject>
@@ -519,6 +537,7 @@ CA
                         <outlet property="scriptMenu" destination="b55-CL-1HX" id="jXX-SM-9Pq"/>
                     </connections>
                 </customObject>
+                <customObject id="c27-0I-7lW" customClass="BookmarkController" customModule="Celestia" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
