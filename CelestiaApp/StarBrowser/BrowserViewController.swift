@@ -159,7 +159,7 @@ class BrowserViewController: NSViewController {
         }
     }
 
-    @IBAction private func doubleClick(_ sender: NSBrowser) {
+    @objc private func doubleClick(_ sender: NSBrowser) {
         if let sel = selection(at: current.path().components(separatedBy: current.pathSeparator)) {
             core.simulation.selection = sel
             core.charEnter(103)
