@@ -8,6 +8,8 @@
 
 import Cocoa
 
+import CelestiaCore
+
 class BookmarkController: NSObject {
     private var storedBookmarks: [BookmarkNode] = []
 
@@ -33,5 +35,27 @@ class BookmarkController: NSObject {
         let vc = NSStoryboard(name: "Bookmark", bundle: nil).instantiateController(withIdentifier: "Organizer") as! NSViewController
         let panel = NSPanel(contentViewController: vc)
         panel.makeKeyAndOrderFront(self)
+    }
+}
+
+extension CelestiaAppCore {
+    var currentBookmark: BookmarkNode? {
+        let selection = simulation.selection
+        if selection.isEmpty {
+            return nil
+        }
+        let name: String
+        if let star = selection.star {
+            name = simulation.universe.starCatalog.starName(star)
+        } else if let body = selection.body {
+            name = body.name
+        } else if let dso = selection.dso {
+            name = simulation.universe.dsoCatalog.dsoName(dso)
+        } else if let location = selection.location {
+            name = location.name
+        } else {
+            name = NSLocalizedString("Unknown", comment: "")
+        }
+        return BookmarkNode(name: name, url: currentURL, isFolder: false)
     }
 }
