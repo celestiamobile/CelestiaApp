@@ -48,31 +48,34 @@ extension CelestiaDSOCatalog: Sequence {
 class BrowserViewController: NSViewController {
     @IBOutlet weak var tabView: NSTabView!
 
-    private lazy var sol: BrowserItem = {
-        let sol = core.simulation.universe.find("Sol")
-        return BrowserItem(star: sol.star!)
+    private lazy var sol: CelestiaBrowserItem = {
+        let sol = universe.find("Sol")
+        return CelestiaBrowserItem(catEntry: sol.star!, provider: universe)
     }()
 
     private var current: NSBrowser!
 
-    private lazy var stars: BrowserItem = {
-        func updateAccumulation(result: inout [String : BrowserItem], star: CelestiaStar) {
-            result[core.simulation.universe.starCatalog.starName(star)] = BrowserItem(star: star)
+    private lazy var stars: CelestiaBrowserItem = {
+        func updateAccumulation(result: inout [String : CelestiaBrowserItem], star: CelestiaStar) {
+            result[universe.starCatalog.starName(star)] = CelestiaBrowserItem(catEntry: star, provider: universe)
         }
 
-        let nearest = CelestiaStarBrowser(kind: .nearest, simulation: core.simulation).stars().reduce(into: [String : BrowserItem](), updateAccumulation)
-        let brightest = CelestiaStarBrowser(kind: .brightest, simulation: core.simulation).stars().reduce(into: [String : BrowserItem](), updateAccumulation)
-        let hasPlanets = CelestiaStarBrowser(kind: .starsWithPlants, simulation: core.simulation).stars().reduce(into: [String : BrowserItem](), updateAccumulation)
+        let nearest = CelestiaStarBrowser(kind: .nearest, simulation: core.simulation).stars().reduce(into: [String : CelestiaBrowserItem](), updateAccumulation)
+        let brightest = CelestiaStarBrowser(kind: .brightest, simulation: core.simulation).stars().reduce(into: [String : CelestiaBrowserItem](), updateAccumulation)
+        let hasPlanets = CelestiaStarBrowser(kind: .starsWithPlants, simulation: core.simulation).stars().reduce(into: [String : CelestiaBrowserItem](), updateAccumulation)
 
-        let stars = BrowserItem(name: "")
-        stars.addChild(BrowserItem(name: "Nearest Stars", children: nearest))
-        stars.addChild(BrowserItem(name: "Brightest Stars", children: brightest))
-        stars.addChild(BrowserItem(name: "Stars With Planets", children: hasPlanets))
-
+        let nearestName = NSLocalizedString("Nearest Stars", comment: "")
+        let brightestName = NSLocalizedString("Brightest Stars", comment: "")
+        let hasPlanetsName = NSLocalizedString("Stars With Planets", comment: "")
+        let stars = CelestiaBrowserItem(name: "", children: [
+            nearestName : CelestiaBrowserItem(name: nearestName, children: nearest),
+            brightestName : CelestiaBrowserItem(name: brightestName, children: brightest),
+            hasPlanetsName : CelestiaBrowserItem(name: hasPlanetsName, children: hasPlanets),
+        ])
         return stars
     }()
 
-    private lazy var dso: BrowserItem = {
+    private lazy var dso: CelestiaBrowserItem = {
         let typeMap = [
             "SB" : NSLocalizedString("Galaxies (Barred Spiral)", comment: ""),
             "S" : NSLocalizedString("Galaxies (Spiral)", comment: ""),
@@ -84,27 +87,27 @@ class BrowserViewController: NSViewController {
             "Unknown" : NSLocalizedString("Unknown", comment: ""),
         ]
 
-        func updateAccumulation(result: inout [String : BrowserItem], item: (key: String, value: [String : BrowserItem])) {
+        func updateAccumulation(result: inout [String : CelestiaBrowserItem], item: (key: String, value: [String : CelestiaBrowserItem])) {
             let fullName = typeMap[item.key]!
-            result[fullName] = BrowserItem(name: fullName, children: item.value)
+            result[fullName] = CelestiaBrowserItem(name: fullName, children: item.value)
         }
 
         let prefixes = ["SB", "S", "E", "Irr", "Neb", "Glob", "Clust"]
 
-        var tempDict = prefixes.reduce(into: [String : [String : BrowserItem]]()) { $0[$1] = [String : BrowserItem]() }
+        var tempDict = prefixes.reduce(into: [String : [String : CelestiaBrowserItem]]()) { $0[$1] = [String : CelestiaBrowserItem]() }
 
-        let catalog = core.simulation.universe.dsoCatalog
+        let catalog = universe.dsoCatalog
         catalog.forEach({ (dso) in
             let matchingType = prefixes.first(where: {dso.type.hasPrefix($0)}) ?? "Unknown"
             let name = catalog.dsoName(dso)
-            tempDict[matchingType]![name] = BrowserItem(dso: dso)
+            tempDict[matchingType]![name] = CelestiaBrowserItem(catEntry: dso, provider: universe)
         })
 
-        let results = tempDict.reduce(into: [String : BrowserItem](), updateAccumulation)
-        return BrowserItem(name: "", children: results)
+        let results = tempDict.reduce(into: [String : CelestiaBrowserItem](), updateAccumulation)
+        return CelestiaBrowserItem(name: "", children: results)
     }()
 
-    private var root: BrowserItem {
+    private var root: CelestiaBrowserItem {
         return [
             "solarSystem" : self.sol,
             "star" : self.stars,
@@ -112,9 +115,9 @@ class BrowserViewController: NSViewController {
         ][rootID]!
     }
 
-    func item(at pathArray: [String]) -> BrowserItem {
+    func item(at pathArray: [String]) -> CelestiaBrowserItem {
         var lastItem = root
-        var nextItem: BrowserItem? = lastItem
+        var nextItem: CelestiaBrowserItem? = lastItem
 
         for i in 1..<pathArray.count {
             let lastKey = pathArray[i]
@@ -125,14 +128,11 @@ class BrowserViewController: NSViewController {
             lastItem = nextItem!
         }
 
-        if let item = nextItem {
-            BrowserItem.addChildrenIfAvailable(item, in: core.simulation.universe)
-        }
         return lastItem
     }
 
     func selection(at pathArray: [String]) -> CelestiaSelection? {
-        let body = item(at: pathArray).body
+        let body = item(at: pathArray).entry
         if let star = body as? CelestiaStar {
            return CelestiaSelection(star: star)
         } else if let dso = body as? CelestiaDSO {
@@ -146,6 +146,7 @@ class BrowserViewController: NSViewController {
     }
 
     private let core: CelestiaAppCore = AppDelegate.shared.core
+    private lazy var universe: CelestiaUniverse = self.core.simulation.universe
 
     private var rootID: String = "solarSystem"
 
@@ -184,10 +185,10 @@ extension BrowserViewController: NSBrowserDelegate {
 
     func browser(_ sender: NSBrowser, willDisplayCell cell: Any, atRow row: Int, column: Int) {
         let itemForColumn = item(at: sender.path(toColumn: column).components(separatedBy: sender.pathSeparator))
-        let itemName = itemForColumn.allChildNames[row]
-        let isLeaf = BrowserItem.isLeaf(itemForColumn.child(with: itemName)!, in: core.simulation.universe)
+        let itemName = itemForColumn.childName(at: row)!
+        let child = itemForColumn.child(with: itemName)!
         let actualCell = cell as! NSBrowserCell
-        actualCell.title = itemForColumn.allChildNames[row]
-        actualCell.isLeaf = isLeaf
+        actualCell.title = itemName
+        actualCell.isLeaf = child.childCount == 0
     }
 }

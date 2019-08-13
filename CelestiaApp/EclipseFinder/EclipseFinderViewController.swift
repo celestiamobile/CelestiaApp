@@ -14,7 +14,7 @@ class EclipseFinderViewController: NSViewController {
 
     private let core: CelestiaAppCore = AppDelegate.shared.core
 
-    var currentSearcher: EclipseSearcher?
+    var currentFinder: CelestiaEclipseFinder?
 
     var results: [EclipseResult] = []
 
@@ -67,10 +67,10 @@ class EclipseFinderViewController: NSViewController {
         progressIndicator.startAnimation(self)
         findButton.isEnabled = false
         DispatchQueue.global().async { [weak self] in
-            let searcher = EclipseSearcher(body: parameter.body)
-            self?.currentSearcher = searcher
-            let results = searcher.search(kind: parameter.kind, from: startDate, to: endDate)
-            self?.currentSearcher = nil
+            let finder = CelestiaEclipseFinder(body: parameter.body)
+            self?.currentFinder = finder
+            let results = finder.search(kind: parameter.kind, from: startDate, to: endDate)
+            self?.currentFinder = nil
             DispatchQueue.main.async {
                 self?.findButton.isEnabled = true
                 self?.progressIndicator.stopAnimation(self)
@@ -81,7 +81,7 @@ class EclipseFinderViewController: NSViewController {
     }
 
     @IBAction func stop(_ sender: Any) {
-        currentSearcher?.abort()
+        currentFinder?.abort()
     }
 
     @objc private func go(_ sender: Any) {
