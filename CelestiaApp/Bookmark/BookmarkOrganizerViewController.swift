@@ -9,11 +9,14 @@
 import Cocoa
 
 class BookmarkOrganizerViewController: NSViewController {
-    @IBOutlet weak var outlineView: NSOutlineView!
+    @IBOutlet private weak var outlineView: NSOutlineView!
+    @IBOutlet private var tree: NSTreeController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
     }
     
+}
+
+extension BookmarkOrganizerViewController: NSOutlineViewDelegate {
 }
