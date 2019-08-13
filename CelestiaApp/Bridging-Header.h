@@ -12,6 +12,4 @@
 #import "NSOpenGLView+AASample.h"
 #import "CGLInfo.h"
 
-#import <CelestiaCore/CelestiaCore.h>
-
 #endif /* BRIDGING_HEADER_H */

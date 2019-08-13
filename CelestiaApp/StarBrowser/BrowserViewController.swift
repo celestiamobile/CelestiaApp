@@ -8,6 +8,8 @@
 
 import Cocoa
 
+import CelestiaCore
+
 extension CelestiaDSOCatalog {
     subscript(index: Int) -> CelestiaDSO {
         get {

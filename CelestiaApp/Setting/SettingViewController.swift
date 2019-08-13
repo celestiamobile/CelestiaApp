@@ -8,6 +8,8 @@
 
 import Cocoa
 
+import CelestiaCore
+
 class SettingViewController: NSViewController {
     let core: CelestiaAppCore = AppDelegate.shared.core
 

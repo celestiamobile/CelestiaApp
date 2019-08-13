@@ -8,6 +8,8 @@
 
 import Cocoa
 
+import CelestiaCore
+
 class EclipseFinderViewController: NSViewController {
 
     private let core: CelestiaAppCore = AppDelegate.shared.core

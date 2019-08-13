@@ -8,6 +8,8 @@
 
 import Cocoa
 
+import CelestiaCore
+
 class CelestiaViewController: NSViewController {
 
     @IBOutlet weak var glView: CelestiaGLView!
@@ -231,21 +233,25 @@ extension CelestiaViewController: CelestiaGLViewDelegate {
     }
 }
 
+extension CelestiaGLViewMouseButton {
+    var celestiaButtons: MouseButton { return MouseButton(rawValue: rawValue) }
+}
+
 extension CelestiaViewController: CelestiaGLViewMouseProcessor {
-    func mouseUp(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: MouseButton) {
-        core.mouseButtonUp(at: point, modifiers: modifiers.rawValue, with: buttons)
+    func mouseUp(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton) {
+        core.mouseButtonUp(at: point, modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
     }
 
-    func mouseDown(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: MouseButton) {
-        core.mouseButtonDown(at: point, modifiers: modifiers.rawValue, with: buttons)
+    func mouseDown(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton) {
+        core.mouseButtonDown(at: point, modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
     }
 
     func mouseDragged(to point: CGPoint) {
         core.mouseDragged(to: point)
     }
 
-    func mouseMove(by offset: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: MouseButton) {
-        core.mouseMove(by: offset, modifiers: modifiers.rawValue, with: buttons)
+    func mouseMove(by offset: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton) {
+        core.mouseMove(by: offset, modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
     }
 
     func mouseWheel(by motion: CGFloat, modifiers: NSEvent.ModifierFlags) {

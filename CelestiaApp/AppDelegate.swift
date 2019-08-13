@@ -8,6 +8,8 @@
 
 import Cocoa
 
+import CelestiaCore
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     static var shared: AppDelegate {

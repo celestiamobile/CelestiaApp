@@ -8,6 +8,8 @@
 
 import Cocoa
 
+import CelestiaCore
+
 class ScriptController: NSObject {
     @IBOutlet private weak var scriptMenu: NSMenu!
 

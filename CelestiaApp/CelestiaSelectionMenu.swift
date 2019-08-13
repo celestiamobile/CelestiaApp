@@ -8,6 +8,8 @@
 
 import Cocoa
 
+import CelestiaCore
+
 extension NSMenuItem {
     convenience init(title string: String, tag: Int, keyEquivalent charCode: String) {
         self.init(title: string, action: nil, keyEquivalent: charCode)
