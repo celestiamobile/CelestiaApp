@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Bookmark Organizer View Controller-->
+        <!--Bookmark Organizer-->
         <scene sceneID="VOF-xl-GbP">
             <objects>
-                <viewController storyboardIdentifier="Organizer" id="JH6-56-5zh" customClass="BookmarkOrganizerViewController" customModule="Celestia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Bookmark Organizer" storyboardIdentifier="Organizer" id="JH6-56-5zh" customClass="BookmarkOrganizerViewController" customModule="Celestia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="FYP-UT-PZ6">
                         <rect key="frame" x="0.0" y="0.0" width="331" height="384"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -21,13 +21,16 @@
                                         <rect key="frame" x="230" y="13" width="86" height="27"/>
                                         <buttonCell key="cell" type="push" title="New Folder" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="kvc-pO-bT1">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="smallSystem"/>
+                                            <font key="font" metaFont="controlContent" size="11"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="createFolder:" target="JH6-56-5zh" id="qZL-Xa-xt2"/>
+                                        </connections>
                                     </button>
                                     <textField verticalHuggingPriority="750" preferredMaxLayoutWidth="168" translatesAutoresizingMaskIntoConstraints="NO" id="frN-iw-Azg">
                                         <rect key="frame" x="20" y="19" width="171" height="39"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Double-click item to open or control-click for contextual menu. Drag items to reorganize." id="yVe-D5-apu">
-                                            <font key="font" metaFont="label"/>
+                                            <font key="font" metaFont="system" size="10"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -38,16 +41,16 @@
                                             <rect key="frame" x="1" y="0.0" width="289" height="280"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="qqI-0L-2k7" viewBased="YES" indentationPerLevel="16" outlineTableColumn="Ktq-t2-tAw" id="Fs1-bN-hZh">
+                                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="qqI-0L-2k7" viewBased="YES" indentationPerLevel="16" outlineTableColumn="Ktq-t2-tAw" id="Fs1-bN-hZh">
                                                     <rect key="frame" x="0.0" y="0.0" width="294" height="255"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
                                                         <tableColumn width="291" minWidth="40" maxWidth="1000" id="Ktq-t2-tAw">
-                                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                                <font key="font" metaFont="smallSystem"/>
+                                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Bookmarks">
+                                                                <font key="font" metaFont="controlContent" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                             </tableHeaderCell>
@@ -65,7 +68,7 @@
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ON-CJ-GGo">
                                                                             <rect key="frame" x="0.0" y="0.0" width="291" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="Pia-y7-hTs">
+                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="Pia-y7-hTs">
                                                                                 <font key="font" metaFont="system"/>
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -84,12 +87,13 @@
                                                     </tableColumns>
                                                     <connections>
                                                         <binding destination="JW2-tH-f6f" name="content" keyPath="arrangedObjects" id="flW-8b-Q3l"/>
+                                                        <binding destination="JW2-tH-f6f" name="selectionIndexPaths" keyPath="selectionIndexPaths" previousBinding="flW-8b-Q3l" id="mC7-Hl-RH1"/>
                                                         <outlet property="delegate" destination="JW2-tH-f6f" id="Yym-la-zZN"/>
                                                     </connections>
                                                 </outlineView>
                                             </subviews>
                                         </clipView>
-                                        <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="0.59999999999999998" horizontal="YES" id="1ga-ys-OPU">
+                                        <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="0.20000000000000001" horizontal="YES" id="1ga-ys-OPU">
                                             <rect key="frame" x="1" y="280" width="289" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
@@ -126,11 +130,11 @@
                     </view>
                     <connections>
                         <outlet property="outlineView" destination="Fs1-bN-hZh" id="gcQ-TN-aL2"/>
-                        <outlet property="tree" destination="JW2-tH-f6f" id="WNn-tH-haf"/>
+                        <outlet property="treeController" destination="JW2-tH-f6f" id="gJT-iy-QA8"/>
                     </connections>
                 </viewController>
                 <customObject id="eKc-Bb-baB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <treeController childrenKeyPath="children" leafKeyPath="isLeaf" id="JW2-tH-f6f"/>
+                <treeController childrenKeyPath="children" leafKeyPath="isLeaf" avoidsEmptySelection="NO" id="JW2-tH-f6f"/>
             </objects>
             <point key="canvasLocation" x="64.5" y="114"/>
         </scene>

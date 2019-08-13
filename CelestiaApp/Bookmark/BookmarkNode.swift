@@ -23,10 +23,16 @@ final class BookmarkNode: NSObject {
         super.init()
     }
 
-    @objc func isLeaf() -> Bool {
+    @objc var isLeaf: Bool {
         return !isFolder
     }
 }
 
 extension BookmarkNode: Codable {
+    enum CodingKeys: String, CodingKey {
+        case name
+        case url
+        case isFolder
+        case children
+    }
 }

@@ -11,7 +11,7 @@ import Cocoa
 import CelestiaCore
 
 class BookmarkController: NSObject {
-    private var storedBookmarks: [BookmarkNode] = []
+    var storedBookmarks: [BookmarkNode] = []
 
     func readBookmarks() {
         guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else {
@@ -28,11 +28,27 @@ class BookmarkController: NSObject {
         }
     }
 
+    func storeBookmarks() {
+        guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else {
+            return
+        }
+        let bookmarkFilePath = "\(path)/bookmark.json"
+        do {
+            try JSONEncoder().encode(storedBookmarks).write(to: URL(fileURLWithPath: bookmarkFilePath))
+        } catch let error {
+            print("Bookmark writing error: \(error.localizedDescription)")
+        }
+    }
+
     @IBAction private func addBookmark(_ sender: Any) {
+        guard let newBookmark = AppDelegate.shared.core.currentBookmark else { return }
+
+        storedBookmarks.append(newBookmark)
     }
 
     @IBAction private func organizeBookmarks(_ sender: Any) {
-        let vc = NSStoryboard(name: "Bookmark", bundle: nil).instantiateController(withIdentifier: "Organizer") as! NSViewController
+        let vc = NSStoryboard(name: "Bookmark", bundle: nil).instantiateController(withIdentifier: "Organizer") as! BookmarkOrganizerViewController
+        vc.controller = self
         let panel = NSPanel(contentViewController: vc)
         panel.makeKeyAndOrderFront(self)
     }

@@ -34,6 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ aNotification: Notification) {
         core.storeUserDefaults()
+        bookmarkController.storeBookmarks()
     }
 
     @IBAction func captureMovie(_ sender: Any) {
