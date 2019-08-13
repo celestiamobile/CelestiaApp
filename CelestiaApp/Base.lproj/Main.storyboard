@@ -442,8 +442,8 @@ CA
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Favorites" id="DSV-Iu-4uA">
-                                <menu key="submenu" title="Favorites" id="yMS-sF-iBG">
+                            <menuItem title="Bookmarks" id="DSV-Iu-4uA">
+                                <menu key="submenu" title="Bookmarks" id="yMS-sF-iBG">
                                     <items>
                                         <menuItem title="Add Bookmark" keyEquivalent="d" id="zn3-mu-omy">
                                             <connections>
@@ -455,7 +455,6 @@ CA
                                                 <action selector="organizeBookmarks:" target="c27-0I-7lW" id="hKh-jw-ZXX"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title=" " id="Hyi-8W-wB3"/>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -537,7 +536,11 @@ CA
                         <outlet property="scriptMenu" destination="b55-CL-1HX" id="jXX-SM-9Pq"/>
                     </connections>
                 </customObject>
-                <customObject id="c27-0I-7lW" customClass="BookmarkController" customModule="Celestia" customModuleProvider="target"/>
+                <customObject id="c27-0I-7lW" customClass="BookmarkController" customModule="Celestia" customModuleProvider="target">
+                    <connections>
+                        <outlet property="bookmarkMenu" destination="yMS-sF-iBG" id="2Gt-oV-yCa"/>
+                    </connections>
+                </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

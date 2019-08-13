@@ -11,7 +11,9 @@ import Cocoa
 import CelestiaCore
 
 class BookmarkController: NSObject {
-    var storedBookmarks: [BookmarkNode] = []
+    var storedBookmarks: [BookmarkNode] = [] { didSet { buildBookmarkMenu() } }
+
+    @IBOutlet weak var bookmarkMenu: NSMenu!
 
     func readBookmarks() {
         guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else {
@@ -22,7 +24,6 @@ class BookmarkController: NSObject {
             let data = try Data(contentsOf: URL(fileURLWithPath: bookmarkFilePath))
             let bookmarks = try JSONDecoder().decode([BookmarkNode].self, from: data)
             storedBookmarks = bookmarks
-            // TODO: build up the bookmark menu
         } catch let error {
             print("Bookmark reading error: \(error.localizedDescription)")
         }
@@ -38,6 +39,32 @@ class BookmarkController: NSObject {
         } catch let error {
             print("Bookmark writing error: \(error.localizedDescription)")
         }
+    }
+
+    func buildBookmarkMenu() {
+        // get fixedMenus
+        var menuItems = Array(bookmarkMenu.items[0..<2])
+
+        // first 5 bookmarks that are not in a folder
+        let topLevelBookmarks = storedBookmarks.filter { !$0.isFolder }
+        let menuBookmarks = topLevelBookmarks.count > 5 ? Array(topLevelBookmarks[0..<5]) : topLevelBookmarks
+
+        if menuBookmarks.count > 0 {
+            menuItems.append(.separator())
+            for i in 0..<menuBookmarks.count {
+                let bookmark = menuBookmarks[i]
+                let item = NSMenuItem(title: bookmark.name, action: #selector(bookmarkMenuItemClicked(_:)), keyEquivalent: "")
+                item.target = self
+                item.tag = i
+                menuItems.append(item)
+            }
+        }
+        bookmarkMenu.items = menuItems
+    }
+
+    @objc private func bookmarkMenuItemClicked(_ sender: NSMenuItem) {
+        let bookmark = storedBookmarks[sender.tag]
+        AppDelegate.shared.core.go(to: bookmark.url)
     }
 
     @IBAction private func addBookmark(_ sender: Any) {
