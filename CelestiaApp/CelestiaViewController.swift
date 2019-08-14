@@ -17,6 +17,7 @@ class CelestiaViewController: NSViewController {
     @IBOutlet var refMarkMenu: NSMenu!
 
     private let core: CelestiaAppCore = AppDelegate.shared.core
+    private lazy var universe: CelestiaUniverse = self.core.simulation.universe
 
     private var ready: Bool = false
 
@@ -224,6 +225,9 @@ class CelestiaViewController: NSViewController {
     @IBAction private func handleRefMark(_ sender: NSMenuItem) {
         core.setBoolValue(sender.state == .on, forTag: sender.tag)
     }
+
+    @IBAction private func goToObject(_ sender: NSMenuItem) {
+    }
 }
 
 extension CelestiaViewController: CelestiaGLViewDelegate {
@@ -271,13 +275,56 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
         if let refMarkIndex = glViewMenu.items.firstIndex(where: { $0.tag == 9999 }) {
             glViewMenu.items.remove(at: refMarkIndex)
         }
-        if selection.body != nil {
+        if let planetIndex = glViewMenu.items.firstIndex(where: { $0.tag == 10000 }) {
+            glViewMenu.items.remove(at: planetIndex)
+        }
+        let browserItem: CelestiaBrowserItem?
+        let menuItem: NSMenuItem?
+        if let body = selection.body {
+            // add ref mark
             let refMarkMenuItem = NSMenuItem(title: NSLocalizedString("Reference Vectors", comment: ""), action: nil, keyEquivalent: "")
             refMarkMenuItem.tag = 9999
             refMarkMenuItem.submenu = refMarkMenu
             refMarkMenu.items.forEach { $0.state = core.boolValue(forTag: $0.tag) ? .on : .off }
             glViewMenu.insertItem(refMarkMenuItem, at: glViewMenu.items.count - 2)
+
+            browserItem = CelestiaBrowserItem(catEntry: body, provider: universe)
+            menuItem = NSMenuItem(title: NSLocalizedString("Satellites", comment: ""), action: nil, keyEquivalent: "")
+        } else if let star = selection.star {
+            browserItem = CelestiaBrowserItem(catEntry: star, provider: universe)
+            menuItem = NSMenuItem(title: NSLocalizedString("Planets", comment: ""), action: nil, keyEquivalent: "")
+        } else {
+            browserItem = nil
+            menuItem = nil
         }
+
+        func createMenu(for item: CelestiaBrowserItem) -> NSMenu? {
+            var mItems = [NSMenuItem]()
+            for i in 0..<item.childCount {
+                let subItemName = item.childName(at: Int(i))!
+                let child = item.child(with: subItemName)!
+                if child.childCount == 0 {
+                    let childItem = NSMenuItem(title: subItemName, action: #selector(goToObject(_:)), keyEquivalent: "")
+                    childItem.target = self
+                    mItems.append(childItem)
+                } else if let menu = createMenu(for: child) {
+                    let childItem = NSMenuItem(title: subItemName, action: nil, keyEquivalent: "")
+                    childItem.submenu = menu
+                    mItems.append(childItem)
+                }
+            }
+            if mItems.count == 0 { return nil }
+            let menu = NSMenu(title: "")
+            menu.items = mItems
+            return menu
+        }
+
+        // add planet system
+        if let bItem = browserItem, let mItem = menuItem, let menu = createMenu(for: bItem) {
+            mItem.submenu = menu
+            glViewMenu.insertItem(mItem, at: glViewMenu.items.count - 2)
+        }
+
         return glViewMenu
     }
 }
