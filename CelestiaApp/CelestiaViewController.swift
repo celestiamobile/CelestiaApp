@@ -291,19 +291,20 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
         glViewMenu.items[0].title = selection.name
 
         // clear original menu items
-        if let refMarkIndex = glViewMenu.items.firstIndex(where: { $0.tag == 9999 }) {
-            glViewMenu.items.remove(at: refMarkIndex)
-        }
-        glViewMenu.items.removeAll(where: { $0.tag == 10000 })
+        glViewMenu.items.removeAll(where: { $0.tag >= 10000 })
 
         let browserItem: CelestiaBrowserItem?
         if let body = selection.body {
             // add ref mark
             let refMarkMenuItem = NSMenuItem(title: NSLocalizedString("Reference Vectors", comment: ""), action: nil, keyEquivalent: "")
-            refMarkMenuItem.tag = 9999
+            refMarkMenuItem.tag = 10000
             refMarkMenuItem.submenu = refMarkMenu
             refMarkMenu.items.forEach { $0.state = core.boolValue(forTag: $0.tag) ? .on : .off }
             glViewMenu.insertItem(refMarkMenuItem, at: glViewMenu.items.count - 2)
+
+            let sep = NSMenuItem.separator()
+            sep.tag = 10001
+            glViewMenu.insertItem(sep, at: glViewMenu.items.count - 2)
 
             browserItem = CelestiaBrowserItem(catEntry: body, provider: universe)
         } else if let star = selection.star {
@@ -334,7 +335,11 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
 
         // add planet system
         if let bItem = browserItem, let planetItems = createMenuItems(for: bItem) {
-            planetItems.forEach {$0.tag = 10000; glViewMenu.insertItem($0, at: glViewMenu.items.count - 2)}
+            planetItems.forEach {$0.tag = 10002; glViewMenu.insertItem($0, at: glViewMenu.items.count - 2)}
+
+            let sep = NSMenuItem.separator()
+            sep.tag = 10003
+            glViewMenu.insertItem(sep, at: glViewMenu.items.count - 2)
         }
 
         return glViewMenu
