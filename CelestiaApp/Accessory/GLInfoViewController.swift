@@ -15,7 +15,7 @@ class GLInfoViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        infoTextView.textStorage?.setAttributedString(NSAttributedString(string: CGLInfo.info))
+        infoTextView.string = CGLInfo.info
     }
     
 }
