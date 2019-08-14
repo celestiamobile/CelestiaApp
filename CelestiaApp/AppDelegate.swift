@@ -74,8 +74,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func presentHelp(_ sender: NSMenuItem) {
-        let wc = NSWindowController(windowNibName: "HelpWindow")
-        wc.showWindow(self)
+        NSWorkspace.shared.open(URL(string: "https://en.wikibooks.org/wiki/Celestia")!)
     }
 
     @IBAction func presentGLInfo(_ sender: NSMenuItem) {

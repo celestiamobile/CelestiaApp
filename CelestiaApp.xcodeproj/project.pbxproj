@@ -27,7 +27,6 @@
 		974D26FB2302B1DC00FDFBC0 /* BookmarkNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26FA2302B1DC00FDFBC0 /* BookmarkNode.swift */; };
 		974D27552303CEF000FDFBC0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D27532303CEF000FDFBC0 /* InfoViewController.swift */; };
 		97DBBE5922FFDDC4003D1BAF /* SetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE5722FFDDC4003D1BAF /* SetTimeViewController.swift */; };
-		97DBBE5F22FFE571003D1BAF /* HelpWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 97DBBE5E22FFE571003D1BAF /* HelpWindow.nib */; };
 		97DBBE6122FFE779003D1BAF /* GLInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6022FFE779003D1BAF /* GLInfoViewController.swift */; };
 		97DBBE6422FFE887003D1BAF /* CGLInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6222FFE887003D1BAF /* CGLInfo.m */; };
 		97DBBE6822FFF2AC003D1BAF /* SplashWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6722FFF2AC003D1BAF /* SplashWindow.swift */; };
@@ -85,7 +84,6 @@
 		974D27532303CEF000FDFBC0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		976BC22C23002B7700D2BF29 /* Celestia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Celestia.entitlements; sourceTree = "<group>"; };
 		97DBBE5722FFDDC4003D1BAF /* SetTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimeViewController.swift; sourceTree = "<group>"; };
-		97DBBE5E22FFE571003D1BAF /* HelpWindow.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = HelpWindow.nib; sourceTree = "<group>"; };
 		97DBBE6022FFE779003D1BAF /* GLInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLInfoViewController.swift; sourceTree = "<group>"; };
 		97DBBE6222FFE887003D1BAF /* CGLInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGLInfo.m; sourceTree = "<group>"; };
 		97DBBE6322FFE887003D1BAF /* CGLInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGLInfo.h; sourceTree = "<group>"; };
@@ -171,7 +169,6 @@
 		972F3A3322FFC6D700CEDDAC /* Accessory */ = {
 			isa = PBXGroup;
 			children = (
-				97DBBE5E22FFE571003D1BAF /* HelpWindow.nib */,
 				972F3A3422FFC6E400CEDDAC /* Accessory.storyboard */,
 				972F3A3622FFC70C00CEDDAC /* GotoViewController.swift */,
 				97DBBE5722FFDDC4003D1BAF /* SetTimeViewController.swift */,
@@ -350,7 +347,6 @@
 				97F2519222FDB6E700067B06 /* Assets.xcassets in Resources */,
 				972F3A2E22FFC5BA00CEDDAC /* Setting.storyboard in Resources */,
 				97F2519522FDB6E700067B06 /* Main.storyboard in Resources */,
-				97DBBE5F22FFE571003D1BAF /* HelpWindow.nib in Resources */,
 				972F3A2C22FFC5A300CEDDAC /* StarBrowser.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
