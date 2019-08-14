@@ -92,10 +92,17 @@ static NSString *queryGLExtension(const char *extName)
 
     ENDL;
 
-    [result appendString:
-        (ExtensionSupported("GL_ARB_multitexture") ?
-         queryGLInteger(GL_MAX_TEXTURE_UNITS_ARB, NSLocalizedString(@"Max simultaneous textures","")) :
-         [NSString stringWithFormat: [NSString stringWithFormat: @"%@: 1", NSLocalizedString(@"Max simultaneous textures","")]])]; ENDL;
+    if (ExtensionSupported("GL_ARB_multitexture"))
+    {
+        [result appendString:queryGLInteger(GL_MAX_TEXTURE_UNITS_ARB, NSLocalizedString(@"Max simultaneous textures",""))];
+    }
+    else
+    {
+        [result appendString:NSLocalizedString(@"Max simultaneous textures","")];
+        [result appendString:@": 1"];
+    }
+    ENDL;
+
     [result appendString: queryGLInteger(GL_MAX_TEXTURE_SIZE, NSLocalizedString(@"Max texture size",""))]; ENDL;
 
     if (ExtensionSupported("GL_ARB_texture_cube_map"))

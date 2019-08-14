@@ -553,7 +553,7 @@ CA
                     <window key="window" title="Celestia" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="640" height="480"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="640" height="480"/>
                         <connections>
@@ -695,24 +695,21 @@ CA
                             <view translatesAutoresizingMaskIntoConstraints="NO" id="ECa-DH-5SU">
                                 <rect key="frame" x="0.0" y="0.0" width="674" height="530"/>
                                 <subviews>
-                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hXZ-tL-cG0" customClass="SplashImageView" customModule="Celestia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="39" width="674" height="491"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                    <imageView translatesAutoresizingMaskIntoConstraints="NO" id="hXZ-tL-cG0" customClass="SplashImageView" customModule="Celestia" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="674" height="530"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="splash" id="e3z-jv-nHq"/>
                                     </imageView>
-                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dw5-XD-Uzb">
-                                        <rect key="frame" x="500" y="65" width="157" height="14"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dw5-XD-Uzb">
+                                        <rect key="frame" x="600" y="44" width="56" height="14"/>
                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="loading... " id="csL-Ov-fg4">
                                             <font key="font" metaFont="message" size="11"/>
                                             <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hWj-ws-cYN">
-                                        <rect key="frame" x="500" y="81" width="157" height="14"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="right" title="VERSION" id="PVI-tP-Egi">
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hWj-ws-cYN">
+                                        <rect key="frame" x="603" y="60" width="53" height="14"/>
+                                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="VERSION" id="PVI-tP-Egi">
                                             <font key="font" metaFont="message" size="11"/>
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -720,8 +717,18 @@ CA
                                     </textField>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="hWj-ws-cYN" firstAttribute="trailing" secondItem="dw5-XD-Uzb" secondAttribute="trailing" id="3U1-s7-OPy"/>
+                                    <constraint firstItem="hXZ-tL-cG0" firstAttribute="leading" secondItem="ECa-DH-5SU" secondAttribute="leading" id="CXP-80-Mad"/>
+                                    <constraint firstAttribute="bottom" secondItem="hXZ-tL-cG0" secondAttribute="bottom" id="ClZ-Gk-Zdb"/>
+                                    <constraint firstItem="hWj-ws-cYN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ECa-DH-5SU" secondAttribute="leading" id="KDm-9X-4gY"/>
+                                    <constraint firstItem="dw5-XD-Uzb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ECa-DH-5SU" secondAttribute="leading" id="Nq7-Dd-UNW"/>
+                                    <constraint firstAttribute="trailing" secondItem="hXZ-tL-cG0" secondAttribute="trailing" id="Nuk-sY-eY1"/>
                                     <constraint firstAttribute="height" constant="530" id="P90-sr-RGg"/>
+                                    <constraint firstAttribute="bottom" secondItem="dw5-XD-Uzb" secondAttribute="bottom" constant="44" id="QJU-m2-ZdT"/>
                                     <constraint firstAttribute="width" constant="674" id="Ydc-pR-AHG"/>
+                                    <constraint firstItem="dw5-XD-Uzb" firstAttribute="top" secondItem="hWj-ws-cYN" secondAttribute="bottom" constant="2" id="fVa-q9-9aq"/>
+                                    <constraint firstItem="hXZ-tL-cG0" firstAttribute="top" secondItem="ECa-DH-5SU" secondAttribute="top" id="iQA-Cx-Rbt"/>
+                                    <constraint firstAttribute="trailing" secondItem="dw5-XD-Uzb" secondAttribute="trailing" constant="20" id="jnJ-AV-YPe"/>
                                 </constraints>
                             </view>
                         </subviews>
