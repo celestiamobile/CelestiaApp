@@ -217,9 +217,13 @@ class CelestiaViewController: NSViewController {
         handleMenuItem(sender)
     }
 
-    @IBAction private func showWebInfo(_ sender: NSMenuItem) {
-        if let urlStr = core.simulation.selection.webInfoURL, let url = URL(string: urlStr) {
-            NSWorkspace.shared.open(url)
+    @IBAction private func showInfo(_ sender: NSMenuItem) {
+        let selection = core.simulation.selection
+        if !selection.isEmpty {
+            let vc = NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "Info") as! InfoViewController
+            vc.selection = selection
+            let panel = NSPanel(contentViewController: vc)
+            panel.makeKeyAndOrderFront(self)
         }
     }
 

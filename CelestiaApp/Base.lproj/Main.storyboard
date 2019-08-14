@@ -780,9 +780,9 @@ CA
                                 </items>
                             </menu>
                         </menuItem>
-                        <menuItem title="Show Web Info" id="LKg-qL-Xnj">
+                        <menuItem title="Show Info" id="LKg-qL-Xnj">
                             <connections>
-                                <action selector="showWebInfo" target="XfG-lQ-9wD" id="Ayb-g3-NCH"/>
+                                <action selector="showInfo:" target="XfG-lQ-9wD" id="e35-R6-AaU"/>
                             </connections>
                         </menuItem>
                     </items>
