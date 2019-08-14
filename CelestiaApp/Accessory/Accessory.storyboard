@@ -9,7 +9,7 @@
         <!--Set Time-->
         <scene sceneID="exj-fg-5hI">
             <objects>
-                <viewController title="Set Time" storyboardIdentifier="SetTime" id="eTe-Ua-qWY" customClass="SetTimeViewController" customModule="CelestiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Set Time" storyboardIdentifier="SetTime" id="eTe-Ua-qWY" customClass="SetTimeViewController" customModule="Celestia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" identifier="SetTime" id="3x2-ZX-6jb">
                         <rect key="frame" x="0.0" y="0.0" width="340" height="224"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -139,7 +139,7 @@ DQ
                                         <autoresizingMask key="autoresizingMask"/>
                                         <popUpButtonCell key="cell" type="push" title="Local Time" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="650" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="icF-0q-sje" id="5Ld-Rc-ioj">
                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
+                                            <font key="font" metaFont="menu"/>
                                             <menu key="menu" title="OtherViews" id="h2W-pF-OPd">
                                                 <items>
                                                     <menuItem title="Local Time" state="on" tag="650" id="icF-0q-sje"/>
@@ -171,7 +171,7 @@ DQ
                                         <autoresizingMask key="autoresizingMask"/>
                                         <popUpButtonCell key="cell" type="push" title="Default" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="660" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="wkr-jP-5qi" id="Bbu-U4-N7J">
                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
+                                            <font key="font" metaFont="menu"/>
                                             <menu key="menu" title="OtherViews" id="rWB-sy-ugy">
                                                 <items>
                                                     <menuItem title="Default" state="on" tag="660" id="wkr-jP-5qi"/>
@@ -208,7 +208,7 @@ DQ
         <!--OpenGL Info-->
         <scene sceneID="q5V-nl-XfF">
             <objects>
-                <viewController title="OpenGL Info" storyboardIdentifier="GLInfo" id="MEG-m2-V92" customClass="GLInfoViewController" customModule="CelestiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="OpenGL Info" storyboardIdentifier="GLInfo" id="MEG-m2-V92" customClass="GLInfoViewController" customModule="Celestia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="BHs-XD-QVF">
                         <rect key="frame" x="0.0" y="0.0" width="380" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -262,7 +262,7 @@ DQ
         <!--Go To-->
         <scene sceneID="SB7-PG-LlP">
             <objects>
-                <viewController title="Go To" storyboardIdentifier="Goto" id="UeX-IU-xh4" customClass="GotoViewController" customModule="CelestiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Go To" storyboardIdentifier="Goto" id="UeX-IU-xh4" customClass="GotoViewController" customModule="Celestia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="KJe-AD-muE">
                         <rect key="frame" x="0.0" y="0.0" width="332" height="160"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -394,7 +394,7 @@ DQ
                                         <autoresizingMask key="autoresizingMask"/>
                                         <popUpButtonCell key="cell" type="push" title="km" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="rUa-Wd-AsS" id="3jX-kL-qlp">
                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
+                                            <font key="font" metaFont="menu"/>
                                             <menu key="menu" title="OtherViews" id="xrL-th-f7V">
                                                 <items>
                                                     <menuItem title="km" state="on" id="rUa-Wd-AsS"/>
