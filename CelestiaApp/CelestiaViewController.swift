@@ -13,10 +13,12 @@ import CelestiaCore
 class CelestiaViewController: NSViewController {
 
     @IBOutlet weak var glView: CelestiaGLView!
+    @IBOutlet var glViewMenu: NSMenu!
 
     private let core: CelestiaAppCore = AppDelegate.shared.core
 
     private var ready: Bool = false
+
     private var pendingScript: String?
 
     private var pressingKey: (key: Int, time: Int)?
@@ -45,11 +47,6 @@ class CelestiaViewController: NSViewController {
         glView.delegate = self
         glView.mouseProcessor = self
         glView.keyboardProcessor = self
-
-        CelestiaSelection.actionGroup.forEach { $0.target = self; $0.action = #selector(glViewMenuClicked(_:)) }
-        CelestiaSelection.locationGroup.forEach { $0.target = self; $0.action = #selector(glViewMenuClicked(_:)) }
-        CelestiaSelection.markOrUnmark.target = self
-        CelestiaSelection.markOrUnmark.action = #selector(glViewMenuClicked(_:))
 
         Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(displayCallback), userInfo: nil, repeats: true)
     }
@@ -212,11 +209,15 @@ class CelestiaViewController: NSViewController {
             }
         }
     }
-}
 
-extension CelestiaViewController {
-    @objc private func glViewMenuClicked(_ sender: NSMenuItem) {
+    @IBAction private func glViewMenuClicked(_ sender: NSMenuItem) {
         handleMenuItem(sender)
+    }
+
+    @IBAction private func showWebInfo(_ sender: NSMenuItem) {
+        if let urlStr = core.simulation.selection.webInfoURL, let url = URL(string: urlStr) {
+            NSWorkspace.shared.open(url)
+        }
     }
 }
 
@@ -260,7 +261,9 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
 
     func requestMenu(at point: NSPoint) -> NSMenu? {
         let selection = core.requestSelection(at: point)
-        return selection.menu
+        if selection.isEmpty { return nil }
+        glViewMenu.items[0].title = selection.name
+        return glViewMenu
     }
 }
 

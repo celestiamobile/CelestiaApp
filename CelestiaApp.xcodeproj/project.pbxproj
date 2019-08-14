@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		970DCE3A22FE786C0044F590 /* CelestiaSelectionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970DCE3922FE786C0044F590 /* CelestiaSelectionMenu.swift */; };
 		970DCE3D22FE8B550044F590 /* NSOpenGLView+AASample.m in Sources */ = {isa = PBXBuildFile; fileRef = 970DCE3C22FE8B550044F590 /* NSOpenGLView+AASample.m */; };
 		971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251A722FDB86E00067B06 /* libc++.tbd */; };
 		971A67472301A36C009E4EA1 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251BA22FDB9AD00067B06 /* libiconv.tbd */; };
@@ -66,7 +65,6 @@
 
 /* Begin PBXFileReference section */
 		970DCE0C22FE58DB0044F590 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		970DCE3922FE786C0044F590 /* CelestiaSelectionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestiaSelectionMenu.swift; sourceTree = "<group>"; };
 		970DCE3B22FE8B550044F590 /* NSOpenGLView+AASample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSOpenGLView+AASample.h"; sourceTree = "<group>"; };
 		970DCE3C22FE8B550044F590 /* NSOpenGLView+AASample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSOpenGLView+AASample.m"; sourceTree = "<group>"; };
 		971A67492301A376009E4EA1 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -225,7 +223,6 @@
 				972F3A2F22FFC64600CEDDAC /* EclipseFinder */,
 				97F2518D22FDB6E100067B06 /* AppDelegate.swift */,
 				97F2518F22FDB6E100067B06 /* CelestiaViewController.swift */,
-				970DCE3922FE786C0044F590 /* CelestiaSelectionMenu.swift */,
 				97F2519122FDB6E700067B06 /* Assets.xcassets */,
 				97F2519322FDB6E700067B06 /* Main.storyboard */,
 				970DCE0C22FE58DB0044F590 /* Bridging-Header.h */,
@@ -379,7 +376,6 @@
 				97F2518E22FDB6E100067B06 /* AppDelegate.swift in Sources */,
 				972F3A3822FFC70C00CEDDAC /* GotoViewController.swift in Sources */,
 				974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */,
-				970DCE3A22FE786C0044F590 /* CelestiaSelectionMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

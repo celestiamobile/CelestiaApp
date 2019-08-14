@@ -589,9 +589,77 @@ CA
                     </view>
                     <connections>
                         <outlet property="glView" destination="ggi-fp-OSg" id="xpF-3o-x8V"/>
+                        <outlet property="glViewMenu" destination="Dny-Ca-Av0" id="0Kt-4l-krC"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu title="Menu" id="Dny-Ca-Av0" userLabel="ViewContextMenu">
+                    <items>
+                        <menuItem title="Object" id="ECe-YE-7Wr"/>
+                        <menuItem isSeparatorItem="YES" id="FVW-vs-5aa">
+                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                        </menuItem>
+                        <menuItem title="Go" tag="103" keyEquivalent="g" id="ueU-Qa-NNo">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="glViewMenuClicked:" target="XfG-lQ-9wD" id="RAa-Lv-mj1"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Follow" tag="102" keyEquivalent="f" id="bHH-7J-mLh">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="glViewMenuClicked:" target="XfG-lQ-9wD" id="Xcc-Pa-j72"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Orbit Synchronously" tag="121" keyEquivalent="y" id="4JE-DU-m5g">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="glViewMenuClicked:" target="XfG-lQ-9wD" id="EsL-6q-oLs"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Lock Phase" tag="58" keyEquivalent=":" id="eCg-iT-lnF">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="glViewMenuClicked:" target="XfG-lQ-9wD" id="m4L-Yj-HeY"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Chase" tag="34" keyEquivalent="&quot;" id="Ofu-WF-1Gp">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="glViewMenuClicked:" target="XfG-lQ-9wD" id="xpS-RA-9fv"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="dhg-jL-6d7">
+                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                        </menuItem>
+                        <menuItem title="Center" tag="99" keyEquivalent="c" id="iTF-hI-1xI">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="glViewMenuClicked:" target="XfG-lQ-9wD" id="hpY-3n-JDj"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Track" tag="116" keyEquivalent="t" id="zLY-ET-929">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="glViewMenuClicked:" target="XfG-lQ-9wD" id="SCk-BD-rSM"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="QgP-mk-d5A">
+                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                        </menuItem>
+                        <menuItem title="Mark/Unmark" tag="16" keyEquivalent="p" id="wDT-gH-pvN">
+                            <modifierMask key="keyEquivalentModifierMask" control="YES"/>
+                            <connections>
+                                <action selector="glViewMenuClicked:" target="XfG-lQ-9wD" id="jXt-KQ-2Ij"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Show Web Info" id="LKg-qL-Xnj">
+                            <connections>
+                                <action selector="showWebInfo" target="XfG-lQ-9wD" id="Ayb-g3-NCH"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                </menu>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
