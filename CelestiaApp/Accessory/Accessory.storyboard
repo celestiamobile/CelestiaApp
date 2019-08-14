@@ -315,6 +315,7 @@ DQ
                     </view>
                     <connections>
                         <outlet property="contentTextView" destination="Hdq-9W-rYd" id="6qw-oo-MPf"/>
+                        <outlet property="webInfoButton" destination="keB-ek-vod" id="Wwm-x2-bYH"/>
                     </connections>
                 </viewController>
                 <customObject id="r23-8D-ka8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
