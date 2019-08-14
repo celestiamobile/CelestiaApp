@@ -223,6 +223,7 @@ class CelestiaViewController: NSViewController {
             let vc = NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "Info") as! InfoViewController
             vc.selection = selection
             let panel = NSPanel(contentViewController: vc)
+            panel.styleMask = [panel.styleMask, .utilityWindow]
             panel.makeKeyAndOrderFront(self)
         }
     }
