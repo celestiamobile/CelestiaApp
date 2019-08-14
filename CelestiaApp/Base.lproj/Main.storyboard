@@ -591,6 +591,7 @@ CA
                         <outlet property="glView" destination="ggi-fp-OSg" id="xpF-3o-x8V"/>
                         <outlet property="glViewMenu" destination="Dny-Ca-Av0" id="0Kt-4l-krC"/>
                         <outlet property="refMarkMenu" destination="RFA-7p-BIu" id="kWu-B4-u5z"/>
+                        <outlet property="unmarkMenuItem" destination="KoR-2q-BSU" id="ieS-Du-KVS"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -688,11 +689,96 @@ CA
                         <menuItem isSeparatorItem="YES" id="QgP-mk-d5A">
                             <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                         </menuItem>
-                        <menuItem title="Mark/Unmark" tag="16" keyEquivalent="p" id="wDT-gH-pvN">
-                            <modifierMask key="keyEquivalentModifierMask" control="YES"/>
-                            <connections>
-                                <action selector="glViewMenuClicked:" target="XfG-lQ-9wD" id="jXt-KQ-2Ij"/>
-                            </connections>
+                        <menuItem title="Mark" id="wDT-gH-pvN">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <menu key="submenu" autoenablesItems="NO" id="Psf-jz-5u3">
+                                <items>
+                                    <menuItem title="Diamond" id="dEg-02-O8f">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="handleMark:" target="XfG-lQ-9wD" id="LF6-59-K0X"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Triangle" id="vSO-vQ-Njr">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="handleMark:" target="XfG-lQ-9wD" id="sfS-7w-XkQ"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Square" id="ngP-1Y-j4S">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="handleMark:" target="XfG-lQ-9wD" id="kC4-qo-zGn"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Filled Square" id="cZL-cr-3Yx">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="handleMark:" target="XfG-lQ-9wD" id="AQM-UY-XKz"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Plus" id="ksq-eM-YQF">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="handleMark:" target="XfG-lQ-9wD" id="aCk-v5-zAA"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="X" id="Ad6-MB-VyM">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="handleMark:" target="XfG-lQ-9wD" id="IlX-Eq-cZa"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Left Arrow" id="DMQ-58-jvV">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="handleMark:" target="XfG-lQ-9wD" id="qgq-bi-bUL"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Right Arrow" id="3Xo-jh-0Lz">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="handleMark:" target="XfG-lQ-9wD" id="bYo-Ym-rSp"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Up Arrow" id="I9D-WR-Bjj">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="handleMark:" target="XfG-lQ-9wD" id="aI9-L2-k4G"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Down Arrow" id="82b-c1-izC">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="handleMark:" target="XfG-lQ-9wD" id="BJ9-aa-jkV"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Circle" id="rMJ-lo-X7n">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="handleMark:" target="XfG-lQ-9wD" id="I79-QL-xwp"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Disk" id="u5y-bi-VJu">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="handleMark:" target="XfG-lQ-9wD" id="drt-Af-Lpp"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Crosshair" id="Uac-4L-1K8">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="handleMark:" target="XfG-lQ-9wD" id="k27-fl-cb2"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Unmark" id="KoR-2q-BSU">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="handleUnmark:" target="XfG-lQ-9wD" id="26g-f7-hNu"/>
+                                        </connections>
+                                    </menuItem>
+                                </items>
+                            </menu>
                         </menuItem>
                         <menuItem title="Show Web Info" id="LKg-qL-Xnj">
                             <connections>

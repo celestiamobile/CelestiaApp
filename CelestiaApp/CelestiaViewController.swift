@@ -15,6 +15,7 @@ class CelestiaViewController: NSViewController {
     @IBOutlet weak var glView: CelestiaGLView!
     @IBOutlet var glViewMenu: NSMenu!
     @IBOutlet var refMarkMenu: NSMenu!
+    @IBOutlet var unmarkMenuItem: NSMenuItem!
 
     private let core: CelestiaAppCore = AppDelegate.shared.core
     private lazy var universe: CelestiaUniverse = self.core.simulation.universe
@@ -226,6 +227,17 @@ class CelestiaViewController: NSViewController {
         core.setBoolValue(sender.state == .on, forTag: sender.tag)
     }
 
+    @IBAction func handleUnmark(_ sender: Any) {
+        core.simulation.universe.unmark(core.simulation.selection)
+    }
+
+    @IBAction func handleMark(_ sender: NSMenuItem) {
+        if let index = sender.menu?.items.firstIndex(of: sender) {
+            core.simulation.universe.mark(core.simulation.selection, with: CelestiaMarkerRepresentation(rawValue: UInt(index))!)
+            core.showMarkers = true
+        }
+    }
+
     @IBAction private func selectObject(_ sender: BrowserMenuItem) {
         if let item = sender.browserItem, let cat = item.entry {
             let selection: CelestiaSelection?
@@ -245,6 +257,8 @@ class CelestiaViewController: NSViewController {
             }
         }
     }
+
+    
 }
 
 extension CelestiaViewController: CelestiaGLViewDelegate {
@@ -288,7 +302,10 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
     func requestMenu(at point: NSPoint) -> NSMenu? {
         let selection = core.requestSelection(at: point)
         if selection.isEmpty { return nil }
+
+        // configure fixed items
         glViewMenu.items[0].title = selection.name
+        unmarkMenuItem.isEnabled = core.simulation.universe.isMarked(core.simulation.selection)
 
         // clear original menu items
         glViewMenu.items.removeAll(where: { $0.tag >= 10000 })
