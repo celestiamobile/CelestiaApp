@@ -590,9 +590,50 @@ CA
                     <connections>
                         <outlet property="glView" destination="ggi-fp-OSg" id="xpF-3o-x8V"/>
                         <outlet property="glViewMenu" destination="Dny-Ca-Av0" id="0Kt-4l-krC"/>
+                        <outlet property="refMarkMenu" destination="RFA-7p-BIu" id="kWu-B4-u5z"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu id="RFA-7p-BIu">
+                    <items>
+                        <menuItem title="Show Body Axes" tag="1000" id="8Z4-sL-73h">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="handleRefMark:" target="XfG-lQ-9wD" id="28M-TP-PFC"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Show Frame Axes" tag="1001" id="Ykl-GU-l6a">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="handleRefMark:" target="XfG-lQ-9wD" id="POs-lX-mgR"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Show Sun Direction" tag="1002" id="2RU-5H-AFB">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="handleRefMark:" target="XfG-lQ-9wD" id="2lo-hf-Vcv"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Show Velocity Vector" tag="1003" id="Vik-25-YSG">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="handleRefMark:" target="XfG-lQ-9wD" id="EE1-fG-qAS"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Show Planetographic Grid" tag="1003" id="VTk-tR-S7O">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="handleRefMark:" target="XfG-lQ-9wD" id="u7F-sl-0C9"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Show Terminator" tag="1005" id="b00-H1-6Y9">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="handleRefMark:" target="XfG-lQ-9wD" id="ig6-0l-7BL"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                </menu>
                 <menu title="Menu" id="Dny-Ca-Av0" userLabel="ViewContextMenu">
                     <items>
                         <menuItem title="Object" id="ECe-YE-7Wr"/>
@@ -661,7 +702,7 @@ CA
                     </items>
                 </menu>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="52" y="787"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="IUu-rL-q7q">

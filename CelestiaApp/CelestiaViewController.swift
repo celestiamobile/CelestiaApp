@@ -14,6 +14,7 @@ class CelestiaViewController: NSViewController {
 
     @IBOutlet weak var glView: CelestiaGLView!
     @IBOutlet var glViewMenu: NSMenu!
+    @IBOutlet var refMarkMenu: NSMenu!
 
     private let core: CelestiaAppCore = AppDelegate.shared.core
 
@@ -219,6 +220,10 @@ class CelestiaViewController: NSViewController {
             NSWorkspace.shared.open(url)
         }
     }
+
+    @IBAction private func handleRefMark(_ sender: NSMenuItem) {
+        core.setBoolValue(sender.state == .on, forTag: sender.tag)
+    }
 }
 
 extension CelestiaViewController: CelestiaGLViewDelegate {
@@ -263,6 +268,16 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
         let selection = core.requestSelection(at: point)
         if selection.isEmpty { return nil }
         glViewMenu.items[0].title = selection.name
+        if let refMarkIndex = glViewMenu.items.firstIndex(where: { $0.tag == 9999 }) {
+            glViewMenu.items.remove(at: refMarkIndex)
+        }
+        if selection.body != nil {
+            let refMarkMenuItem = NSMenuItem(title: NSLocalizedString("Reference Vectors", comment: ""), action: nil, keyEquivalent: "")
+            refMarkMenuItem.tag = 9999
+            refMarkMenuItem.submenu = refMarkMenu
+            refMarkMenu.items.forEach { $0.state = core.boolValue(forTag: $0.tag) ? .on : .off }
+            glViewMenu.insertItem(refMarkMenuItem, at: glViewMenu.items.count - 2)
+        }
         return glViewMenu
     }
 }
