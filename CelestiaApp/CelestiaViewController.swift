@@ -226,7 +226,24 @@ class CelestiaViewController: NSViewController {
         core.setBoolValue(sender.state == .on, forTag: sender.tag)
     }
 
-    @IBAction private func goToObject(_ sender: NSMenuItem) {
+    @IBAction private func selectObject(_ sender: BrowserMenuItem) {
+        if let item = sender.browserItem, let cat = item.entry {
+            let selection: CelestiaSelection?
+            if let body = cat as? CelestiaBody {
+                selection = CelestiaSelection(body: body)
+            } else if let star = cat as? CelestiaStar {
+                selection = CelestiaSelection(star: star)
+            } else if let dso = cat as? CelestiaDSO {
+                selection = CelestiaSelection(dso: dso)
+            } else if let location = cat as? CelestiaLocation {
+                selection = CelestiaSelection(location: location)
+            } else {
+                selection = nil
+            }
+            if let sel = selection {
+                core.simulation.selection = sel
+            }
+        }
     }
 }
 
@@ -272,14 +289,14 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
         let selection = core.requestSelection(at: point)
         if selection.isEmpty { return nil }
         glViewMenu.items[0].title = selection.name
+
+        // clear original menu items
         if let refMarkIndex = glViewMenu.items.firstIndex(where: { $0.tag == 9999 }) {
             glViewMenu.items.remove(at: refMarkIndex)
         }
-        if let planetIndex = glViewMenu.items.firstIndex(where: { $0.tag == 10000 }) {
-            glViewMenu.items.remove(at: planetIndex)
-        }
+        glViewMenu.items.removeAll(where: { $0.tag == 10000 })
+
         let browserItem: CelestiaBrowserItem?
-        let menuItem: NSMenuItem?
         if let body = selection.body {
             // add ref mark
             let refMarkMenuItem = NSMenuItem(title: NSLocalizedString("Reference Vectors", comment: ""), action: nil, keyEquivalent: "")
@@ -289,40 +306,35 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
             glViewMenu.insertItem(refMarkMenuItem, at: glViewMenu.items.count - 2)
 
             browserItem = CelestiaBrowserItem(catEntry: body, provider: universe)
-            menuItem = NSMenuItem(title: NSLocalizedString("Satellites", comment: ""), action: nil, keyEquivalent: "")
         } else if let star = selection.star {
             browserItem = CelestiaBrowserItem(catEntry: star, provider: universe)
-            menuItem = NSMenuItem(title: NSLocalizedString("Planets", comment: ""), action: nil, keyEquivalent: "")
         } else {
             browserItem = nil
-            menuItem = nil
         }
 
-        func createMenu(for item: CelestiaBrowserItem) -> NSMenu? {
-            var mItems = [NSMenuItem]()
+        func createMenuItems(for item: CelestiaBrowserItem) -> [NSMenuItem]? {
+            var mItems = [BrowserMenuItem]()
             for i in 0..<item.childCount {
                 let subItemName = item.childName(at: Int(i))!
                 let child = item.child(with: subItemName)!
+                let childItem = BrowserMenuItem(title: subItemName, action: #selector(selectObject(_:)), keyEquivalent: "")
+                childItem.target = self
+                childItem.browserItem = child
                 if child.childCount == 0 {
-                    let childItem = NSMenuItem(title: subItemName, action: #selector(goToObject(_:)), keyEquivalent: "")
-                    childItem.target = self
                     mItems.append(childItem)
-                } else if let menu = createMenu(for: child) {
-                    let childItem = NSMenuItem(title: subItemName, action: nil, keyEquivalent: "")
-                    childItem.submenu = menu
+                } else if let menuItems = createMenuItems(for: child) {
+                    let subMenu = NSMenu(title: "")
+                    subMenu.items = menuItems
+                    childItem.submenu = subMenu
                     mItems.append(childItem)
                 }
             }
-            if mItems.count == 0 { return nil }
-            let menu = NSMenu(title: "")
-            menu.items = mItems
-            return menu
+            return mItems.count == 0 ? nil : mItems
         }
 
         // add planet system
-        if let bItem = browserItem, let mItem = menuItem, let menu = createMenu(for: bItem) {
-            mItem.submenu = menu
-            glViewMenu.insertItem(mItem, at: glViewMenu.items.count - 2)
+        if let bItem = browserItem, let planetItems = createMenuItems(for: bItem) {
+            planetItems.forEach {$0.tag = 10000; glViewMenu.insertItem($0, at: glViewMenu.items.count - 2)}
         }
 
         return glViewMenu
@@ -337,4 +349,8 @@ extension CelestiaViewController: CelestiaGLViewKeyboardProcessor {
     func keyDown(modifiers: NSEvent.ModifierFlags, with input: String?) {
         core.keyDown(with: input, modifiers: modifiers.rawValue)
     }
+}
+
+class BrowserMenuItem: NSMenuItem {
+    var browserItem: CelestiaBrowserItem? = nil
 }
