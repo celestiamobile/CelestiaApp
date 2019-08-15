@@ -268,7 +268,7 @@ DQ
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="keB-ek-vod">
-                                <rect key="frame" x="153" y="13" width="133" height="32"/>
+                                <rect key="frame" x="14" y="13" width="272" height="32"/>
                                 <buttonCell key="cell" type="push" title="Open Web URL" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9za-Zh-Fwg">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -311,6 +311,7 @@ DQ
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="keB-ek-vod" secondAttribute="trailing" constant="20" symbolic="YES" id="BY5-J3-jeO"/>
+                            <constraint firstItem="keB-ek-vod" firstAttribute="centerX" secondItem="Jeb-Cq-BnM" secondAttribute="centerX" id="JwS-o4-J9O"/>
                             <constraint firstItem="dhI-tM-qT8" firstAttribute="trailing" secondItem="keB-ek-vod" secondAttribute="trailing" id="S6P-o9-ime"/>
                             <constraint firstItem="keB-ek-vod" firstAttribute="top" secondItem="dhI-tM-qT8" secondAttribute="bottom" constant="20" symbolic="YES" id="iDI-WD-GQ7"/>
                             <constraint firstItem="dhI-tM-qT8" firstAttribute="top" secondItem="Jeb-Cq-BnM" secondAttribute="top" constant="20" symbolic="YES" id="lAE-1w-i0I"/>
