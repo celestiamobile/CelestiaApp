@@ -26,6 +26,7 @@
 		974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */; };
 		974D26FB2302B1DC00FDFBC0 /* BookmarkNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26FA2302B1DC00FDFBC0 /* BookmarkNode.swift */; };
 		974D27552303CEF000FDFBC0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D27532303CEF000FDFBC0 /* InfoViewController.swift */; };
+		97989D4E2304EEF0008FA466 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 97989D4D2304EEF0008FA466 /* Credits.rtf */; };
 		97DBBE5922FFDDC4003D1BAF /* SetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE5722FFDDC4003D1BAF /* SetTimeViewController.swift */; };
 		97DBBE6122FFE779003D1BAF /* GLInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6022FFE779003D1BAF /* GLInfoViewController.swift */; };
 		97DBBE6422FFE887003D1BAF /* CGLInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6222FFE887003D1BAF /* CGLInfo.m */; };
@@ -83,6 +84,7 @@
 		974D26FA2302B1DC00FDFBC0 /* BookmarkNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkNode.swift; sourceTree = "<group>"; };
 		974D27532303CEF000FDFBC0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		976BC22C23002B7700D2BF29 /* Celestia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Celestia.entitlements; sourceTree = "<group>"; };
+		97989D4D2304EEF0008FA466 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		97DBBE5722FFDDC4003D1BAF /* SetTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimeViewController.swift; sourceTree = "<group>"; };
 		97DBBE6022FFE779003D1BAF /* GLInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLInfoViewController.swift; sourceTree = "<group>"; };
 		97DBBE6222FFE887003D1BAF /* CGLInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGLInfo.m; sourceTree = "<group>"; };
@@ -192,6 +194,14 @@
 			path = Bookmark;
 			sourceTree = "<group>";
 		};
+		97989D4C2304EEE6008FA466 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				97989D4D2304EEF0008FA466 /* Credits.rtf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		97F2518122FDB6E000067B06 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +225,7 @@
 		97F2518C22FDB6E100067B06 /* CelestiaApp */ = {
 			isa = PBXGroup;
 			children = (
+				97989D4C2304EEE6008FA466 /* Resources */,
 				974D26F22302ACBF00FDFBC0 /* Bookmark */,
 				972F3A3322FFC6D700CEDDAC /* Accessory */,
 				972F3A3222FFC67100CEDDAC /* OpenGL */,
@@ -344,6 +355,7 @@
 				974D26F52302ACD300FDFBC0 /* Bookmark.storyboard in Resources */,
 				972F3A2A22FFC57700CEDDAC /* EclipseFinder.storyboard in Resources */,
 				972F3A3522FFC6E400CEDDAC /* Accessory.storyboard in Resources */,
+				97989D4E2304EEF0008FA466 /* Credits.rtf in Resources */,
 				97F2519222FDB6E700067B06 /* Assets.xcassets in Resources */,
 				972F3A2E22FFC5BA00CEDDAC /* Setting.storyboard in Resources */,
 				97F2519522FDB6E700067B06 /* Main.storyboard in Resources */,
