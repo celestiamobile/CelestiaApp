@@ -446,7 +446,7 @@ DQ
                                         </textFieldCell>
                                     </textField>
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XPr-xV-1Wu">
-                                        <rect key="frame" x="118" y="61" width="198" height="22"/>
+                                        <rect key="frame" x="118" y="61" width="178" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="yXb-5m-mA5"/>
                                         </constraints>
@@ -476,7 +476,10 @@ DQ
                                         </textFieldCell>
                                     </textField>
                                     <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Xw-RX-gXS">
-                                        <rect key="frame" x="322" y="58" width="65" height="25"/>
+                                        <rect key="frame" x="302" y="58" width="85" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="Z7j-YT-D9V"/>
+                                        </constraints>
                                         <popUpButtonCell key="cell" type="push" title="km" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="rUa-Wd-AsS" id="3jX-kL-qlp">
                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="menu"/>
