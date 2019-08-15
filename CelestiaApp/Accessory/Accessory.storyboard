@@ -327,10 +327,10 @@ DQ
             </objects>
             <point key="canvasLocation" x="949" y="438"/>
         </scene>
-        <!--Go To-->
+        <!--Go To Object-->
         <scene sceneID="SB7-PG-LlP">
             <objects>
-                <viewController title="Go To" storyboardIdentifier="Goto" id="UeX-IU-xh4" customClass="GotoViewController" customModule="Celestia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Go To Object" storyboardIdentifier="Goto" id="UeX-IU-xh4" customClass="GotoViewController" customModule="Celestia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="KJe-AD-muE">
                         <rect key="frame" x="0.0" y="0.0" width="332" height="160"/>
                         <autoresizingMask key="autoresizingMask"/>
