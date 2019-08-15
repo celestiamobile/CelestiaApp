@@ -50,7 +50,7 @@
                                                     <tableColumns>
                                                         <tableColumn width="291" minWidth="40" maxWidth="1000" id="Ktq-t2-tAw">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Bookmarks">
-                                                                <font key="font" metaFont="controlContent" size="11"/>
+                                                                <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                             </tableHeaderCell>
@@ -65,9 +65,8 @@
                                                                     <rect key="frame" x="1" y="1" width="291" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ON-CJ-GGo">
+                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="9ON-CJ-GGo">
                                                                             <rect key="frame" x="0.0" y="0.0" width="291" height="17"/>
-                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="Pia-y7-hTs">
                                                                                 <font key="font" metaFont="system"/>
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -78,6 +77,11 @@
                                                                             </connections>
                                                                         </textField>
                                                                     </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="9ON-CJ-GGo" firstAttribute="centerY" secondItem="0zg-X8-eqd" secondAttribute="centerY" id="69t-ZN-Sos"/>
+                                                                        <constraint firstItem="9ON-CJ-GGo" firstAttribute="centerX" secondItem="0zg-X8-eqd" secondAttribute="centerX" id="G6q-Ks-A34"/>
+                                                                        <constraint firstItem="9ON-CJ-GGo" firstAttribute="leading" secondItem="0zg-X8-eqd" secondAttribute="leading" constant="2" id="xft-9i-Vvd"/>
+                                                                    </constraints>
                                                                     <connections>
                                                                         <outlet property="textField" destination="9ON-CJ-GGo" id="zRI-Ae-nP4"/>
                                                                     </connections>
@@ -93,7 +97,7 @@
                                                 </outlineView>
                                             </subviews>
                                         </clipView>
-                                        <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="0.20000000000000001" horizontal="YES" id="1ga-ys-OPU">
+                                        <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="1ga-ys-OPU">
                                             <rect key="frame" x="1" y="280" width="289" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
@@ -112,6 +116,7 @@
                                     <constraint firstItem="aTh-xQ-7Oj" firstAttribute="leading" secondItem="ZG7-u5-eXv" secondAttribute="leading" constant="20" id="49J-yk-XWz"/>
                                     <constraint firstItem="frN-iw-Azg" firstAttribute="top" secondItem="aTh-xQ-7Oj" secondAttribute="bottom" constant="10" id="8tY-3q-lF6"/>
                                     <constraint firstItem="frN-iw-Azg" firstAttribute="bottom" secondItem="aM6-UE-LeT" secondAttribute="bottom" id="AOP-Rb-s2Y"/>
+                                    <constraint firstItem="aM6-UE-LeT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="frN-iw-Azg" secondAttribute="trailing" constant="8" symbolic="YES" id="cIe-T2-eF9"/>
                                     <constraint firstItem="frN-iw-Azg" firstAttribute="leading" secondItem="ZG7-u5-eXv" secondAttribute="leading" constant="22" id="ctZ-0p-S5o"/>
                                     <constraint firstAttribute="width" constant="331" id="ds2-1y-bzV"/>
                                     <constraint firstAttribute="trailing" secondItem="aTh-xQ-7Oj" secondAttribute="trailing" constant="20" id="si7-Hb-mA4"/>
