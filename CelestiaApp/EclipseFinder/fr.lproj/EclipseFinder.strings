@@ -1,0 +1,42 @@
+/* Class = "NSTextFieldCell"; title = "Enter name of planet or moon"; ObjectID = "118-ID-12t"; */
+"118-ID-12t.title" = "Nom d'une planète ou d'une lune";
+/* Class = "NSTextFieldCell"; title = "mm/dd/yyyy"; ObjectID = "4sh-pJ-p62"; */
+"4sh-pJ-p62.title" = "mm/jj/aaaa";
+/* Class = "NSDateFormatter"; ibShadowedDateFormat = "%m/%d/%Y"; ObjectID = "KUf-B1-6mL"; */
+"KUf-B1-6mL.ibShadowedDateFormat" = "%m/%d/%Y";
+/* Class = "NSTextFieldCell"; title = "Note:\nSpecifying a large time interval may cause long search times and a very large number of results."; ObjectID = "LvX-DV-tGN"; */
+"LvX-DV-tGN.title" = "Note:\nSpécifier un intervalle de temps trop grand peut générer un temps de recherche très long et une liste de résultats très longue…";
+/* Class = "NSTextFieldCell"; title = "and:"; ObjectID = "N71-Nt-mo0"; */
+"N71-Nt-mo0.title" = "et le :";
+/* Class = "NSDateFormatter"; ibShadowedDateFormat = "%H:%M"; ObjectID = "Nri-FG-PQv"; */
+"Nri-FG-PQv.ibShadowedDateFormat" = "%H:%M";
+/* Class = "NSViewController"; title = "Eclipse Finder"; ObjectID = "Ojt-JY-TNt"; */
+"Ojt-JY-TNt.title" = "Chercheur d'Eclipses";
+/* Class = "NSTableColumn"; headerCell.title = "Date"; ObjectID = "SfC-YD-aEx"; */
+"SfC-YD-aEx.headerCell.title" = "Date";
+/* Class = "NSTextFieldCell"; title = "Double click on item to go"; ObjectID = "VjE-Ij-WbL"; */
+"VjE-Ij-WbL.title" = "Double-cliquer sur une date pour voir l'éclipse";
+/* Class = "NSTextFieldCell"; title = "Find Eclipses cast on:"; ObjectID = "WHK-lG-Qs8"; */
+"WHK-lG-Qs8.title" = "Rechercher des éclipses pour :";
+/* Class = "NSTableColumn"; headerCell.title = "Occulter"; ObjectID = "YAl-3h-bsM"; */
+"YAl-3h-bsM.headerCell.title" = "Occulter";
+/* Class = "NSDateFormatter"; ibShadowedDateFormat = "%m/%d/%Y"; ObjectID = "bjm-iB-rra"; */
+"bjm-iB-rra.ibShadowedDateFormat" = "%m/%d/%Y";
+/* Class = "NSBox"; title = "Box"; ObjectID = "bpH-Tu-Q0n"; */
+"bpH-Tu-Q0n.title" = "Box";
+/* Class = "NSTextFieldCell"; title = "Between:"; ObjectID = "i0A-wj-4q2"; */
+"i0A-wj-4q2.title" = "Entre le :";
+/* Class = "NSDateFormatter"; ibShadowedDateFormat = "%Y-%m-%d"; ObjectID = "jTS-Vi-yt1"; */
+"jTS-Vi-yt1.ibShadowedDateFormat" = "%Y-%m-%d";
+/* Class = "NSTableColumn"; headerCell.title = "Duration"; ObjectID = "nFi-u9-cuc"; */
+"nFi-u9-cuc.headerCell.title" = "Durée";
+/* Class = "NSTableColumn"; headerCell.title = "Receiver"; ObjectID = "oAp-ct-xdd"; */
+"oAp-ct-xdd.headerCell.title" = "Receiver";
+/* Class = "NSTextFieldCell"; title = "mm/dd/yyyy"; ObjectID = "szb-Ml-zUk"; */
+"szb-Ml-zUk.title" = "mm/jj/aaaa";
+/* Class = "NSButtonCell"; title = "Find"; ObjectID = "xjj-VM-Ln3"; */
+"xjj-VM-Ln3.title" = "Chercher";
+/* Class = "NSTableColumn"; headerCell.title = "Beginning"; ObjectID = "xyN-6l-7zd"; */
+"xyN-6l-7zd.headerCell.title" = "Début";
+/* Class = "NSButtonCell"; title = "Stop"; ObjectID = "yvY-Js-gdt"; */
+"yvY-Js-gdt.title" = "Arrêter";

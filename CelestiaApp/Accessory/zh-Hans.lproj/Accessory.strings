@@ -1,0 +1,62 @@
+/* Class = "NSTextFieldCell"; title = "Julian Date:"; ObjectID = "0aR-yU-tqC"; */
+"0aR-yU-tqC.title" = "儒略日:";
+/* Class = "NSButtonCell"; title = "Go"; ObjectID = "3hX-Bm-EyY"; */
+"3hX-Bm-EyY.title" = "转到";
+/* Class = "NSButtonCell"; title = "Set Time"; ObjectID = "4s4-Vo-vVH"; */
+"4s4-Vo-vVH.title" = "设置时间";
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "5CY-Gl-KC7"; */
+"5CY-Gl-KC7.title" = "取消";
+/* Class = "NSTextFieldCell"; title = "Longitude:"; ObjectID = "5aY-uw-TXk"; */
+"5aY-uw-TXk.title" = "经度:";
+/* Class = "NSButtonCell"; title = "Open Web URL"; ObjectID = "9za-Zh-Fwg"; */
+"9za-Zh-Fwg.title" = "Open Web URL";
+/* Class = "NSMenuItem"; title = "YYYY MMM DD HH:MM:SS TZ"; ObjectID = "Cq5-Mn-CEs"; */
+"Cq5-Mn-CEs.title" = "YYYY MMM DD HH:MM:SS TZ";
+/* Class = "NSViewController"; title = "OpenGL Info"; ObjectID = "MEG-m2-V92"; */
+"MEG-m2-V92.title" = "OpenGL 信息";
+/* Class = "NSTextFieldCell"; title = "Distance:"; ObjectID = "Mgt-gb-h9n"; */
+"Mgt-gb-h9n.title" = "距离：";
+/* Class = "NSTextFieldCell"; title = "Object:"; ObjectID = "Nd3-41-GkV"; */
+"Nd3-41-GkV.title" = "目标:";
+/* Class = "NSMenuItem"; title = "radii"; ObjectID = "Opi-tT-vs9"; */
+"Opi-tT-vs9.title" = "半径";
+/* Class = "NSTextFieldCell"; title = "Date:"; ObjectID = "SLP-la-fii"; */
+"SLP-la-fii.title" = "日期：";
+/* Class = "NSMenuItem"; title = "UTC"; ObjectID = "TFk-ed-Fhc"; */
+"TFk-ed-Fhc.title" = "协调世界时";
+/* Class = "NSTextFieldCell"; title = "hh:mm:ss"; ObjectID = "TtF-8Y-DIm"; */
+"TtF-8Y-DIm.title" = "hh:mm:ss";
+/* Class = "NSViewController"; title = "Go To Object"; ObjectID = "UeX-IU-xh4"; */
+"UeX-IU-xh4.title" = "转到目标";
+/* Class = "NSMenuItem"; title = "UTC Offset"; ObjectID = "Vax-4l-Ged"; */
+"Vax-4l-Ged.title" = "UTC Offset";
+/* Class = "NSTextFieldCell"; title = "Latitude:"; ObjectID = "Voa-EQ-UOx"; */
+"Voa-EQ-UOx.title" = "纬度:";
+/* Class = "NSTextFieldCell"; title = "Time:"; ObjectID = "YvK-18-9Or"; */
+"YvK-18-9Or.title" = "时间：";
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "e7V-H0-akS"; */
+"e7V-H0-akS.title" = "取消";
+/* Class = "NSViewController"; title = "Set Time"; ObjectID = "eTe-Ua-qWY"; */
+"eTe-Ua-qWY.title" = "设置时间";
+/* Class = "NSMenuItem"; title = "au"; ObjectID = "fwf-Xn-wk3"; */
+"fwf-Xn-wk3.title" = "天文单位";
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "h2W-pF-OPd"; */
+"h2W-pF-OPd.title" = "OtherViews";
+/* Class = "NSMenuItem"; title = "Local Time"; ObjectID = "icF-0q-sje"; */
+"icF-0q-sje.title" = "本地时间";
+/* Class = "NSTextFieldCell"; title = "Format:"; ObjectID = "lwT-B6-xfP"; */
+"lwT-B6-xfP.title" = "格式：";
+/* Class = "NSTextFieldCell"; title = "Time Zone:"; ObjectID = "odf-km-unR"; */
+"odf-km-unR.title" = "时区：";
+/* Class = "NSMenuItem"; title = "km"; ObjectID = "rUa-Wd-AsS"; */
+"rUa-Wd-AsS.title" = "千米";
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "rWB-sy-ugy"; */
+"rWB-sy-ugy.title" = "OtherViews";
+/* Class = "NSTextFieldCell"; title = "mm/dd/yyyy"; ObjectID = "vsX-2G-BbW"; */
+"vsX-2G-BbW.title" = "月/日/年";
+/* Class = "NSViewController"; title = "Info"; ObjectID = "wd2-8h-VmF"; */
+"wd2-8h-VmF.title" = "Info";
+/* Class = "NSMenuItem"; title = "Default"; ObjectID = "wkr-jP-5qi"; */
+"wkr-jP-5qi.title" = "预设";
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "xrL-th-f7V"; */
+"xrL-th-f7V.title" = "OtherViews";

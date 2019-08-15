@@ -1,0 +1,178 @@
+/* Class = "NSButtonCell"; title = " Night Lights"; ObjectID = "0Il-bY-Qcu"; */
+"0Il-bY-Qcu.title" = " Night Lights";
+/* Class = "NSButtonCell"; title = "Show Constellation Labels"; ObjectID = "0tM-dG-P9E"; */
+"0tM-dG-P9E.title" = "Show Constellation Labels";
+/* Class = "NSTextFieldCell"; title = "Texture Resolution :\n"; ObjectID = "132-TB-C9T"; */
+"132-TB-C9T.title" = "Texture Resolution :\n";
+/* Class = "NSButtonCell"; title = " Comet Tails"; ObjectID = "1fU-sQ-BDn"; */
+"1fU-sQ-BDn.title" = " Comet Tails";
+/* Class = "NSMenuItem"; title = "Verbose"; ObjectID = "2wb-NK-gnk"; */
+"2wb-NK-gnk.title" = "Verbose";
+/* Class = "NSMenuItem"; title = "Scaled Discs"; ObjectID = "3FQ-j2-NGt"; */
+"3FQ-j2-NGt.title" = "Disques à l'échelle";
+/* Class = "NSButtonCell"; title = " Atmospheres"; ObjectID = "3wY-3N-3A9"; */
+"3wY-3N-3A9.title" = " Atmospheres";
+/* Class = "NSButtonCell"; title = "Mare"; ObjectID = "4cw-J2-xfM"; */
+"4cw-J2-xfM.title" = "Mare";
+/* Class = "NSTextFieldCell"; title = "Ambient Light :\n"; ObjectID = "6NZ-1l-4DO"; */
+"6NZ-1l-4DO.title" = "Ambient Light :\n";
+/* Class = "NSTextFieldCell"; title = "Label Density:"; ObjectID = "7wA-Kp-wjP"; */
+"7wA-Kp-wjP.title" = "Label Density:";
+/* Class = "NSButtonCell"; title = "Fossa"; ObjectID = "9W5-3D-aBc"; */
+"9W5-3D-aBc.title" = "Fossa";
+/* Class = "NSButtonCell"; title = "Constellations in Latin"; ObjectID = "9fx-R9-SeK"; */
+"9fx-R9-SeK.title" = "Constellations in Latin";
+/* Class = "NSTextFieldCell"; title = "Grids"; ObjectID = "ACx-bR-krJ"; */
+"ACx-bR-krJ.title" = "Grids";
+/* Class = "NSButtonCell"; title = "Undae"; ObjectID = "AS1-W6-8TV"; */
+"AS1-W6-8TV.title" = "Undae";
+/* Class = "NSButtonCell"; title = "Chasma"; ObjectID = "AWO-vE-0nP"; */
+"AWO-vE-0nP.title" = "Chasma";
+/* Class = "NSButtonCell"; title = "Planitia"; ObjectID = "BaI-kz-AV8"; */
+"BaI-kz-AV8.title" = "Planitia";
+/* Class = "NSButtonCell"; title = "Astrum"; ObjectID = "C2z-CJ-dQQ"; */
+"C2z-CJ-dQQ.title" = "Astrum";
+/* Class = "NSMenuItem"; title = "Points"; ObjectID = "DJS-S7-fC7"; */
+"DJS-S7-fC7.title" = "Points";
+/* Class = "NSTextFieldCell"; title = "Constellations"; ObjectID = "EC4-sQ-pBh"; */
+"EC4-sQ-pBh.title" = "Constellations";
+/* Class = "NSButtonCell"; title = "Mons"; ObjectID = "EWO-TN-WzA"; */
+"EWO-TN-WzA.title" = "Mons";
+/* Class = "NSButtonCell"; title = "Terra"; ObjectID = "FI7-Pf-xeU"; */
+"FI7-Pf-xeU.title" = "Terra";
+/* Class = "NSButtonCell"; title = "Ecliptic"; ObjectID = "GCc-dz-Faa"; */
+"GCc-dz-Faa.title" = "Ecliptic";
+/* Class = "NSTextFieldCell"; title = "Dwarf Planets"; ObjectID = "GOz-Jm-xDp"; */
+"GOz-Jm-xDp.title" = "Dwarf Planets";
+/* Class = "NSButtonCell"; title = "Catena"; ObjectID = "Gi0-rf-Mdp"; */
+"Gi0-rf-Mdp.title" = "Catena";
+/* Class = "NSTabViewItem"; label = "   General   "; ObjectID = "I39-YQ-tz2"; */
+"I39-YQ-tz2.label" = "   General   ";
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "Ij8-Mx-tMI"; */
+"Ij8-Mx-tMI.title" = "OtherViews";
+/* Class = "NSTabViewItem"; label = "   Guides   "; ObjectID = "JBT-yv-95U"; */
+"JBT-yv-95U.label" = "   Guides   ";
+/* Class = "NSTextFieldCell"; title = "Open Clusters"; ObjectID = "JHY-96-Ybr"; */
+"JHY-96-Ybr.title" = "Amas ouverts";
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "Kfw-DU-gdH"; */
+"Kfw-DU-gdH.title" = "OtherViews";
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "Kqo-rM-Vth"; */
+"Kqo-rM-Vth.title" = "OtherViews";
+/* Class = "NSButtonCell"; title = "Cities"; ObjectID = "LiZ-0t-asA"; */
+"LiZ-0t-asA.title" = "Villes";
+/* Class = "NSButtonCell"; title = "Rupes"; ObjectID = "LvB-EF-0eT"; */
+"LvB-EF-0eT.title" = "Rupes";
+/* Class = "NSTextFieldCell"; title = "Labels"; ObjectID = "Omb-HE-vSj"; */
+"Omb-HE-vSj.title" = "Labels";
+/* Class = "NSButtonCell"; title = "Observatories"; ObjectID = "PNq-Pv-CmX"; */
+"PNq-Pv-CmX.title" = "Observatoires";
+/* Class = "NSTextFieldCell"; title = "Moons"; ObjectID = "PTW-Vh-rg6"; */
+"PTW-Vh-rg6.title" = "Satellites";
+/* Class = "NSMenuItem"; title = "Terse"; ObjectID = "PfB-I6-IB1"; */
+"PfB-I6-IB1.title" = "Terse";
+/* Class = "NSButtonCell"; title = "Regio"; ObjectID = "QDU-o8-VUb"; */
+"QDU-o8-VUb.title" = "Regio";
+/* Class = "NSButtonCell"; title = "Other"; ObjectID = "QFT-Zj-wtB"; */
+"QFT-Zj-wtB.title" = "Autres";
+/* Class = "NSButtonCell"; title = "Show Constellations"; ObjectID = "QmG-QR-ITo"; */
+"QmG-QR-ITo.title" = "Show Constellations";
+/* Class = "NSButtonCell"; title = "Chaos"; ObjectID = "Qnq-LX-w6M"; */
+"Qnq-LX-w6M.title" = "Chaos";
+/* Class = "NSButtonCell"; title = "Mensa"; ObjectID = "Rzo-nd-anH"; */
+"Rzo-nd-anH.title" = "Mensa";
+/* Class = "NSTextFieldCell"; title = "Faintest Stars :\n"; ObjectID = "Szu-bR-5ss"; */
+"Szu-bR-5ss.title" = "Faintest Stars :\n";
+/* Class = "NSButtonCell"; title = " Smooth Lines"; ObjectID = "TPn-ae-ipF"; */
+"TPn-ae-ipF.title" = " Smooth Lines";
+/* Class = "NSButtonCell"; title = "Rima"; ObjectID = "TSj-vm-FCk"; */
+"TSj-vm-FCk.title" = "Rima";
+/* Class = "NSMenuItem"; title = "High"; ObjectID = "UUN-D9-6np"; */
+"UUN-D9-6np.title" = "High";
+/* Class = "NSTextFieldCell"; title = "Orbits"; ObjectID = "Vvm-Te-Wqt"; */
+"Vvm-Te-Wqt.title" = "Orbites";
+/* Class = "NSButtonCell"; title = "Planum"; ObjectID = "WTQ-KG-X44"; */
+"WTQ-KG-X44.title" = "Planum";
+/* Class = "NSButtonCell"; title = "Dorsum"; ObjectID = "Wxc-Es-pZy"; */
+"Wxc-Es-pZy.title" = "Dorsum";
+/* Class = "NSButtonCell"; title = " Ring Shadows"; ObjectID = "XbE-CV-bgt"; */
+"XbE-CV-bgt.title" = " Ring Shadows";
+/* Class = "NSButtonCell"; title = "Show Markers"; ObjectID = "Xqb-ZG-LI0"; */
+"Xqb-ZG-LI0.title" = "Show Markers";
+/* Class = "NSMenuItem"; title = "Low"; ObjectID = "Z96-0u-jVe"; */
+"Z96-0u-jVe.title" = "Basse";
+/* Class = "NSButtonCell"; title = "Crater"; ObjectID = "aEj-Jx-Jet"; */
+"aEj-Jx-Jet.title" = "Crater";
+/* Class = "NSTextFieldCell"; title = "Show"; ObjectID = "aTv-L6-NzJ"; */
+"aTv-L6-NzJ.title" = "Show";
+/* Class = "NSButtonCell"; title = " Auto Mag"; ObjectID = "ack-PX-wkF"; */
+"ack-PX-wkF.title" = " Auto Mag";
+/* Class = "NSTextFieldCell"; title = "Nebulae"; ObjectID = "aok-sv-U5G"; */
+"aok-sv-U5G.title" = "Nébuleuses";
+/* Class = "NSTextFieldCell"; title = "Galaxies"; ObjectID = "awS-7e-sxM"; */
+"awS-7e-sxM.title" = "Galaxies";
+/* Class = "NSButtonCell"; title = "Horizontal"; ObjectID = "bQg-Cr-n1k"; */
+"bQg-Cr-n1k.title" = "Horizontal";
+/* Class = "NSTextFieldCell"; title = "Planets"; ObjectID = "bSM-kD-Lho"; */
+"bSM-kD-Lho.title" = "Planètes";
+/* Class = "NSTextFieldCell"; title = "Bodies"; ObjectID = "bVl-4Y-aBx"; */
+"bVl-4Y-aBx.title" = "Bodies";
+/* Class = "NSButtonCell"; title = "Tessera"; ObjectID = "cMM-g2-6tm"; */
+"cMM-g2-6tm.title" = "Tessera";
+/* Class = "NSTextFieldCell"; title = "Star Style :\n"; ObjectID = "crl-iI-9CV"; */
+"crl-iI-9CV.title" = "Star Style :\n";
+/* Class = "NSButtonCell"; title = "Fluctus"; ObjectID = "ewz-Mp-2zm"; */
+"ewz-Mp-2zm.title" = "Fluctus";
+/* Class = "NSTextFieldCell"; title = "(OpenGL 2.0 Only)"; ObjectID = "ez6-3L-dF9"; */
+"ez6-3L-dF9.title" = "(OpenGL 2.0 Only)";
+/* Class = "NSButtonCell"; title = "Show Boundaries"; ObjectID = "fQW-zY-huJ"; */
+"fQW-zY-huJ.title" = "Show Boundaries";
+/* Class = "NSMenuItem"; title = "Fuzzy Points"; ObjectID = "iP9-eP-sI5"; */
+"iP9-eP-sI5.title" = "Points diffus";
+/* Class = "NSMenuItem"; title = "Medium"; ObjectID = "jjZ-iK-LOI"; */
+"jjZ-iK-LOI.title" = "Moyenne";
+/* Class = "NSButtonCell"; title = "Paterae"; ObjectID = "kvF-42-Nc0"; */
+"kvF-42-Nc0.title" = "Paterae";
+/* Class = "NSButtonCell"; title = "Galactic"; ObjectID = "mZw-zi-UKy"; */
+"mZw-zi-UKy.title" = "Galactic";
+/* Class = "NSTextFieldCell"; title = "Feature Types:\n"; ObjectID = "miM-oO-mrN"; */
+"miM-oO-mrN.title" = "Feature Types:\n";
+/* Class = "NSTextFieldCell"; title = "Minor Moons"; ObjectID = "nOr-N1-3fd"; */
+"nOr-N1-3fd.title" = "Minor Moons";
+/* Class = "NSTextFieldCell"; title = "Comets"; ObjectID = "of3-dq-XNi"; */
+"of3-dq-XNi.title" = "Comètes";
+/* Class = "NSButtonCell"; title = "Show Locations"; ObjectID = "ogY-uO-gL3"; */
+"ogY-uO-gL3.title" = "Show Locations";
+/* Class = "NSTextFieldCell"; title = "Info Display :\n"; ObjectID = "otB-dg-vlg"; */
+"otB-dg-vlg.title" = "Info Display :\n";
+/* Class = "NSButtonCell"; title = "Landing Sites"; ObjectID = "p2P-Fy-jI4"; */
+"p2P-Fy-jI4.title" = "Sites d'atterrissage";
+/* Class = "NSTextFieldCell"; title = "Spacecraft"; ObjectID = "p7z-LO-5pI"; */
+"p7z-LO-5pI.title" = "Astronefs";
+/* Class = "NSButtonCell"; title = " Eclipse Shadows"; ObjectID = "q8F-U2-lFB"; */
+"q8F-U2-lFB.title" = " Eclipse Shadows";
+/* Class = "NSButtonCell"; title = "Vallis"; ObjectID = "rnN-5M-cHo"; */
+"rnN-5M-cHo.title" = "Vallis";
+/* Class = "NSMenuItem"; title = "None"; ObjectID = "sUD-l4-cHw"; */
+"sUD-l4-cHw.title" = "None";
+/* Class = "NSButtonCell"; title = "Linea"; ObjectID = "sao-lW-UdE"; */
+"sao-lW-UdE.title" = "Linea";
+/* Class = "NSButtonCell"; title = " Cloud Shadows"; ObjectID = "tai-bz-pyO"; */
+"tai-bz-pyO.title" = " Cloud Shadows";
+/* Class = "NSButtonCell"; title = "Volcano"; ObjectID = "tyH-zp-LWG"; */
+"tyH-zp-LWG.title" = "Volcano";
+/* Class = "NSTextFieldCell"; title = "Globulars"; ObjectID = "u4G-pC-fmj"; */
+"u4G-pC-fmj.title" = "Globulars";
+/* Class = "NSButtonCell"; title = "Corona"; ObjectID = "uWP-FL-9uz"; */
+"uWP-FL-9uz.title" = "Corona";
+/* Class = "NSButtonCell"; title = "Farrum"; ObjectID = "v7w-A5-oIJ"; */
+"v7w-A5-oIJ.title" = "Farrum";
+/* Class = "NSButtonCell"; title = " Clouds"; ObjectID = "wkc-Y8-Sgb"; */
+"wkc-Y8-Sgb.title" = " Clouds";
+/* Class = "NSButtonCell"; title = "Equatorial"; ObjectID = "xwR-9A-wcm"; */
+"xwR-9A-wcm.title" = "Equatorial";
+/* Class = "NSTextFieldCell"; title = "Asteroids"; ObjectID = "yHU-Dh-9lF"; */
+"yHU-Dh-9lF.title" = "Astéroïdes";
+/* Class = "NSButtonCell"; title = "Reticulum"; ObjectID = "zNm-l8-N8R"; */
+"zNm-l8-N8R.title" = "Reticulum";
+/* Class = "NSTextFieldCell"; title = "Stars"; ObjectID = "zqF-fv-JDd"; */
+"zqF-fv-JDd.title" = "Etoiles";

@@ -1,0 +1,56 @@
+/* Class = "NSButtonCell"; title = "Select"; ObjectID = "09t-ny-GpF"; */
+"09t-ny-GpF.title" = "Select";
+/* Class = "NSButtonCell"; title = "Follow"; ObjectID = "0Yg-Gc-nu8"; */
+"0Yg-Gc-nu8.title" = "Suivre";
+/* Class = "NSButtonCell"; title = "Center"; ObjectID = "0jj-fQ-6iL"; */
+"0jj-fQ-6iL.title" = "Centrer";
+/* Class = "NSButtonCell"; title = "Track"; ObjectID = "2dQ-2r-1Ed"; */
+"2dQ-2r-1Ed.title" = "Maintenir la sélection centrée (Pister)";
+/* Class = "NSButtonCell"; title = "Follow"; ObjectID = "4C5-QQ-gPC"; */
+"4C5-QQ-gPC.title" = "Suivre";
+/* Class = "NSButtonCell"; title = "Align"; ObjectID = "4I5-s1-i8D"; */
+"4I5-s1-i8D.title" = "Align";
+/* Class = "NSButtonCell"; title = "Align"; ObjectID = "6Ui-RU-O2k"; */
+"6Ui-RU-O2k.title" = "Align";
+/* Class = "NSButtonCell"; title = "Track"; ObjectID = "86w-Yf-rXc"; */
+"86w-Yf-rXc.title" = "Maintenir la sélection centrée (Pister)";
+/* Class = "NSButtonCell"; title = "Track"; ObjectID = "8aO-tX-W7f"; */
+"8aO-tX-W7f.title" = "Maintenir la sélection centrée (Pister)";
+/* Class = "NSButtonCell"; title = "Follow"; ObjectID = "Agn-Lm-oMY"; */
+"Agn-Lm-oMY.title" = "Suivre";
+/* Class = "NSButtonCell"; title = "Orbit"; ObjectID = "K36-xN-kqO"; */
+"K36-xN-kqO.title" = "Orbit";
+/* Class = "NSButtonCell"; title = "Select"; ObjectID = "KK5-v2-2wp"; */
+"KK5-v2-2wp.title" = "Select";
+/* Class = "NSButtonCell"; title = "Center"; ObjectID = "Kcd-kE-qvx"; */
+"Kcd-kE-qvx.title" = "Centrer";
+/* Class = "NSTabViewItem"; label = "Solar System"; ObjectID = "Owe-gU-rz5"; */
+"Owe-gU-rz5.label" = "Système solaire";
+/* Class = "NSButtonCell"; title = "Lock"; ObjectID = "Pgt-o1-BOm"; */
+"Pgt-o1-BOm.title" = "Lock";
+/* Class = "NSButtonCell"; title = "Select"; ObjectID = "U15-zr-Pxg"; */
+"U15-zr-Pxg.title" = "Select";
+/* Class = "NSButtonCell"; title = "Go"; ObjectID = "ax8-pt-r0e"; */
+"ax8-pt-r0e.title" = "Aller";
+/* Class = "NSButtonCell"; title = "Lock"; ObjectID = "b6M-4u-z2Y"; */
+"b6M-4u-z2Y.title" = "Lock";
+/* Class = "NSButtonCell"; title = "Align"; ObjectID = "hmr-IP-fdU"; */
+"hmr-IP-fdU.title" = "Align";
+/* Class = "NSButtonCell"; title = "Lock"; ObjectID = "owD-ro-yk9"; */
+"owD-ro-yk9.title" = "Lock";
+/* Class = "NSViewController"; title = "Celestia Browser"; ObjectID = "rTU-Ea-46J"; */
+"rTU-Ea-46J.title" = "Navigateur de Celestia";
+/* Class = "NSButtonCell"; title = "Orbit"; ObjectID = "sig-vD-KIs"; */
+"sig-vD-KIs.title" = "Orbit";
+/* Class = "NSTabViewItem"; label = "DSOs"; ObjectID = "tK0-KY-Z8J"; */
+"tK0-KY-Z8J.label" = "Objets de ciel profond";
+/* Class = "NSButtonCell"; title = "Go"; ObjectID = "uAY-xP-VzA"; */
+"uAY-xP-VzA.title" = "Aller";
+/* Class = "NSButtonCell"; title = "Center"; ObjectID = "vax-4v-YZM"; */
+"vax-4v-YZM.title" = "Centrer";
+/* Class = "NSButtonCell"; title = "Orbit"; ObjectID = "xYa-FJ-qes"; */
+"xYa-FJ-qes.title" = "Orbit";
+/* Class = "NSButtonCell"; title = "Go"; ObjectID = "xvk-RE-Ho3"; */
+"xvk-RE-Ho3.title" = "Aller";
+/* Class = "NSTabViewItem"; label = "Stars"; ObjectID = "zg0-Ah-2oF"; */
+"zg0-Ah-2oF.label" = "Etoiles";

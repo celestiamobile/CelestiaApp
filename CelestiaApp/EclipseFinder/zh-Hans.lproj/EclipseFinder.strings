@@ -1,0 +1,42 @@
+/* Class = "NSTextFieldCell"; title = "Enter name of planet or moon"; ObjectID = "118-ID-12t"; */
+"118-ID-12t.title" = "输入行星或卫星名称";
+/* Class = "NSTextFieldCell"; title = "mm/dd/yyyy"; ObjectID = "4sh-pJ-p62"; */
+"4sh-pJ-p62.title" = "月/日/年";
+/* Class = "NSDateFormatter"; ibShadowedDateFormat = "%m/%d/%Y"; ObjectID = "KUf-B1-6mL"; */
+"KUf-B1-6mL.ibShadowedDateFormat" = "%m/%d/%Y";
+/* Class = "NSTextFieldCell"; title = "Note:\nSpecifying a large time interval may cause long search times and a very large number of results."; ObjectID = "LvX-DV-tGN"; */
+"LvX-DV-tGN.title" = "注意:\n指定较长的时间间隔将延长分析时间并导致分析结果的数量变得非常大.";
+/* Class = "NSTextFieldCell"; title = "and:"; ObjectID = "N71-Nt-mo0"; */
+"N71-Nt-mo0.title" = "和:";
+/* Class = "NSDateFormatter"; ibShadowedDateFormat = "%H:%M"; ObjectID = "Nri-FG-PQv"; */
+"Nri-FG-PQv.ibShadowedDateFormat" = "%H:%M";
+/* Class = "NSViewController"; title = "Eclipse Finder"; ObjectID = "Ojt-JY-TNt"; */
+"Ojt-JY-TNt.title" = "日/月蚀 查找器";
+/* Class = "NSTableColumn"; headerCell.title = "Date"; ObjectID = "SfC-YD-aEx"; */
+"SfC-YD-aEx.headerCell.title" = "日期";
+/* Class = "NSTextFieldCell"; title = "Double click on item to go"; ObjectID = "VjE-Ij-WbL"; */
+"VjE-Ij-WbL.title" = "双击目标转到";
+/* Class = "NSTextFieldCell"; title = "Find Eclipses cast on:"; ObjectID = "WHK-lG-Qs8"; */
+"WHK-lG-Qs8.title" = "查找日/月蚀发生在:";
+/* Class = "NSTableColumn"; headerCell.title = "Occulter"; ObjectID = "YAl-3h-bsM"; */
+"YAl-3h-bsM.headerCell.title" = "Occulter";
+/* Class = "NSDateFormatter"; ibShadowedDateFormat = "%m/%d/%Y"; ObjectID = "bjm-iB-rra"; */
+"bjm-iB-rra.ibShadowedDateFormat" = "%m/%d/%Y";
+/* Class = "NSBox"; title = "Box"; ObjectID = "bpH-Tu-Q0n"; */
+"bpH-Tu-Q0n.title" = "Box";
+/* Class = "NSTextFieldCell"; title = "Between:"; ObjectID = "i0A-wj-4q2"; */
+"i0A-wj-4q2.title" = "介于:";
+/* Class = "NSDateFormatter"; ibShadowedDateFormat = "%Y-%m-%d"; ObjectID = "jTS-Vi-yt1"; */
+"jTS-Vi-yt1.ibShadowedDateFormat" = "%Y-%m-%d";
+/* Class = "NSTableColumn"; headerCell.title = "Duration"; ObjectID = "nFi-u9-cuc"; */
+"nFi-u9-cuc.headerCell.title" = "持续时间";
+/* Class = "NSTableColumn"; headerCell.title = "Receiver"; ObjectID = "oAp-ct-xdd"; */
+"oAp-ct-xdd.headerCell.title" = "Receiver";
+/* Class = "NSTextFieldCell"; title = "mm/dd/yyyy"; ObjectID = "szb-Ml-zUk"; */
+"szb-Ml-zUk.title" = "月/日/年";
+/* Class = "NSButtonCell"; title = "Find"; ObjectID = "xjj-VM-Ln3"; */
+"xjj-VM-Ln3.title" = "查找";
+/* Class = "NSTableColumn"; headerCell.title = "Beginning"; ObjectID = "xyN-6l-7zd"; */
+"xyN-6l-7zd.headerCell.title" = "开始";
+/* Class = "NSButtonCell"; title = "Stop"; ObjectID = "yvY-Js-gdt"; */
+"yvY-Js-gdt.title" = "停止";
