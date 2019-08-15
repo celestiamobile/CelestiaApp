@@ -13,13 +13,15 @@ import CelestiaCore
 class ScriptController: NSObject {
     @IBOutlet private weak var scriptMenu: NSMenu!
 
+    static let supportedFileExtensions = ["cel", "celx"]
+
     private var savedScripts: [CelestiaScript] = []
 
     private var lastScriptPath: String?
 
     @IBAction private func runScript(sender: AnyObject) {
         let panel = NSOpenPanel()
-        panel.allowedFileTypes = ["cel", "celx"]
+        panel.allowedFileTypes = ScriptController.supportedFileExtensions
         panel.allowsMultipleSelection = false
         let result = panel.runModal()
         if result == .OK, let url = panel.url {

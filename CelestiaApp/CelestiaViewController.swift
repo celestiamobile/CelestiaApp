@@ -50,6 +50,7 @@ class CelestiaViewController: NSViewController {
         glView.delegate = self
         glView.mouseProcessor = self
         glView.keyboardProcessor = self
+        glView.dndProcessor = self
 
         Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(displayCallback), userInfo: nil, repeats: true)
     }
@@ -365,6 +366,19 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
         }
 
         return glViewMenu
+    }
+}
+
+extension CelestiaViewController: CelestiaGLViewDNDProcessor {
+    func draggingType(for url: URL) -> NSDragOperation {
+        if url.isFileURL && ScriptController.supportedFileExtensions.contains(url.pathExtension.lowercased()) {
+            return .copy
+        }
+        return NSDragOperation()
+    }
+
+    func performDrop(for url: URL) {
+        AppDelegate.shared.scriptController.runScript(at: url.path)
     }
 }
 

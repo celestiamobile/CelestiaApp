@@ -38,6 +38,11 @@ protocol CelestiaGLViewKeyboardProcessor: class {
     func keyDown(modifiers: NSEvent.ModifierFlags, with input: String?)
 }
 
+protocol CelestiaGLViewDNDProcessor: class {
+    func draggingType(for url: URL) -> NSDragOperation
+    func performDrop(for url: URL)
+}
+
 extension NSEvent {
     var input: String? {
         if let c = characters, c.count > 0 {
@@ -51,6 +56,7 @@ class CelestiaGLView: NSOpenGLView {
     weak var delegate: CelestiaGLViewDelegate?
     weak var mouseProcessor: CelestiaGLViewMouseProcessor?
     weak var keyboardProcessor: CelestiaGLViewKeyboardProcessor?
+    weak var dndProcessor: CelestiaGLViewDNDProcessor?
 
     required init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
@@ -174,6 +180,21 @@ class CelestiaGLView: NSOpenGLView {
     override func resignFirstResponder() -> Bool { return true }
 
     override func acceptsFirstMouse(for event: NSEvent?) -> Bool { return true }
+
+    // MARK: Drag and Drop
+    override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
+        if let path = sender.draggingPasteboard.string(forType: .init(kUTTypeFileURL as String)), let url = URL(string: path) {
+            return dndProcessor?.draggingType(for: url) ?? NSDragOperation()
+        }
+        return NSDragOperation()
+    }
+
+    override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
+        if let path = sender.draggingPasteboard.string(forType: .init(kUTTypeFileURL as String)), let url = URL(string: path) {
+            dndProcessor?.performDrop(for: url)
+        }
+        return true
+    }
 }
 
 extension CelestiaGLView {
@@ -190,5 +211,7 @@ extension CelestiaGLView {
 
         var swapInterval: GLint = 1
         openGLContext?.setValues(&swapInterval, for: .swapInterval)
+
+        registerForDraggedTypes([.init(kUTTypeFileURL as String)])
     }
 }
