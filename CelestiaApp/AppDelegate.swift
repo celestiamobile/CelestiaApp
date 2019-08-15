@@ -80,6 +80,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func presentGLInfo(_ sender: NSMenuItem) {
         let vc = NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "GLInfo") as! NSViewController
         let panel = NSPanel(contentViewController: vc)
+        panel.styleMask = [panel.styleMask, .utilityWindow]
         panel.makeKeyAndOrderFront(self)
     }
 
