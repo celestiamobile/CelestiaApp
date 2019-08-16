@@ -6,11 +6,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Setting View Controller-->
+        <!--Preference-->
         <scene sceneID="zqY-dJ-w8x">
             <objects>
                 <customObject id="90W-Wb-uoP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="Setting" id="c4N-h6-Ogk" customClass="SettingViewController" customModule="Celestia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Preference" storyboardIdentifier="Setting" id="c4N-h6-Ogk" customClass="SettingViewController" customModule="Celestia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="gbv-Xm-RwL">
                         <rect key="frame" x="0.0" y="0.0" width="622" height="472"/>
                         <autoresizingMask key="autoresizingMask"/>
