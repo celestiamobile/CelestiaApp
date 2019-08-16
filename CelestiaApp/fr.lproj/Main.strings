@@ -40,8 +40,8 @@
 "Ad6-MB-VyM.title" = "X";
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
 "BOF-NM-1cW.title" = "Préférences…";
-/* Class = "NSMenuItem"; title = "Capture Movie"; ObjectID = "Bct-wG-tlW"; */
-"Bct-wG-tlW.title" = "Capture Movie";
+/* Class = "NSMenuItem"; title = "Capture Video"; ObjectID = "Bct-wG-tlW"; */
+"Bct-wG-tlW.title" = "Enregistrer un film";
 /* Class = "NSMenuItem"; title = "Forward"; ObjectID = "BoU-HP-H96"; */
 "BoU-HP-H96.title" = "En avant";
 /* Class = "NSMenuItem"; title = "Delete Active View"; ObjectID = "DH9-Bc-TZu"; */

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="F8w-LJ-0Tu">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -92,7 +91,7 @@
                                             <menu key="submenu" title="Scripts" id="b55-CL-1HX"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="EMn-fN-e7d"/>
-                                        <menuItem title="Capture Movie" id="Bct-wG-tlW">
+                                        <menuItem title="Capture Video" id="Bct-wG-tlW">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="captureMovie:" target="Voe-Tx-rLC" id="5Us-uZ-eLC"/>

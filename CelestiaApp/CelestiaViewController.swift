@@ -163,7 +163,7 @@ class CelestiaViewController: NSViewController {
         let width = CGFloat(availableResolutions[selectedResolutionIndex].width)
         let height = CGFloat(availableResolutions[selectedResolutionIndex].height)
         guard core.captureMovie(to: path, size: CGSize(width: width, height: height), fps: availableFPS[selectedFPSIndex]) else {
-            NSAlert.warning(message: "Unable to Capture Movie", text: "")
+            NSAlert.warning(message: NSLocalizedString("Unable to Capture Video", comment: ""), text: "")
             return
         }
     }
