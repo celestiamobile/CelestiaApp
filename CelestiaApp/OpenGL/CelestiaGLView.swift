@@ -58,10 +58,14 @@ class CelestiaGLView: NSOpenGLView {
     weak var keyboardProcessor: CelestiaGLViewKeyboardProcessor?
     weak var dndProcessor: CelestiaGLViewDNDProcessor?
 
+    var displayLink: CVDisplayLink?
+
     required init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
 
-        setup()
+        setupGL()
+        setupDisplayLink()
+        setupDND()
     }
 
     override func draw(_ dirtyRect: NSRect) {
@@ -195,10 +199,17 @@ class CelestiaGLView: NSOpenGLView {
         }
         return true
     }
+
+    func displayLinkCallback() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.needsDisplay = true
+        }
+    }
 }
 
 extension CelestiaGLView {
-    func setup() {
+    private func setupGL() {
         let attributes = [UInt32(NSOpenGLPFADoubleBuffer), UInt32(NSOpenGLPFADepthSize), 32, 0]
         let format = NSOpenGLPixelFormat(attributes: attributes)
         pixelFormat = format
@@ -211,7 +222,25 @@ extension CelestiaGLView {
 
         var swapInterval: GLint = 1
         openGLContext?.setValues(&swapInterval, for: .swapInterval)
+    }
 
+    private func setupDisplayLink() {
+        CVDisplayLinkCreateWithActiveCGDisplays(&displayLink)
+        if let link = displayLink {
+            CVDisplayLinkSetOutputCallback(link, { (link, now, outputTime, flagsIn, flagsOut, context) -> CVReturn in
+                let view = Unmanaged<CelestiaGLView>.fromOpaque(context!).takeUnretainedValue()
+                view.displayLinkCallback()
+                return kCVReturnSuccess
+            }, Unmanaged.passUnretained(self).toOpaque())
+
+            if let cglContext = openGLContext?.cglContextObj, let cglPixelFormat = pixelFormat?.cglPixelFormatObj {
+                CVDisplayLinkSetCurrentCGDisplayFromOpenGLContext(link, cglContext, cglPixelFormat)
+                CVDisplayLinkStart(link)
+            }
+        }
+    }
+
+    private func setupDND() {
         registerForDraggedTypes([.init(kUTTypeFileURL as String)])
     }
 }

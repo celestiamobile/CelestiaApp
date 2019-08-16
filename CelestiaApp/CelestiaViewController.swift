@@ -57,8 +57,6 @@ class CelestiaViewController: NSViewController {
         glView.mouseProcessor = self
         glView.keyboardProcessor = self
         glView.dndProcessor = self
-
-        Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(displayCallback), userInfo: nil, repeats: true)
     }
 
     override func viewWillDisappear() {
@@ -84,16 +82,6 @@ class CelestiaViewController: NSViewController {
             core.runScript(at: path)
         } else {
             pendingScript = path
-        }
-    }
-
-    @objc private func displayCallback() {
-        NSEvent.stopPeriodicEvents()
-
-        keyTick()
-
-        if !glView.needsDisplay {
-            glView.needsDisplay = true
         }
     }
 
@@ -275,6 +263,10 @@ class CelestiaViewController: NSViewController {
 
 extension CelestiaViewController: CelestiaGLViewDelegate {
     func draw(in glView: CelestiaGLView) {
+        NSEvent.stopPeriodicEvents()
+
+        keyTick()
+
         if ready {
             core.draw()
             core.tick()
