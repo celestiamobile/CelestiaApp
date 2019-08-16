@@ -42,6 +42,12 @@ class CelestiaViewController: NSViewController {
             NSAlert.fatalError(text: NSLocalizedString("Failed to start renderer.", comment: ""))
         }
 
+        // find the dpi
+        if let displayPixelSize = NSScreen.main?.deviceDescription[.size] as? CGSize, let displayID = NSScreen.main?.deviceDescription[.init("NSScreenNumber")] as? CGDirectDisplayID {
+            let displayPhysicalSize = CGDisplayScreenSize(displayID)
+            core.setDPI(Int(displayPixelSize.width / displayPhysicalSize.width * 25.4))
+        }
+
         core.loadUserDefaults()
 
         core.tick()
