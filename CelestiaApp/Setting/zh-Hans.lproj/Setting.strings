@@ -2,8 +2,8 @@
 "0Il-bY-Qcu.title" = " 夜间照明";
 /* Class = "NSButtonCell"; title = "Show Constellation Labels"; ObjectID = "0tM-dG-P9E"; */
 "0tM-dG-P9E.title" = "显示星座标签";
-/* Class = "NSTextFieldCell"; title = "Texture Resolution :\n"; ObjectID = "132-TB-C9T"; */
-"132-TB-C9T.title" = "纹理分辨率 :\n";
+/* Class = "NSTextFieldCell"; title = "Texture Resolution :"; ObjectID = "132-TB-C9T"; */
+"132-TB-C9T.title" = "纹理分辨率 :";
 /* Class = "NSButtonCell"; title = " Comet Tails"; ObjectID = "1fU-sQ-BDn"; */
 "1fU-sQ-BDn.title" = " 彗尾";
 /* Class = "NSMenuItem"; title = "Verbose"; ObjectID = "2wb-NK-gnk"; */
@@ -14,8 +14,8 @@
 "3wY-3N-3A9.title" = " 大气层";
 /* Class = "NSButtonCell"; title = "Mare"; ObjectID = "4cw-J2-xfM"; */
 "4cw-J2-xfM.title" = "海洋";
-/* Class = "NSTextFieldCell"; title = "Ambient Light :\n"; ObjectID = "6NZ-1l-4DO"; */
-"6NZ-1l-4DO.title" = "背景光 :\n";
+/* Class = "NSTextFieldCell"; title = "Ambient Light :"; ObjectID = "6NZ-1l-4DO"; */
+"6NZ-1l-4DO.title" = "背景光 :";
 /* Class = "NSTextFieldCell"; title = "Label Density:"; ObjectID = "7wA-Kp-wjP"; */
 "7wA-Kp-wjP.title" = "标签密度:";
 /* Class = "NSButtonCell"; title = "Fossa"; ObjectID = "9W5-3D-aBc"; */
@@ -80,8 +80,8 @@
 "Qnq-LX-w6M.title" = "混沌";
 /* Class = "NSButtonCell"; title = "Mensa"; ObjectID = "Rzo-nd-anH"; */
 "Rzo-nd-anH.title" = "山案座";
-/* Class = "NSTextFieldCell"; title = "Faintest Stars :\n"; ObjectID = "Szu-bR-5ss"; */
-"Szu-bR-5ss.title" = "黯淡恒星 :\n";
+/* Class = "NSTextFieldCell"; title = "Faintest Stars :"; ObjectID = "Szu-bR-5ss"; */
+"Szu-bR-5ss.title" = "黯淡恒星 :";
 /* Class = "NSButtonCell"; title = " Smooth Lines"; ObjectID = "TPn-ae-ipF"; */
 "TPn-ae-ipF.title" = " 线性平滑";
 /* Class = "NSButtonCell"; title = "Rima"; ObjectID = "TSj-vm-FCk"; */
@@ -118,8 +118,8 @@
 "bVl-4Y-aBx.title" = "星体";
 /* Class = "NSButtonCell"; title = "Tessera"; ObjectID = "cMM-g2-6tm"; */
 "cMM-g2-6tm.title" = "砖瓦地形";
-/* Class = "NSTextFieldCell"; title = "Star Style :\n"; ObjectID = "crl-iI-9CV"; */
-"crl-iI-9CV.title" = "恒星样式 :\n";
+/* Class = "NSTextFieldCell"; title = "Star Style :"; ObjectID = "crl-iI-9CV"; */
+"crl-iI-9CV.title" = "恒星样式 :";
 /* Class = "NSButtonCell"; title = "Fluctus"; ObjectID = "ewz-Mp-2zm"; */
 "ewz-Mp-2zm.title" = "流动地带";
 /* Class = "NSTextFieldCell"; title = "(OpenGL 2.0 Only)"; ObjectID = "ez6-3L-dF9"; */
@@ -142,8 +142,8 @@
 "of3-dq-XNi.title" = "彗星";
 /* Class = "NSButtonCell"; title = "Show Locations"; ObjectID = "ogY-uO-gL3"; */
 "ogY-uO-gL3.title" = "显示位置";
-/* Class = "NSTextFieldCell"; title = "Info Display :\n"; ObjectID = "otB-dg-vlg"; */
-"otB-dg-vlg.title" = "信息显示 :\n";
+/* Class = "NSTextFieldCell"; title = "Info Display :"; ObjectID = "otB-dg-vlg"; */
+"otB-dg-vlg.title" = "信息显示 :";
 /* Class = "NSButtonCell"; title = "Landing Sites"; ObjectID = "p2P-Fy-jI4"; */
 "p2P-Fy-jI4.title" = "登陆地点";
 /* Class = "NSTextFieldCell"; title = "Spacecraft"; ObjectID = "p7z-LO-5pI"; */
