@@ -11,14 +11,14 @@
             <objects>
                 <viewController title="Set Time" storyboardIdentifier="SetTime" id="eTe-Ua-qWY" customClass="SetTimeViewController" customModule="Celestia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" identifier="SetTime" id="3x2-ZX-6jb">
-                        <rect key="frame" x="0.0" y="0.0" width="415" height="195"/>
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="135"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <view translatesAutoresizingMaskIntoConstraints="NO" id="mW7-6S-krJ">
-                                <rect key="frame" x="0.0" y="0.0" width="415" height="195"/>
+                                <rect key="frame" x="0.0" y="0.0" width="420" height="135"/>
                                 <subviews>
                                     <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwt-PE-MlJ">
-                                        <rect key="frame" x="18" y="95" width="84" height="17"/>
+                                        <rect key="frame" x="18" y="95" width="76" height="17"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Time:" id="YvK-18-9Or">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -26,7 +26,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bk7-xv-S6T">
-                                        <rect key="frame" x="307" y="13" width="94" height="32"/>
+                                        <rect key="frame" x="312" y="13" width="94" height="32"/>
                                         <buttonCell key="cell" type="push" title="Set Time" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="4s4-Vo-vVH">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -38,18 +38,8 @@ DQ
                                             <action selector="setTime:" target="eTe-Ua-qWY" id="9r7-cN-p0u"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bCC-so-btd">
-                                        <rect key="frame" x="225" y="13" width="82" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="e7V-H0-akS">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="cancel:" target="eTe-Ua-qWY" id="xbY-Rn-DMA"/>
-                                        </connections>
-                                    </button>
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M8O-tO-2Lv">
-                                        <rect key="frame" x="108" y="61" width="287" height="22"/>
+                                        <rect key="frame" x="100" y="61" width="300" height="22"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="eOE-lF-XFi">
                                             <numberFormatter key="formatter" formatterBehavior="10_0" positiveFormat="0.00000" negativeFormat="-0.00000" hasThousandSeparators="NO" thousandSeparator="," id="7Wp-WA-HZD">
                                                 <attributedString key="attributedStringForNil"/>
@@ -71,61 +61,15 @@ DQ
                                         </connections>
                                     </textField>
                                     <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lwe-oZ-PzC">
-                                        <rect key="frame" x="18" y="64" width="84" height="17"/>
+                                        <rect key="frame" x="18" y="64" width="76" height="17"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Julian Date:" id="0aR-yU-tqC">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <popUpButton verticalHuggingPriority="750" tag="650" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f5m-uf-trl">
-                                        <rect key="frame" x="106" y="151" width="292" height="25"/>
-                                        <popUpButtonCell key="cell" type="push" title="Local Time" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="650" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="icF-0q-sje" id="5Ld-Rc-ioj">
-                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                            <menu key="menu" title="OtherViews" id="h2W-pF-OPd">
-                                                <items>
-                                                    <menuItem title="Local Time" state="on" tag="650" id="icF-0q-sje"/>
-                                                    <menuItem title="UTC" tag="651" id="TFk-ed-Fhc"/>
-                                                </items>
-                                            </menu>
-                                        </popUpButtonCell>
-                                    </popUpButton>
-                                    <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O6d-AE-7a8">
-                                        <rect key="frame" x="18" y="156" width="84" height="17"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="Gul-90-5US"/>
-                                        </constraints>
-                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Time Zone:" usesSingleLineMode="YES" id="odf-km-unR">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F8M-bR-6PO">
-                                        <rect key="frame" x="18" y="125" width="84" height="17"/>
-                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Format:" usesSingleLineMode="YES" id="lwT-B6-xfP">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <popUpButton verticalHuggingPriority="750" tag="660" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vQ1-JK-kxy">
-                                        <rect key="frame" x="106" y="120" width="292" height="25"/>
-                                        <popUpButtonCell key="cell" type="push" title="Default" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="660" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="wkr-jP-5qi" id="Bbu-U4-N7J">
-                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                            <menu key="menu" title="OtherViews" id="rWB-sy-ugy">
-                                                <items>
-                                                    <menuItem title="Default" state="on" tag="660" id="wkr-jP-5qi"/>
-                                                    <menuItem title="YYYY MMM DD HH:MM:SS TZ" tag="661" id="Cq5-Mn-CEs"/>
-                                                    <menuItem title="UTC Offset" tag="662" id="Vax-4l-Ged"/>
-                                                </items>
-                                            </menu>
-                                        </popUpButtonCell>
-                                    </popUpButton>
                                     <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Fa-RE-X9p">
-                                        <rect key="frame" x="108" y="91" width="290" height="28"/>
+                                        <rect key="frame" x="100" y="91" width="303" height="28"/>
                                         <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="Vt6-Ch-Dfy">
                                             <font key="font" metaFont="system"/>
                                             <date key="date" timeIntervalSinceReferenceDate="-595929600">
@@ -141,36 +85,20 @@ DQ
                                     </datePicker>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="f5m-uf-trl" secondAttribute="trailing" constant="20" symbolic="YES" id="2h3-Jx-YdH"/>
+                                    <constraint firstItem="bk7-xv-S6T" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mW7-6S-krJ" secondAttribute="leading" constant="20" symbolic="YES" id="1yQ-ij-5cL"/>
                                     <constraint firstItem="M8O-tO-2Lv" firstAttribute="trailing" secondItem="4Fa-RE-X9p" secondAttribute="trailing" id="2iO-Fn-g2n"/>
-                                    <constraint firstItem="f5m-uf-trl" firstAttribute="leading" secondItem="O6d-AE-7a8" secondAttribute="trailing" constant="8" symbolic="YES" id="5lG-LX-LAW"/>
+                                    <constraint firstItem="4Fa-RE-X9p" firstAttribute="top" secondItem="mW7-6S-krJ" secondAttribute="top" constant="20" symbolic="YES" id="AHZ-ZS-FeX"/>
                                     <constraint firstItem="Lwe-oZ-PzC" firstAttribute="centerY" secondItem="M8O-tO-2Lv" secondAttribute="centerY" id="Dd8-3p-hsy"/>
-                                    <constraint firstItem="F8M-bR-6PO" firstAttribute="leading" secondItem="O6d-AE-7a8" secondAttribute="leading" id="DmU-ei-kEx"/>
-                                    <constraint firstItem="4Fa-RE-X9p" firstAttribute="top" secondItem="vQ1-JK-kxy" secondAttribute="bottom" constant="8" symbolic="YES" id="EKo-9u-YiD"/>
-                                    <constraint firstItem="gwt-PE-MlJ" firstAttribute="trailing" secondItem="F8M-bR-6PO" secondAttribute="trailing" id="Eph-in-NXc"/>
+                                    <constraint firstAttribute="trailing" secondItem="bk7-xv-S6T" secondAttribute="trailing" constant="20" symbolic="YES" id="Ds2-US-DEG"/>
                                     <constraint firstItem="Lwe-oZ-PzC" firstAttribute="width" secondItem="gwt-PE-MlJ" secondAttribute="width" id="Fr4-OC-WNj"/>
-                                    <constraint firstItem="f5m-uf-trl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mW7-6S-krJ" secondAttribute="leading" constant="20" symbolic="YES" id="GgC-Xp-TkY"/>
-                                    <constraint firstItem="f5m-uf-trl" firstAttribute="top" secondItem="mW7-6S-krJ" secondAttribute="top" constant="20" symbolic="YES" id="HgK-wh-bb1"/>
-                                    <constraint firstItem="F8M-bR-6PO" firstAttribute="width" secondItem="O6d-AE-7a8" secondAttribute="width" id="OYt-31-VDx"/>
-                                    <constraint firstItem="f5m-uf-trl" firstAttribute="leading" secondItem="vQ1-JK-kxy" secondAttribute="leading" id="Oqf-JQ-Kr2"/>
-                                    <constraint firstItem="bCC-so-btd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mW7-6S-krJ" secondAttribute="leading" constant="20" symbolic="YES" id="PLS-fG-QpA"/>
-                                    <constraint firstItem="4Fa-RE-X9p" firstAttribute="leading" secondItem="vQ1-JK-kxy" secondAttribute="leading" id="Pex-mH-IsT"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Fa-RE-X9p" secondAttribute="trailing" constant="20" symbolic="YES" id="MQi-6U-1NS"/>
                                     <constraint firstItem="Lwe-oZ-PzC" firstAttribute="leading" secondItem="gwt-PE-MlJ" secondAttribute="leading" id="TML-Dw-8vS"/>
-                                    <constraint firstItem="vQ1-JK-kxy" firstAttribute="top" secondItem="f5m-uf-trl" secondAttribute="bottom" constant="10" symbolic="YES" id="W3f-6Z-aXk"/>
-                                    <constraint firstItem="F8M-bR-6PO" firstAttribute="centerY" secondItem="vQ1-JK-kxy" secondAttribute="centerY" id="WcW-QC-1Oz"/>
-                                    <constraint firstItem="vQ1-JK-kxy" firstAttribute="leading" secondItem="F8M-bR-6PO" secondAttribute="trailing" constant="8" symbolic="YES" id="Wnx-NF-NmN"/>
-                                    <constraint firstItem="bk7-xv-S6T" firstAttribute="trailing" secondItem="vQ1-JK-kxy" secondAttribute="trailing" id="XUt-WL-yWb"/>
                                     <constraint firstItem="M8O-tO-2Lv" firstAttribute="top" secondItem="4Fa-RE-X9p" secondAttribute="bottom" constant="8" symbolic="YES" id="auk-nq-q1X"/>
-                                    <constraint firstItem="4Fa-RE-X9p" firstAttribute="trailing" secondItem="vQ1-JK-kxy" secondAttribute="trailing" id="cAg-JE-NQq"/>
+                                    <constraint firstItem="4Fa-RE-X9p" firstAttribute="leading" secondItem="gwt-PE-MlJ" secondAttribute="trailing" constant="8" symbolic="YES" id="bpV-Cs-MUq"/>
                                     <constraint firstItem="bk7-xv-S6T" firstAttribute="top" secondItem="M8O-tO-2Lv" secondAttribute="bottom" constant="20" id="cL2-Z8-PFw"/>
                                     <constraint firstItem="M8O-tO-2Lv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Lwe-oZ-PzC" secondAttribute="trailing" constant="8" symbolic="YES" id="d8l-rz-eRQ"/>
-                                    <constraint firstItem="vQ1-JK-kxy" firstAttribute="trailing" secondItem="f5m-uf-trl" secondAttribute="trailing" id="gv0-fo-hWK"/>
-                                    <constraint firstItem="O6d-AE-7a8" firstAttribute="centerY" secondItem="f5m-uf-trl" secondAttribute="centerY" id="inj-9Y-7js"/>
+                                    <constraint firstItem="gwt-PE-MlJ" firstAttribute="leading" secondItem="mW7-6S-krJ" secondAttribute="leading" constant="20" id="hjM-63-ejC"/>
                                     <constraint firstAttribute="bottom" secondItem="bk7-xv-S6T" secondAttribute="bottom" constant="20" symbolic="YES" id="oZx-oj-LX6"/>
-                                    <constraint firstItem="gwt-PE-MlJ" firstAttribute="leading" secondItem="F8M-bR-6PO" secondAttribute="leading" id="ph3-mL-skt"/>
-                                    <constraint firstItem="bCC-so-btd" firstAttribute="centerY" secondItem="bk7-xv-S6T" secondAttribute="centerY" id="vIM-CI-357"/>
-                                    <constraint firstItem="O6d-AE-7a8" firstAttribute="leading" secondItem="mW7-6S-krJ" secondAttribute="leading" constant="20" symbolic="YES" id="wCX-C1-z06"/>
-                                    <constraint firstItem="bk7-xv-S6T" firstAttribute="leading" secondItem="bCC-so-btd" secondAttribute="trailing" constant="12" symbolic="YES" id="zHt-jc-emR"/>
                                     <constraint firstItem="gwt-PE-MlJ" firstAttribute="centerY" secondItem="4Fa-RE-X9p" secondAttribute="centerY" id="zWk-IR-IpC"/>
                                     <constraint firstItem="M8O-tO-2Lv" firstAttribute="leading" secondItem="4Fa-RE-X9p" secondAttribute="leading" id="zqs-Se-00U"/>
                                 </constraints>
@@ -190,7 +118,7 @@ DQ
                 </viewController>
                 <customObject id="hcT-3R-OOS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="585.5" y="-13.5"/>
+            <point key="canvasLocation" x="588" y="-13.5"/>
         </scene>
         <!--OpenGL Info-->
         <scene sceneID="q5V-nl-XfF">
@@ -446,19 +374,6 @@ DQ
                                             </menu>
                                         </popUpButtonCell>
                                     </popUpButton>
-                                    <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p0m-gI-hhd">
-                                        <rect key="frame" x="226" y="13" width="82" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="5CY-Gl-KC7">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                            <string key="keyEquivalent" base64-UTF8="YES">
-Gw
-</string>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="cancel:" target="UeX-IU-xh4" id="bAy-2R-6m9"/>
-                                        </connections>
-                                    </button>
                                     <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MFT-rp-XpX">
                                         <rect key="frame" x="18" y="118" width="94" height="17"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Coordinate:" usesSingleLineMode="YES" id="0gU-lV-8e8">
@@ -468,7 +383,10 @@ Gw
                                         </textFieldCell>
                                     </textField>
                                     <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OHR-Bf-Zwc">
-                                        <rect key="frame" x="308" y="13" width="82" height="32"/>
+                                        <rect key="frame" x="298" y="13" width="92" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="JNv-YM-urn"/>
+                                        </constraints>
                                         <buttonCell key="cell" type="push" title="Go" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="3hX-Bm-EyY">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -483,15 +401,13 @@ DQ
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="5Xw-RX-gXS" firstAttribute="leading" secondItem="XPr-xV-1Wu" secondAttribute="trailing" constant="8" symbolic="YES" id="1lk-cl-Opq"/>
+                                    <constraint firstItem="OHR-Bf-Zwc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9fW-Ng-Rac" secondAttribute="leading" constant="20" symbolic="YES" id="6Ax-1b-qDV"/>
                                     <constraint firstItem="BQ9-qg-kgm" firstAttribute="leading" secondItem="MFT-rp-XpX" secondAttribute="trailing" constant="8" id="8YC-2Q-QD5"/>
                                     <constraint firstItem="MFT-rp-XpX" firstAttribute="centerY" secondItem="BQ9-qg-kgm" secondAttribute="centerY" id="9fo-nW-39C"/>
-                                    <constraint firstItem="p0m-gI-hhd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9fW-Ng-Rac" secondAttribute="leading" constant="20" symbolic="YES" id="BZr-nJ-QHD"/>
                                     <constraint firstAttribute="bottom" secondItem="OHR-Bf-Zwc" secondAttribute="bottom" constant="20" symbolic="YES" id="EhN-rx-Nye"/>
                                     <constraint firstItem="RW8-4X-Xlg" firstAttribute="leading" secondItem="MFT-rp-XpX" secondAttribute="leading" id="Hrz-wt-qes"/>
                                     <constraint firstItem="MFT-rp-XpX" firstAttribute="leading" secondItem="9fW-Ng-Rac" secondAttribute="leading" constant="20" symbolic="YES" id="IFq-TW-jLc"/>
-                                    <constraint firstItem="p0m-gI-hhd" firstAttribute="centerY" secondItem="OHR-Bf-Zwc" secondAttribute="centerY" id="Lje-Rb-ahW"/>
                                     <constraint firstItem="RW8-4X-Xlg" firstAttribute="centerY" secondItem="XPr-xV-1Wu" secondAttribute="centerY" id="LkD-N7-SJa"/>
-                                    <constraint firstItem="OHR-Bf-Zwc" firstAttribute="width" secondItem="p0m-gI-hhd" secondAttribute="width" id="OAt-a7-qpo"/>
                                     <constraint firstItem="Z94-Ry-JzY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9fW-Ng-Rac" secondAttribute="leading" priority="750" constant="20" symbolic="YES" id="PnU-0F-ujM"/>
                                     <constraint firstItem="5Xw-RX-gXS" firstAttribute="trailing" secondItem="p3j-C8-udW" secondAttribute="trailing" id="Trx-rM-a8C"/>
                                     <constraint firstItem="5Xw-RX-gXS" firstAttribute="top" secondItem="Rdo-s8-WP2" secondAttribute="bottom" constant="8" symbolic="YES" id="U2U-hX-DBv"/>
@@ -516,7 +432,6 @@ DQ
                                     <constraint firstItem="p3j-C8-udW" firstAttribute="top" secondItem="Z94-Ry-JzY" secondAttribute="bottom" constant="10" symbolic="YES" id="phO-wf-45S"/>
                                     <constraint firstItem="Esu-eA-i5r" firstAttribute="centerY" secondItem="Rdo-s8-WP2" secondAttribute="centerY" id="qkq-t4-Vqy"/>
                                     <constraint firstItem="p3j-C8-udW" firstAttribute="leading" secondItem="BQ9-qg-kgm" secondAttribute="trailing" constant="8" symbolic="YES" id="sLb-cq-d1W"/>
-                                    <constraint firstItem="OHR-Bf-Zwc" firstAttribute="leading" secondItem="p0m-gI-hhd" secondAttribute="trailing" constant="12" symbolic="YES" id="xzU-GK-P1Q"/>
                                     <constraint firstItem="RW8-4X-Xlg" firstAttribute="width" secondItem="MFT-rp-XpX" secondAttribute="width" id="zNk-NI-25I"/>
                                 </constraints>
                             </view>

@@ -7,8 +7,11 @@
 //
 
 import Cocoa
+import CelestiaCore
 
-class SetTimeViewController: SettingViewController {
+class SetTimeViewController: NSViewController {
+    private let core: CelestiaAppCore = AppDelegate.shared.core
+
     @IBOutlet private weak var dateTimePicker: NSDatePicker!
     @IBOutlet private weak var julianTimeField: NSTextField!
 
@@ -25,10 +28,6 @@ class SetTimeViewController: SettingViewController {
     
     @IBAction func setTime(_ sender: Any) {
         core.simulation.time = currentTime()
-    }
-
-    @IBAction func cancel(_ sender: Any) {
-        view.window?.performClose(self)
     }
 
     @IBAction func dateChange(_ sender: Any) {

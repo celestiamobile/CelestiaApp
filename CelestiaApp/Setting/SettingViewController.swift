@@ -11,7 +11,7 @@ import Cocoa
 import CelestiaCore
 
 class SettingViewController: NSViewController {
-    let core: CelestiaAppCore = AppDelegate.shared.core
+    private let core: CelestiaAppCore = AppDelegate.shared.core
 
     override func viewDidLoad() {
         super.viewDidLoad()

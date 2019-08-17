@@ -73,9 +73,4 @@ class GotoViewController: NSViewController {
         }
         core.simulation.go(to: location)
     }
-
-    @IBAction func cancel(_ sender: Any) {
-        view.window?.performClose(self)
-    }
-
 }
