@@ -29,51 +29,109 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <box autoresizesSubviews="NO" borderType="line" title="Display" translatesAutoresizingMaskIntoConstraints="NO" id="fMw-5J-W58">
-                                                    <rect key="frame" x="17" y="226" width="284" height="184"/>
+                                                    <rect key="frame" x="17" y="46" width="284" height="364"/>
                                                     <view key="contentView" id="tAg-GI-ln8">
-                                                        <rect key="frame" x="3" y="3" width="278" height="166"/>
+                                                        <rect key="frame" x="3" y="3" width="278" height="346"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <stackView orientation="vertical" alignment="leading" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" translatesAutoresizingMaskIntoConstraints="NO" id="xNq-yn-0sc">
-                                                                <rect key="frame" x="20" y="20" width="238" height="126"/>
+                                                                <rect key="frame" x="20" y="20" width="238" height="306"/>
                                                                 <beginningViews>
-                                                                    <button fixedFrame="YES" tag="401" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3xB-G6-cdC">
-                                                                        <rect key="frame" x="-2" y="110" width="53" height="18"/>
-                                                                        <buttonCell key="cell" type="check" title="Body" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="401" inset="2" id="irK-zZ-Jlv">
-                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                                            <font key="font" metaFont="system"/>
-                                                                        </buttonCell>
-                                                                    </button>
                                                                     <button fixedFrame="YES" tag="400" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X8W-on-4Ky">
-                                                                        <rect key="frame" x="-2" y="84" width="54" height="18"/>
+                                                                        <rect key="frame" x="-2" y="290" width="54" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Stars" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="400" inset="2" id="Vlz-5z-6Hv">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
-                                                                    <button fixedFrame="YES" tag="402" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Blm-Ew-7GE">
-                                                                        <rect key="frame" x="-2" y="58" width="73" height="18"/>
-                                                                        <buttonCell key="cell" type="check" title="Galaxies" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="402" inset="2" id="iUT-mT-ggc">
+                                                                    <button fixedFrame="YES" tag="401" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3xB-G6-cdC">
+                                                                        <rect key="frame" x="-2" y="264" width="67" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Planets" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="401" inset="2" id="irK-zZ-Jlv">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
-                                                                    <button fixedFrame="YES" tag="430" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ziq-7u-xUv">
-                                                                        <rect key="frame" x="-2" y="32" width="80" height="18"/>
-                                                                        <buttonCell key="cell" type="check" title="Globulars" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="417" inset="2" id="3Iw-0v-T8T">
+                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="418" translatesAutoresizingMaskIntoConstraints="NO" id="8mm-tt-cGj">
+                                                                        <rect key="frame" x="-2" y="238" width="102" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Dwaf Planets" bezelStyle="regularSquare" imagePosition="left" inset="2" id="nw1-2e-NUx">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
-                                                                    <button fixedFrame="YES" tag="417" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SdV-Yg-jgb">
-                                                                        <rect key="frame" x="-2" y="6" width="72" height="18"/>
-                                                                        <buttonCell key="cell" type="check" title="Nebulae" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="417" inset="2" id="qYj-Gq-JF2">
+                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="431" translatesAutoresizingMaskIntoConstraints="NO" id="kXl-Pp-e9s">
+                                                                        <rect key="frame" x="-2" y="212" width="63" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Moons" bezelStyle="regularSquare" imagePosition="left" inset="2" id="TbN-4b-M1B">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="432" translatesAutoresizingMaskIntoConstraints="NO" id="Dzq-c5-wxS">
+                                                                        <rect key="frame" x="-2" y="186" width="101" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Minor Moons" bezelStyle="regularSquare" imagePosition="left" inset="2" id="pOC-0d-VRV">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
                                                                 </beginningViews>
+                                                                <middleViews>
+                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="433" translatesAutoresizingMaskIntoConstraints="NO" id="34y-ep-jLB">
+                                                                        <rect key="frame" x="-2" y="160" width="80" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Asteroids" bezelStyle="regularSquare" imagePosition="left" inset="2" id="kfv-xt-Bfk">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="434" translatesAutoresizingMaskIntoConstraints="NO" id="acK-ic-Zg1">
+                                                                        <rect key="frame" x="-2" y="134" width="69" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Comets" bezelStyle="regularSquare" imagePosition="left" inset="2" id="qrf-NG-sbP">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="435" translatesAutoresizingMaskIntoConstraints="NO" id="eVi-Nv-Lgo">
+                                                                        <rect key="frame" x="-2" y="108" width="95" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Spacecrafts" bezelStyle="regularSquare" imagePosition="left" inset="2" id="flT-AA-QMy">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" tag="402" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Blm-Ew-7GE">
+                                                                        <rect key="frame" x="-2" y="82" width="73" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Galaxies" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="402" inset="2" id="iUT-mT-ggc">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" tag="417" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SdV-Yg-jgb">
+                                                                        <rect key="frame" x="-2" y="56" width="72" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Nebulae" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="417" inset="2" id="qYj-Gq-JF2">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" tag="430" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ziq-7u-xUv">
+                                                                        <rect key="frame" x="-2" y="30" width="80" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Globulars" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="417" inset="2" id="3Iw-0v-T8T">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="436" translatesAutoresizingMaskIntoConstraints="NO" id="wRv-Y5-JBZ">
+                                                                        <rect key="frame" x="-2" y="4" width="109" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Open Clusters" bezelStyle="regularSquare" imagePosition="left" inset="2" id="kVc-xW-XW1">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                </middleViews>
                                                                 <visibilityPriorities>
+                                                                    <integer value="1000"/>
+                                                                    <integer value="1000"/>
+                                                                    <integer value="1000"/>
+                                                                    <integer value="1000"/>
+                                                                    <integer value="1000"/>
+                                                                    <integer value="1000"/>
+                                                                    <integer value="1000"/>
                                                                     <integer value="1000"/>
                                                                     <integer value="1000"/>
                                                                     <integer value="1000"/>
@@ -81,6 +139,13 @@
                                                                     <integer value="1000"/>
                                                                 </visibilityPriorities>
                                                                 <customSpacing>
+                                                                    <real value="3.4028234663852886e+38"/>
+                                                                    <real value="3.4028234663852886e+38"/>
+                                                                    <real value="3.4028234663852886e+38"/>
+                                                                    <real value="3.4028234663852886e+38"/>
+                                                                    <real value="3.4028234663852886e+38"/>
+                                                                    <real value="3.4028234663852886e+38"/>
+                                                                    <real value="3.4028234663852886e+38"/>
                                                                     <real value="3.4028234663852886e+38"/>
                                                                     <real value="3.4028234663852886e+38"/>
                                                                     <real value="3.4028234663852886e+38"/>
@@ -97,7 +162,7 @@
                                                         </constraints>
                                                     </view>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="180" id="lfO-NN-Gd7"/>
+                                                        <constraint firstAttribute="height" constant="360" id="lfO-NN-Gd7"/>
                                                     </constraints>
                                                 </box>
                                                 <box autoresizesSubviews="NO" borderType="line" title="Features" translatesAutoresizingMaskIntoConstraints="NO" id="LGQ-M8-Tn9">
