@@ -21,8 +21,8 @@ class EclipseFinderViewController: NSViewController {
     @IBOutlet weak var eclipseList: NSTableView!
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
     @IBOutlet weak var eclipseReceiverTextField: NSTextField!
-    @IBOutlet weak var eclipseStartDateTextField: NSTextField!
-    @IBOutlet weak var eclipseEndDateTextField: NSTextField!
+    @IBOutlet weak var eclipseStartDatePicker: NSDatePicker!
+    @IBOutlet weak var eclipseEndDatePicker: NSDatePicker!
     @IBOutlet weak var findButton: NSButton!
 
     override func viewDidLoad() {
@@ -30,14 +30,14 @@ class EclipseFinderViewController: NSViewController {
 
         eclipseList.target = self
         eclipseList.doubleAction = #selector(go(_:))
+
+        eclipseStartDatePicker.dateValue = Date()
+        eclipseEndDatePicker.dateValue = Date()
     }
 
     @IBAction func find(_ sender: Any) {
-        guard let startDate = eclipseStartDateTextField.objectValue as? Date, let endDate = eclipseEndDateTextField.objectValue as? Date else {
-            NSAlert.warning(message: NSLocalizedString("No Starting or Ending Date Entered", comment: ""),
-                            text: NSLocalizedString("Please enter starting and ending dates.", comment: ""))
-            return
-        }
+        let startDate = eclipseStartDatePicker.dateValue
+        let endDate = eclipseEndDatePicker.dateValue
 
         let receiver = eclipseReceiverTextField.stringValue
 

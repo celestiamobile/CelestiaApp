@@ -46,7 +46,7 @@
                                                                 <tableColumns>
                                                                     <tableColumn identifier="occulter" editable="NO" width="100" minWidth="100" maxWidth="200" id="YAl-3h-bsM">
                                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Occulter">
-                                                                            <font key="font" metaFont="smallSystem"/>
+                                                                            <font key="font" metaFont="label" size="11"/>
                                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </tableHeaderCell>
@@ -59,7 +59,7 @@
                                                                     </tableColumn>
                                                                     <tableColumn identifier="receiver" editable="NO" width="100" minWidth="100" maxWidth="200" id="oAp-ct-xdd">
                                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Receiver">
-                                                                            <font key="font" metaFont="smallSystem"/>
+                                                                            <font key="font" metaFont="label" size="11"/>
                                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </tableHeaderCell>
@@ -72,7 +72,7 @@
                                                                     </tableColumn>
                                                                     <tableColumn identifier="date" editable="NO" width="100" minWidth="100" maxWidth="160" id="SfC-YD-aEx">
                                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Date">
-                                                                            <font key="font" metaFont="smallSystem"/>
+                                                                            <font key="font" metaFont="label" size="11"/>
                                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </tableHeaderCell>
@@ -86,7 +86,7 @@
                                                                     </tableColumn>
                                                                     <tableColumn identifier="begin" editable="NO" width="80" minWidth="80" maxWidth="145" id="xyN-6l-7zd">
                                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Beginning">
-                                                                            <font key="font" metaFont="smallSystem"/>
+                                                                            <font key="font" metaFont="label" size="11"/>
                                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                         </tableHeaderCell>
@@ -100,7 +100,7 @@
                                                                     </tableColumn>
                                                                     <tableColumn identifier="duration" editable="NO" width="80" minWidth="80" maxWidth="160" id="nFi-u9-cuc">
                                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Duration">
-                                                                            <font key="font" metaFont="smallSystem"/>
+                                                                            <font key="font" metaFont="label" size="11"/>
                                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                         </tableHeaderCell>
@@ -163,9 +163,6 @@
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
-                                                <connections>
-                                                    <outlet property="nextKeyView" destination="fwu-hC-Dee" id="UdB-9H-y5W"/>
-                                                </connections>
                                             </textField>
                                             <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qe8-GE-lXn">
                                                 <rect key="frame" x="18" y="366" width="204" height="11"/>
@@ -183,56 +180,16 @@
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fwu-hC-Dee">
-                                                <rect key="frame" x="20" y="311" width="200" height="22"/>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="S20-xR-Wr6">
-                                                    <dateFormatter key="formatter" formatterBehavior="pre10_4" dateFormat="%m/%d/%Y" id="bjm-iB-rra"/>
-                                                    <font key="font" metaFont="system"/>
-                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                </textFieldCell>
-                                                <connections>
-                                                    <outlet property="nextKeyView" destination="W9R-TA-xQy" id="773-iv-dBg"/>
-                                                </connections>
-                                            </textField>
-                                            <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eas-8J-uhO">
-                                                <rect key="frame" x="18" y="292" width="204" height="11"/>
-                                                <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="right" title="mm/dd/yyyy" id="szb-Ml-zUk">
-                                                    <font key="font" metaFont="menu" size="9"/>
-                                                    <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                </textFieldCell>
-                                            </textField>
                                             <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pcj-ca-p62">
-                                                <rect key="frame" x="18" y="267" width="204" height="17"/>
+                                                <rect key="frame" x="18" y="284" width="204" height="17"/>
                                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="and:" id="N71-Nt-mo0">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W9R-TA-xQy">
-                                                <rect key="frame" x="20" y="237" width="200" height="22"/>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="hbh-Ys-Mbd">
-                                                    <dateFormatter key="formatter" formatterBehavior="pre10_4" dateFormat="%m/%d/%Y" id="KUf-B1-6mL"/>
-                                                    <font key="font" metaFont="system"/>
-                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                </textFieldCell>
-                                                <connections>
-                                                    <outlet property="nextKeyView" destination="ehj-g8-db6" id="VpR-bn-67X"/>
-                                                </connections>
-                                            </textField>
-                                            <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NIG-bz-fpZ">
-                                                <rect key="frame" x="18" y="218" width="204" height="11"/>
-                                                <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="right" title="mm/dd/yyyy" id="4sh-pJ-p62">
-                                                    <font key="font" metaFont="menu" size="9"/>
-                                                    <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                </textFieldCell>
-                                            </textField>
                                             <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ehj-g8-db6">
-                                                <rect key="frame" x="74" y="170" width="92" height="32"/>
+                                                <rect key="frame" x="74" y="204" width="92" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="V3l-uW-7kb"/>
                                                 </constraints>
@@ -246,7 +203,7 @@
                                                 </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2n9-dy-5WS">
-                                                <rect key="frame" x="74" y="137" width="92" height="32"/>
+                                                <rect key="frame" x="74" y="171" width="92" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="IE0-Bh-UFR"/>
                                                 </constraints>
@@ -260,7 +217,7 @@
                                                 </connections>
                                             </button>
                                             <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="QEQ-fG-wpC">
-                                                <rect key="frame" x="112" y="108" width="16" height="16"/>
+                                                <rect key="frame" x="112" y="142" width="16" height="16"/>
                                             </progressIndicator>
                                             <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FtQ-IX-iIU">
                                                 <rect key="frame" x="18" y="20" width="204" height="52"/>
@@ -272,46 +229,62 @@ Specifying a large time interval may cause long search times and a very large nu
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
+                                            <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vVh-iO-NLy">
+                                                <rect key="frame" x="20" y="309" width="203" height="28"/>
+                                                <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="Tbt-QN-hf0">
+                                                    <font key="font" metaFont="system"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="-595929600">
+                                                        <!--1982-02-12 16:00:00 +0000-->
+                                                    </date>
+                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                </datePickerCell>
+                                            </datePicker>
+                                            <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QBM-gB-GbU">
+                                                <rect key="frame" x="20" y="252" width="203" height="28"/>
+                                                <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="PfF-G7-tEK">
+                                                    <font key="font" metaFont="system"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="-595929600">
+                                                        <!--1982-02-12 16:00:00 +0000-->
+                                                    </date>
+                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                </datePickerCell>
+                                            </datePicker>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="eas-8J-uhO" firstAttribute="leading" secondItem="fwu-hC-Dee" secondAttribute="leading" id="1ei-Kn-A4R"/>
-                                            <constraint firstItem="fwu-hC-Dee" firstAttribute="leading" secondItem="axz-am-hfl" secondAttribute="leading" id="3nc-q9-V9U"/>
-                                            <constraint firstItem="pcj-ca-p62" firstAttribute="top" secondItem="eas-8J-uhO" secondAttribute="bottom" constant="8" symbolic="YES" id="7JI-X3-SO0"/>
-                                            <constraint firstItem="pcj-ca-p62" firstAttribute="leading" secondItem="eas-8J-uhO" secondAttribute="leading" id="9ji-1o-JxQ"/>
-                                            <constraint firstItem="pcj-ca-p62" firstAttribute="trailing" secondItem="eas-8J-uhO" secondAttribute="trailing" id="BCg-ab-wMr"/>
+                                            <constraint firstItem="vVh-iO-NLy" firstAttribute="trailing" secondItem="axz-am-hfl" secondAttribute="trailing" id="0qD-kD-Rcl"/>
+                                            <constraint firstItem="QBM-gB-GbU" firstAttribute="trailing" secondItem="pcj-ca-p62" secondAttribute="trailing" id="Aas-Cb-aSk"/>
+                                            <constraint firstItem="pcj-ca-p62" firstAttribute="top" secondItem="vVh-iO-NLy" secondAttribute="bottom" constant="8" symbolic="YES" id="Bt4-Y9-GFu"/>
                                             <constraint firstItem="bKI-bX-GG1" firstAttribute="trailing" secondItem="ty8-OD-fxE" secondAttribute="trailing" id="G7j-Cp-uZF"/>
                                             <constraint firstItem="ty8-OD-fxE" firstAttribute="top" secondItem="Jp0-Xz-9i6" secondAttribute="top" constant="20" symbolic="YES" id="GbB-vQ-x70"/>
-                                            <constraint firstItem="NIG-bz-fpZ" firstAttribute="top" secondItem="W9R-TA-xQy" secondAttribute="bottom" constant="8" symbolic="YES" id="IcT-HS-wld"/>
                                             <constraint firstItem="axz-am-hfl" firstAttribute="top" secondItem="qe8-GE-lXn" secondAttribute="bottom" constant="8" symbolic="YES" id="Lev-ah-bYc"/>
                                             <constraint firstItem="ehj-g8-db6" firstAttribute="centerX" secondItem="Jp0-Xz-9i6" secondAttribute="centerX" id="Orm-vR-YYF"/>
                                             <constraint firstItem="axz-am-hfl" firstAttribute="trailing" secondItem="qe8-GE-lXn" secondAttribute="trailing" id="P9d-fS-6Sj"/>
                                             <constraint firstItem="qe8-GE-lXn" firstAttribute="trailing" secondItem="bKI-bX-GG1" secondAttribute="trailing" id="PPt-1n-dTy"/>
-                                            <constraint firstItem="fwu-hC-Dee" firstAttribute="top" secondItem="axz-am-hfl" secondAttribute="bottom" constant="8" symbolic="YES" id="QA5-61-ezU"/>
                                             <constraint firstItem="qe8-GE-lXn" firstAttribute="leading" secondItem="bKI-bX-GG1" secondAttribute="leading" id="QIP-UF-A8F"/>
+                                            <constraint firstItem="vVh-iO-NLy" firstAttribute="leading" secondItem="axz-am-hfl" secondAttribute="leading" id="Sn7-p8-MLt"/>
                                             <constraint firstItem="2n9-dy-5WS" firstAttribute="centerX" secondItem="Jp0-Xz-9i6" secondAttribute="centerX" id="Tkm-p5-k0r"/>
-                                            <constraint firstItem="eas-8J-uhO" firstAttribute="top" secondItem="fwu-hC-Dee" secondAttribute="bottom" constant="8" symbolic="YES" id="VFQ-qu-aH8"/>
                                             <constraint firstItem="ty8-OD-fxE" firstAttribute="leading" secondItem="Jp0-Xz-9i6" secondAttribute="leading" constant="20" symbolic="YES" id="Vid-ZZ-G1M"/>
                                             <constraint firstItem="QEQ-fG-wpC" firstAttribute="top" secondItem="2n9-dy-5WS" secondAttribute="bottom" constant="20" symbolic="YES" id="ZCX-U7-h0g"/>
                                             <constraint firstItem="FtQ-IX-iIU" firstAttribute="leading" secondItem="ty8-OD-fxE" secondAttribute="leading" id="ZZM-r1-Fd1"/>
+                                            <constraint firstItem="vVh-iO-NLy" firstAttribute="top" secondItem="axz-am-hfl" secondAttribute="bottom" constant="8" symbolic="YES" id="bBl-pW-HP7"/>
                                             <constraint firstItem="bKI-bX-GG1" firstAttribute="leading" secondItem="ty8-OD-fxE" secondAttribute="leading" id="d2e-a5-sXg"/>
-                                            <constraint firstItem="fwu-hC-Dee" firstAttribute="trailing" secondItem="axz-am-hfl" secondAttribute="trailing" id="dAQ-fb-Orc"/>
                                             <constraint firstItem="bKI-bX-GG1" firstAttribute="top" secondItem="ty8-OD-fxE" secondAttribute="bottom" constant="8" symbolic="YES" id="f1m-55-6ea"/>
                                             <constraint firstItem="axz-am-hfl" firstAttribute="leading" secondItem="qe8-GE-lXn" secondAttribute="leading" id="gds-Wk-vWE"/>
-                                            <constraint firstItem="W9R-TA-xQy" firstAttribute="trailing" secondItem="pcj-ca-p62" secondAttribute="trailing" id="hwC-93-se3"/>
                                             <constraint firstAttribute="trailing" secondItem="ty8-OD-fxE" secondAttribute="trailing" constant="20" symbolic="YES" id="iMR-tA-suY"/>
-                                            <constraint firstItem="ehj-g8-db6" firstAttribute="top" secondItem="NIG-bz-fpZ" secondAttribute="bottom" constant="20" symbolic="YES" id="iQ6-cC-PHI"/>
                                             <constraint firstItem="FtQ-IX-iIU" firstAttribute="trailing" secondItem="ty8-OD-fxE" secondAttribute="trailing" id="jaU-gv-6f6"/>
                                             <constraint firstAttribute="width" constant="240" id="mKJ-1B-8zo"/>
-                                            <constraint firstItem="W9R-TA-xQy" firstAttribute="top" secondItem="pcj-ca-p62" secondAttribute="bottom" constant="8" symbolic="YES" id="mzh-nN-DSF"/>
                                             <constraint firstItem="FtQ-IX-iIU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QEQ-fG-wpC" secondAttribute="bottom" constant="8" symbolic="YES" id="n7N-e4-Mei"/>
                                             <constraint firstItem="QEQ-fG-wpC" firstAttribute="centerX" secondItem="Jp0-Xz-9i6" secondAttribute="centerX" id="nC2-4C-T2d"/>
-                                            <constraint firstItem="NIG-bz-fpZ" firstAttribute="leading" secondItem="W9R-TA-xQy" secondAttribute="leading" id="nCW-qB-5dL"/>
+                                            <constraint firstItem="QBM-gB-GbU" firstAttribute="top" secondItem="pcj-ca-p62" secondAttribute="bottom" constant="8" symbolic="YES" id="oKP-0F-xZG"/>
                                             <constraint firstItem="2n9-dy-5WS" firstAttribute="top" secondItem="ehj-g8-db6" secondAttribute="bottom" constant="12" symbolic="YES" id="omA-33-wNn"/>
-                                            <constraint firstItem="W9R-TA-xQy" firstAttribute="leading" secondItem="pcj-ca-p62" secondAttribute="leading" id="vau-pq-cLE"/>
-                                            <constraint firstItem="NIG-bz-fpZ" firstAttribute="trailing" secondItem="W9R-TA-xQy" secondAttribute="trailing" id="xC4-z8-tcu"/>
+                                            <constraint firstItem="pcj-ca-p62" firstAttribute="leading" secondItem="vVh-iO-NLy" secondAttribute="leading" id="rHg-ko-qvG"/>
+                                            <constraint firstItem="QBM-gB-GbU" firstAttribute="leading" secondItem="pcj-ca-p62" secondAttribute="leading" id="t2V-lQ-Wbj"/>
+                                            <constraint firstItem="ehj-g8-db6" firstAttribute="top" secondItem="QBM-gB-GbU" secondAttribute="bottom" constant="20" symbolic="YES" id="v0r-1p-RAU"/>
                                             <constraint firstAttribute="bottom" secondItem="FtQ-IX-iIU" secondAttribute="bottom" constant="20" symbolic="YES" id="xUZ-t9-Lja"/>
+                                            <constraint firstItem="pcj-ca-p62" firstAttribute="trailing" secondItem="vVh-iO-NLy" secondAttribute="trailing" id="xd9-E3-hzb"/>
                                             <constraint firstItem="qe8-GE-lXn" firstAttribute="top" secondItem="bKI-bX-GG1" secondAttribute="bottom" constant="8" symbolic="YES" id="yk4-jx-0Ux"/>
-                                            <constraint firstItem="eas-8J-uhO" firstAttribute="trailing" secondItem="fwu-hC-Dee" secondAttribute="trailing" id="yqb-O8-dR3"/>
                                         </constraints>
                                     </customView>
                                 </subviews>
@@ -336,10 +309,10 @@ Specifying a large time interval may cause long search times and a very large nu
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="eclipseEndDateTextField" destination="W9R-TA-xQy" id="9ta-Px-uEy"/>
+                        <outlet property="eclipseEndDatePicker" destination="QBM-gB-GbU" id="jkv-Kj-NgL"/>
                         <outlet property="eclipseList" destination="gRk-RR-4bi" id="HKr-Yp-UrT"/>
                         <outlet property="eclipseReceiverTextField" destination="bKI-bX-GG1" id="22V-29-5h4"/>
-                        <outlet property="eclipseStartDateTextField" destination="fwu-hC-Dee" id="mTD-2g-GG3"/>
+                        <outlet property="eclipseStartDatePicker" destination="vVh-iO-NLy" id="4V4-SJ-yAa"/>
                         <outlet property="findButton" destination="ehj-g8-db6" id="PhF-s2-Hal"/>
                         <outlet property="progressIndicator" destination="QEQ-fG-wpC" id="a6s-7V-bOe"/>
                     </connections>
