@@ -144,12 +144,12 @@ class InfoViewController: NSViewController {
         sph = Astro.rect(toSpherical: galPos)
 
         attr.appendLineBreak()
-        dms = Astro.decimal(toDegMinSec: sph.y() as! Double)
-        attr.appendSecondaryText(String(format: NSLocalizedString("Dec: %d° %d′ %.2f″", comment: ""), dms[0] as! Int, abs(dms[1] as! Int), abs(dms[2] as! Double)))
+        dms = Astro.decimal(toDegMinSec: sph.x() as! Double)
+        attr.appendSecondaryText(String(format: NSLocalizedString("L: %d° %d′ %.2f″", comment: ""), dms[0] as! Int, abs(dms[1] as! Int), abs(dms[2] as! Double)))
 
         attr.appendLineBreak()
         dms = Astro.decimal(toDegMinSec: sph.y() as! Double)
-        attr.appendSecondaryText(String(format: NSLocalizedString("Dec: %d° %d′ %.2f″", comment: ""), dms[0] as! Int, abs(dms[1] as! Int), abs(dms[2] as! Double)))
+        attr.appendSecondaryText(String(format: NSLocalizedString("B: %d° %d′ %.2f″", comment: ""), dms[0] as! Int, abs(dms[1] as! Int), abs(dms[2] as! Double)))
 
         return NSAttributedString(attributedString: attr)
     }
