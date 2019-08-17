@@ -200,6 +200,12 @@ class CelestiaGLView: NSOpenGLView {
         return true
     }
 
+    override func viewWillMove(toWindow newWindow: NSWindow?) {
+        if newWindow == nil, let link = displayLink {
+            CVDisplayLinkStop(link)
+        }
+    }
+
     func displayLinkCallback() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
