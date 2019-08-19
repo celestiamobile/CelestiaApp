@@ -111,12 +111,12 @@ class InfoViewController: NSViewController {
         let eqPos = Astro.ecliptic(toEquatorial: Astro.cel(toJ2000Ecliptic: celPos))
         let sph = Astro.rect(toSpherical: eqPos)
 
-        let hms = Astro.decimal(toDegMinSec: sph.x() as! Double)
-        attr.appendSecondaryText(String(format: NSLocalizedString("RA: %dh %dm %.2fs", comment: ""), hms[0] as! Int, abs(hms[1] as! Int), abs(hms[2] as! Double)))
+        let hms = DMS(decimal: sph.x() as! Double)
+        attr.appendSecondaryText(String(format: NSLocalizedString("RA: %dh %dm %.2fs", comment: ""), hms.hours, abs(hms.minutes), abs(hms.seconds)))
 
         attr.appendLineBreak()
-        let dms = Astro.decimal(toDegMinSec: sph.y() as! Double)
-        attr.appendSecondaryText(String(format: NSLocalizedString("Dec: %d° %d′ %.2f″", comment: ""), dms[0] as! Int, abs(dms[1] as! Int), abs(dms[2] as! Double)))
+        let dms = DMS(decimal: sph.y() as! Double)
+        attr.appendSecondaryText(String(format: NSLocalizedString("Dec: %d° %d′ %.2f″", comment: ""), dms.degrees, abs(dms.minutes), abs(dms.seconds)))
 
 
         return NSAttributedString(attributedString: attr)
@@ -133,23 +133,23 @@ class InfoViewController: NSViewController {
         let eqPos = Astro.ecliptic(toEquatorial: Astro.cel(toJ2000Ecliptic: celPos))
         var sph = Astro.rect(toSpherical: eqPos)
 
-        let hms = Astro.decimal(toDegMinSec: sph.x() as! Double)
-        attr.appendSecondaryText(String(format: NSLocalizedString("RA: %dh %dm %.2fs", comment: ""), hms[0] as! Int, abs(hms[1] as! Int), abs(hms[2] as! Double)))
+        let hms = DMS(decimal: sph.x() as! Double)
+        attr.appendSecondaryText(String(format: NSLocalizedString("RA: %dh %dm %.2fs", comment: ""), hms.hours, abs(hms.minutes), abs(hms.seconds)))
 
         attr.appendLineBreak()
-        var dms = Astro.decimal(toDegMinSec: sph.y() as! Double)
-        attr.appendSecondaryText(String(format: NSLocalizedString("Dec: %d° %d′ %.2f″", comment: ""), dms[0] as! Int, abs(dms[1] as! Int), abs(dms[2] as! Double)))
+        var dms = DMS(decimal: sph.y() as! Double)
+        attr.appendSecondaryText(String(format: NSLocalizedString("Dec: %d° %d′ %.2f″", comment: ""), dms.degrees, abs(dms.minutes), abs(dms.seconds)))
 
         let galPos = Astro.equatorial(toGalactic: eqPos)
         sph = Astro.rect(toSpherical: galPos)
 
         attr.appendLineBreak()
-        dms = Astro.decimal(toDegMinSec: sph.x() as! Double)
-        attr.appendSecondaryText(String(format: NSLocalizedString("L: %d° %d′ %.2f″", comment: ""), dms[0] as! Int, abs(dms[1] as! Int), abs(dms[2] as! Double)))
+        dms = DMS(decimal: sph.x() as! Double)
+        attr.appendSecondaryText(String(format: NSLocalizedString("L: %d° %d′ %.2f″", comment: ""), dms.degrees, abs(dms.minutes), abs(dms.seconds)))
 
         attr.appendLineBreak()
-        dms = Astro.decimal(toDegMinSec: sph.y() as! Double)
-        attr.appendSecondaryText(String(format: NSLocalizedString("B: %d° %d′ %.2f″", comment: ""), dms[0] as! Int, abs(dms[1] as! Int), abs(dms[2] as! Double)))
+        dms = DMS(decimal: sph.y() as! Double)
+        attr.appendSecondaryText(String(format: NSLocalizedString("B: %d° %d′ %.2f″", comment: ""), dms.degrees, abs(dms.minutes), abs(dms.seconds)))
 
         return NSAttributedString(attributedString: attr)
     }
