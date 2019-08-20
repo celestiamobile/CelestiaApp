@@ -52,19 +52,12 @@ fileprivate extension NSEvent {
     }
 }
 
-fileprivate extension CGPoint {
-    var distance: CGFloat {
-        return abs(x) + abs(y)
-    }
-}
-
 class CelestiaGLView: NSOpenGLView {
     weak var delegate: CelestiaGLViewDelegate?
     weak var mouseProcessor: CelestiaGLViewMouseProcessor?
     weak var keyboardProcessor: CelestiaGLViewKeyboardProcessor?
     weak var dndProcessor: CelestiaGLViewDNDProcessor?
 
-    private let minimumDraggingDistance: CGFloat = 1
     private var cursorVisible: Bool = true
 
     private var displayLink: CVDisplayLink?
@@ -173,7 +166,7 @@ class CelestiaGLView: NSOpenGLView {
     override func rightMouseDragged(with event: NSEvent) {
         let offset = CGPoint(x: event.deltaX, y: event.deltaY)
 
-        if cursorVisible, offset.distance >= minimumDraggingDistance {
+        if cursorVisible {
             NSCursor.hide()
             CGAssociateMouseAndMouseCursorPosition(0)
             cursorVisible = false
