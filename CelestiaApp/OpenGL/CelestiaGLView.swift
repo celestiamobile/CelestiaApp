@@ -107,6 +107,8 @@ class CelestiaGLView: NSOpenGLView {
         }
 
         mouseProcessor?.mouseUp(at: location, modifiers: event.modifierFlags, with: .left)
+        CGAssociateMouseAndMouseCursorPosition(1)
+        NSCursor.unhide()
     }
 
     override func mouseDown(with event: NSEvent) {
@@ -114,6 +116,8 @@ class CelestiaGLView: NSOpenGLView {
 
         let location = convert(event.locationInWindow, from: nil)
         mouseProcessor?.mouseDown(at: location, modifiers: event.modifierFlags, with: .left)
+        NSCursor.hide()
+        CGAssociateMouseAndMouseCursorPosition(0)
     }
 
     override func mouseMoved(with event: NSEvent) {
@@ -132,6 +136,9 @@ class CelestiaGLView: NSOpenGLView {
     override func rightMouseUp(with event: NSEvent) {
         mouseProcessor?.mouseUp(at: convert(event.locationInWindow, from: nil), modifiers: event.modifierFlags, with: .right)
 
+        CGAssociateMouseAndMouseCursorPosition(1)
+        NSCursor.unhide()
+
         if event.clickCount > 0 {
             //...Force context menu to appear only on clicks (not drags)
             if let menu = mouseProcessor?.requestMenu(at: convert(event.locationInWindow, from: nil)) {
@@ -142,6 +149,9 @@ class CelestiaGLView: NSOpenGLView {
 
     override func rightMouseDown(with event: NSEvent) {
         mouseProcessor?.mouseDown(at: convert(event.locationInWindow, from: nil), modifiers: event.modifierFlags, with: .right)
+
+        CGAssociateMouseAndMouseCursorPosition(0)
+        NSCursor.hide()
     }
 
     override func rightMouseDragged(with event: NSEvent) {
