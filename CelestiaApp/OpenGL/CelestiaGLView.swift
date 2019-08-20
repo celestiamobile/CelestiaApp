@@ -250,6 +250,8 @@ class CelestiaGLView: NSOpenGLView {
 
 extension CelestiaGLView {
     private func setupGL() {
+        wantsBestResolutionOpenGLSurface = true
+
         let attributes = [UInt32(NSOpenGLPFADoubleBuffer), UInt32(NSOpenGLPFADepthSize), 32, 0]
         let format = NSOpenGLPixelFormat(attributes: attributes)
         pixelFormat = format

@@ -273,7 +273,8 @@ extension CelestiaViewController: CelestiaGLViewDelegate {
     }
 
     func update(in glView: CelestiaGLView) {
-        core.resize(to: glView.bounds.size)
+        let scale = glView.window?.screen?.backingScaleFactor ?? 1
+        core.resize(to: glView.bounds.size.applying(CGAffineTransform(scaleX: scale, y: scale)))
     }
 }
 
@@ -283,27 +284,33 @@ extension CelestiaGLViewMouseButton {
 
 extension CelestiaViewController: CelestiaGLViewMouseProcessor {
     func mouseUp(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton) {
-        core.mouseButtonUp(at: point, modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
+        let scale = glView.window?.screen?.backingScaleFactor ?? 1
+        core.mouseButtonUp(at: point.applying(CGAffineTransform(scaleX: scale, y: scale)), modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
     }
 
     func mouseDown(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton) {
-        core.mouseButtonDown(at: point, modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
+        let scale = glView.window?.screen?.backingScaleFactor ?? 1
+        core.mouseButtonDown(at: point.applying(CGAffineTransform(scaleX: scale, y: scale)), modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
     }
 
     func mouseDragged(to point: CGPoint) {
-        core.mouseDragged(to: point)
+        let scale = glView.window?.screen?.backingScaleFactor ?? 1
+        core.mouseDragged(to: point.applying(CGAffineTransform(scaleX: scale, y: scale)))
     }
 
     func mouseMove(by offset: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton) {
-        core.mouseMove(by: offset, modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
+        let scale = glView.window?.screen?.backingScaleFactor ?? 1
+        core.mouseMove(by: offset.applying(CGAffineTransform(scaleX: scale, y: scale)), modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
     }
 
     func mouseWheel(by motion: CGFloat, modifiers: NSEvent.ModifierFlags) {
-        core.mouseWheel(by: motion, modifiers: modifiers.rawValue)
+        let scale = glView.window?.screen?.backingScaleFactor ?? 1
+        core.mouseWheel(by: motion * scale, modifiers: modifiers.rawValue)
     }
 
     func requestMenu(at point: NSPoint) -> NSMenu? {
-        let selection = core.requestSelection(at: point)
+        let scale = glView.window?.screen?.backingScaleFactor ?? 1
+        let selection = core.requestSelection(at: point.applying(CGAffineTransform(scaleX: scale, y: scale)))
         if selection.isEmpty { return nil }
 
         // configure fixed items
