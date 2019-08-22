@@ -116,7 +116,6 @@
 		97989DDA23051EEC008FA466 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		97989DDB23051EEF008FA466 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		97989DDC23051EF1008FA466 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		97989DE023051F96008FA466 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		97989DE223051FA4008FA466 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		97989DE323051FA7008FA466 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		97989DE423051FA9008FA466 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -525,7 +524,6 @@
 		97989DE123051F96008FA466 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				97989DE023051F96008FA466 /* en */,
 				97989DE223051FA4008FA466 /* zh-Hans */,
 				97989DE323051FA7008FA466 /* ja */,
 				97989DE423051FA9008FA466 /* es */,

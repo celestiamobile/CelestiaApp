@@ -1,62 +1,54 @@
+
 /* Class = "NSTextFieldCell"; title = "Julian Date:"; ObjectID = "0aR-yU-tqC"; */
 "0aR-yU-tqC.title" = "Julian Date:";
+
 /* Class = "NSButtonCell"; title = "Go"; ObjectID = "3hX-Bm-EyY"; */
 "3hX-Bm-EyY.title" = "Aller";
+
 /* Class = "NSButtonCell"; title = "Set Time"; ObjectID = "4s4-Vo-vVH"; */
 "4s4-Vo-vVH.title" = "Régler le temps";
-/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "5CY-Gl-KC7"; */
-"5CY-Gl-KC7.title" = "Cancel";
-/* Class = "NSTextFieldCell"; title = "Longitude:"; ObjectID = "5aY-uw-TXk"; */
-"5aY-uw-TXk.title" = "Longitude:";
+
+/* Class = "NSTextFieldCell"; title = "Longitude"; ObjectID = "5aY-uw-TXk"; */
+"5aY-uw-TXk.title" = "Longitude";
+
 /* Class = "NSButtonCell"; title = "Open Web URL"; ObjectID = "9za-Zh-Fwg"; */
 "9za-Zh-Fwg.title" = "Open Web URL";
-/* Class = "NSMenuItem"; title = "YYYY MMM DD HH:MM:SS TZ"; ObjectID = "Cq5-Mn-CEs"; */
-"Cq5-Mn-CEs.title" = "YYYY MMM DD HH:MM:SS TZ";
+
 /* Class = "NSViewController"; title = "OpenGL Info"; ObjectID = "MEG-m2-V92"; */
 "MEG-m2-V92.title" = "Informations OpenGL";
+
 /* Class = "NSTextFieldCell"; title = "Distance:"; ObjectID = "Mgt-gb-h9n"; */
 "Mgt-gb-h9n.title" = "Distance:";
+
 /* Class = "NSTextFieldCell"; title = "Object:"; ObjectID = "Nd3-41-GkV"; */
 "Nd3-41-GkV.title" = "Object:";
+
 /* Class = "NSMenuItem"; title = "radii"; ObjectID = "Opi-tT-vs9"; */
 "Opi-tT-vs9.title" = "radii";
-/* Class = "NSTextFieldCell"; title = "Date:"; ObjectID = "SLP-la-fii"; */
-"SLP-la-fii.title" = "Date:";
-/* Class = "NSMenuItem"; title = "UTC"; ObjectID = "TFk-ed-Fhc"; */
-"TFk-ed-Fhc.title" = "UTC";
-/* Class = "NSTextFieldCell"; title = "hh:mm:ss"; ObjectID = "TtF-8Y-DIm"; */
-"TtF-8Y-DIm.title" = "hh:mm:ss";
+
 /* Class = "NSViewController"; title = "Go To Object"; ObjectID = "UeX-IU-xh4"; */
 "UeX-IU-xh4.title" = "Aller à l'objet";
-/* Class = "NSMenuItem"; title = "UTC Offset"; ObjectID = "Vax-4l-Ged"; */
-"Vax-4l-Ged.title" = "UTC Offset";
-/* Class = "NSTextFieldCell"; title = "Latitude:"; ObjectID = "Voa-EQ-UOx"; */
-"Voa-EQ-UOx.title" = "Latitude:";
+
+/* Class = "NSTextFieldCell"; title = "Latitude"; ObjectID = "Voa-EQ-UOx"; */
+"Voa-EQ-UOx.title" = "Latitude";
+
 /* Class = "NSTextFieldCell"; title = "Time:"; ObjectID = "YvK-18-9Or"; */
 "YvK-18-9Or.title" = "Time:";
-/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "e7V-H0-akS"; */
-"e7V-H0-akS.title" = "Cancel";
+
 /* Class = "NSViewController"; title = "Set Time"; ObjectID = "eTe-Ua-qWY"; */
 "eTe-Ua-qWY.title" = "Régler le temps";
+
 /* Class = "NSMenuItem"; title = "au"; ObjectID = "fwf-Xn-wk3"; */
 "fwf-Xn-wk3.title" = "au";
-/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "h2W-pF-OPd"; */
-"h2W-pF-OPd.title" = "OtherViews";
-/* Class = "NSMenuItem"; title = "Local Time"; ObjectID = "icF-0q-sje"; */
-"icF-0q-sje.title" = "Local Time";
-/* Class = "NSTextFieldCell"; title = "Format:"; ObjectID = "lwT-B6-xfP"; */
-"lwT-B6-xfP.title" = "Format:";
-/* Class = "NSTextFieldCell"; title = "Time Zone:"; ObjectID = "odf-km-unR"; */
-"odf-km-unR.title" = "Time Zone:";
+
 /* Class = "NSMenuItem"; title = "km"; ObjectID = "rUa-Wd-AsS"; */
 "rUa-Wd-AsS.title" = "km";
-/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "rWB-sy-ugy"; */
-"rWB-sy-ugy.title" = "OtherViews";
-/* Class = "NSTextFieldCell"; title = "mm/dd/yyyy"; ObjectID = "vsX-2G-BbW"; */
-"vsX-2G-BbW.title" = "mm/jj/aaaa";
+
 /* Class = "NSViewController"; title = "Info"; ObjectID = "wd2-8h-VmF"; */
 "wd2-8h-VmF.title" = "Info";
-/* Class = "NSMenuItem"; title = "Default"; ObjectID = "wkr-jP-5qi"; */
-"wkr-jP-5qi.title" = "Default";
+
 /* Class = "NSMenu"; title = "OtherViews"; ObjectID = "xrL-th-f7V"; */
 "xrL-th-f7V.title" = "OtherViews";
+
+/* Class = "NSTextFieldCell"; title = "Coordinate:"; ObjectID = "0gU-lV-8e8"; */
+"0gU-lV-8e8.title" = "";
