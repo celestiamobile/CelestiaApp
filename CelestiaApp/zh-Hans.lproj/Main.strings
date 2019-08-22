@@ -189,7 +189,7 @@
 "T7W-dh-bzm.title" = "OpenGL 信息";
 
 /* Class = "NSMenuItem"; title = "Slower"; ObjectID = "TZE-QC-N1I"; */
-"TZE-QC-N1I.title" = "较慢";
+"TZE-QC-N1I.title" = "减慢";
 
 /* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
 "Td7-aD-5lo.title" = "窗口";
@@ -234,7 +234,7 @@
 "b00-H1-6Y9.title" = "Show Terminator";
 
 /* Class = "NSMenuItem"; title = "Real Time"; ObjectID = "b45-aI-aTq"; */
-"b45-aI-aTq.title" = "实际时间";
+"b45-aI-aTq.title" = "实时";
 
 /* Class = "NSMenu"; title = "Scripts"; ObjectID = "b55-CL-1HX"; */
 "b55-CL-1HX.title" = "脚本";
@@ -327,7 +327,7 @@
 "pxx-59-PXV.title" = "运行脚本…";
 
 /* Class = "NSMenuItem"; title = "Browser"; ObjectID = "qGq-vv-xeo"; */
-"qGq-vv-xeo.title" = "浏览器";
+"qGq-vv-xeo.title" = "星体浏览器";
 
 /* Class = "NSMenuItem"; title = "Time"; ObjectID = "qhb-gd-Vg5"; */
 "qhb-gd-Vg5.title" = "时间";
@@ -372,7 +372,7 @@
 "vSO-vQ-Njr.title" = "三角形";
 
 /* Class = "NSMenuItem"; title = "Reverse"; ObjectID = "vSX-oE-cbe"; */
-"vSX-oE-cbe.title" = "向后";
+"vSX-oE-cbe.title" = "反向";
 
 /* Class = "NSMenuItem"; title = "Down"; ObjectID = "vu1-Cw-mw8"; */
 "vu1-Cw-mw8.title" = "下";
@@ -384,7 +384,7 @@
 "wa3-Ph-4q0.title" = "锁定相位";
 
 /* Class = "NSMenuItem"; title = "Reverse"; ObjectID = "wbD-Cj-buD"; */
-"wbD-Cj-buD.title" = "向后";
+"wbD-Cj-buD.title" = "反向";
 
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
 "wpr-3q-Mcd.title" = "帮助";

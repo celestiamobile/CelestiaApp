@@ -3,10 +3,10 @@
 "301-8d-1fg.title" = "Text Cell";
 
 /* Class = "NSViewController"; title = "Bookmark Organizer"; ObjectID = "JH6-56-5zh"; */
-"JH6-56-5zh.title" = "Bookmark Organizer";
+"JH6-56-5zh.title" = "管理书签";
 
 /* Class = "NSTableColumn"; headerCell.title = "Bookmarks"; ObjectID = "Ktq-t2-tAw"; */
-"Ktq-t2-tAw.headerCell.title" = "Bookmarks";
+"Ktq-t2-tAw.headerCell.title" = "书签";
 
 /* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "Pia-y7-hTs"; */
 "Pia-y7-hTs.title" = "Table View Cell";
@@ -15,4 +15,4 @@
 "kvc-pO-bT1.title" = "新建文件夹";
 
 /* Class = "NSTextFieldCell"; title = "Double-click item to open or control-click for contextual menu. Drag items to reorganize."; ObjectID = "yVe-D5-apu"; */
-"yVe-D5-apu.title" = "连按项目打开或按住 control 并点按项目可以打开上下文菜单. 拖曳项目以重新组织.";
+"yVe-D5-apu.title" = "双击项目打开，右键点击项目打开菜单。拖拽项目进行管理。";
