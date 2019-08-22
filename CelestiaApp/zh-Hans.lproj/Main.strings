@@ -6,7 +6,7 @@
 "16I-LC-lHZ.title" = "1 千米/秒";
 
 /* Class = "NSMenuItem"; title = "Chase"; ObjectID = "1Fg-rM-K1X"; */
-"1Fg-rM-K1X.title" = "同步轨道";
+"1Fg-rM-K1X.title" = "追赶";
 
 /* Class = "NSMenuItem"; title = "Celestia"; ObjectID = "1Xt-HY-uBw"; */
 "1Xt-HY-uBw.title" = "Celestia";
@@ -18,13 +18,13 @@
 "2RU-5H-AFB.title" = "Show Sun Direction";
 
 /* Class = "NSMenuItem"; title = "Right Arrow"; ObjectID = "3Xo-jh-0Lz"; */
-"3Xo-jh-0Lz.title" = "Right Arrow";
+"3Xo-jh-0Lz.title" = "右箭头";
 
 /* Class = "NSMenu"; title = "Time"; ObjectID = "3oz-CR-8Ha"; */
 "3oz-CR-8Ha.title" = "时间";
 
 /* Class = "NSMenuItem"; title = "Orbit Synchronously"; ObjectID = "4JE-DU-m5g"; */
-"4JE-DU-m5g.title" = "同步旋转";
+"4JE-DU-m5g.title" = "同步轨道";
 
 /* Class = "NSMenuItem"; title = "Quit Celestia"; ObjectID = "4sb-4s-VLi"; */
 "4sb-4s-VLi.title" = "退出 Celestia";
@@ -39,10 +39,10 @@
 "5kV-Vb-QxS.title" = "关于 Celestia";
 
 /* Class = "NSMenuItem"; title = "Pause"; ObjectID = "7K5-gi-TCC"; */
-"7K5-gi-TCC.title" = "Pause";
+"7K5-gi-TCC.title" = "暂停";
 
 /* Class = "NSMenuItem"; title = "Down Arrow"; ObjectID = "82b-c1-izC"; */
-"82b-c1-izC.title" = "Down Arrow";
+"82b-c1-izC.title" = "下箭头";
 
 /* Class = "NSMenuItem"; title = "Show Body Axes"; ObjectID = "8Z4-sL-73h"; */
 "8Z4-sL-73h.title" = "Show Body Axes";
@@ -60,22 +60,22 @@
 "Ad6-MB-VyM.title" = "X";
 
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
-"BOF-NM-1cW.title" = "预置…";
+"BOF-NM-1cW.title" = "偏好设置…";
 
 /* Class = "NSMenuItem"; title = "Capture Video"; ObjectID = "Bct-wG-tlW"; */
-"Bct-wG-tlW.title" = "捕捉影片";
+"Bct-wG-tlW.title" = "录制视频";
 
 /* Class = "NSMenuItem"; title = "Forward"; ObjectID = "BoU-HP-H96"; */
 "BoU-HP-H96.title" = "前进";
 
 /* Class = "NSMenuItem"; title = "Delete Active View"; ObjectID = "DH9-Bc-TZu"; */
-"DH9-Bc-TZu.title" = "删除活动的视图";
+"DH9-Bc-TZu.title" = "删除当前视图";
 
 /* Class = "NSMenuItem"; title = "Left Arrow"; ObjectID = "DMQ-58-jvV"; */
-"DMQ-58-jvV.title" = "Left Arrow";
+"DMQ-58-jvV.title" = "左箭头";
 
 /* Class = "NSMenuItem"; title = "Bookmarks"; ObjectID = "DSV-Iu-4uA"; */
-"DSV-Iu-4uA.title" = "Bookmarks";
+"DSV-Iu-4uA.title" = "书签";
 
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "DVo-aG-piG"; */
 "DVo-aG-piG.title" = "关闭";
@@ -111,28 +111,28 @@
 "HyV-fh-RgO.title" = "视图";
 
 /* Class = "NSMenuItem"; title = "Up Arrow"; ObjectID = "I9D-WR-Bjj"; */
-"I9D-WR-Bjj.title" = "Up Arrow";
+"I9D-WR-Bjj.title" = "上箭头";
 
 /* Class = "NSWindow"; title = "Celestia"; ObjectID = "IQv-IB-iLA"; */
 "IQv-IB-iLA.title" = "Celestia";
 
 /* Class = "NSMenuItem"; title = "Select"; ObjectID = "Jad-EA-wOw"; */
-"Jad-EA-wOw.title" = "选择";
+"Jad-EA-wOw.title" = "选择目标";
 
 /* Class = "NSMenuItem"; title = "Velocity"; ObjectID = "Jnc-rE-2pr"; */
 "Jnc-rE-2pr.title" = "速度";
 
 /* Class = "NSMenu"; title = "Roll"; ObjectID = "Jsw-dr-xAx"; */
-"Jsw-dr-xAx.title" = "旋转";
+"Jsw-dr-xAx.title" = "翻滚角";
 
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
 "Kd2-mp-pUS.title" = "显示全部";
 
 /* Class = "NSMenuItem"; title = "Unmark"; ObjectID = "KoR-2q-BSU"; */
-"KoR-2q-BSU.title" = "Unmark";
+"KoR-2q-BSU.title" = "取消标记";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
-"LE2-aR-0XJ.title" = "全部调到前面";
+"LE2-aR-0XJ.title" = "前置全部窗口";
 
 /* Class = "NSMenuItem"; title = "Show Info"; ObjectID = "LKg-qL-Xnj"; */
 "LKg-qL-Xnj.title" = "显示简介";
@@ -150,19 +150,19 @@
 "NMo-om-nkz.title" = "服务";
 
 /* Class = "NSMenuItem"; title = "Look Back"; ObjectID = "Nid-e6-mhX"; */
-"Nid-e6-mhX.title" = "回顾";
+"Nid-e6-mhX.title" = "转向";
 
 /* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
 "OY7-WF-poV.title" = "最小化窗口";
 
 /* Class = "NSMenuItem"; title = "Chase"; ObjectID = "Ofu-WF-1Gp"; */
-"Ofu-WF-1Gp.title" = "同步轨道";
+"Ofu-WF-1Gp.title" = "追赶";
 
 /* Class = "NSMenuItem"; title = "Hide Celestia"; ObjectID = "Olw-nP-bQN"; */
 "Olw-nP-bQN.title" = "隐藏 Celestia";
 
 /* Class = "NSMenuItem"; title = "Orbit Synchronously"; ObjectID = "OwZ-pR-RlU"; */
-"OwZ-pR-RlU.title" = "同步旋转";
+"OwZ-pR-RlU.title" = "同步轨道";
 
 /* Class = "NSTextFieldCell"; title = "VERSION"; ObjectID = "PVI-tP-Egi"; */
 "PVI-tP-Egi.title" = "VERSION";
@@ -174,7 +174,7 @@
 "Pja-kF-PfP.title" = "保持居中";
 
 /* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
-"R4o-n2-Eq4.title" = "Zoom";
+"R4o-n2-Eq4.title" = "缩放";
 
 /* Class = "NSMenuItem"; title = "Display Light Travel Delay"; ObjectID = "RP2-eb-4na"; */
 "RP2-eb-4na.title" = "显示光速延迟";
@@ -195,13 +195,13 @@
 "Td7-aD-5lo.title" = "窗口";
 
 /* Class = "NSMenuItem"; title = "Move Closer"; ObjectID = "UB2-f7-3qY"; */
-"UB2-f7-3qY.title" = "拉近       home 键";
+"UB2-f7-3qY.title" = "拉近";
 
 /* Class = "NSMenuItem"; title = "Location"; ObjectID = "UEz-TY-h2F"; */
 "UEz-TY-h2F.title" = "位置";
 
 /* Class = "NSMenuItem"; title = "Crosshair"; ObjectID = "Uac-4L-1K8"; */
-"Uac-4L-1K8.title" = "Crosshair";
+"Uac-4L-1K8.title" = "瞄准线";
 
 /* Class = "NSMenuItem"; title = "Show Planetographic Grid"; ObjectID = "VTk-tR-S7O"; */
 "VTk-tR-S7O.title" = "Show Planetographic Grid";
@@ -240,7 +240,7 @@
 "b55-CL-1HX.title" = "脚本";
 
 /* Class = "NSMenuItem"; title = "Current Date"; ObjectID = "b6J-EL-lFu"; */
-"b6J-EL-lFu.title" = "Current Date";
+"b6J-EL-lFu.title" = "当前时间";
 
 /* Class = "NSMenuItem"; title = "Follow"; ObjectID = "bHH-7J-mLh"; */
 "bHH-7J-mLh.title" = "跟随";
@@ -249,19 +249,19 @@
 "bib-Uj-vzu.title" = "文件";
 
 /* Class = "NSMenuItem"; title = "Filled Square"; ObjectID = "cZL-cr-3Yx"; */
-"cZL-cr-3Yx.title" = "Filled Square";
+"cZL-cr-3Yx.title" = "实心矩形";
 
 /* Class = "NSMenuItem"; title = "Faster"; ObjectID = "cZc-Gb-GcY"; */
-"cZc-Gb-GcY.title" = "较快";
+"cZc-Gb-GcY.title" = "加快";
 
 /* Class = "NSTextFieldCell"; title = "loading... "; ObjectID = "csL-Ov-fg4"; */
-"csL-Ov-fg4.title" = "loading... ";
+"csL-Ov-fg4.title" = "加载中... ";
 
 /* Class = "NSMenu"; title = "Pitch"; ObjectID = "dBZ-It-qOe"; */
-"dBZ-It-qOe.title" = "倾伏角";
+"dBZ-It-qOe.title" = "俯仰角";
 
 /* Class = "NSMenuItem"; title = "Diamond"; ObjectID = "dEg-02-O8f"; */
-"dEg-02-O8f.title" = "Diamond";
+"dEg-02-O8f.title" = "菱形";
 
 /* Class = "NSMenuItem"; title = "File"; ObjectID = "dMs-cI-mzQ"; */
 "dMs-cI-mzQ.title" = "文件";
@@ -300,28 +300,28 @@
 "iXk-hF-mVs.title" = "跟随";
 
 /* Class = "NSMenuItem"; title = "Yaw"; ObjectID = "iax-av-HRB"; */
-"iax-av-HRB.title" = "偏转";
+"iax-av-HRB.title" = "偏航角";
 
 /* Class = "NSMenuItem"; title = "Plus"; ObjectID = "ksq-eM-YQF"; */
-"ksq-eM-YQF.title" = "Plus";
+"ksq-eM-YQF.title" = "+";
 
 /* Class = "NSMenu"; title = "History"; ObjectID = "lLB-YO-isq"; */
 "lLB-YO-isq.title" = "历史";
 
 /* Class = "NSMenuItem"; title = "Move Farther"; ObjectID = "mZA-rL-kGa"; */
-"mZA-rL-kGa.title" = "推远        end 键";
+"mZA-rL-kGa.title" = "推远";
 
 /* Class = "NSMenuItem"; title = "Go to Selection"; ObjectID = "mmW-EI-s5T"; */
 "mmW-EI-s5T.title" = "转到所选";
 
 /* Class = "NSMenuItem"; title = "Square"; ObjectID = "ngP-1Y-j4S"; */
-"ngP-1Y-j4S.title" = "Square";
+"ngP-1Y-j4S.title" = "矩形";
 
 /* Class = "NSMenuItem"; title = "Right"; ObjectID = "oJa-nc-zLK"; */
 "oJa-nc-zLK.title" = "右";
 
 /* Class = "NSMenuItem"; title = "Organize Bookmarks…"; ObjectID = "olp-mX-lWB"; */
-"olp-mX-lWB.title" = "Organize Bookmarks…";
+"olp-mX-lWB.title" = "管理书签…";
 
 /* Class = "NSMenuItem"; title = "Run Script…"; ObjectID = "pxx-59-PXV"; */
 "pxx-59-PXV.title" = "运行脚本…";
@@ -336,13 +336,13 @@
 "qmL-n4-mUa.title" = "1 天文单位/秒";
 
 /* Class = "NSMenuItem"; title = "Circle"; ObjectID = "rMJ-lo-X7n"; */
-"rMJ-lo-X7n.title" = "Circle";
+"rMJ-lo-X7n.title" = "圆形";
 
 /* Class = "NSMenuItem"; title = "Pitch"; ObjectID = "s3c-M5-6zK"; */
 "s3c-M5-6zK.title" = "倾伏角";
 
 /* Class = "NSMenuItem"; title = "Slower"; ObjectID = "t1H-My-xCp"; */
-"t1H-My-xCp.title" = "较慢";
+"t1H-My-xCp.title" = "减慢";
 
 /* Class = "NSMenuItem"; title = "Split Horizontally"; ObjectID = "t8f-Tb-Pkf"; */
 "t8f-Tb-Pkf.title" = "水平分割";
@@ -354,7 +354,7 @@
 "tpY-kq-jsC.title" = "1000 千米/秒";
 
 /* Class = "NSMenuItem"; title = "Disk"; ObjectID = "u5y-bi-VJu"; */
-"u5y-bi-VJu.title" = "Disk";
+"u5y-bi-VJu.title" = "实心圆";
 
 /* Class = "NSMenu"; title = "Celestia"; ObjectID = "uQy-DD-JDr"; */
 "uQy-DD-JDr.title" = "Celestia";
@@ -369,7 +369,7 @@
 "uos-Sa-3oj.title" = "速度";
 
 /* Class = "NSMenuItem"; title = "Triangle"; ObjectID = "vSO-vQ-Njr"; */
-"vSO-vQ-Njr.title" = "Triangle";
+"vSO-vQ-Njr.title" = "三角形";
 
 /* Class = "NSMenuItem"; title = "Reverse"; ObjectID = "vSX-oE-cbe"; */
 "vSX-oE-cbe.title" = "向后";
@@ -378,7 +378,7 @@
 "vu1-Cw-mw8.title" = "下";
 
 /* Class = "NSMenuItem"; title = "Mark"; ObjectID = "wDT-gH-pvN"; */
-"wDT-gH-pvN.title" = "Mark";
+"wDT-gH-pvN.title" = "标记";
 
 /* Class = "NSMenuItem"; title = "Lock Phase"; ObjectID = "wa3-Ph-4q0"; */
 "wa3-Ph-4q0.title" = "锁定相位";
@@ -393,19 +393,19 @@
 "xKB-fl-Qs2.title" = "垂直分割";
 
 /* Class = "NSMenuItem"; title = "Eclipse Finder"; ObjectID = "xpJ-yk-m3E"; */
-"xpJ-yk-m3E.title" = "日/月蚀 查找器";
+"xpJ-yk-m3E.title" = "日/月食查找器";
 
 /* Class = "NSMenuItem"; title = "Back"; ObjectID = "yDt-6N-XGF"; */
 "yDt-6N-XGF.title" = "后退";
 
 /* Class = "NSMenu"; title = "Bookmarks"; ObjectID = "yMS-sF-iBG"; */
-"yMS-sF-iBG.title" = "Bookmarks";
+"yMS-sF-iBG.title" = "书签";
 
 /* Class = "NSMenuItem"; title = "Track"; ObjectID = "zLY-ET-929"; */
-"zLY-ET-929.title" = "轨道";
+"zLY-ET-929.title" = "保持居中";
 
 /* Class = "NSMenuItem"; title = "Add Bookmark"; ObjectID = "zn3-mu-omy"; */
-"zn3-mu-omy.title" = "Add Bookmark";
+"zn3-mu-omy.title" = "添加书签";
 
 /* Class = "NSMenuItem"; title = "Travel"; ObjectID = "zym-M9-bcX"; */
 "zym-M9-bcX.title" = "移动";
