@@ -8,6 +8,17 @@
 
 import Cocoa
 
+private func createExtraDirectory() -> String? {
+    let mainDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+    let extraDirectory = "\(mainDirectory)/extras"
+    do {
+        try FileManager.default.createDirectory(atPath: extraDirectory, withIntermediateDirectories: true, attributes: nil)
+    } catch _ {
+        return nil
+    }
+    return extraDirectory
+}
+
 class SplashViewController: NSViewController {
     @IBOutlet weak var versionLabel: NSTextField!
     @IBOutlet weak var statusLabel: NSTextField!
@@ -23,7 +34,7 @@ class SplashViewController: NSViewController {
         setupResourceDirectory()
 
         DispatchQueue.global().async { [weak self] in
-            let result = AppDelegate.shared.core.startSimulation(configFileName: nil, extraDirectories: nil, progress: { (status) in
+            let result = AppDelegate.shared.core.startSimulation(configFileName: nil, extraDirectories: [createExtraDirectory()].compactMap{$0}, progress: { (status) in
                 DispatchQueue.main.async {
                     self?.statusLabel.stringValue = status
                 }
