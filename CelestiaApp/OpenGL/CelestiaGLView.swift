@@ -123,9 +123,11 @@ class CelestiaGLView: NSOpenGLView {
         let location = convert(event.locationInWindow, from: nil)
         mouseProcessor?.mouseDown(at: location, modifiers: event.modifierFlags, with: .left)
 
-        NSCursor.hide()
-        CGAssociateMouseAndMouseCursorPosition(0)
-        cursorVisible = false
+        if NSCursor.current == NSCursor.arrow {
+            NSCursor.hide()
+            CGAssociateMouseAndMouseCursorPosition(0)
+            cursorVisible = false
+        }
     }
 
     override func mouseMoved(with event: NSEvent) {

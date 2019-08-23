@@ -96,4 +96,15 @@ extension AppDelegate: CelestiaAppCoreDelegate {
     func celestiaAppCoreFatalErrorHappened(_ error: String) {
         NSAlert.fatalError(text: error)
     }
+
+    func celestiaAppCoreCursorShapeChanged(_ shape: CursorShape) {
+        switch shape {
+        case .sizeVer:
+            NSCursor.resizeUpDown.set()
+        case .sizeHor:
+            NSCursor.resizeLeftRight.set()
+        default:
+            NSCursor.arrow.set()
+        }
+    }
 }
