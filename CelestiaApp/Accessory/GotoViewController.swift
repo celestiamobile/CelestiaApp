@@ -33,7 +33,7 @@ class GotoViewController: NSViewController {
         objectNameComboBox.delegate = self
 
         if let current = core.simulation.currentLocation {
-            objectNameComboBox.stringValue = current.selection.name
+            objectNameComboBox.stringValue = core.simulation.universe.name(for: current.selection)
             longitudeTextField.doubleValue = current.longitude
             latitudeTextField.doubleValue = current.latitude
             distanceTextField.doubleValue = current.distance

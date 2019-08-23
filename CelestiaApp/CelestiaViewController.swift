@@ -307,7 +307,7 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
         if selection.isEmpty { return nil }
 
         // configure fixed items
-        glViewMenu.items[0].title = selection.name
+        glViewMenu.items[0].title = core.simulation.universe.name(for: selection)
         unmarkMenuItem.isEnabled = core.simulation.universe.isMarked(core.simulation.selection)
 
         // clear original menu items
