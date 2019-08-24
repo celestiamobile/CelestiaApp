@@ -94,7 +94,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension AppDelegate: CelestiaAppCoreDelegate {
     func celestiaAppCoreFatalErrorHappened(_ error: String) {
-        NSAlert.fatalError(text: error)
+        NSAlert.warning(message: error, text: "")
     }
 
     func celestiaAppCoreCursorShapeChanged(_ shape: CursorShape) {
