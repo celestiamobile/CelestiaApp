@@ -154,7 +154,7 @@ class BrowserViewController: NSViewController {
         if let sel = selection(at: current.path().components(separatedBy: current.pathSeparator)) {
             core.simulation.selection = sel
             if sender.tag != 0 {
-                core.charEnter(unichar(sender.tag))
+                core.charEnter(Int8(sender.tag))
             }
         }
     }

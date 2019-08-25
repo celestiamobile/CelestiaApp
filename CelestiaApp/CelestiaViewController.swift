@@ -110,7 +110,7 @@ class CelestiaViewController: NSViewController {
         if tag < 0 {
             pressAndHold(key: -tag, time: 1)
         } else {
-            core.charEnter(unichar(tag))
+            core.charEnter(Int8(tag))
         }
     }
 
