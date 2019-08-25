@@ -26,7 +26,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     lazy var core = CelestiaAppCore()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        core.delegate = self
         CelestiaAppCore.setLocaleDirectory("\(Bundle.main.resourcePath!)/CelestiaResources/locale")
     }
 
@@ -89,22 +88,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func application(_ sender: NSApplication, openFile filename: String) -> Bool {
         scriptController.runScript(at: filename)
         return true
-    }
-}
-
-extension AppDelegate: CelestiaAppCoreDelegate {
-    func celestiaAppCoreFatalErrorHappened(_ error: String) {
-        NSAlert.warning(message: error, text: "")
-    }
-
-    func celestiaAppCoreCursorShapeChanged(_ shape: CursorShape) {
-        switch shape {
-        case .sizeVer:
-            NSCursor.resizeUpDown.set()
-        case .sizeHor:
-            NSCursor.resizeLeftRight.set()
-        default:
-            NSCursor.arrow.set()
-        }
     }
 }

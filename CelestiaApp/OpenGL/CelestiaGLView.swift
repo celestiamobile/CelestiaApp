@@ -29,8 +29,6 @@ protocol CelestiaGLViewMouseProcessor: class {
     func mouseMove(by offset: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton)
     func mouseDragged(to point: CGPoint)
     func mouseWheel(by motion: CGFloat, modifiers: NSEvent.ModifierFlags)
-
-    func requestMenu(at point: NSPoint) -> NSMenu?
 }
 
 protocol CelestiaGLViewKeyboardProcessor: class {
@@ -57,6 +55,9 @@ class CelestiaGLView: NSOpenGLView {
     weak var mouseProcessor: CelestiaGLViewMouseProcessor?
     weak var keyboardProcessor: CelestiaGLViewKeyboardProcessor?
     weak var dndProcessor: CelestiaGLViewDNDProcessor?
+
+    private let mouseDragThreshold: CGFloat = 3
+    private var mouseMotion: CGFloat = 0
 
     private var cursorVisible: Bool = true
 
@@ -94,7 +95,7 @@ class CelestiaGLView: NSOpenGLView {
     // MARK: Mouse
     override func mouseUp(with event: NSEvent) {
         if event.modifierFlags.contains(NSEvent.ModifierFlags.option) {
-            otherMouseUp(with: event)
+            rightMouseUp(with: event)
             return
         }
 
@@ -120,14 +121,10 @@ class CelestiaGLView: NSOpenGLView {
     override func mouseDown(with event: NSEvent) {
         window?.makeFirstResponder(self)
 
+        mouseMotion = 0
+
         let location = convert(event.locationInWindow, from: nil)
         mouseProcessor?.mouseDown(at: location, modifiers: event.modifierFlags, with: .left)
-
-        if NSCursor.current == NSCursor.arrow {
-            NSCursor.hide()
-            CGAssociateMouseAndMouseCursorPosition(0)
-            cursorVisible = false
-        }
     }
 
     override func mouseMoved(with event: NSEvent) {
@@ -141,6 +138,14 @@ class CelestiaGLView: NSOpenGLView {
         }
 
         let offset = CGPoint(x: event.deltaX, y: event.deltaY)
+        mouseMotion += (abs(offset.x) + abs(offset.y))
+
+        if NSCursor.current == NSCursor.arrow && cursorVisible && mouseMotion > mouseDragThreshold  {
+            NSCursor.hide()
+            CGAssociateMouseAndMouseCursorPosition(0)
+            cursorVisible = false
+        }
+
         mouseProcessor?.mouseMove(by: offset, modifiers: event.modifierFlags, with: .left)
     }
 
@@ -152,23 +157,20 @@ class CelestiaGLView: NSOpenGLView {
             NSCursor.unhide()
             cursorVisible = true
         }
-
-        if event.clickCount > 0 {
-            //...Force context menu to appear only on clicks (not drags)
-            if let menu = mouseProcessor?.requestMenu(at: convert(event.locationInWindow, from: nil)) {
-                NSMenu.popUpContextMenu(menu, with: event, for: self)
-            }
-        }
     }
 
     override func rightMouseDown(with event: NSEvent) {
+        mouseMotion = 0
+
         mouseProcessor?.mouseDown(at: convert(event.locationInWindow, from: nil), modifiers: event.modifierFlags, with: .right)
     }
 
     override func rightMouseDragged(with event: NSEvent) {
         let offset = CGPoint(x: event.deltaX, y: event.deltaY)
 
-        if cursorVisible {
+        mouseMotion += (abs(offset.x) + abs(offset.y))
+
+        if cursorVisible && mouseMotion > mouseDragThreshold {
             NSCursor.hide()
             CGAssociateMouseAndMouseCursorPosition(0)
             cursorVisible = false
@@ -182,6 +184,8 @@ class CelestiaGLView: NSOpenGLView {
     }
 
     override func otherMouseDown(with event: NSEvent) {
+        mouseMotion = 0
+
         mouseProcessor?.mouseDown(at: convert(event.locationInWindow, from: nil), modifiers: event.modifierFlags, with: .middle)
     }
 
@@ -200,11 +204,6 @@ class CelestiaGLView: NSOpenGLView {
 
     override func keyDown(with event: NSEvent) {
         keyboardProcessor?.keyDown(modifiers: event.modifierFlags, with: event.input)
-    }
-
-    // MARK: Menu
-    override func menu(for event: NSEvent) -> NSMenu? {
-        return mouseProcessor?.requestMenu(at: convert(event.locationInWindow, from: nil))
     }
 
     // MARK: Responder

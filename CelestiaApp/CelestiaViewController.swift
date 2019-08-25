@@ -29,6 +29,8 @@ class CelestiaViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        core.delegate = self
+
         glView.openGLContext?.makeCurrentContext()
 
         // init glew
@@ -302,8 +304,7 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
         core.mouseWheel(by: motion, modifiers: modifiers.rawValue)
     }
 
-    func requestMenu(at point: NSPoint) -> NSMenu? {
-        let selection = core.requestSelection(at: point)
+    func requestMenu(for selection: CelestiaSelection) -> NSMenu? {
         if selection.isEmpty { return nil }
 
         // configure fixed items
@@ -386,6 +387,27 @@ extension CelestiaViewController: CelestiaGLViewKeyboardProcessor {
 
     func keyDown(modifiers: NSEvent.ModifierFlags, with input: String?) {
         core.keyDown(with: input, modifiers: modifiers.rawValue)
+    }
+}
+
+extension CelestiaViewController: CelestiaAppCoreDelegate {
+    func celestiaAppCoreCursorDidRequestContextMenu(at location: NSPoint, with selection: CelestiaSelection) {
+        requestMenu(for: selection)?.popUp(positioning: nil, at: location, in: glView)
+    }
+
+    func celestiaAppCoreFatalErrorHappened(_ error: String) {
+        NSAlert.warning(message: error, text: "")
+    }
+
+    func celestiaAppCoreCursorShapeChanged(_ shape: CursorShape) {
+        switch shape {
+        case .sizeVer:
+            NSCursor.resizeUpDown.set()
+        case .sizeHor:
+            NSCursor.resizeLeftRight.set()
+        default:
+            NSCursor.arrow.set()
+        }
     }
 }
 
