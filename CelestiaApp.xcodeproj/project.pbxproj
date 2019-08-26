@@ -21,6 +21,7 @@
 		974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */; };
 		974D26FB2302B1DC00FDFBC0 /* BookmarkNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26FA2302B1DC00FDFBC0 /* BookmarkNode.swift */; };
 		974D27552303CEF000FDFBC0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D27532303CEF000FDFBC0 /* InfoViewController.swift */; };
+		97916F402313F31D00925AF3 /* CelestiaViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97916F3F2313F31D00925AF3 /* CelestiaViewDelegate.swift */; };
 		97989DA423051BB9008FA466 /* Bookmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97989DA623051BB9008FA466 /* Bookmark.storyboard */; };
 		97989DA823051BBD008FA466 /* Accessory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97989DAA23051BBD008FA466 /* Accessory.storyboard */; };
 		97989DAB23051BC2008FA466 /* StarBrowser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97989DAD23051BC2008FA466 /* StarBrowser.storyboard */; };
@@ -81,6 +82,7 @@
 		974D26FA2302B1DC00FDFBC0 /* BookmarkNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkNode.swift; sourceTree = "<group>"; };
 		974D27532303CEF000FDFBC0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		976BC22C23002B7700D2BF29 /* Celestia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Celestia.entitlements; sourceTree = "<group>"; };
+		97916F3F2313F31D00925AF3 /* CelestiaViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestiaViewDelegate.swift; sourceTree = "<group>"; };
 		97989DA523051BB9008FA466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Bookmark.storyboard; sourceTree = "<group>"; };
 		97989DA923051BBD008FA466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Accessory.storyboard; sourceTree = "<group>"; };
 		97989DAC23051BC2008FA466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StarBrowser.storyboard; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				972F3A3022FFC65700CEDDAC /* Setting */,
 				972F3A2F22FFC64600CEDDAC /* EclipseFinder */,
 				97F2518D22FDB6E100067B06 /* AppDelegate.swift */,
+				97916F3F2313F31D00925AF3 /* CelestiaViewDelegate.swift */,
 				97F2518F22FDB6E100067B06 /* CelestiaViewController.swift */,
 				97F2519122FDB6E700067B06 /* Assets.xcassets */,
 				97F2519322FDB6E700067B06 /* Main.storyboard */,
@@ -435,6 +438,7 @@
 				97F2518E22FDB6E100067B06 /* AppDelegate.swift in Sources */,
 				972F3A3822FFC70C00CEDDAC /* GotoViewController.swift in Sources */,
 				974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */,
+				97916F402313F31D00925AF3 /* CelestiaViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,46 +8,14 @@
 
 import Cocoa
 
+typealias CelestiaGLViewMouseButton = CelestiaViewMouseButton;
+typealias CelestiaGLViewMouseProcessor = CelestiaViewMouseProcessor;
+typealias CelestiaGLViewKeyboardProcessor = CelestiaViewKeyboardProcessor;
+typealias CelestiaGLViewDNDProcessor = CelestiaViewDNDProcessor;
+
 protocol CelestiaGLViewDelegate: class {
     func draw(in glView: CelestiaGLView)
     func update(in glView: CelestiaGLView)
-}
-
-struct CelestiaGLViewMouseButton: OptionSet {
-    let rawValue: UInt
-
-    static let left = CelestiaGLViewMouseButton(rawValue: 1 << 0)
-    static let middle = CelestiaGLViewMouseButton(rawValue: 1 << 1)
-    static let right = CelestiaGLViewMouseButton(rawValue: 1 << 2)
-
-    static let all: CelestiaGLViewMouseButton = [.left, .middle, .right]
-}
-
-protocol CelestiaGLViewMouseProcessor: class {
-    func mouseUp(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton)
-    func mouseDown(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton)
-    func mouseMove(by offset: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton)
-    func mouseDragged(to point: CGPoint)
-    func mouseWheel(by motion: CGFloat, modifiers: NSEvent.ModifierFlags)
-}
-
-protocol CelestiaGLViewKeyboardProcessor: class {
-    func keyUp(modifiers: NSEvent.ModifierFlags, with input: String?)
-    func keyDown(modifiers: NSEvent.ModifierFlags, with input: String?)
-}
-
-protocol CelestiaGLViewDNDProcessor: class {
-    func draggingType(for url: URL) -> NSDragOperation
-    func performDrop(for url: URL)
-}
-
-fileprivate extension NSEvent {
-    var input: String? {
-        if let c = characters, c.count > 0 {
-            return c
-        }
-        return charactersIgnoringModifiers
-    }
 }
 
 class CelestiaGLView: NSOpenGLView {
