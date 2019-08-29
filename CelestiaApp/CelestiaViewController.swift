@@ -31,6 +31,8 @@ class CelestiaViewController: NSViewController {
 
         core.delegate = self
 
+        glView.wantsBestResolutionOpenGLSurface = false
+
         glView.openGLContext?.makeCurrentContext()
 
         // init glew
