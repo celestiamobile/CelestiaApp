@@ -95,6 +95,12 @@ class InfoViewController: NSViewController {
             }
         }
 
+        if body.hasRings || body.hasAtmosphere {
+            attr.appendEmptyLine()
+            body.hasRings ? attr.appendSecondaryText(NSLocalizedString("Has rings", comment: "")) : ()
+            body.hasAtmosphere ? attr.appendSecondaryText(NSLocalizedString("Has atmosphere", comment: "")) : ()
+        }
+
         return NSAttributedString(attributedString: attr)
     }
 
