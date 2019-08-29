@@ -88,7 +88,7 @@ class InfoViewController: NSViewController {
                 unit = NSLocalizedString("days", comment: "")
             }
             attr.appendEmptyLine()
-            attr.appendSecondaryText(String(format: NSLocalizedString("Equatorial radius: %.2f %@", comment: ""), rotPeriod, unit))
+            attr.appendSecondaryText(String(format: NSLocalizedString("Sidereal rotation period: %.2f %@", comment: ""), rotPeriod, unit))
             if dayLength != 0 {
                 attr.appendLineBreak()
                 attr.appendSecondaryText(String(format: NSLocalizedString("Length of day: %.2f %@", comment: ""), dayLength, unit))
