@@ -9,8 +9,8 @@
 import Cocoa
 
 private func createExtraDirectory() -> String? {
-    let mainDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-    let extraDirectory = "\(mainDirectory)/extras"
+    let mainDirectory = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)[0]
+    let extraDirectory = "\(mainDirectory)/CelestiaResources/extras"
     do {
         try FileManager.default.createDirectory(atPath: extraDirectory, withIntermediateDirectories: true, attributes: nil)
     } catch _ {

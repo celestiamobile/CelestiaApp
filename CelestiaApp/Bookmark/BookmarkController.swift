@@ -16,7 +16,7 @@ class BookmarkController: NSObject {
     @IBOutlet weak var bookmarkMenu: NSMenu!
 
     func readBookmarks() {
-        guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else {
+        guard let path = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).first else {
             return
         }
         let bookmarkFilePath = "\(path)/bookmark.json"
@@ -30,7 +30,7 @@ class BookmarkController: NSObject {
     }
 
     func storeBookmarks() {
-        guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else {
+        guard let path = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).first else {
             return
         }
         let bookmarkFilePath = "\(path)/bookmark.json"
