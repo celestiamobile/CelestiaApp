@@ -29,7 +29,18 @@ class SplashViewController: NSViewController {
             })
             DispatchQueue.main.async {
                 if !result {
-                    NSAlert.fatalError(text: NSLocalizedString("Error loading data files. Celestia will now quit.", comment: ""))
+                    self?.view.window?.close()
+                    let alert = NSAlert()
+                    alert.messageText = NSLocalizedString("Celestia failed to load data files.", comment: "")
+                    alert.alertStyle = .critical
+                    alert.addButton(withTitle: NSLocalizedString("Choose Configuration File", comment: ""))
+                    alert.addButton(withTitle: NSLocalizedString("Quit", comment: ""))
+                    if alert.runModal() == .alertFirstButtonReturn {
+                        AppDelegate.shared.showChangeConfigFile(launchFailure: true)
+                        return
+                    }
+                    NSApp.terminate(nil)
+                    return
                 }
                 AppDelegate.shared.scriptController.buildScriptMenu()
                 AppDelegate.shared.bookmarkController.readBookmarks()

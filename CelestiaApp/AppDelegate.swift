@@ -30,12 +30,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        return true
+        return core.isInitialized
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        core.storeUserDefaults()
-        bookmarkController.storeBookmarks()
+        if core.isInitialized {
+            core.storeUserDefaults()
+            bookmarkController.storeBookmarks()
+        }
     }
 
     @IBAction func captureMovie(_ sender: Any) {
