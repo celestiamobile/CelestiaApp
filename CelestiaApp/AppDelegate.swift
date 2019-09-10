@@ -90,9 +90,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func showChangeConfigFile(launchFailure: Bool) {
-        let wc = ConfigSelectionWindowController(windowNibName: "ConfigSelectionWindow")
-        wc.launchFailure = launchFailure
-        wc.showWindow(nil)
+        let vc = NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "ConfigSelectionWindow") as! ConfigSelectionViewController
+        vc.launchFailure = launchFailure
+        let panel = NSPanel(contentViewController: vc)
+        panel.styleMask = panel.styleMask.subtracting([.resizable, .miniaturizable])
+        if launchFailure {
+            panel.styleMask = panel.styleMask.subtracting(.closable)
+        }
+        panel.makeKeyAndOrderFront(self)
     }
 
     func application(_ sender: NSApplication, openFile filename: String) -> Bool {

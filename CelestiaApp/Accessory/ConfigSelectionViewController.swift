@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ConfigSelectionWindowController: NSWindowController {
+class ConfigSelectionViewController: NSViewController {
 
     @IBOutlet private weak var cancelButton: NSButton!
     @IBOutlet private weak var configPathControl: NSPathControl!
@@ -16,18 +16,16 @@ class ConfigSelectionWindowController: NSWindowController {
 
     var launchFailure: Bool = false
 
-    override func windowDidLoad() {
-        super.windowDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
         configPathControl.url = currentConfigFile()
         dataPathControl.url = currentDataDirectory()
 
         if launchFailure {
             cancelButton.title = NSLocalizedString("Quit", comment: "")
-            window?.standardWindowButton(.closeButton)?.isEnabled = false
         } else {
             cancelButton.title = NSLocalizedString("Cancel", comment: "")
-            window?.standardWindowButton(.closeButton)?.isEnabled = true
         }
     }
 
@@ -35,7 +33,7 @@ class ConfigSelectionWindowController: NSWindowController {
         if launchFailure {
             NSApp.terminate(nil)
         } else {
-            window?.performClose(nil)
+            view.window?.performClose(nil)
         }
     }
 
