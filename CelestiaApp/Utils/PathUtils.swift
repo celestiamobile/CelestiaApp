@@ -12,7 +12,7 @@ let defaultDataDirectory: URL = {
     return Bundle.main.url(forResource: "CelestiaResources", withExtension: nil)!
 }()
 
-let defaultConfigDirectory: URL = {
+let defaultConfigFile: URL = {
     return defaultDataDirectory.appendingPathComponent("celestia.cfg")
 }()
 
@@ -44,14 +44,21 @@ func currentDataDirectory() -> URL {
     return resolved
 }
 
-func currentConfigDirectory() -> URL {
-    guard let bookmark = UserDefaults.standard.data(forKey: "configFilePath") else { return defaultConfigDirectory }
+func currentConfigFile() -> URL {
+    guard let bookmark = UserDefaults.standard.data(forKey: "configFilePath") else { return defaultConfigFile }
 
     var isStale: Bool = false
-    guard let resolved = try? URL(resolvingBookmarkData: bookmark, options: .withSecurityScope, relativeTo: nil, bookmarkDataIsStale: &isStale) else { return defaultConfigDirectory }
+    guard let resolved = try? URL(resolvingBookmarkData: bookmark, options: .withSecurityScope, relativeTo: nil, bookmarkDataIsStale: &isStale) else { return defaultConfigFile }
 
-    guard resolved.startAccessingSecurityScopedResource() else { return defaultConfigDirectory }
+    guard resolved.startAccessingSecurityScopedResource() else { return defaultConfigFile }
 
     return resolved
 }
 
+func saveDataDirectory(bookmark: Data?) {
+    UserDefaults.standard.set(bookmark, forKey: "dataDirPath")
+}
+
+func saveConfigFile(bookmark: Data?) {
+    UserDefaults.standard.set(bookmark, forKey: "configFilePath")
+}

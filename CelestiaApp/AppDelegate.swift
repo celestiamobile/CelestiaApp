@@ -85,6 +85,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         panel.makeKeyAndOrderFront(self)
     }
 
+    @IBAction func changeConfigFile(_ sender: Any) {
+        showChangeConfigFile(launchFailure: false)
+    }
+
+    func showChangeConfigFile(launchFailure: Bool) {
+        let wc = ConfigSelectionWindowController(windowNibName: "ConfigSelectionWindow")
+        wc.launchFailure = launchFailure
+        wc.showWindow(nil)
+    }
+
     func application(_ sender: NSApplication, openFile filename: String) -> Bool {
         scriptController.runScript(at: filename)
         return true

@@ -73,7 +73,7 @@ DQ
 </string>
                         </buttonCell>
                         <connections>
-                            <action selector="confirm:" target="-2" id="SPJ-gC-Nhs"/>
+                            <action selector="confirm:" target="-2" id="NNC-Z2-jRb"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5kO-L1-5fQ">
@@ -86,7 +86,7 @@ DQ
                             <font key="font" metaFont="menu" size="11"/>
                         </buttonCell>
                         <connections>
-                            <action selector="reset:" target="-2" id="alh-wA-jOl"/>
+                            <action selector="reset:" target="-2" id="3QF-hG-Iy6"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ff6-C3-vKK">
@@ -102,7 +102,7 @@ Gw
 </string>
                         </buttonCell>
                         <connections>
-                            <action selector="cancel:" target="-2" id="NW4-9C-PZ8"/>
+                            <action selector="cancel:" target="-2" id="eWR-gU-XyF"/>
                         </connections>
                     </button>
                 </subviews>

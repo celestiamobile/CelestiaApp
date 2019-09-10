@@ -22,7 +22,7 @@ class SplashViewController: NSViewController {
 
         let core = AppDelegate.shared.core
         DispatchQueue.global().async { [weak self] in
-            let result = core.startSimulation(configFileName: currentConfigDirectory().path, extraDirectories: [extraDirectory].compactMap{$0?.path}, progress: { (status) in
+            let result = core.startSimulation(configFileName: currentConfigFile().path, extraDirectories: [extraDirectory].compactMap{$0?.path}, progress: { (status) in
                 DispatchQueue.main.async {
                     self?.statusLabel.stringValue = status
                 }
