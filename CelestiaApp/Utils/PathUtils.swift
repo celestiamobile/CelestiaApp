@@ -31,7 +31,7 @@ let extraDirectory: URL? = {
     return parentDirectory
 }()
 
-let scriptDirectory: URL? = extraDirectory?.appendingPathComponent("scripts")
+let extraScriptDirectory: URL? = extraDirectory?.appendingPathComponent("scripts")
 
 func currentDataDirectory() -> URL {
     guard let bookmark = UserDefaults.standard.data(forKey: "dataDirPath") else { return defaultDataDirectory }
