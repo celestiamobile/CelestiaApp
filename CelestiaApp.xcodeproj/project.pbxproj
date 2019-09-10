@@ -17,6 +17,9 @@
 		972F3A1222FEF65300CEDDAC /* EclipseFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F3A1122FEF65300CEDDAC /* EclipseFinderViewController.swift */; };
 		972F3A2222FF96F000CEDDAC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F3A2122FF96F000CEDDAC /* SettingViewController.swift */; };
 		972F3A3822FFC70C00CEDDAC /* GotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F3A3622FFC70C00CEDDAC /* GotoViewController.swift */; };
+		97458FE4232769CF009BFADF /* ConfigSelectionWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97458FE2232769CF009BFADF /* ConfigSelectionWindow.xib */; };
+		97458FE6232769F8009BFADF /* ConfigSelectionWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97458FE5232769F8009BFADF /* ConfigSelectionWindowController.swift */; };
+		97458FE923276B54009BFADF /* PathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97458FE823276B54009BFADF /* PathUtils.swift */; };
 		974D26F72302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F62302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift */; };
 		974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */; };
 		974D26FB2302B1DC00FDFBC0 /* BookmarkNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26FA2302B1DC00FDFBC0 /* BookmarkNode.swift */; };
@@ -77,6 +80,9 @@
 		972F3A1122FEF65300CEDDAC /* EclipseFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EclipseFinderViewController.swift; sourceTree = "<group>"; };
 		972F3A2122FF96F000CEDDAC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		972F3A3622FFC70C00CEDDAC /* GotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotoViewController.swift; sourceTree = "<group>"; };
+		97458FE2232769CF009BFADF /* ConfigSelectionWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigSelectionWindow.xib; sourceTree = "<group>"; };
+		97458FE5232769F8009BFADF /* ConfigSelectionWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigSelectionWindowController.swift; sourceTree = "<group>"; };
+		97458FE823276B54009BFADF /* PathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathUtils.swift; sourceTree = "<group>"; };
 		974D26F62302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkOrganizerViewController.swift; sourceTree = "<group>"; };
 		974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkController.swift; sourceTree = "<group>"; };
 		974D26FA2302B1DC00FDFBC0 /* BookmarkNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkNode.swift; sourceTree = "<group>"; };
@@ -212,6 +218,7 @@
 		972F3A3322FFC6D700CEDDAC /* Accessory */ = {
 			isa = PBXGroup;
 			children = (
+				97458FE2232769CF009BFADF /* ConfigSelectionWindow.xib */,
 				97989DAA23051BBD008FA466 /* Accessory.storyboard */,
 				972F3A3622FFC70C00CEDDAC /* GotoViewController.swift */,
 				97DBBE5722FFDDC4003D1BAF /* SetTimeViewController.swift */,
@@ -220,8 +227,17 @@
 				97DBBE6B230003DC003D1BAF /* NSAlert.swift */,
 				971A674F2301A9D3009E4EA1 /* ScriptController.swift */,
 				974D27532303CEF000FDFBC0 /* InfoViewController.swift */,
+				97458FE5232769F8009BFADF /* ConfigSelectionWindowController.swift */,
 			);
 			path = Accessory;
+			sourceTree = "<group>";
+		};
+		97458FE723276B43009BFADF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				97458FE823276B54009BFADF /* PathUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		974D26F22302ACBF00FDFBC0 /* Bookmark */ = {
@@ -266,6 +282,7 @@
 		97F2518C22FDB6E100067B06 /* CelestiaApp */ = {
 			isa = PBXGroup;
 			children = (
+				97458FE723276B43009BFADF /* Utils */,
 				97989D4C2304EEE6008FA466 /* Resources */,
 				974D26F22302ACBF00FDFBC0 /* Bookmark */,
 				972F3A3322FFC6D700CEDDAC /* Accessory */,
@@ -404,6 +421,7 @@
 				97989DB123051BCE008FA466 /* EclipseFinder.storyboard in Resources */,
 				97989DA823051BBD008FA466 /* Accessory.storyboard in Resources */,
 				97989E1823057DC2008FA466 /* Credits.rtf in Resources */,
+				97458FE4232769CF009BFADF /* ConfigSelectionWindow.xib in Resources */,
 				97F2519222FDB6E700067B06 /* Assets.xcassets in Resources */,
 				97989DDF23051F96008FA466 /* Localizable.strings in Resources */,
 				97989DAE23051BCA008FA466 /* Setting.storyboard in Resources */,
@@ -420,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97458FE923276B54009BFADF /* PathUtils.swift in Sources */,
 				97DBBE5922FFDDC4003D1BAF /* SetTimeViewController.swift in Sources */,
 				972F3A1222FEF65300CEDDAC /* EclipseFinderViewController.swift in Sources */,
 				971A67502301A9D3009E4EA1 /* ScriptController.swift in Sources */,
@@ -428,6 +447,7 @@
 				97DBBE6C230003DC003D1BAF /* NSAlert.swift in Sources */,
 				97DBBE6822FFF2AC003D1BAF /* SplashWindow.swift in Sources */,
 				974D26F72302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift in Sources */,
+				97458FE6232769F8009BFADF /* ConfigSelectionWindowController.swift in Sources */,
 				97DBBE6122FFE779003D1BAF /* GLInfoViewController.swift in Sources */,
 				97F251BF22FDBACA00067B06 /* CelestiaGLView.swift in Sources */,
 				972F39E022FEAD1D00CEDDAC /* BrowserViewController.swift in Sources */,
