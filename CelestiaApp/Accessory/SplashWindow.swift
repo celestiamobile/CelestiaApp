@@ -8,22 +8,9 @@
 
 import Cocoa
 
-private func createExtraDirectory() -> String? {
-    let mainDirectory = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)[0]
-    let extraDirectory = "\(mainDirectory)/CelestiaResources/extras"
-    do {
-        try FileManager.default.createDirectory(atPath: extraDirectory, withIntermediateDirectories: true, attributes: nil)
-    } catch _ {
-        return nil
-    }
-    return extraDirectory
-}
-
 class SplashViewController: NSViewController {
-    @IBOutlet weak var versionLabel: NSTextField!
-    @IBOutlet weak var statusLabel: NSTextField!
-
-    private let resourceFolderName = "CelestiaResources"
+    @IBOutlet private weak var versionLabel: NSTextField!
+    @IBOutlet private weak var statusLabel: NSTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +22,7 @@ class SplashViewController: NSViewController {
 
         let core = AppDelegate.shared.core
         DispatchQueue.global().async { [weak self] in
-            let result = core.startSimulation(configFileName: nil, extraDirectories: [createExtraDirectory()].compactMap{$0}, progress: { (status) in
+            let result = core.startSimulation(configFileName: currentConfigDirectory().path, extraDirectories: [extraDirectory].compactMap{$0?.path}, progress: { (status) in
                 DispatchQueue.main.async {
                     self?.statusLabel.stringValue = status
                 }
@@ -55,20 +42,7 @@ class SplashViewController: NSViewController {
 
     func setupResourceDirectory() {
         let fm = FileManager.default
-
-        var resourceDirectories = [String]()
-
-        let defaultPath = Bundle.main.resourcePath!.appending("/\(resourceFolderName)")
-        var isDirectory: ObjCBool = false
-        if fm.fileExists(atPath: defaultPath, isDirectory: &isDirectory), isDirectory.boolValue {
-            resourceDirectories.append(defaultPath)
-        }
-
-        guard let first = resourceDirectories.first else {
-            NSAlert.fatalError(text: NSLocalizedString("It appears that the \"CelestiaResources\" directory has not been properly installed in the correct location as indicated in the installation instructions. \n\nPlease correct this and try again.", comment: ""))
-        }
-
-        FileManager.default.changeCurrentDirectoryPath(first)
+        fm.changeCurrentDirectoryPath(currentDataDirectory().path)
     }
 }
 
