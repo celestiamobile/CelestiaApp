@@ -12,6 +12,7 @@ import CelestiaCore
 
 class BookmarkController: NSObject {
     var storedBookmarks: [BookmarkNode] = [] { didSet { buildBookmarkMenu() } }
+    var displayedBookmarks: [BookmarkNode] = []
 
     @IBOutlet weak var bookmarkMenu: NSMenu!
 
@@ -47,12 +48,12 @@ class BookmarkController: NSObject {
 
         // first 5 bookmarks that are not in a folder
         let topLevelBookmarks = storedBookmarks.filter { !$0.isFolder }
-        let menuBookmarks = topLevelBookmarks.count > 5 ? Array(topLevelBookmarks[0..<5]) : topLevelBookmarks
+        displayedBookmarks = topLevelBookmarks.count > 5 ? Array(topLevelBookmarks[0..<5]) : topLevelBookmarks
 
-        if menuBookmarks.count > 0 {
+        if displayedBookmarks.count > 0 {
             menuItems.append(.separator())
-            for i in 0..<menuBookmarks.count {
-                let bookmark = menuBookmarks[i]
+            for i in 0..<displayedBookmarks.count {
+                let bookmark = displayedBookmarks[i]
                 let item = NSMenuItem(title: bookmark.name, action: #selector(bookmarkMenuItemClicked(_:)), keyEquivalent: "")
                 item.target = self
                 item.tag = i
@@ -63,7 +64,7 @@ class BookmarkController: NSObject {
     }
 
     @objc private func bookmarkMenuItemClicked(_ sender: NSMenuItem) {
-        let bookmark = storedBookmarks[sender.tag]
+        let bookmark = displayedBookmarks[sender.tag]
         AppDelegate.shared.core.go(to: bookmark.url)
     }
 
