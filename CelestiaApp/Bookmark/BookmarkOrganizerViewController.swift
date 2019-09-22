@@ -104,22 +104,23 @@ extension BookmarkOrganizerViewController: NSOutlineViewDataSource {
     }
 
     func outlineView(_ outlineView: NSOutlineView, validateDrop info: NSDraggingInfo, proposedItem item: Any?, proposedChildIndex index: Int) -> NSDragOperation {
-        var result = NSDragOperation()
 
-        if item == nil {
-            // no item to drop on
-            result = .generic
+        // no item to drop on
+        guard let myItem = item else { return .generic }
+
+        if index == -1 {
+            // don't allow dropping on a child
+            return NSDragOperation()
+        } else if let nodes = dragNodesArray, nodes.contains(where: { (tree) -> Bool in
+            let containerIndexPath = (myItem as AnyObject).indexPath!!
+            return containerIndexPath.starts(with: tree.indexPath)
+        }) {
+            // don't allow dropping on itself or its child container
+            return NSDragOperation()
         } else {
-            if index == -1 {
-                // don't allow dropping on a child
-                result = NSDragOperation()
-            } else {
-                // drop location is a container
-                result = .move
-            }
+            // drop location is a container
+            return .move
         }
-
-        return result
     }
 
     func outlineView(_ outlineView: NSOutlineView, acceptDrop info: NSDraggingInfo, item: Any?, childIndex index: Int) -> Bool {
