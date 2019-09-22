@@ -261,6 +261,19 @@ class CelestiaViewController: NSViewController {
             }
         }
     }
+
+    @IBAction private func changeAltSurface(_ sender: NSMenuItem) {
+        if let altSurfaces = core.simulation.selection.body?.alternateSurfaceNames, altSurfaces.count > 0 {
+            if sender.tag == 0 {
+                core.simulation.activeObserver.displayedSurface = ""
+            } else {
+                let actualIndex = sender.tag - 1
+                if actualIndex < altSurfaces.count {
+                    core.simulation.activeObserver.displayedSurface = altSurfaces[actualIndex]
+                }
+            }
+        }
+    }
     
 }
 
@@ -362,6 +375,29 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
 
             let sep = NSMenuItem.separator()
             sep.tag = 10003
+            glViewMenu.insertItem(sep, at: glViewMenu.items.count - 2)
+        }
+
+        if let altSurfaces = selection.body?.alternateSurfaceNames {
+
+            let altSurfaceItem = NSMenuItem(title: NSLocalizedString("Alternate Surfaces", comment: ""), action: nil, keyEquivalent: "")
+            altSurfaceItem.tag = 10004
+            glViewMenu.insertItem(altSurfaceItem, at: glViewMenu.items.count - 2)
+
+            var items: [NSMenuItem] = []
+            for (index, surface) in ([NSLocalizedString("Default", comment: "")] + altSurfaces).enumerated() {
+                let item = NSMenuItem(title: surface, action: #selector(changeAltSurface(_:)), keyEquivalent: "")
+                let current = core.simulation.activeObserver.displayedSurface
+                item.state = (index == 0 ? current == "" : current == surface) ? .on : .off
+                item.tag = index
+                items.append(item)
+            }
+            let submenu = NSMenu(title: "")
+            altSurfaceItem.submenu = submenu
+            submenu.items = items
+
+            let sep = NSMenuItem.separator()
+            sep.tag = 10005
             glViewMenu.insertItem(sep, at: glViewMenu.items.count - 2)
         }
 
