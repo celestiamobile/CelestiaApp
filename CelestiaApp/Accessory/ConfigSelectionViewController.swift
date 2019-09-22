@@ -53,7 +53,7 @@ class ConfigSelectionViewController: NSViewController {
             dataBookmark = nil
         } else {
             do {
-                dataBookmark = try dataDir.bookmarkData(options: .withSecurityScope, includingResourceValuesForKeys: nil, relativeTo: nil)
+                dataBookmark = try dataDir.bookmarkData(options: [.withSecurityScope, .securityScopeAllowOnlyReadAccess], includingResourceValuesForKeys: nil, relativeTo: nil)
             } catch let error {
                 NSAlert(error: error).runModal()
                 return
@@ -64,7 +64,7 @@ class ConfigSelectionViewController: NSViewController {
             configBookmark = nil
         } else {
             do {
-                configBookmark = try configFile.bookmarkData(options: .withSecurityScope, includingResourceValuesForKeys: nil, relativeTo: nil)
+                configBookmark = try configFile.bookmarkData(options: [.withSecurityScope, .securityScopeAllowOnlyReadAccess], includingResourceValuesForKeys: nil, relativeTo: nil)
             } catch let error {
                 NSAlert(error: error).runModal()
                 return
