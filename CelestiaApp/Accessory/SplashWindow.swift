@@ -22,11 +22,15 @@ class SplashViewController: NSViewController {
 
         let core = AppDelegate.shared.core
         DispatchQueue.global().async { [weak self] in
+            // create a context in case it's needed by Celestia
+            let context = NSOpenGLContext(format: NSOpenGLPixelFormat(), share: nil)
+            context?.makeCurrentContext()
             let result = core.startSimulation(configFileName: currentConfigFile().path, extraDirectories: [extraDirectory].compactMap{$0?.path}, progress: { (status) in
                 DispatchQueue.main.async {
                     self?.statusLabel.stringValue = status
                 }
             })
+            NSOpenGLContext.clearCurrentContext()
             DispatchQueue.main.async {
                 if !result {
                     self?.view.window?.close()
