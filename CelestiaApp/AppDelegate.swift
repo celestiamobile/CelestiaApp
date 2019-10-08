@@ -26,6 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     lazy var core = CelestiaAppCore()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        Migrator.tryToMigrate()
         CelestiaAppCore.setLocaleDirectory("\(Bundle.main.resourcePath!)/CelestiaResources/locale")
     }
 

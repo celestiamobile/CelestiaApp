@@ -11,7 +11,7 @@ import Cocoa
 import CelestiaCore
 
 class BookmarkController: NSObject {
-    var storedBookmarks: [BookmarkNode] = [] { didSet { buildBookmarkMenu() } }
+    var storedBookmarks: [BookmarkNode] = []
     var displayedBookmarks: [BookmarkNode] = []
 
     @IBOutlet weak var bookmarkMenu: NSMenu!

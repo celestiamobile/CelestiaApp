@@ -38,6 +38,8 @@
 		97DBBE6822FFF2AC003D1BAF /* SplashWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6722FFF2AC003D1BAF /* SplashWindow.swift */; };
 		97DBBE6C230003DC003D1BAF /* NSAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6B230003DC003D1BAF /* NSAlert.swift */; };
 		97DBBE7123000FAB003D1BAF /* CelestiaResources in CopyFiles */ = {isa = PBXBuildFile; fileRef = 97DBBE7023000FAB003D1BAF /* CelestiaResources */; };
+		97ED227A234C297800FA5E2D /* LegacyMigrator.m in Sources */ = {isa = PBXBuildFile; fileRef = 97ED2279234C297800FA5E2D /* LegacyMigrator.m */; };
+		97ED227C234C2D6900FA5E2D /* Migrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ED227B234C2D6900FA5E2D /* Migrator.swift */; };
 		97F2518E22FDB6E100067B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F2518D22FDB6E100067B06 /* AppDelegate.swift */; };
 		97F2519022FDB6E100067B06 /* CelestiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F2518F22FDB6E100067B06 /* CelestiaViewController.swift */; };
 		97F2519222FDB6E700067B06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97F2519122FDB6E700067B06 /* Assets.xcassets */; };
@@ -139,6 +141,9 @@
 		97DBBE6B230003DC003D1BAF /* NSAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAlert.swift; sourceTree = "<group>"; };
 		97DBBE6D23000EA8003D1BAF /* liblua53.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblua53.a; path = ../../../Downloads/celestialibs/liblua53.a; sourceTree = "<group>"; };
 		97DBBE7023000FAB003D1BAF /* CelestiaResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CelestiaResources; sourceTree = "<group>"; };
+		97ED2277234C297800FA5E2D /* LegacyMigrator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegacyMigrator.h; sourceTree = "<group>"; };
+		97ED2279234C297800FA5E2D /* LegacyMigrator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegacyMigrator.m; sourceTree = "<group>"; };
+		97ED227B234C2D6900FA5E2D /* Migrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migrator.swift; sourceTree = "<group>"; };
 		97F2518A22FDB6E100067B06 /* Celestia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Celestia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F2518D22FDB6E100067B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97F2518F22FDB6E100067B06 /* CelestiaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestiaViewController.swift; sourceTree = "<group>"; };
@@ -232,7 +237,10 @@
 		97458FE723276B43009BFADF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				97ED2277234C297800FA5E2D /* LegacyMigrator.h */,
+				97ED2279234C297800FA5E2D /* LegacyMigrator.m */,
 				97458FE823276B54009BFADF /* PathUtils.swift */,
+				97ED227B234C2D6900FA5E2D /* Migrator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -454,7 +462,9 @@
 				97F2518E22FDB6E100067B06 /* AppDelegate.swift in Sources */,
 				972F3A3822FFC70C00CEDDAC /* GotoViewController.swift in Sources */,
 				974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */,
+				97ED227A234C297800FA5E2D /* LegacyMigrator.m in Sources */,
 				97916F402313F31D00925AF3 /* CelestiaViewDelegate.swift in Sources */,
+				97ED227C234C2D6900FA5E2D /* Migrator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

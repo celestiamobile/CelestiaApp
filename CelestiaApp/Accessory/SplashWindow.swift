@@ -48,6 +48,7 @@ class SplashViewController: NSViewController {
                 }
                 AppDelegate.shared.scriptController.buildScriptMenu()
                 AppDelegate.shared.bookmarkController.readBookmarks()
+                AppDelegate.shared.bookmarkController.buildBookmarkMenu()
                 let wc = self?.storyboard?.instantiateController(withIdentifier: "Main") as! NSWindowController
                 wc.showWindow(nil)
                 self?.view.window?.close()

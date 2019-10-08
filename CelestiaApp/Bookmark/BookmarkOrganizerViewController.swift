@@ -93,6 +93,7 @@ class BookmarkOrganizerViewController: NSViewController {
         super.viewWillDisappear()
 
         controller.storedBookmarks = contents as! [BookmarkNode]
+        controller.buildBookmarkMenu()
     }
 }
 
