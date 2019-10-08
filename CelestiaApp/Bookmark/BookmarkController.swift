@@ -46,19 +46,26 @@ class BookmarkController: NSObject {
         // get fixedMenus
         var menuItems = Array(bookmarkMenu.items[0..<2])
 
-        // first 5 bookmarks that are not in a folder
-        let topLevelBookmarks = storedBookmarks.filter { !$0.isFolder }
-        displayedBookmarks = topLevelBookmarks.count > 5 ? Array(topLevelBookmarks[0..<5]) : topLevelBookmarks
+        displayedBookmarks = []
 
-        if displayedBookmarks.count > 0 {
+        if storedBookmarks.count > 0 {
             menuItems.append(.separator())
-            for i in 0..<displayedBookmarks.count {
-                let bookmark = displayedBookmarks[i]
-                let item = NSMenuItem(title: bookmark.name, action: #selector(bookmarkMenuItemClicked(_:)), keyEquivalent: "")
-                item.target = self
-                item.tag = i
-                menuItems.append(item)
+            func createMenuItem(for item: BookmarkNode) -> NSMenuItem {
+                if !item.isFolder {
+                    let menuItem = NSMenuItem(title: item.name, action: #selector(bookmarkMenuItemClicked(_:)), keyEquivalent: "")
+                    menuItem.target = self
+                    menuItem.tag = displayedBookmarks.count
+                    displayedBookmarks.append(item)
+                    return menuItem
+                }
+                let menuItem = NSMenuItem(title: item.name, action: nil, keyEquivalent: "")
+                let subItems = item.children.map { createMenuItem(for: $0) }
+                let subMenu = NSMenu(title: "")
+                subMenu.items = subItems
+                menuItem.submenu = subMenu
+                return menuItem
             }
+            menuItems += storedBookmarks.map { createMenuItem(for: $0) }
         }
         bookmarkMenu.items = menuItems
     }
