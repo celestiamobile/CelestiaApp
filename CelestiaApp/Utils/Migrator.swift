@@ -25,7 +25,7 @@ class Migrator {
     }
 
     class func tryToMigrate() {
-        if dbVersion != supportedDBVersion {
+        if dbVersion < supportedDBVersion {
             LegacyMigrator.tryToMigrate()
             migrateDBFrom1To2()
         }

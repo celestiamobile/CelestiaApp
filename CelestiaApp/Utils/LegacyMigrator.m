@@ -19,7 +19,7 @@
 }
 
 + (void)tryToMigrate {
-    if ([self dataBaseVersion] != [self supportedDataBaseVersion]) {
+    if ([self dataBaseVersion] < [self supportedDataBaseVersion]) {
         [self migrateDataBaseFrom0To1];
     }
 }
