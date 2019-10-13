@@ -82,6 +82,7 @@
 		972F3A3622FFC70C00CEDDAC /* GotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotoViewController.swift; sourceTree = "<group>"; };
 		97458FE5232769F8009BFADF /* ConfigSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigSelectionViewController.swift; sourceTree = "<group>"; };
 		97458FE823276B54009BFADF /* PathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathUtils.swift; sourceTree = "<group>"; };
+		974A6B282353391D007BCABD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		974D26F62302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkOrganizerViewController.swift; sourceTree = "<group>"; };
 		974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkController.swift; sourceTree = "<group>"; };
 		974D26FA2302B1DC00FDFBC0 /* BookmarkNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkNode.swift; sourceTree = "<group>"; };
@@ -534,6 +535,7 @@
 		97989DE123051F96008FA466 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
+                974A6B282353391D007BCABD /* Base */,
 				97989DE223051FA4008FA466 /* zh-Hans */,
 				97989DE323051FA7008FA466 /* ja */,
 				97989DE423051FA9008FA466 /* es */,
