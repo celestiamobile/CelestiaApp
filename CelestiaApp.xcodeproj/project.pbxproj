@@ -29,7 +29,6 @@
 		97989DAB23051BC2008FA466 /* StarBrowser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97989DAD23051BC2008FA466 /* StarBrowser.storyboard */; };
 		97989DAE23051BCA008FA466 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97989DB023051BCA008FA466 /* Setting.storyboard */; };
 		97989DB123051BCE008FA466 /* EclipseFinder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97989DB323051BCE008FA466 /* EclipseFinder.storyboard */; };
-		97989DD623051EE3008FA466 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 97989DD823051EE3008FA466 /* InfoPlist.strings */; };
 		97989DDF23051F96008FA466 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 97989DE123051F96008FA466 /* Localizable.strings */; };
 		97989E1823057DC2008FA466 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 97989E1A23057DC2008FA466 /* Credits.rtf */; };
 		97DBBE5922FFDDC4003D1BAF /* SetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE5722FFDDC4003D1BAF /* SetTimeViewController.swift */; };
@@ -119,11 +118,6 @@
 		97989DCC23051D92008FA466 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/EclipseFinder.strings; sourceTree = "<group>"; };
 		97989DCD23051D92008FA466 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		97989DCE23051DE2008FA466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
-		97989DD723051EE3008FA466 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		97989DD923051EEB008FA466 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		97989DDA23051EEC008FA466 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		97989DDB23051EEF008FA466 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		97989DDC23051EF1008FA466 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		97989DE223051FA4008FA466 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		97989DE323051FA7008FA466 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		97989DE423051FA9008FA466 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -302,7 +296,6 @@
 				97F2519322FDB6E700067B06 /* Main.storyboard */,
 				970DCE0C22FE58DB0044F590 /* Bridging-Header.h */,
 				97989DE123051F96008FA466 /* Localizable.strings */,
-				97989DD823051EE3008FA466 /* InfoPlist.strings */,
 				97989DCF23051DE2008FA466 /* Info.plist */,
 				97F2519722FDB6E700067B06 /* CelestiaApp.entitlements */,
 			);
@@ -430,7 +423,6 @@
 				97989DDF23051F96008FA466 /* Localizable.strings in Resources */,
 				97989DAE23051BCA008FA466 /* Setting.storyboard in Resources */,
 				97F2519522FDB6E700067B06 /* Main.storyboard in Resources */,
-				97989DD623051EE3008FA466 /* InfoPlist.strings in Resources */,
 				97989DAB23051BC2008FA466 /* StarBrowser.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,18 +529,6 @@
 				97989DCE23051DE2008FA466 /* Base */,
 			);
 			name = Info.plist;
-			sourceTree = "<group>";
-		};
-		97989DD823051EE3008FA466 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				97989DD723051EE3008FA466 /* en */,
-				97989DD923051EEB008FA466 /* zh-Hans */,
-				97989DDA23051EEC008FA466 /* ja */,
-				97989DDB23051EEF008FA466 /* es */,
-				97989DDC23051EF1008FA466 /* fr */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		97989DE123051F96008FA466 /* Localizable.strings */ = {
