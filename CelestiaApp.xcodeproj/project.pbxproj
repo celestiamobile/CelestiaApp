@@ -94,12 +94,12 @@
 		97989DAC23051BC2008FA466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StarBrowser.storyboard; sourceTree = "<group>"; };
 		97989DAF23051BCA008FA466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Setting.storyboard; sourceTree = "<group>"; };
 		97989DB223051BCE008FA466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EclipseFinder.storyboard; sourceTree = "<group>"; };
-		97989DB423051BD8008FA466 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Bookmark.strings"; sourceTree = "<group>"; };
-		97989DB523051BD9008FA466 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Accessory.strings"; sourceTree = "<group>"; };
-		97989DB623051BD9008FA466 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/StarBrowser.strings"; sourceTree = "<group>"; };
-		97989DB723051BD9008FA466 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Setting.strings"; sourceTree = "<group>"; };
-		97989DB823051BD9008FA466 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/EclipseFinder.strings"; sourceTree = "<group>"; };
-		97989DB923051BD9008FA466 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		97989DB423051BD8008FA466 /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = "zh_CN.lproj/Bookmark.strings"; sourceTree = "<group>"; };
+		97989DB523051BD9008FA466 /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = "zh_CN.lproj/Accessory.strings"; sourceTree = "<group>"; };
+		97989DB623051BD9008FA466 /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = "zh_CN.lproj/StarBrowser.strings"; sourceTree = "<group>"; };
+		97989DB723051BD9008FA466 /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = "zh_CN.lproj/Setting.strings"; sourceTree = "<group>"; };
+		97989DB823051BD9008FA466 /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = "zh_CN.lproj/EclipseFinder.strings"; sourceTree = "<group>"; };
+		97989DB923051BD9008FA466 /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = "zh_CN.lproj/Main.strings"; sourceTree = "<group>"; };
 		97989DBB23051D6B008FA466 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Bookmark.strings; sourceTree = "<group>"; };
 		97989DBC23051D6B008FA466 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Accessory.strings; sourceTree = "<group>"; };
 		97989DBD23051D6C008FA466 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/StarBrowser.strings; sourceTree = "<group>"; };
@@ -119,12 +119,12 @@
 		97989DCC23051D92008FA466 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/EclipseFinder.strings; sourceTree = "<group>"; };
 		97989DCD23051D92008FA466 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		97989DCE23051DE2008FA466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
-		97989DE223051FA4008FA466 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		97989DE223051FA4008FA466 /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = "zh_CN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		97989DE323051FA7008FA466 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		97989DE423051FA9008FA466 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		97989DE523051FA9008FA466 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		97989E1923057DC2008FA466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Base; path = Base.lproj/Credits.rtf; sourceTree = "<group>"; };
-		97989E1C23057DD0008FA466 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
+		97989E1C23057DD0008FA466 /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = zh_CN; path = "zh_CN.lproj/Credits.rtf"; sourceTree = "<group>"; };
 		97989E1D23057DD3008FA466 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ja; path = ja.lproj/Credits.rtf; sourceTree = "<group>"; };
 		97989E1E23057DD4008FA466 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = es; path = es.lproj/Credits.rtf; sourceTree = "<group>"; };
 		97989E1F23057DD4008FA466 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = fr; path = fr.lproj/Credits.rtf; sourceTree = "<group>"; };
@@ -380,7 +380,7 @@
 			knownRegions = (
 				en,
 				Base,
-				"zh-Hans",
+				zh_CN,
 				ja,
 				es,
 				fr,
@@ -468,7 +468,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				97989DA523051BB9008FA466 /* Base */,
-				97989DB423051BD8008FA466 /* zh-Hans */,
+				97989DB423051BD8008FA466 /* zh_CN */,
 				97989DBB23051D6B008FA466 /* ja */,
 				97989DC223051D8B008FA466 /* es */,
 				97989DC823051D91008FA466 /* fr */,
@@ -480,7 +480,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				97989DA923051BBD008FA466 /* Base */,
-				97989DB523051BD9008FA466 /* zh-Hans */,
+				97989DB523051BD9008FA466 /* zh_CN */,
 				97989DBC23051D6B008FA466 /* ja */,
 				97989DC323051D8B008FA466 /* es */,
 				97989DC923051D92008FA466 /* fr */,
@@ -492,7 +492,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				97989DAC23051BC2008FA466 /* Base */,
-				97989DB623051BD9008FA466 /* zh-Hans */,
+				97989DB623051BD9008FA466 /* zh_CN */,
 				97989DBD23051D6C008FA466 /* ja */,
 				97989DC423051D8B008FA466 /* es */,
 				97989DCA23051D92008FA466 /* fr */,
@@ -504,7 +504,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				97989DAF23051BCA008FA466 /* Base */,
-				97989DB723051BD9008FA466 /* zh-Hans */,
+				97989DB723051BD9008FA466 /* zh_CN */,
 				97989DBE23051D6C008FA466 /* ja */,
 				97989DC523051D8C008FA466 /* es */,
 				97989DCB23051D92008FA466 /* fr */,
@@ -516,7 +516,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				97989DB223051BCE008FA466 /* Base */,
-				97989DB823051BD9008FA466 /* zh-Hans */,
+				97989DB823051BD9008FA466 /* zh_CN */,
 				97989DBF23051D6C008FA466 /* ja */,
 				97989DC623051D8C008FA466 /* es */,
 				97989DCC23051D92008FA466 /* fr */,
@@ -536,7 +536,7 @@
 			isa = PBXVariantGroup;
 			children = (
                 974A6B282353391D007BCABD /* Base */,
-				97989DE223051FA4008FA466 /* zh-Hans */,
+				97989DE223051FA4008FA466 /* zh_CN */,
 				97989DE323051FA7008FA466 /* ja */,
 				97989DE423051FA9008FA466 /* es */,
 				97989DE523051FA9008FA466 /* fr */,
@@ -548,7 +548,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				97989E1923057DC2008FA466 /* Base */,
-				97989E1C23057DD0008FA466 /* zh-Hans */,
+				97989E1C23057DD0008FA466 /* zh_CN */,
 				97989E1D23057DD3008FA466 /* ja */,
 				97989E1E23057DD4008FA466 /* es */,
 				97989E1F23057DD4008FA466 /* fr */,
@@ -560,7 +560,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				97F2519422FDB6E700067B06 /* Base */,
-				97989DB923051BD9008FA466 /* zh-Hans */,
+				97989DB923051BD9008FA466 /* zh_CN */,
 				97989DC023051D6C008FA466 /* ja */,
 				97989DC723051D8C008FA466 /* es */,
 				97989DCD23051D92008FA466 /* fr */,
