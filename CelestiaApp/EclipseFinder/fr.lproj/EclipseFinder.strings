@@ -32,9 +32,6 @@
 /* Class = "NSTextFieldCell"; title = "Between:"; ObjectID = "i0A-wj-4q2"; */
 "i0A-wj-4q2.title" = "Entre le :";
 
-/* Class = "NSDateFormatter"; ibShadowedDateFormat = "%Y-%m-%d"; ObjectID = "jTS-Vi-yt1"; */
-"jTS-Vi-yt1.ibShadowedDateFormat" = "%Y-%m-%d";
-
 /* Class = "NSTableColumn"; headerCell.title = "Duration"; ObjectID = "nFi-u9-cuc"; */
 "nFi-u9-cuc.headerCell.title" = "Durée";
 

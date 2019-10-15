@@ -12,13 +12,13 @@
 "Asteroid" = "Asteroid";
 
 /* Browser - Asteroids */
-"Asteroids" = "Asteroids";
+"Asteroids" = "小行星";
 
 /* Browser - Brightest Stars */
 "Brightest Stars" = "Brightest Stars";
 
 /* Cancel button */
-"Cancel" = "Cancel";
+"Cancel" = "取消";
 
 /* Movie Capture - Movie save panel title */
 "Capture Video" = "Capture Video";
@@ -27,7 +27,7 @@
 "Comet" = "Comet";
 
 /* Browser - Comets */
-"Comets" = "Comets";
+"Comets" = "彗星";
 
 /* Browser - Deep Sky Objects */
 "Deep Sky Objects" = "Deep Sky Objects";
@@ -57,7 +57,7 @@
 "Galaxies (Spiral)" = "Galaxies (Spiral)";
 
 /* Browser - Sol */
-"Home (Sol)" = "Home (Sol)";
+"Home (Sol)" = "主地點 (太陽)";
 
 /* Warning - Set Time - Improper Date or Time Format */
 "Improper Date or Time Format" = "Improper Date or Time Format";
@@ -69,7 +69,7 @@
 "It appears you are running Celestia on %s hardware. Do you wish to install a workaround?" = "It appears you are running Celestia on %s hardware. Do you wish to install a workaround?";
 
 /* Browser - Locations */
-"Locations" = "Locations";
+"Locations" = "位置";
 
 /* OpenGL Info - Maximum number of textures */
 "Max simultaneous textures" = "Max simultaneous textures";
@@ -78,7 +78,7 @@
 "Max texture size" = "Max texture size";
 
 /* Browser - Minor Moons */
-"Minor Moons" = "Minor Moons";
+"Minor Moons" = "子衛星";
 
 /* Warning - Movie capture not available explanation */
 "Movie capture is not available in this version of Celestia." = "Movie capture is not available in this version of Celestia.";
@@ -87,7 +87,7 @@
 "Nearest Stars" = "Nearest Stars";
 
 /* Browser - Nebulae */
-"Nebulae" = "Nebulae";
+"Nebulae" = "星雲";
 
 /* No button */
 "No" = "No";
@@ -108,13 +108,13 @@
 "Object Not Found" = "Object Not Found";
 
 /* Browser - Open Clusters */
-"Open Clusters" = "Open Clusters";
+"Open Clusters" = "疏散星團";
 
 /* Browser - Planet */
 "Planet" = "Planet";
 
 /* Browser - Planets */
-"Planets" = "Planets";
+"Planets" = "行星";
 
 /* Warning - Set Location - Please check object name */
 "Please check that the object name is correct." = "Please check that the object name is correct.";
@@ -144,10 +144,10 @@
 "Show Alternate Surface" = "Show Alternate Surface";
 
 /* Browser - Spacecraft (singular) */
-"Spacecraft" = "Spacecraft";
+"Spacecraft" = "航天器";
 
 /* Browser - Spacecraft (plural) */
-"Spacecrafts" = "Spacecraft";
+"Spacecrafts" = "航天器";
 
 /* Browser - Stars With Planets */
 "Stars With Planets" = "Stars With Planets";
@@ -184,75 +184,3 @@
 
 /* Preferences - Render path (e.g., DOT3+ARB VP, OpenGL 2.0) not supported */
 "Your system does not support\n%@" = "Your system does not support\n%@";
-
-/* No comment provided by engineer. */
-"%@: %d" = "%@: %d";
-
-/* No comment provided by engineer. */
-"%s:  %@" = "%s:  %@";
-
-/* No comment provided by engineer. */
-"B: %d° %d′ %.2f″" = "B: %d° %d′ %.2f″";
-
-/* No comment provided by engineer. */
-"days" = "days";
-
-/* No comment provided by engineer. */
-"Dec: %d° %d′ %.2f″" = "Dec: %d° %d′ %.2f″";
-
-/* No comment provided by engineer. */
-"Delete" = "Delete";
-
-/* No comment provided by engineer. */
-"Equatorial radius: %.2f %@" = "Equatorial radius: %.2f %@";
-
-/* No comment provided by engineer. */
-"Equatorial radius: %@" = "Equatorial radius: %@";
-
-/* No comment provided by engineer. */
-"Failed to start GLEW." = "Failed to start GLEW.";
-
-/* No comment provided by engineer. */
-"Failed to start renderer." = "Failed to start renderer.";
-
-/* No comment provided by engineer. */
-"Frame rate:" = "Frame rate:";
-
-/* No comment provided by engineer. */
-"Globulars" = "Globulars";
-
-/* No comment provided by engineer. */
-"hours" = "hours";
-
-/* No comment provided by engineer. */
-"km" = "km";
-
-/* No comment provided by engineer. */
-"L: %d° %d′ %.2f″" = "L: %d° %d′ %.2f″";
-
-/* No comment provided by engineer. */
-"Length of day: %.2f %@" = "Length of day: %.2f %@";
-
-/* No comment provided by engineer. */
-"m" = "m";
-
-/* No comment provided by engineer. */
-"OK" = "OK";
-
-/* No comment provided by engineer. */
-"RA: %dh %dm %.2fs" = "RA: %dh %dm %.2fs";
-
-/* No comment provided by engineer. */
-"Reference Vectors" = "Reference Vectors";
-
-/* No comment provided by engineer. */
-"Resolution:" = "Resolution:";
-
-/* No comment provided by engineer. */
-"Size: %@" = "Size: %@";
-
-/* No comment provided by engineer. */
-"Unable to Capture Video" = "Unable to Capture Video";
-
-/* No comment provided by engineer. */
-"Untitled" = "Untitled";
