@@ -24,6 +24,10 @@
 		974D26FB2302B1DC00FDFBC0 /* BookmarkNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26FA2302B1DC00FDFBC0 /* BookmarkNode.swift */; };
 		974D27552303CEF000FDFBC0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D27532303CEF000FDFBC0 /* InfoViewController.swift */; };
 		9751DC3D23594E6800299997 /* POConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9751DC3C23594E6800299997 /* POConverter.m */; };
+		9751DCF62359518600299997 /* AUTHORS in Resources */ = {isa = PBXBuildFile; fileRef = 9751DCF52359518600299997 /* AUTHORS */; };
+		9751DCF82359519100299997 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 9751DCF72359519000299997 /* COPYING */; };
+		9751DCFB235951F400299997 /* ChangeLog in Resources */ = {isa = PBXBuildFile; fileRef = 9751DCF9235951F400299997 /* ChangeLog */; };
+		9751DCFC235951F400299997 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 9751DCFA235951F400299997 /* README */; };
 		97916F402313F31D00925AF3 /* CelestiaViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97916F3F2313F31D00925AF3 /* CelestiaViewDelegate.swift */; };
 		97989DA423051BB9008FA466 /* Bookmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97989DA623051BB9008FA466 /* Bookmark.storyboard */; };
 		97989DA823051BBD008FA466 /* Accessory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97989DAA23051BBD008FA466 /* Accessory.storyboard */; };
@@ -49,6 +53,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9751DC3E23594E8F00299997 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97F2518222FDB6E000067B06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9751DC3323594E2C00299997;
+			remoteInfo = POConverter;
+		};
 		97F251A122FDB75400067B06 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 97F2519D22FDB75400067B06 /* CelestiaCore.xcodeproj */;
@@ -70,13 +81,13 @@
 		};
 		97DBBE6F23000F94003D1BAF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
 				97DBBE7123000FAB003D1BAF /* CelestiaResources in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -99,6 +110,10 @@
 		974D27532303CEF000FDFBC0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		9751DC3423594E2C00299997 /* POConverter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = POConverter; sourceTree = BUILT_PRODUCTS_DIR; };
 		9751DC3C23594E6800299997 /* POConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POConverter.m; sourceTree = "<group>"; };
+		9751DCF52359518600299997 /* AUTHORS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AUTHORS; path = ../../../Celestia/AUTHORS; sourceTree = "<group>"; };
+		9751DCF72359519000299997 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = COPYING; path = ../../../Celestia/COPYING; sourceTree = "<group>"; };
+		9751DCF9235951F400299997 /* ChangeLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ChangeLog; path = ../../../Celestia/ChangeLog; sourceTree = "<group>"; };
+		9751DCFA235951F400299997 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README; path = ../../../Celestia/README; sourceTree = "<group>"; };
 		976BC22C23002B7700D2BF29 /* Celestia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Celestia.entitlements; sourceTree = "<group>"; };
 		97916F3F2313F31D00925AF3 /* CelestiaViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestiaViewDelegate.swift; sourceTree = "<group>"; };
 		97989DA523051BB9008FA466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Bookmark.storyboard; sourceTree = "<group>"; };
@@ -289,6 +304,10 @@
 		97989D4C2304EEE6008FA466 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9751DCF52359518600299997 /* AUTHORS */,
+				9751DCF72359519000299997 /* COPYING */,
+				9751DCF9235951F400299997 /* ChangeLog */,
+				9751DCFA235951F400299997 /* README */,
 				97989E1A23057DC2008FA466 /* Credits.rtf */,
 			);
 			path = Resources;
@@ -394,10 +413,12 @@
 				97F2518722FDB6E100067B06 /* Frameworks */,
 				97F2518822FDB6E100067B06 /* Resources */,
 				97DBBE6F23000F94003D1BAF /* CopyFiles */,
+				9751DC4023594EF100299997 /* Convert PO */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9751DC3F23594E8F00299997 /* PBXTargetDependency */,
 			);
 			name = Celestia;
 			productName = CelestiaApp;
@@ -475,19 +496,45 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9751DCFC235951F400299997 /* README in Resources */,
 				97989DA423051BB9008FA466 /* Bookmark.storyboard in Resources */,
+				9751DCFB235951F400299997 /* ChangeLog in Resources */,
 				97989DB123051BCE008FA466 /* EclipseFinder.storyboard in Resources */,
 				97989DA823051BBD008FA466 /* Accessory.storyboard in Resources */,
 				97989E1823057DC2008FA466 /* Credits.rtf in Resources */,
 				97F2519222FDB6E700067B06 /* Assets.xcassets in Resources */,
 				97989DDF23051F96008FA466 /* Localizable.strings in Resources */,
 				97989DAE23051BCA008FA466 /* Setting.storyboard in Resources */,
+				9751DCF82359519100299997 /* COPYING in Resources */,
+				9751DCF62359518600299997 /* AUTHORS in Resources */,
 				97F2519522FDB6E700067B06 /* Main.storyboard in Resources */,
 				97989DAB23051BC2008FA466 /* StarBrowser.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9751DC4023594EF100299997 /* Convert PO */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Convert PO";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "DIDBUILD=0\nfor po in $SRCROOT/../po/*.po; do\n    f=${po##*/};f=${f%.*}\n    LPROJ=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/$f.lproj\n    mkdir -p $LPROJ\n    if [ $po -nt $LPROJ/po.strings ];then\n        echo \"$BUILT_PRODUCTS_DIR/POConverter -sn $po $LPROJ/po.strings\"\n        $BUILT_PRODUCTS_DIR/POConverter -sn $po $LPROJ/po.strings\n        DIDBUILD=1\n    fi\ndone\n\nfor po in $SRCROOT/../po2/*.po; do\n    f=${po##*/};f=${f%.*}\n    LPROJ=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/$f.lproj\n    mkdir -p $LPROJ\n    if [ $po -nt $LPROJ/celestia_constellations.strings ];then\n        echo \"$BUILT_PRODUCTS_DIR/POConverter -sn $po $LPROJ/celestia_constellations.strings\"\n        $BUILT_PRODUCTS_DIR/POConverter -sn $po $LPROJ/celestia_constellations.strings\n        DIDBUILD=1\n    fi\ndone\nif [ $DIDBUILD -eq 1 ];then\n    echo \"Touch $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\"\n    touch -c $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9751DC3023594E2C00299997 /* Sources */ = {
@@ -529,6 +576,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9751DC3F23594E8F00299997 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9751DC3323594E2C00299997 /* POConverter */;
+			targetProxy = 9751DC3E23594E8F00299997 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		97989DA623051BB9008FA466 /* Bookmark.storyboard */ = {
