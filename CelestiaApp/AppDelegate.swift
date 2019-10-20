@@ -45,6 +45,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         celestiaViewController?.showVideoCapture()
     }
 
+    @IBAction func screenshot(_ sender: Any) {
+        celestiaViewController?.saveScreenshot()
+    }
+
     @IBAction func forward(_ sender: Any) {
         celestiaViewController?.forward()
     }

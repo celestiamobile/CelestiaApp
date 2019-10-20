@@ -48,4 +48,10 @@ extension NSAlert {
         return popup.indexOfSelectedItem
     }
 
+    class func selection<T>(message: String, cases: [(value: T, description: String)]) -> (T, String)? {
+        if let index = selection(message: message, selections: cases.map { $0.description }) {
+            return cases[index]
+        }
+        return nil
+    }
 }

@@ -136,6 +136,30 @@ class CelestiaViewController: NSViewController {
         panel.makeKeyAndOrderFront(self)
     }
 
+
+    func saveScreenshot() {
+        // get the user selected type
+        let availableTypes = [
+            (value: ScreenshotFileType.JPEG, description: "jpg"),
+            (value: ScreenshotFileType.PNG, description: "png"),
+        ]
+        guard let (type, description) = NSAlert.selection(message: NSLocalizedString("File type", comment: ""), cases: availableTypes) else { return }
+
+        // get the destination path
+        let panel = NSSavePanel()
+        panel.allowedFileTypes = [description]
+        panel.nameFieldStringValue = "CelestiaScreenshot"
+        guard panel.runModal() == .OK, let url = panel.url else { return }
+
+        // invoke draw before screenshot
+        core.draw()
+        guard core.screenshot(to: url.path, type: type) else {
+            NSAlert.warning(message: "Unable to save screenshot", text: "")
+            return
+        }
+        NSWorkspace.shared.activateFileViewerSelecting([url])
+    }
+
     func showVideoCapture() {
         let availableResolutions: [(width: Int, height: Int)] = [
             (160, 120),
