@@ -79,6 +79,7 @@ class BookmarkController: NSObject {
         guard let newBookmark = AppDelegate.shared.core.currentBookmark else { return }
 
         storedBookmarks.append(newBookmark)
+        buildBookmarkMenu()
     }
 
     @IBAction private func organizeBookmarks(_ sender: Any) {
