@@ -84,7 +84,7 @@ static NSString *queryGLExtension(const char *extName)
         {
             [result appendString:
                 [NSString stringWithFormat: @"%@%@",
-                    NSLocalizedStringFromTable(@"GLSL version: ",@"po",""),
+                    NSLocalizedString(@"GLSL version: ", @""),
                     glslVersion]
             ]; ENDL;
         }
@@ -111,7 +111,7 @@ static NSString *queryGLExtension(const char *extName)
         glGetIntegerv(GL_MAX_CUBE_MAP_TEXTURE_SIZE_ARB, &maxCubeMapSize);
         [result appendString:
             [NSString stringWithFormat: @"%@%d",
-                NSLocalizedStringFromTable(@"Max cube map size: ",@"po",""),
+                NSLocalizedString(@"Max cube map size: ", @""),
                 maxCubeMapSize]
         ]; ENDL;
     }
@@ -120,7 +120,7 @@ static NSString *queryGLExtension(const char *extName)
     glGetFloatv(GL_POINT_SIZE_RANGE, pointSizeRange);
     [result appendString:
         [NSString stringWithFormat: @"%@%f - %f",
-            NSLocalizedStringFromTable(@"Point size range: ",@"po",""),
+            NSLocalizedString(@"Point size range: ", @""),
             pointSizeRange[0], pointSizeRange[1]]
     ]; ENDL;
 
