@@ -10,54 +10,19 @@ import Cocoa
 
 import CelestiaCore
 
-extension CelestiaDSOCatalog {
-    subscript(index: Int) -> CelestiaDSO {
-        get {
-            return object(at: index)
-        }
-    }
-}
-
-public struct CelestiaDSOCatalogIterator: IteratorProtocol {
-    private let catalog: CelestiaDSOCatalog
-    private var index = 0
-
-    public typealias Element = CelestiaDSO
-
-    init(catalog: CelestiaDSOCatalog) {
-        self.catalog = catalog
-    }
-
-    mutating public func next() -> CelestiaDSO? {
-        defer { index += 1 }
-        if index >= catalog.count {
-            return nil
-        }
-        return catalog[index]
-    }
-}
-
-extension CelestiaDSOCatalog: Sequence {
-    public typealias Iterator = CelestiaDSOCatalogIterator
-
-    public __consuming func makeIterator() -> CelestiaDSOCatalogIterator {
-        return CelestiaDSOCatalogIterator(catalog: self)
-    }
-}
-
 class BrowserViewController: NSViewController {
     @IBOutlet weak var tabView: NSTabView!
 
     private lazy var sol: CelestiaBrowserItem = {
         let sol = universe.find("Sol")
-        return CelestiaBrowserItem(catEntry: sol.star!, provider: universe)
+        return CelestiaBrowserItem(object: sol.star!, provider: universe)
     }()
 
     private var current: NSBrowser!
 
     private lazy var stars: CelestiaBrowserItem = {
         func updateAccumulation(result: inout [String : CelestiaBrowserItem], star: CelestiaStar) {
-            result[universe.starCatalog.starName(star)] = CelestiaBrowserItem(catEntry: star, provider: universe)
+            result[universe.catalog.starName(star)] = CelestiaBrowserItem(object: star, provider: universe)
         }
 
         let nearest = CelestiaStarBrowser(kind: .nearest, simulation: core.simulation).stars().reduce(into: [String : CelestiaBrowserItem](), updateAccumulation)
@@ -96,11 +61,11 @@ class BrowserViewController: NSViewController {
 
         var tempDict = prefixes.reduce(into: [String : [String : CelestiaBrowserItem]]()) { $0[$1] = [String : CelestiaBrowserItem]() }
 
-        let catalog = universe.dsoCatalog
-        catalog.forEach({ (dso) in
+        let catalog = universe.catalog
+        catalog.dsos.forEach({ (dso) in
             let matchingType = prefixes.first(where: {dso.type.hasPrefix($0)}) ?? "Unknown"
             let name = catalog.dsoName(dso)
-            tempDict[matchingType]![name] = CelestiaBrowserItem(catEntry: dso, provider: universe)
+            tempDict[matchingType]![name] = CelestiaBrowserItem(object: dso, provider: universe)
         })
 
         let results = tempDict.reduce(into: [String : CelestiaBrowserItem](), updateAccumulation)
@@ -132,7 +97,7 @@ class BrowserViewController: NSViewController {
     }
 
     func selection(at pathArray: [String]) -> CelestiaSelection? {
-        let body = item(at: pathArray).entry
+        let body = item(at: pathArray).object
         if let star = body as? CelestiaStar {
            return CelestiaSelection(star: star)
         } else if let dso = body as? CelestiaDSO {

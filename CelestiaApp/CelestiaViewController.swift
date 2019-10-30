@@ -243,7 +243,7 @@ class CelestiaViewController: NSViewController {
     }
 
     @IBAction private func selectObject(_ sender: BrowserMenuItem) {
-        if let item = sender.browserItem, let cat = item.entry {
+        if let item = sender.browserItem, let cat = item.object {
             let selection: CelestiaSelection?
             if let body = cat as? CelestiaBody {
                 selection = CelestiaSelection(body: body)
@@ -342,9 +342,9 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
             sep.tag = 10001
             glViewMenu.insertItem(sep, at: glViewMenu.items.count - 2)
 
-            browserItem = CelestiaBrowserItem(catEntry: body, provider: universe)
+            browserItem = CelestiaBrowserItem(object: body, provider: universe)
         } else if let star = selection.star {
-            browserItem = CelestiaBrowserItem(catEntry: star, provider: universe)
+            browserItem = CelestiaBrowserItem(object: star, provider: universe)
         } else {
             browserItem = nil
         }

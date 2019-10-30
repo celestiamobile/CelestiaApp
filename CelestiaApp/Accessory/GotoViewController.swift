@@ -108,7 +108,7 @@ extension GotoViewController: NSComboBoxDataSource, NSComboBoxDelegate {
         } else {
             searchOperationQueue.addOperation { [weak self] in
                 guard let self = self else { return }
-                let suggestions = self.core.simulation.universe.starCatalog.completion(for: text) + self.core.simulation.universe.dsoCatalog.completion(for: text)
+                let suggestions = self.core.simulation.universe.catalog.completion(for: text)
                 DispatchQueue.main.async {
                     self.suggestions = suggestions
                     self.objectNameComboBox.reloadData()

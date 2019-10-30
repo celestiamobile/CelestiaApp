@@ -97,11 +97,11 @@ extension CelestiaAppCore {
         }
         let name: String
         if let star = selection.star {
-            name = simulation.universe.starCatalog.starName(star)
+            name = simulation.universe.catalog.starName(star)
         } else if let body = selection.body {
             name = body.name
         } else if let dso = selection.dso {
-            name = simulation.universe.dsoCatalog.dsoName(dso)
+            name = simulation.universe.catalog.dsoName(dso)
         } else if let location = selection.location {
             name = location.name
         } else {

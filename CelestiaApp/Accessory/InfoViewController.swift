@@ -106,7 +106,7 @@ class InfoViewController: NSViewController {
 
     func attributedTextForStar(_ star: CelestiaStar) -> NSAttributedString {
         let attr = NSMutableAttributedString()
-        let name = core.simulation.universe.starCatalog.starName(star)
+        let name = core.simulation.universe.catalog.starName(star)
 
         let time = core.simulation.time
 
@@ -130,7 +130,7 @@ class InfoViewController: NSViewController {
 
     func attributedTextForDSO(_ dso: CelestiaDSO) -> NSAttributedString {
         let attr = NSMutableAttributedString()
-        let name = core.simulation.universe.dsoCatalog.dsoName(dso)
+        let name = core.simulation.universe.catalog.dsoName(dso)
 
         attr.appendPrimaryText("\(name)")
         attr.appendEmptyLine()
