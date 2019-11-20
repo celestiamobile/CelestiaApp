@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		970C560E238507F500EBB157 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 970C560D238507EA00EBB157 /* libbz2.tbd */; };
 		970DCE3D22FE8B550044F590 /* NSOpenGLView+AASample.m in Sources */ = {isa = PBXBuildFile; fileRef = 970DCE3C22FE8B550044F590 /* NSOpenGLView+AASample.m */; };
 		971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251A722FDB86E00067B06 /* libc++.tbd */; };
 		971A67472301A36C009E4EA1 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251BA22FDB9AD00067B06 /* libiconv.tbd */; };
@@ -23,7 +24,6 @@
 		974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */; };
 		974D26FB2302B1DC00FDFBC0 /* BookmarkNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26FA2302B1DC00FDFBC0 /* BookmarkNode.swift */; };
 		974D27552303CEF000FDFBC0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D27532303CEF000FDFBC0 /* InfoViewController.swift */; };
-		9751DC3D23594E6800299997 /* POConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9751DC3C23594E6800299997 /* POConverter.m */; };
 		9751DCF62359518600299997 /* AUTHORS in Resources */ = {isa = PBXBuildFile; fileRef = 9751DCF52359518600299997 /* AUTHORS */; };
 		9751DCF82359519100299997 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 9751DCF72359519000299997 /* COPYING */; };
 		9751DCFB235951F400299997 /* ChangeLog in Resources */ = {isa = PBXBuildFile; fileRef = 9751DCF9235951F400299997 /* ChangeLog */; };
@@ -41,7 +41,6 @@
 		97DBBE6422FFE887003D1BAF /* CGLInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6222FFE887003D1BAF /* CGLInfo.m */; };
 		97DBBE6822FFF2AC003D1BAF /* SplashWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6722FFF2AC003D1BAF /* SplashWindow.swift */; };
 		97DBBE6C230003DC003D1BAF /* NSAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6B230003DC003D1BAF /* NSAlert.swift */; };
-		97DBBE7123000FAB003D1BAF /* CelestiaResources in CopyFiles */ = {isa = PBXBuildFile; fileRef = 97DBBE7023000FAB003D1BAF /* CelestiaResources */; };
 		97ED227A234C297800FA5E2D /* LegacyMigrator.m in Sources */ = {isa = PBXBuildFile; fileRef = 97ED2279234C297800FA5E2D /* LegacyMigrator.m */; };
 		97ED227C234C2D6900FA5E2D /* Migrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ED227B234C2D6900FA5E2D /* Migrator.swift */; };
 		97F2518E22FDB6E100067B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F2518D22FDB6E100067B06 /* AppDelegate.swift */; };
@@ -53,13 +52,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9751DC3E23594E8F00299997 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 97F2518222FDB6E000067B06 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9751DC3323594E2C00299997;
-			remoteInfo = POConverter;
-		};
 		97F251A122FDB75400067B06 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 97F2519D22FDB75400067B06 /* CelestiaCore.xcodeproj */;
@@ -69,29 +61,8 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		9751DC3223594E2C00299997 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-		97DBBE6F23000F94003D1BAF /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstPath = "";
-			dstSubfolderSpec = 7;
-			files = (
-				97DBBE7123000FAB003D1BAF /* CelestiaResources in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		970C560D238507EA00EBB157 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		970DCE0C22FE58DB0044F590 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		970DCE3B22FE8B550044F590 /* NSOpenGLView+AASample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSOpenGLView+AASample.h"; sourceTree = "<group>"; };
 		970DCE3C22FE8B550044F590 /* NSOpenGLView+AASample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSOpenGLView+AASample.m"; sourceTree = "<group>"; };
@@ -108,8 +79,6 @@
 		974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkController.swift; sourceTree = "<group>"; };
 		974D26FA2302B1DC00FDFBC0 /* BookmarkNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkNode.swift; sourceTree = "<group>"; };
 		974D27532303CEF000FDFBC0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		9751DC3423594E2C00299997 /* POConverter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = POConverter; sourceTree = BUILT_PRODUCTS_DIR; };
-		9751DC3C23594E6800299997 /* POConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POConverter.m; sourceTree = "<group>"; };
 		9751DCF52359518600299997 /* AUTHORS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AUTHORS; path = ../../../Celestia/AUTHORS; sourceTree = "<group>"; };
 		9751DCF72359519000299997 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = COPYING; path = ../../../Celestia/COPYING; sourceTree = "<group>"; };
 		9751DCF9235951F400299997 /* ChangeLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ChangeLog; path = ../../../Celestia/ChangeLog; sourceTree = "<group>"; };
@@ -145,7 +114,6 @@
 		97989DCB23051D92008FA466 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Setting.strings; sourceTree = "<group>"; };
 		97989DCC23051D92008FA466 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/EclipseFinder.strings; sourceTree = "<group>"; };
 		97989DCD23051D92008FA466 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
-		97989DCE23051DE2008FA466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		97989DE223051FA4008FA466 /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = zh_CN.lproj/Localizable.strings; sourceTree = "<group>"; };
 		97989DE323051FA7008FA466 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		97989DE423051FA9008FA466 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -170,7 +138,6 @@
 		97DBBE6722FFF2AC003D1BAF /* SplashWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWindow.swift; sourceTree = "<group>"; };
 		97DBBE6B230003DC003D1BAF /* NSAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAlert.swift; sourceTree = "<group>"; };
 		97DBBE6D23000EA8003D1BAF /* liblua53.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblua53.a; path = ../../../Downloads/celestialibs/liblua53.a; sourceTree = "<group>"; };
-		97DBBE7023000FAB003D1BAF /* CelestiaResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CelestiaResources; sourceTree = "<group>"; };
 		97ED2277234C297800FA5E2D /* LegacyMigrator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegacyMigrator.h; sourceTree = "<group>"; };
 		97ED2279234C297800FA5E2D /* LegacyMigrator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegacyMigrator.m; sourceTree = "<group>"; };
 		97ED227B234C2D6900FA5E2D /* Migrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migrator.swift; sourceTree = "<group>"; };
@@ -194,13 +161,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9751DC3123594E2C00299997 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		97F2518722FDB6E100067B06 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -208,6 +168,7 @@
 				971A674A2301A376009E4EA1 /* OpenGL.framework in Frameworks */,
 				971A67482301A370009E4EA1 /* libz.tbd in Frameworks */,
 				971A67472301A36C009E4EA1 /* libiconv.tbd in Frameworks */,
+				970C560E238507F500EBB157 /* libbz2.tbd in Frameworks */,
 				971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */,
 				97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */,
 			);
@@ -293,14 +254,6 @@
 			path = Bookmark;
 			sourceTree = "<group>";
 		};
-		9751DC3523594E2C00299997 /* POConverter */ = {
-			isa = PBXGroup;
-			children = (
-				9751DC3C23594E6800299997 /* POConverter.m */,
-			);
-			path = POConverter;
-			sourceTree = "<group>";
-		};
 		97989D4C2304EEE6008FA466 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,10 +270,8 @@
 			isa = PBXGroup;
 			children = (
 				976BC22C23002B7700D2BF29 /* Celestia.entitlements */,
-				97DBBE7023000FAB003D1BAF /* CelestiaResources */,
 				97F2519D22FDB75400067B06 /* CelestiaCore.xcodeproj */,
 				97F2518C22FDB6E100067B06 /* CelestiaApp */,
-				9751DC3523594E2C00299997 /* POConverter */,
 				97F2518B22FDB6E100067B06 /* Products */,
 				97F251A522FDB79F00067B06 /* Frameworks */,
 			);
@@ -330,7 +281,6 @@
 			isa = PBXGroup;
 			children = (
 				97F2518A22FDB6E100067B06 /* Celestia.app */,
-				9751DC3423594E2C00299997 /* POConverter */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -353,7 +303,6 @@
 				97F2519322FDB6E700067B06 /* Main.storyboard */,
 				970DCE0C22FE58DB0044F590 /* Bridging-Header.h */,
 				97989DE123051F96008FA466 /* Localizable.strings */,
-				97989DCF23051DE2008FA466 /* Info.plist */,
 				97F2519722FDB6E700067B06 /* CelestiaApp.entitlements */,
 			);
 			path = CelestiaApp;
@@ -370,6 +319,7 @@
 		97F251A522FDB79F00067B06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				970C560D238507EA00EBB157 /* libbz2.tbd */,
 				971A67492301A376009E4EA1 /* OpenGL.framework */,
 				97DBBE6D23000EA8003D1BAF /* liblua53.a */,
 				97F251BC22FDB9BB00067B06 /* libz.tbd */,
@@ -388,23 +338,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9751DC3323594E2C00299997 /* POConverter */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9751DC3B23594E2C00299997 /* Build configuration list for PBXNativeTarget "POConverter" */;
-			buildPhases = (
-				9751DC3023594E2C00299997 /* Sources */,
-				9751DC3123594E2C00299997 /* Frameworks */,
-				9751DC3223594E2C00299997 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = POConverter;
-			productName = POConverter;
-			productReference = 9751DC3423594E2C00299997 /* POConverter */;
-			productType = "com.apple.product-type.tool";
-		};
 		97F2518922FDB6E100067B06 /* Celestia */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97F2519A22FDB6E700067B06 /* Build configuration list for PBXNativeTarget "Celestia" */;
@@ -412,13 +345,12 @@
 				97F2518622FDB6E100067B06 /* Sources */,
 				97F2518722FDB6E100067B06 /* Frameworks */,
 				97F2518822FDB6E100067B06 /* Resources */,
-				97DBBE6F23000F94003D1BAF /* CopyFiles */,
+				970C560B2385009E00EBB157 /* Copy General Data */,
 				9751DC4023594EF100299997 /* Convert PO */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9751DC3F23594E8F00299997 /* PBXTargetDependency */,
 			);
 			name = Celestia;
 			productName = CelestiaApp;
@@ -435,9 +367,6 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "李林峰";
 				TargetAttributes = {
-					9751DC3323594E2C00299997 = {
-						CreatedOnToolsVersion = 11.1;
-					};
 					97F2518922FDB6E100067B06 = {
 						CreatedOnToolsVersion = 10.3;
 						SystemCapabilities = {
@@ -476,7 +405,6 @@
 			projectRoot = "";
 			targets = (
 				97F2518922FDB6E100067B06 /* Celestia */,
-				9751DC3323594E2C00299997 /* POConverter */,
 			);
 		};
 /* End PBXProject section */
@@ -515,6 +443,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		970C560B2385009E00EBB157 /* Copy General Data */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy General Data";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "DIDCOPY=0\n\nCELESTIA_ROOT=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/CelestiaResources\n\nmkdir -p $CELESTIA_ROOT\n\nfor directory in 'data' 'extras' 'extras-standard' 'fonts' 'images' 'locale' 'models' 'scripts' 'shaders' 'textures';do\n    f=$SRCROOT/../Celestia/$directory\n    if [ $f -nt $CELESTIA_ROOT/$directory ];then\n        echo \"rsync -rv --quiet --exclude=CMakeLists.txt $f $CELESTIA_ROOT\"\n        rsync -rv --quiet --exclude=CMakeLists.txt $f $CELESTIA_ROOT\n        DIDCOPY=1\n    fi\ndone\n\nfor file in \"celestia.cfg\" \"controls.txt\" \"demo.cel\" \"guide.cel\" \"start.cel\";do\n    f=$SRCROOT/../Celestia/$file\n    if [ $f -nt $CELESTIA_ROOT/$file ];then\n        echo \"cp $f $CELESTIA_ROOT/$file\"\n        cp $f $CELESTIA_ROOT/$file\n    fi\ndone\n\nif [ $DIDCOPY -eq 1 ];then\n    echo \"Touch $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\"\n    touch -c $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		9751DC4023594EF100299997 /* Convert PO */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
@@ -531,20 +478,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "DIDBUILD=0\nfor po in $SRCROOT/../Celestia/po/*.po; do\n    f=${po##*/};f=${f%.*}\n    LPROJ=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/$f.lproj\n    mkdir -p $LPROJ\n    if [ $po -nt $LPROJ/po.strings ];then\n        echo \"$BUILT_PRODUCTS_DIR/POConverter -sn $po $LPROJ/po.strings\"\n        $BUILT_PRODUCTS_DIR/POConverter -sn $po $LPROJ/po.strings\n        DIDBUILD=1\n    fi\ndone\n\nfor po in $SRCROOT/../Celestia/po2/*.po; do\n    f=${po##*/};f=${f%.*}\n    LPROJ=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/$f.lproj\n    mkdir -p $LPROJ\n    if [ $po -nt $LPROJ/celestia_constellations.strings ];then\n        echo \"$BUILT_PRODUCTS_DIR/POConverter -sn $po $LPROJ/celestia_constellations.strings\"\n        $BUILT_PRODUCTS_DIR/POConverter -sn $po $LPROJ/celestia_constellations.strings\n        DIDBUILD=1\n    fi\ndone\nif [ $DIDBUILD -eq 1 ];then\n    echo \"Touch $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\"\n    touch -c $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\nfi\n";
+			shellScript = "DIDBUILD=0\n\nCELESTIA_ROOT=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/CelestiaResources\nLOCALE_ROOT=$CELESTIA_ROOT/locale\n\nmkdir -p $LOCALE_ROOT\n\nPOT=$SRCROOT/../Celestia/po/celestia.pot\n\nfor po in $SRCROOT/../Celestia/po/*.po; do\n    f=${po##*/};f=${f%.*}\n    LANG_ROOT=$LOCALE_ROOT/$f/LC_MESSAGES\n    mkdir -p $LANG_ROOT\n    if [ $po -nt $LANG_ROOT/celestia.mo ];then\n        echo \"Create $LANG_ROOT/celestia.mo\"\n        msgmerge --quiet --output-file=$PROJECT_TEMP_DIR/$f.po --lang=$f --sort-output $po $POT\n        msgfmt -o $LANG_ROOT/celestia.mo $PROJECT_TEMP_DIR/$f.po\n        DIDBUILD=1\n    fi\ndone\n\nPOT=$SRCROOT/../Celestia/po2/celestia_constellations.pot\n\nfor po in $SRCROOT/../Celestia/po2/*.po; do\n    f=${po##*/};f=${f%.*}\n    LANG_ROOT=$LOCALE_ROOT/$f/LC_MESSAGES\n    mkdir -p $LANG_ROOT\n    if [ $po -nt $LANG_ROOT/celestia_constellations.mo ];then\n        echo \"Create $LANG_ROOT/celestia_constellations.mo\"\n        msgmerge --quiet --output-file=$PROJECT_TEMP_DIR/$f.po --lang=$f --sort-output $po $POT\n        msgfmt -o $LANG_ROOT/celestia_constellations.mo $PROJECT_TEMP_DIR/$f.po\n        DIDBUILD=1\n    fi\ndone\nif [ $DIDBUILD -eq 1 ];then\n    echo \"Touch $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\"\n    touch -c $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9751DC3023594E2C00299997 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9751DC3D23594E6800299997 /* POConverter.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		97F2518622FDB6E100067B06 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -576,14 +515,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9751DC3F23594E8F00299997 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9751DC3323594E2C00299997 /* POConverter */;
-			targetProxy = 9751DC3E23594E8F00299997 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		97989DA623051BB9008FA466 /* Bookmark.storyboard */ = {
@@ -651,14 +582,6 @@
 			name = EclipseFinder.storyboard;
 			sourceTree = "<group>";
 		};
-		97989DCF23051DE2008FA466 /* Info.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				97989DCE23051DE2008FA466 /* Base */,
-			);
-			name = Info.plist;
-			sourceTree = "<group>";
-		};
 		97989DE123051F96008FA466 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -701,28 +624,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9751DC3823594E2C00299997 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		9751DC3923594E2C00299997 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		97F2519822FDB6E700067B06 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -897,15 +798,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9751DC3B23594E2C00299997 /* Build configuration list for PBXNativeTarget "POConverter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9751DC3823594E2C00299997 /* Debug */,
-				9751DC3923594E2C00299997 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		97F2518522FDB6E000067B06 /* Build configuration list for PBXProject "CelestiaApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
