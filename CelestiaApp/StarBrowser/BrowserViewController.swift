@@ -48,12 +48,14 @@ extension CelestiaDSOCatalog: Sequence {
 class BrowserViewController: NSViewController {
     @IBOutlet weak var tabView: NSTabView!
 
+    @IBOutlet private var solarSystemTree: NSTreeController!
+    @IBOutlet private var starTree: NSTreeController!
+    @IBOutlet private var dsoTree: NSTreeController!
+
     private lazy var sol: CelestiaBrowserItem = {
         let sol = universe.find("Sol")
-        return CelestiaBrowserItem(name: nil, catEntry: sol.star!, provider: universe)
+        return CelestiaBrowserItem(name: universe.starCatalog.starName(sol.star!), catEntry: sol.star!, provider: universe)
     }()
-
-    private var current: NSBrowser!
 
     private lazy var stars: CelestiaBrowserItem = {
         func updateAccumulation(result: inout [String : CelestiaBrowserItem], star: CelestiaStar) {
@@ -108,51 +110,43 @@ class BrowserViewController: NSViewController {
         return CelestiaBrowserItem(name: nil, children: results)
     }()
 
-    private var root: CelestiaBrowserItem {
+    private var currentTree: NSTreeController {
         return [
-            "solarSystem" : self.sol,
-            "star" : self.stars,
-            "dso" : self.dso,
-        ][rootID]!
+            "solarSystem" : solarSystemTree,
+            "star" : starTree,
+            "dso" : dsoTree,
+        ][tabView.selectedTabViewItem?.identifier as! String]!
     }
 
-    func item(at pathArray: [String]) -> CelestiaBrowserItem {
-        var lastItem = root
-        var nextItem: CelestiaBrowserItem? = lastItem
+    private var currentSelection: CelestiaSelection? {
+        guard let object = (currentTree.selectedObjects.first as? CelestiaBrowserItem)?.entry else { return nil }
 
-        for i in 1..<pathArray.count {
-            let lastKey = pathArray[i]
-            nextItem = lastItem.child(with: lastKey)
-            if nextItem == nil {
-                break
-            }
-            lastItem = nextItem!
-        }
-
-        return lastItem
-    }
-
-    func selection(at pathArray: [String]) -> CelestiaSelection? {
-        let body = item(at: pathArray).entry
-        if let star = body as? CelestiaStar {
+        if let star = object as? CelestiaStar {
            return CelestiaSelection(star: star)
-        } else if let dso = body as? CelestiaDSO {
+        } else if let dso = object as? CelestiaDSO {
             return CelestiaSelection(dso: dso)
-        } else if let b = body as? CelestiaBody {
+        } else if let b = object as? CelestiaBody {
             return CelestiaSelection(body: b)
-        } else if let l = body as? CelestiaLocation {
+        } else if let l = object as? CelestiaLocation {
             return CelestiaSelection(location: l)
+        } else {
+            return nil
         }
-        return nil
     }
 
     private let core: CelestiaAppCore = AppDelegate.shared.core
     private lazy var universe: CelestiaUniverse = self.core.simulation.universe
 
-    private var rootID: String = "solarSystem"
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        solarSystemTree.content = NSArray(array: [sol])
+        starTree.content = NSArray(array: stars.children)
+        dsoTree.content = NSArray(array: dso.children)
+    }
 
     @IBAction private func commonAction(_ sender: NSButton) {
-        if let sel = selection(at: current.path().components(separatedBy: current.pathSeparator)) {
+        if let sel = currentSelection {
             core.simulation.selection = sel
             if sender.tag != 0 {
                 core.charEnter(Int8(sender.tag))
@@ -160,8 +154,8 @@ class BrowserViewController: NSViewController {
         }
     }
 
-    @objc private func doubleClick(_ sender: NSBrowser) {
-        if let sel = selection(at: current.path().components(separatedBy: current.pathSeparator)) {
+    @IBAction private func doubleClick(_ sender: NSOutlineView) {
+        if let sel = currentSelection {
             core.simulation.selection = sel
             core.charEnter(103)
         }
@@ -169,27 +163,5 @@ class BrowserViewController: NSViewController {
 }
 
 extension BrowserViewController: NSTabViewDelegate {
-    func tabView(_ tabView: NSTabView, didSelect tabViewItem: NSTabViewItem?) {
-        rootID = tabViewItem?.identifier as? String ?? ""
-    }
 }
 
-extension BrowserViewController: NSBrowserDelegate {
-    func browser(_ sender: NSBrowser, numberOfRowsInColumn column: Int) -> Int {
-        if current != sender {
-            current = sender
-            current.target = self
-            current.doubleAction = #selector(doubleClick(_:))
-        }
-        return Int(self.item(at: sender.path(toColumn: column).components(separatedBy: sender.pathSeparator)).children.count)
-    }
-
-    func browser(_ sender: NSBrowser, willDisplayCell cell: Any, atRow row: Int, column: Int) {
-        let itemForColumn = item(at: sender.path(toColumn: column).components(separatedBy: sender.pathSeparator))
-        let itemName = itemForColumn.childName(at: row)!
-        let child = itemForColumn.child(with: itemName)!
-        let actualCell = cell as! NSBrowserCell
-        actualCell.title = itemName
-        actualCell.isLeaf = child.children.count == 0
-    }
-}

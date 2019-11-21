@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		970C560E238507F500EBB157 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 970C560D238507EA00EBB157 /* libbz2.tbd */; };
+		970C5625238637B900EBB157 /* BrowserItemAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970C5624238637B900EBB157 /* BrowserItemAddition.swift */; };
 		970DCE3D22FE8B550044F590 /* NSOpenGLView+AASample.m in Sources */ = {isa = PBXBuildFile; fileRef = 970DCE3C22FE8B550044F590 /* NSOpenGLView+AASample.m */; };
 		971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251A722FDB86E00067B06 /* libc++.tbd */; };
 		971A67472301A36C009E4EA1 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251BA22FDB9AD00067B06 /* libiconv.tbd */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		970C560D238507EA00EBB157 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		970C5624238637B900EBB157 /* BrowserItemAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserItemAddition.swift; sourceTree = "<group>"; };
 		970DCE0C22FE58DB0044F590 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		970DCE3B22FE8B550044F590 /* NSOpenGLView+AASample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSOpenGLView+AASample.h"; sourceTree = "<group>"; };
 		970DCE3C22FE8B550044F590 /* NSOpenGLView+AASample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSOpenGLView+AASample.m"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			children = (
 				97989DAD23051BC2008FA466 /* StarBrowser.storyboard */,
 				972F39DF22FEAD1D00CEDDAC /* BrowserViewController.swift */,
+				970C5624238637B900EBB157 /* BrowserItemAddition.swift */,
 			);
 			path = StarBrowser;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				97F2519022FDB6E100067B06 /* CelestiaViewController.swift in Sources */,
 				97F2518E22FDB6E100067B06 /* AppDelegate.swift in Sources */,
 				972F3A3822FFC70C00CEDDAC /* GotoViewController.swift in Sources */,
+				970C5625238637B900EBB157 /* BrowserItemAddition.swift in Sources */,
 				974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */,
 				97ED227A234C297800FA5E2D /* LegacyMigrator.m in Sources */,
 				97916F402313F31D00925AF3 /* CelestiaViewDelegate.swift in Sources */,
