@@ -375,13 +375,13 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
 
         func createMenuItems(for item: CelestiaBrowserItem) -> [NSMenuItem]? {
             var mItems = [BrowserMenuItem]()
-            for i in 0..<item.childCount {
+            for i in 0..<item.children.count {
                 let subItemName = item.childName(at: Int(i))!
                 let child = item.child(with: subItemName)!
                 let childItem = BrowserMenuItem(title: subItemName, action: #selector(selectObject(_:)), keyEquivalent: "")
                 childItem.target = self
                 childItem.browserItem = child
-                if child.childCount == 0 {
+                if child.children.count == 0 {
                     mItems.append(childItem)
                 } else if let menuItems = createMenuItems(for: child) {
                     let subMenu = NSMenu(title: "")

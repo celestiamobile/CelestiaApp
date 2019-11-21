@@ -180,7 +180,7 @@ extension BrowserViewController: NSBrowserDelegate {
             current.target = self
             current.doubleAction = #selector(doubleClick(_:))
         }
-        return Int(self.item(at: sender.path(toColumn: column).components(separatedBy: sender.pathSeparator)).childCount)
+        return Int(self.item(at: sender.path(toColumn: column).components(separatedBy: sender.pathSeparator)).children.count)
     }
 
     func browser(_ sender: NSBrowser, willDisplayCell cell: Any, atRow row: Int, column: Int) {
@@ -189,6 +189,6 @@ extension BrowserViewController: NSBrowserDelegate {
         let child = itemForColumn.child(with: itemName)!
         let actualCell = cell as! NSBrowserCell
         actualCell.title = itemName
-        actualCell.isLeaf = child.childCount == 0
+        actualCell.isLeaf = child.children.count == 0
     }
 }
