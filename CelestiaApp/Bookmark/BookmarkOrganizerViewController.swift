@@ -37,12 +37,20 @@ class BookmarkOrganizerViewController: NSViewController {
     }
 
     @objc private func performDelete() {
-        treeController.remove(self)
+        let clickedRow = outlineView.clickedRow
+        guard clickedRow >= 0 else { return }
+
+        if let indexPath = (outlineView.item(atRow: clickedRow) as? NSTreeNode)?.indexPath {
+            treeController.removeObject(atArrangedObjectIndexPath: indexPath)
+        }
     }
 
     @objc private func performGoTo() {
-        if let firstSelectedNode = self.treeController.selectedObjects.first as? BookmarkNode, !firstSelectedNode.isFolder {
-            AppDelegate.shared.core.go(to: firstSelectedNode.url)
+        let clickedRow = outlineView.clickedRow
+        guard clickedRow >= 0 else { return }
+
+        if let item = (outlineView.item(atRow: clickedRow) as? NSTreeNode)?.representedObject as? BookmarkNode, !item.url.isEmpty {
+            AppDelegate.shared.core.go(to: item.url)
         }
     }
 

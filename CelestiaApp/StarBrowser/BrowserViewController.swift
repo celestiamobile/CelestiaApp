@@ -119,10 +119,15 @@ class BrowserViewController: NSViewController {
     }
 
     private var currentSelection: CelestiaSelection? {
-        guard let object = (currentTree.selectedObjects.first as? CelestiaBrowserItem)?.entry else { return nil }
+        guard let object = currentTree.selectedObjects.first as? CelestiaBrowserItem else { return nil }
 
+        return transform(object)
+    }
+
+    private func transform(_ item: CelestiaBrowserItem) -> CelestiaSelection? {
+        let object = item.entry
         if let star = object as? CelestiaStar {
-           return CelestiaSelection(star: star)
+            return CelestiaSelection(star: star)
         } else if let dso = object as? CelestiaDSO {
             return CelestiaSelection(dso: dso)
         } else if let b = object as? CelestiaBody {
@@ -155,7 +160,10 @@ class BrowserViewController: NSViewController {
     }
 
     @IBAction private func doubleClick(_ sender: NSOutlineView) {
-        if let sel = currentSelection {
+        let clickedRow = sender.clickedRow
+        guard clickedRow >= 0 else { return }
+
+        if let item = (sender.item(atRow: clickedRow) as? NSTreeNode)?.representedObject as? CelestiaBrowserItem, let sel = transform(item) {
             core.simulation.selection = sel
             core.charEnter(103)
         }
