@@ -50,14 +50,15 @@ class BrowserViewController: NSViewController {
 
     private lazy var sol: CelestiaBrowserItem = {
         let sol = universe.find("Sol")
-        return CelestiaBrowserItem(catEntry: sol.star!, provider: universe)
+        return CelestiaBrowserItem(name: nil, catEntry: sol.star!, provider: universe)
     }()
 
     private var current: NSBrowser!
 
     private lazy var stars: CelestiaBrowserItem = {
         func updateAccumulation(result: inout [String : CelestiaBrowserItem], star: CelestiaStar) {
-            result[universe.starCatalog.starName(star)] = CelestiaBrowserItem(catEntry: star, provider: universe)
+            let name = universe.starCatalog.starName(star)
+            result[name] = CelestiaBrowserItem(name: name, catEntry: star, provider: universe)
         }
 
         let nearest = CelestiaStarBrowser(kind: .nearest, simulation: core.simulation).stars().reduce(into: [String : CelestiaBrowserItem](), updateAccumulation)
@@ -67,7 +68,7 @@ class BrowserViewController: NSViewController {
         let nearestName = NSLocalizedString("Nearest Stars", comment: "")
         let brightestName = NSLocalizedString("Brightest Stars", comment: "")
         let hasPlanetsName = NSLocalizedString("Stars With Planets", comment: "")
-        let stars = CelestiaBrowserItem(name: "", children: [
+        let stars = CelestiaBrowserItem(name: nil, children: [
             nearestName : CelestiaBrowserItem(name: nearestName, children: nearest),
             brightestName : CelestiaBrowserItem(name: brightestName, children: brightest),
             hasPlanetsName : CelestiaBrowserItem(name: hasPlanetsName, children: hasPlanets),
@@ -100,11 +101,11 @@ class BrowserViewController: NSViewController {
         catalog.forEach({ (dso) in
             let matchingType = prefixes.first(where: {dso.type.hasPrefix($0)}) ?? "Unknown"
             let name = catalog.dsoName(dso)
-            tempDict[matchingType]![name] = CelestiaBrowserItem(catEntry: dso, provider: universe)
+            tempDict[matchingType]![name] = CelestiaBrowserItem(name: name, catEntry: dso, provider: universe)
         })
 
         let results = tempDict.reduce(into: [String : CelestiaBrowserItem](), updateAccumulation)
-        return CelestiaBrowserItem(name: "", children: results)
+        return CelestiaBrowserItem(name: nil, children: results)
     }()
 
     private var root: CelestiaBrowserItem {

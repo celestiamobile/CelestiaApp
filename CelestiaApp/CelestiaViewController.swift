@@ -366,9 +366,9 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
             sep.tag = 10001
             glViewMenu.insertItem(sep, at: glViewMenu.items.count - 2)
 
-            browserItem = CelestiaBrowserItem(catEntry: body, provider: universe)
+            browserItem = CelestiaBrowserItem(name: body.name, catEntry: body, provider: universe)
         } else if let star = selection.star {
-            browserItem = CelestiaBrowserItem(catEntry: star, provider: universe)
+            browserItem = CelestiaBrowserItem(name: universe.starCatalog.starName(star), catEntry: star, provider: universe)
         } else {
             browserItem = nil
         }
