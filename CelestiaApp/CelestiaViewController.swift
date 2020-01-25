@@ -55,7 +55,7 @@ class CelestiaViewController: NSViewController {
         core.loadUserDefaults()
 
         core.tick()
-        core.start(at: Date())
+        core.start()
 
         glView.delegate = self
         glView.mouseProcessor = self
