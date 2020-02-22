@@ -19,6 +19,7 @@
 		972F3A1222FEF65300CEDDAC /* EclipseFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F3A1122FEF65300CEDDAC /* EclipseFinderViewController.swift */; };
 		972F3A2222FF96F000CEDDAC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F3A2122FF96F000CEDDAC /* SettingViewController.swift */; };
 		972F3A3822FFC70C00CEDDAC /* GotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F3A3622FFC70C00CEDDAC /* GotoViewController.swift */; };
+		973E2F05240135F500B0F059 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 973E2F03240135F500B0F059 /* defaults.plist */; };
 		97458FE6232769F8009BFADF /* ConfigSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97458FE5232769F8009BFADF /* ConfigSelectionViewController.swift */; };
 		97458FE923276B54009BFADF /* PathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97458FE823276B54009BFADF /* PathUtils.swift */; };
 		974D26F72302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F62302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift */; };
@@ -74,6 +75,7 @@
 		972F3A1122FEF65300CEDDAC /* EclipseFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EclipseFinderViewController.swift; sourceTree = "<group>"; };
 		972F3A2122FF96F000CEDDAC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		972F3A3622FFC70C00CEDDAC /* GotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotoViewController.swift; sourceTree = "<group>"; };
+		973E2F03240135F500B0F059 /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaults.plist; sourceTree = "<group>"; };
 		97458FE5232769F8009BFADF /* ConfigSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigSelectionViewController.swift; sourceTree = "<group>"; };
 		97458FE823276B54009BFADF /* PathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathUtils.swift; sourceTree = "<group>"; };
 		974A6B282353391D007BCABD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		97989D4C2304EEE6008FA466 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				973E2F03240135F500B0F059 /* defaults.plist */,
 				9751DCF52359518600299997 /* AUTHORS */,
 				9751DCF72359519000299997 /* COPYING */,
 				9751DCF9235951F400299997 /* ChangeLog */,
@@ -429,6 +432,7 @@
 			files = (
 				9751DCFC235951F400299997 /* README in Resources */,
 				97989DA423051BB9008FA466 /* Bookmark.storyboard in Resources */,
+				973E2F05240135F500B0F059 /* defaults.plist in Resources */,
 				9751DCFB235951F400299997 /* ChangeLog in Resources */,
 				97989DB123051BCE008FA466 /* EclipseFinder.storyboard in Resources */,
 				97989DA823051BBD008FA466 /* Accessory.storyboard in Resources */,

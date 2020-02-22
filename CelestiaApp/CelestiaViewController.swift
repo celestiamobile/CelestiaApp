@@ -36,7 +36,7 @@ class CelestiaViewController: NSViewController {
         glView.openGLContext?.makeCurrentContext()
 
         // init glew
-        guard CelestiaAppCore.glewInit() else {
+        guard CelestiaAppCore.initGL() else {
             NSAlert.fatalError(text: NSLocalizedString("Failed to start GLEW.", comment: ""))
         }
 
@@ -52,7 +52,7 @@ class CelestiaViewController: NSViewController {
             core.setDPI(Int(displayPixelSize.width / displayPhysicalSize.width * 25.4))
         }
 
-        core.loadUserDefaults()
+        core.loadUserDefaultsWithAppDefaults(atPath: Bundle.main.path(forResource: "defaults", ofType: "plist"))
 
         core.tick()
         core.start()
