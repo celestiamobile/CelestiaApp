@@ -17,7 +17,7 @@ class CelestiaViewController: NSViewController {
     @IBOutlet var refMarkMenu: NSMenu!
     @IBOutlet var unmarkMenuItem: NSMenuItem!
 
-    private let core: CelestiaAppCore = AppDelegate.shared.core
+    private let core: CelestiaAppCore = CelestiaAppCore.shared
     private lazy var universe: CelestiaUniverse = self.core.simulation.universe
 
     private var ready: Bool = false

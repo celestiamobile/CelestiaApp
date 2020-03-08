@@ -12,7 +12,7 @@ import CelestiaCore
 
 class EclipseFinderViewController: NSViewController {
 
-    private let core: CelestiaAppCore = AppDelegate.shared.core
+    private let core: CelestiaAppCore = CelestiaAppCore.shared
 
     var currentFinder: CelestiaEclipseFinder?
 

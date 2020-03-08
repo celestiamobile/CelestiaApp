@@ -19,8 +19,8 @@ class ConfigSelectionViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configPathControl.url = currentConfigFile()
-        dataPathControl.url = currentDataDirectory()
+        configPathControl.url = currentConfigFile().url
+        dataPathControl.url = currentDataDirectory().url
 
         if launchFailure {
             cancelButton.title = NSLocalizedString("Quit", comment: "")
@@ -71,8 +71,8 @@ class ConfigSelectionViewController: NSViewController {
             }
         }
 
-        saveDataDirectory(bookmark: dataBookmark)
-        saveConfigFile(bookmark: configBookmark)
+        saveDataDirectory(dataBookmark)
+        saveConfigFile(configBookmark)
         NSApp.terminate(nil)
 
         NSWorkspace.shared.launchApplication(withBundleIdentifier: Bundle.main.bundleIdentifier!, options: .async, additionalEventParamDescriptor: nil, launchIdentifier: nil)

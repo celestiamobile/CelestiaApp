@@ -10,7 +10,7 @@ import Cocoa
 import CelestiaCore
 
 class SetTimeViewController: NSViewController {
-    private let core: CelestiaAppCore = AppDelegate.shared.core
+    private let core: CelestiaAppCore = CelestiaAppCore.shared
 
     @IBOutlet private weak var dateTimePicker: NSDatePicker!
     @IBOutlet private weak var julianTimeField: NSTextField!

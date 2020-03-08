@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return NSApp.windows.first?.contentView?.nextResponder as? CelestiaViewController
     }
 
-    lazy var core = CelestiaAppCore()
+    lazy var core = CelestiaAppCore.shared
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         Migrator.tryToMigrate()

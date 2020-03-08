@@ -10,7 +10,7 @@ import Cocoa
 import CelestiaCore
 
 class InfoViewController: NSViewController {
-    private let core: CelestiaAppCore = AppDelegate.shared.core
+    private let core: CelestiaAppCore = CelestiaAppCore.shared
 
     var selection: CelestiaSelection!
 

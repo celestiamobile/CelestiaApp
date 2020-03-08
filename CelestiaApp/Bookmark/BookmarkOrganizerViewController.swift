@@ -8,6 +8,8 @@
 
 import Cocoa
 
+import CelestiaCore
+
 class BookmarkOrganizerViewController: NSViewController {
     private let pbIdentifier = "cc.meowssage.celestia.Bookmark"
 
@@ -50,7 +52,7 @@ class BookmarkOrganizerViewController: NSViewController {
         guard clickedRow >= 0 else { return }
 
         if let item = (outlineView.item(atRow: clickedRow) as? NSTreeNode)?.representedObject as? BookmarkNode, !item.url.isEmpty {
-            AppDelegate.shared.core.go(to: item.url)
+            CelestiaAppCore.shared.go(to: item.url)
         }
     }
 

@@ -8,6 +8,11 @@
 
 import Cocoa
 
+import CelestiaCore
+
+private var dataDirectoryURL: UniformedURL!
+private var configFileURL: UniformedURL!
+
 class SplashViewController: NSViewController {
     @IBOutlet private weak var versionLabel: NSTextField!
     @IBOutlet private weak var statusLabel: NSTextField!
@@ -18,22 +23,26 @@ class SplashViewController: NSViewController {
         let shortVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
         versionLabel.stringValue = shortVersion
 
+        dataDirectoryURL = currentDataDirectory()
+        configFileURL = currentConfigFile()
+
         setupResourceDirectory()
 
-        let core = AppDelegate.shared.core
+        let core = CelestiaAppCore.shared
         DispatchQueue.global().async { [weak self] in
+            guard let self = self else { return }
             // create a context in case it's needed by Celestia
             let context = NSOpenGLContext(format: NSOpenGLPixelFormat(), share: nil)
             context?.makeCurrentContext()
-            let result = core.startSimulation(configFileName: currentConfigFile().path, extraDirectories: [extraDirectory].compactMap{$0?.path}, progress: { (status) in
+            let result = core.startSimulation(configFileName: configFileURL.url.path, extraDirectories: [extraDirectory].compactMap{$0?.path}, progress: { (status) in
                 DispatchQueue.main.async {
-                    self?.statusLabel.stringValue = status
+                    self.statusLabel.stringValue = status
                 }
             })
             NSOpenGLContext.clearCurrentContext()
             DispatchQueue.main.async {
                 if !result {
-                    self?.view.window?.close()
+                    self.view.window?.close()
                     let alert = NSAlert()
                     alert.messageText = NSLocalizedString("Celestia failed to load data files.", comment: "")
                     alert.alertStyle = .critical
@@ -49,16 +58,16 @@ class SplashViewController: NSViewController {
                 AppDelegate.shared.scriptController.buildScriptMenu()
                 AppDelegate.shared.bookmarkController.readBookmarks()
                 AppDelegate.shared.bookmarkController.buildBookmarkMenu()
-                let wc = self?.storyboard?.instantiateController(withIdentifier: "Main") as! NSWindowController
+                let wc = self.storyboard?.instantiateController(withIdentifier: "Main") as! NSWindowController
                 wc.showWindow(nil)
-                self?.view.window?.close()
+                self.view.window?.close()
             }
         }
     }
 
     func setupResourceDirectory() {
-        let fm = FileManager.default
-        fm.changeCurrentDirectoryPath(currentDataDirectory().path)
+        FileManager.default.changeCurrentDirectoryPath(dataDirectoryURL.url.path)
+        CelestiaAppCore.setLocaleDirectory(dataDirectoryURL.url.path + "/locale")
     }
 }
 

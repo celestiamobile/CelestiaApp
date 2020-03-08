@@ -72,11 +72,11 @@ class BookmarkController: NSObject {
 
     @objc private func bookmarkMenuItemClicked(_ sender: NSMenuItem) {
         let bookmark = displayedBookmarks[sender.tag]
-        AppDelegate.shared.core.go(to: bookmark.url)
+        CelestiaAppCore.shared.go(to: bookmark.url)
     }
 
     @IBAction private func addBookmark(_ sender: Any) {
-        guard let newBookmark = AppDelegate.shared.core.currentBookmark else { return }
+        guard let newBookmark = CelestiaAppCore.shared.currentBookmark else { return }
 
         storedBookmarks.append(newBookmark)
         buildBookmarkMenu()

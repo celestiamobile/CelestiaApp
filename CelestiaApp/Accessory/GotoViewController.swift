@@ -11,7 +11,7 @@ import Cocoa
 import CelestiaCore
 
 class GotoViewController: NSViewController {
-    private let core: CelestiaAppCore = AppDelegate.shared.core
+    private let core: CelestiaAppCore = CelestiaAppCore.shared
 
     private var searchOperationQueue = OperationQueue()
 

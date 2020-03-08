@@ -20,8 +20,10 @@
 		972F3A2222FF96F000CEDDAC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F3A2122FF96F000CEDDAC /* SettingViewController.swift */; };
 		972F3A3822FFC70C00CEDDAC /* GotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F3A3622FFC70C00CEDDAC /* GotoViewController.swift */; };
 		973E2F05240135F500B0F059 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 973E2F03240135F500B0F059 /* defaults.plist */; };
+		97401C912414CF2D0015F8E8 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97401C8D2414CF2D0015F8E8 /* URL.swift */; };
+		97401C922414CF2D0015F8E8 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97401C8E2414CF2D0015F8E8 /* UserDefaults.swift */; };
+		97401C932414CF2D0015F8E8 /* Celestia+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97401C8F2414CF2D0015F8E8 /* Celestia+Extension.swift */; };
 		97458FE6232769F8009BFADF /* ConfigSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97458FE5232769F8009BFADF /* ConfigSelectionViewController.swift */; };
-		97458FE923276B54009BFADF /* PathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97458FE823276B54009BFADF /* PathUtils.swift */; };
 		974D26F72302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F62302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift */; };
 		974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */; };
 		974D26FB2302B1DC00FDFBC0 /* BookmarkNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26FA2302B1DC00FDFBC0 /* BookmarkNode.swift */; };
@@ -76,8 +78,10 @@
 		972F3A2122FF96F000CEDDAC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		972F3A3622FFC70C00CEDDAC /* GotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotoViewController.swift; sourceTree = "<group>"; };
 		973E2F03240135F500B0F059 /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaults.plist; sourceTree = "<group>"; };
+		97401C8D2414CF2D0015F8E8 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		97401C8E2414CF2D0015F8E8 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		97401C8F2414CF2D0015F8E8 /* Celestia+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Celestia+Extension.swift"; sourceTree = "<group>"; };
 		97458FE5232769F8009BFADF /* ConfigSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigSelectionViewController.swift; sourceTree = "<group>"; };
-		97458FE823276B54009BFADF /* PathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathUtils.swift; sourceTree = "<group>"; };
 		974A6B282353391D007BCABD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		974D26F62302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkOrganizerViewController.swift; sourceTree = "<group>"; };
 		974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkController.swift; sourceTree = "<group>"; };
@@ -237,12 +241,22 @@
 			path = Accessory;
 			sourceTree = "<group>";
 		};
+		97401C8C2414CF2D0015F8E8 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				97401C8D2414CF2D0015F8E8 /* URL.swift */,
+				97401C8E2414CF2D0015F8E8 /* UserDefaults.swift */,
+				97401C8F2414CF2D0015F8E8 /* Celestia+Extension.swift */,
+			);
+			name = Helper;
+			path = ../../CelestiaCore/Helper;
+			sourceTree = "<group>";
+		};
 		97458FE723276B43009BFADF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				97ED2277234C297800FA5E2D /* LegacyMigrator.h */,
 				97ED2279234C297800FA5E2D /* LegacyMigrator.m */,
-				97458FE823276B54009BFADF /* PathUtils.swift */,
 				97ED227B234C2D6900FA5E2D /* Migrator.swift */,
 			);
 			path = Utils;
@@ -294,6 +308,7 @@
 		97F2518C22FDB6E100067B06 /* CelestiaApp */ = {
 			isa = PBXGroup;
 			children = (
+				97401C8C2414CF2D0015F8E8 /* Helper */,
 				97458FE723276B43009BFADF /* Utils */,
 				97989D4C2304EEE6008FA466 /* Resources */,
 				974D26F22302ACBF00FDFBC0 /* Bookmark */,
@@ -452,7 +467,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		970C560B2385009E00EBB157 /* Copy General Data */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -464,14 +479,14 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "DIDCOPY=0\n\nCELESTIA_ROOT=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/CelestiaResources\n\nmkdir -p $CELESTIA_ROOT\n\nfor directory in 'data' 'extras' 'extras-standard' 'fonts' 'images' 'locale' 'models' 'scripts' 'shaders' 'textures';do\n    f=$SRCROOT/../Celestia/$directory\n    if [ $f -nt $CELESTIA_ROOT/$directory ];then\n        echo \"rsync -rv --quiet --exclude=CMakeLists.txt $f $CELESTIA_ROOT\"\n        rsync -rv --quiet --exclude=CMakeLists.txt $f $CELESTIA_ROOT\n        DIDCOPY=1\n    fi\ndone\n\nfor file in \"celestia.cfg\" \"controls.txt\" \"demo.cel\" \"guide.cel\" \"start.cel\";do\n    f=$SRCROOT/../Celestia/$file\n    if [ $f -nt $CELESTIA_ROOT/$file ];then\n        echo \"cp $f $CELESTIA_ROOT/$file\"\n        cp $f $CELESTIA_ROOT/$file\n    fi\ndone\n\nif [ $DIDCOPY -eq 1 ];then\n    echo \"Touch $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\"\n    touch -c $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9751DC4023594EF100299997 /* Convert PO */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -483,7 +498,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "DIDBUILD=0\n\nCELESTIA_ROOT=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/CelestiaResources\nLOCALE_ROOT=$CELESTIA_ROOT/locale\n\nmkdir -p $LOCALE_ROOT\n\nPOT=$SRCROOT/../Celestia/po/celestia.pot\n\nfor po in $SRCROOT/../Celestia/po/*.po; do\n    f=${po##*/};f=${f%.*}\n    LANG_ROOT=$LOCALE_ROOT/$f/LC_MESSAGES\n    mkdir -p $LANG_ROOT\n    if [ $po -nt $LANG_ROOT/celestia.mo ];then\n        echo \"Create $LANG_ROOT/celestia.mo\"\n        msgmerge --quiet --output-file=$PROJECT_TEMP_DIR/$f.po --lang=$f --sort-output $po $POT\n        msgfmt -o $LANG_ROOT/celestia.mo $PROJECT_TEMP_DIR/$f.po\n        DIDBUILD=1\n    fi\ndone\n\nPOT=$SRCROOT/../Celestia/po2/celestia_constellations.pot\n\nfor po in $SRCROOT/../Celestia/po2/*.po; do\n    f=${po##*/};f=${f%.*}\n    LANG_ROOT=$LOCALE_ROOT/$f/LC_MESSAGES\n    mkdir -p $LANG_ROOT\n    if [ $po -nt $LANG_ROOT/celestia_constellations.mo ];then\n        echo \"Create $LANG_ROOT/celestia_constellations.mo\"\n        msgmerge --quiet --output-file=$PROJECT_TEMP_DIR/$f.po --lang=$f --sort-output $po $POT\n        msgfmt -o $LANG_ROOT/celestia_constellations.mo $PROJECT_TEMP_DIR/$f.po\n        DIDBUILD=1\n    fi\ndone\nif [ $DIDBUILD -eq 1 ];then\n    echo \"Touch $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\"\n    touch -c $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\nfi\n";
 			showEnvVarsInLog = 0;
@@ -495,10 +510,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97458FE923276B54009BFADF /* PathUtils.swift in Sources */,
 				97DBBE5922FFDDC4003D1BAF /* SetTimeViewController.swift in Sources */,
 				972F3A1222FEF65300CEDDAC /* EclipseFinderViewController.swift in Sources */,
 				971A67502301A9D3009E4EA1 /* ScriptController.swift in Sources */,
+				97401C922414CF2D0015F8E8 /* UserDefaults.swift in Sources */,
 				97DBBE6422FFE887003D1BAF /* CGLInfo.m in Sources */,
 				974D27552303CEF000FDFBC0 /* InfoViewController.swift in Sources */,
 				97DBBE6C230003DC003D1BAF /* NSAlert.swift in Sources */,
@@ -507,9 +522,11 @@
 				97458FE6232769F8009BFADF /* ConfigSelectionViewController.swift in Sources */,
 				97DBBE6122FFE779003D1BAF /* GLInfoViewController.swift in Sources */,
 				97F251BF22FDBACA00067B06 /* CelestiaGLView.swift in Sources */,
+				97401C932414CF2D0015F8E8 /* Celestia+Extension.swift in Sources */,
 				972F39E022FEAD1D00CEDDAC /* BrowserViewController.swift in Sources */,
 				972F3A2222FF96F000CEDDAC /* SettingViewController.swift in Sources */,
 				974D26FB2302B1DC00FDFBC0 /* BookmarkNode.swift in Sources */,
+				97401C912414CF2D0015F8E8 /* URL.swift in Sources */,
 				970DCE3D22FE8B550044F590 /* NSOpenGLView+AASample.m in Sources */,
 				97F2519022FDB6E100067B06 /* CelestiaViewController.swift in Sources */,
 				97F2518E22FDB6E100067B06 /* AppDelegate.swift in Sources */,
