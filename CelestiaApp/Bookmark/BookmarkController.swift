@@ -16,30 +16,12 @@ class BookmarkController: NSObject {
 
     @IBOutlet weak var bookmarkMenu: NSMenu!
 
-    func readBookmarks() {
-        guard let path = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).first else {
-            return
-        }
-        let bookmarkFilePath = "\(path)/bookmark.json"
-        do {
-            let data = try Data(contentsOf: URL(fileURLWithPath: bookmarkFilePath))
-            let bookmarks = try JSONDecoder().decode([BookmarkNode].self, from: data)
-            storedBookmarks = bookmarks
-        } catch let error {
-            print("Bookmark reading error: \(error.localizedDescription)")
-        }
+    func readBookmarksFromDisk() {
+        storedBookmarks = readBookmarks()
     }
 
-    func storeBookmarks() {
-        guard let path = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).first else {
-            return
-        }
-        let bookmarkFilePath = "\(path)/bookmark.json"
-        do {
-            try JSONEncoder().encode(storedBookmarks).write(to: URL(fileURLWithPath: bookmarkFilePath))
-        } catch let error {
-            print("Bookmark writing error: \(error.localizedDescription)")
-        }
+    func storeBookmarksToDisk() {
+        storeBookmarks(storedBookmarks)
     }
 
     func buildBookmarkMenu() {
@@ -87,27 +69,5 @@ class BookmarkController: NSObject {
         vc.controller = self
         let panel = NSPanel(contentViewController: vc)
         panel.makeKeyAndOrderFront(self)
-    }
-}
-
-extension CelestiaAppCore {
-    var currentBookmark: BookmarkNode? {
-        let selection = simulation.selection
-        if selection.isEmpty {
-            return nil
-        }
-        let name: String
-        if let star = selection.star {
-            name = simulation.universe.starCatalog.starName(star)
-        } else if let body = selection.body {
-            name = body.name
-        } else if let dso = selection.dso {
-            name = simulation.universe.dsoCatalog.dsoName(dso)
-        } else if let location = selection.location {
-            name = location.name
-        } else {
-            name = NSLocalizedString("Unknown", comment: "")
-        }
-        return BookmarkNode(name: name, url: currentURL, isFolder: false)
     }
 }

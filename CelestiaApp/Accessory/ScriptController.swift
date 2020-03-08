@@ -41,11 +41,7 @@ class ScriptController: NSObject {
     }
 
     func buildScriptMenu() {
-        var scripts = CelestiaScript.scripts(inDirectory: "scripts", deepScan: true)
-        if let extraScriptsPath = extraScriptDirectory?.path {
-            scripts += CelestiaScript.scripts(inDirectory: extraScriptsPath, deepScan: true)
-        }
-        scriptMenu.removeAllItems()
+        let scripts = readScripts()
 
         for i in 0..<scripts.count {
             let menuItem = NSMenuItem(title: scripts[i].title, action: #selector(scriptInvoked(_:)), keyEquivalent: "")

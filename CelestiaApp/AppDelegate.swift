@@ -37,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         if core.isInitialized {
             core.storeUserDefaults()
-            bookmarkController.storeBookmarks()
+            bookmarkController.storeBookmarksToDisk()
         }
     }
 

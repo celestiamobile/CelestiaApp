@@ -26,7 +26,6 @@
 		97458FE6232769F8009BFADF /* ConfigSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97458FE5232769F8009BFADF /* ConfigSelectionViewController.swift */; };
 		974D26F72302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F62302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift */; };
 		974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */; };
-		974D26FB2302B1DC00FDFBC0 /* BookmarkNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26FA2302B1DC00FDFBC0 /* BookmarkNode.swift */; };
 		974D27552303CEF000FDFBC0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D27532303CEF000FDFBC0 /* InfoViewController.swift */; };
 		9751DCF62359518600299997 /* AUTHORS in Resources */ = {isa = PBXBuildFile; fileRef = 9751DCF52359518600299997 /* AUTHORS */; };
 		9751DCF82359519100299997 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 9751DCF72359519000299997 /* COPYING */; };
@@ -85,7 +84,6 @@
 		974A6B282353391D007BCABD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		974D26F62302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkOrganizerViewController.swift; sourceTree = "<group>"; };
 		974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkController.swift; sourceTree = "<group>"; };
-		974D26FA2302B1DC00FDFBC0 /* BookmarkNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkNode.swift; sourceTree = "<group>"; };
 		974D27532303CEF000FDFBC0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		9751DCF52359518600299997 /* AUTHORS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AUTHORS; path = ../../../Celestia/AUTHORS; sourceTree = "<group>"; };
 		9751DCF72359519000299997 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = COPYING; path = ../../../Celestia/COPYING; sourceTree = "<group>"; };
@@ -268,7 +266,6 @@
 				97989DA623051BB9008FA466 /* Bookmark.storyboard */,
 				974D26F62302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift */,
 				974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */,
-				974D26FA2302B1DC00FDFBC0 /* BookmarkNode.swift */,
 			);
 			path = Bookmark;
 			sourceTree = "<group>";
@@ -525,7 +522,6 @@
 				97401C932414CF2D0015F8E8 /* Celestia+Extension.swift in Sources */,
 				972F39E022FEAD1D00CEDDAC /* BrowserViewController.swift in Sources */,
 				972F3A2222FF96F000CEDDAC /* SettingViewController.swift in Sources */,
-				974D26FB2302B1DC00FDFBC0 /* BookmarkNode.swift in Sources */,
 				97401C912414CF2D0015F8E8 /* URL.swift in Sources */,
 				970DCE3D22FE8B550044F590 /* NSOpenGLView+AASample.m in Sources */,
 				97F2519022FDB6E100067B06 /* CelestiaViewController.swift in Sources */,

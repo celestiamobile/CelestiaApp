@@ -38,7 +38,7 @@ class Migrator {
         let legacyBookmarks = legacyRawBookmarks.map { CelestiaFavorite(dictionary: $0) }
         let newBookmarks = legacyBookmarks.map { BookmarkNode(legacy: $0) }
         AppDelegate.shared.bookmarkController.storedBookmarks = newBookmarks
-        AppDelegate.shared.bookmarkController.storeBookmarks()
+        AppDelegate.shared.bookmarkController.storeBookmarksToDisk()
 
         dbVersion = 2
 
