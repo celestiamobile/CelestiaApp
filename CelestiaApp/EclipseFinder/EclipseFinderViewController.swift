@@ -90,8 +90,8 @@ class EclipseFinderViewController: NSViewController {
 
         let eclipse = results[selected]
         core.simulation.time = eclipse.startTime
-        let target = CelestiaSelection(body: eclipse.receiver)
-        let ref = CelestiaSelection(star: eclipse.receiver.system!.star!)
+        let target = CelestiaSelection(object: eclipse.receiver)!
+        let ref = CelestiaSelection(object: eclipse.receiver.system!.star!)!
         core.simulation.goToEclipse(occulter: ref, receiver: target)
     }
 }

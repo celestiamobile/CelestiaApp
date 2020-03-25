@@ -268,19 +268,7 @@ class CelestiaViewController: NSViewController {
 
     @IBAction private func selectObject(_ sender: BrowserMenuItem) {
         if let item = sender.browserItem, let cat = item.entry {
-            let selection: CelestiaSelection?
-            if let body = cat as? CelestiaBody {
-                selection = CelestiaSelection(body: body)
-            } else if let star = cat as? CelestiaStar {
-                selection = CelestiaSelection(star: star)
-            } else if let dso = cat as? CelestiaDSO {
-                selection = CelestiaSelection(dso: dso)
-            } else if let location = cat as? CelestiaLocation {
-                selection = CelestiaSelection(location: location)
-            } else {
-                selection = nil
-            }
-            if let sel = selection {
+            if let sel = CelestiaSelection(object: cat) {
                 core.simulation.selection = sel
             }
         }

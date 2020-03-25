@@ -32,22 +32,7 @@ class BrowserViewController: NSViewController {
     private var currentSelection: CelestiaSelection? {
         guard let object = currentTree.selectedObjects.first as? CelestiaBrowserItem else { return nil }
 
-        return transform(object)
-    }
-
-    private func transform(_ item: CelestiaBrowserItem) -> CelestiaSelection? {
-        let object = item.entry
-        if let star = object as? CelestiaStar {
-            return CelestiaSelection(star: star)
-        } else if let dso = object as? CelestiaDSO {
-            return CelestiaSelection(dso: dso)
-        } else if let b = object as? CelestiaBody {
-            return CelestiaSelection(body: b)
-        } else if let l = object as? CelestiaLocation {
-            return CelestiaSelection(location: l)
-        } else {
-            return nil
-        }
+        return CelestiaSelection(item: object)
     }
 
     private let core: CelestiaAppCore = CelestiaAppCore.shared
@@ -74,7 +59,7 @@ class BrowserViewController: NSViewController {
         let clickedRow = sender.clickedRow
         guard clickedRow >= 0 else { return }
 
-        if let item = (sender.item(atRow: clickedRow) as? NSTreeNode)?.representedObject as? CelestiaBrowserItem, let sel = transform(item) {
+        if let item = (sender.item(atRow: clickedRow) as? NSTreeNode)?.representedObject as? CelestiaBrowserItem, let sel = CelestiaSelection(item: item) {
             core.simulation.selection = sel
             core.charEnter(103)
         }
