@@ -125,12 +125,20 @@ class CelestiaViewController: NSViewController {
     }
 
     func showSetting() {
+        if let existing = NSApp.findWindow(type: SettingViewController.self) {
+            existing.makeKeyAndOrderFront(nil)
+            return
+        }
         let setting = NSStoryboard(name: "Setting", bundle: nil).instantiateController(withIdentifier: "Setting") as! SettingViewController
         let panel = NSPanel(contentViewController: setting)
         panel.makeKeyAndOrderFront(self)
     }
 
     func showBrowser() {
+        if let existing = NSApp.findWindow(type: BrowserViewController.self) {
+            existing.makeKeyAndOrderFront(nil)
+            return
+        }
         let browser = NSStoryboard(name: "StarBrowser", bundle: nil).instantiateController(withIdentifier: "Browser") as! BrowserViewController
         let panel = NSPanel(contentViewController: browser)
         panel.makeKeyAndOrderFront(self)
@@ -197,6 +205,10 @@ class CelestiaViewController: NSViewController {
     }
 
     func showGoto() {
+        if let existing = NSApp.findWindow(type: GotoViewController.self) {
+            existing.makeKeyAndOrderFront(nil)
+            return
+        }
         let goto = NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "Goto") as! GotoViewController
 
         let panel = NSPanel(contentViewController: goto)
@@ -204,6 +216,10 @@ class CelestiaViewController: NSViewController {
     }
 
     func showSetTime() {
+        if let existing = NSApp.findWindow(type: SetTimeViewController.self) {
+            existing.makeKeyAndOrderFront(nil)
+            return
+        }
         let time = NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "SetTime") as! SetTimeViewController
 
         let panel = NSPanel(contentViewController: time)
@@ -211,6 +227,10 @@ class CelestiaViewController: NSViewController {
     }
 
     func showEclipseFinder() {
+        if let existing = NSApp.findWindow(type: EclipseFinderViewController.self) {
+            existing.makeKeyAndOrderFront(nil)
+            return
+        }
         let finder = NSStoryboard(name: "EclipseFinder", bundle: nil).instantiateController(withIdentifier: "EclipseFinder") as! EclipseFinderViewController
         let panel = NSPanel(contentViewController: finder)
         panel.makeKeyAndOrderFront(self)
@@ -241,6 +261,9 @@ class CelestiaViewController: NSViewController {
     }
 
     @IBAction private func showInfo(_ sender: NSMenuItem) {
+        if let existing = NSApp.findWindow(type: InfoViewController.self) {
+            existing.performClose(nil)
+        }
         let selection = core.simulation.selection
         if !selection.isEmpty {
             let vc = NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "Info") as! InfoViewController

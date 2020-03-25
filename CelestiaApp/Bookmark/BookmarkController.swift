@@ -65,6 +65,10 @@ class BookmarkController: NSObject {
     }
 
     @IBAction private func organizeBookmarks(_ sender: Any) {
+        if let existing = NSApp.findWindow(type: BookmarkOrganizerViewController.self) {
+            existing.makeKeyAndOrderFront(nil)
+            return
+        }
         let vc = NSStoryboard(name: "Bookmark", bundle: nil).instantiateController(withIdentifier: "Organizer") as! BookmarkOrganizerViewController
         vc.controller = self
         let panel = NSPanel(contentViewController: vc)

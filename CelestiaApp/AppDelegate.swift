@@ -86,6 +86,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func presentGLInfo(_ sender: NSMenuItem) {
+        if let existing = NSApp.findWindow(type: GLInfoViewController.self) {
+            existing.makeKeyAndOrderFront(nil)
+            return
+        }
         let vc = NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "GLInfo") as! NSViewController
         let panel = NSPanel(contentViewController: vc)
         panel.styleMask = [panel.styleMask, .utilityWindow]
@@ -97,6 +101,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func showChangeConfigFile(launchFailure: Bool) {
+        if let existing = NSApp.findWindow(type: ConfigSelectionViewController.self) {
+            existing.makeKeyAndOrderFront(nil)
+            return
+        }
         let vc = NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "ConfigSelectionWindow") as! ConfigSelectionViewController
         vc.launchFailure = launchFailure
         let panel = NSPanel(contentViewController: vc)
@@ -110,5 +118,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func application(_ sender: NSApplication, openFile filename: String) -> Bool {
         scriptController.runScript(at: filename)
         return true
+    }
+}
+
+
+extension NSApplication {
+    func findWindow<ViewController: NSViewController>(type: ViewController.Type) -> NSWindow? {
+        for window in windows {
+            if window.contentViewController is ViewController {
+                return window
+            }
+        }
+        return nil
     }
 }
