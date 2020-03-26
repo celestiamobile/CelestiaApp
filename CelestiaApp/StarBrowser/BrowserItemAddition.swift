@@ -8,8 +8,6 @@
 
 import CelestiaCore
 
-var sharedUniverseItem: CelestiaUniverse?
-
 extension CelestiaBrowserItem {
     @objc var isLeaf: Bool {
         return children.count == 0
