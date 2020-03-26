@@ -27,10 +27,6 @@
 		974D26F72302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F62302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift */; };
 		974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */; };
 		974D27552303CEF000FDFBC0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D27532303CEF000FDFBC0 /* InfoViewController.swift */; };
-		9751DCF62359518600299997 /* AUTHORS in Resources */ = {isa = PBXBuildFile; fileRef = 9751DCF52359518600299997 /* AUTHORS */; };
-		9751DCF82359519100299997 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 9751DCF72359519000299997 /* COPYING */; };
-		9751DCFB235951F400299997 /* ChangeLog in Resources */ = {isa = PBXBuildFile; fileRef = 9751DCF9235951F400299997 /* ChangeLog */; };
-		9751DCFC235951F400299997 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 9751DCFA235951F400299997 /* README */; };
 		97916F402313F31D00925AF3 /* CelestiaViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97916F3F2313F31D00925AF3 /* CelestiaViewDelegate.swift */; };
 		97989DA423051BB9008FA466 /* Bookmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97989DA623051BB9008FA466 /* Bookmark.storyboard */; };
 		97989DA823051BBD008FA466 /* Accessory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97989DAA23051BBD008FA466 /* Accessory.storyboard */; };
@@ -84,10 +80,6 @@
 		974D26F62302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkOrganizerViewController.swift; sourceTree = "<group>"; };
 		974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkController.swift; sourceTree = "<group>"; };
 		974D27532303CEF000FDFBC0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		9751DCF52359518600299997 /* AUTHORS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AUTHORS; path = ../../../Celestia/AUTHORS; sourceTree = "<group>"; };
-		9751DCF72359519000299997 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = COPYING; path = ../../../Celestia/COPYING; sourceTree = "<group>"; };
-		9751DCF9235951F400299997 /* ChangeLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ChangeLog; path = ../../../Celestia/ChangeLog; sourceTree = "<group>"; };
-		9751DCFA235951F400299997 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README; path = ../../../Celestia/README; sourceTree = "<group>"; };
 		976BC22C23002B7700D2BF29 /* Celestia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Celestia.entitlements; sourceTree = "<group>"; };
 		97916F3F2313F31D00925AF3 /* CelestiaViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestiaViewDelegate.swift; sourceTree = "<group>"; };
 		97989DA523051BB9008FA466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Bookmark.storyboard; sourceTree = "<group>"; };
@@ -269,10 +261,6 @@
 			isa = PBXGroup;
 			children = (
 				973E2F03240135F500B0F059 /* defaults.plist */,
-				9751DCF52359518600299997 /* AUTHORS */,
-				9751DCF72359519000299997 /* COPYING */,
-				9751DCF9235951F400299997 /* ChangeLog */,
-				9751DCFA235951F400299997 /* README */,
 				97989E1A23057DC2008FA466 /* Credits.rtf */,
 			);
 			path = Resources;
@@ -437,18 +425,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9751DCFC235951F400299997 /* README in Resources */,
 				97989DA423051BB9008FA466 /* Bookmark.storyboard in Resources */,
 				973E2F05240135F500B0F059 /* defaults.plist in Resources */,
-				9751DCFB235951F400299997 /* ChangeLog in Resources */,
 				97989DB123051BCE008FA466 /* EclipseFinder.storyboard in Resources */,
 				97989DA823051BBD008FA466 /* Accessory.storyboard in Resources */,
 				97989E1823057DC2008FA466 /* Credits.rtf in Resources */,
 				97F2519222FDB6E700067B06 /* Assets.xcassets in Resources */,
 				97989DDF23051F96008FA466 /* Localizable.strings in Resources */,
 				97989DAE23051BCA008FA466 /* Setting.storyboard in Resources */,
-				9751DCF82359519100299997 /* COPYING in Resources */,
-				9751DCF62359518600299997 /* AUTHORS in Resources */,
 				97F2519522FDB6E700067B06 /* Main.storyboard in Resources */,
 				97989DAB23051BC2008FA466 /* StarBrowser.storyboard in Resources */,
 			);
@@ -473,7 +457,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "DIDCOPY=0\n\nCELESTIA_ROOT=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/CelestiaResources\n\nmkdir -p $CELESTIA_ROOT\n\nfor directory in 'data' 'extras' 'extras-standard' 'fonts' 'images' 'locale' 'models' 'scripts' 'shaders' 'textures';do\n    f=$SRCROOT/../Celestia/$directory\n    if [ $f -nt $CELESTIA_ROOT/$directory ];then\n        echo \"rsync -rv --quiet --exclude=CMakeLists.txt $f $CELESTIA_ROOT\"\n        rsync -rv --quiet --exclude=CMakeLists.txt $f $CELESTIA_ROOT\n        DIDCOPY=1\n    fi\ndone\n\nfor file in \"celestia.cfg\" \"controls.txt\" \"demo.cel\" \"guide.cel\" \"start.cel\";do\n    f=$SRCROOT/../Celestia/$file\n    if [ $f -nt $CELESTIA_ROOT/$file ];then\n        echo \"cp $f $CELESTIA_ROOT/$file\"\n        cp $f $CELESTIA_ROOT/$file\n    fi\ndone\n\nif [ $DIDCOPY -eq 1 ];then\n    echo \"Touch $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\"\n    touch -c $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\nfi\n";
+			shellScript = "CELESTIA_CORE_ROOT=$SRCROOT/../CelestiaCore\n\nSH_FILE=$CELESTIA_CORE_ROOT/copy_general_data.sh\n\nchmod +x $SH_FILE\n\n$SH_FILE\n";
 			showEnvVarsInLog = 0;
 		};
 		9751DC4023594EF100299997 /* Convert PO */ = {
@@ -492,7 +476,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "DIDBUILD=0\n\nCELESTIA_ROOT=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/CelestiaResources\nLOCALE_ROOT=$CELESTIA_ROOT/locale\n\nmkdir -p $LOCALE_ROOT\n\nPOT=$SRCROOT/../Celestia/po/celestia.pot\n\nfor po in $SRCROOT/../Celestia/po/*.po; do\n    f=${po##*/};f=${f%.*}\n    LANG_ROOT=$LOCALE_ROOT/$f/LC_MESSAGES\n    mkdir -p $LANG_ROOT\n    if [ $po -nt $LANG_ROOT/celestia.mo ];then\n        echo \"Create $LANG_ROOT/celestia.mo\"\n        msgmerge --quiet --output-file=$PROJECT_TEMP_DIR/$f.po --lang=$f --sort-output $po $POT\n        msgfmt -o $LANG_ROOT/celestia.mo $PROJECT_TEMP_DIR/$f.po\n        DIDBUILD=1\n    fi\ndone\n\nPOT=$SRCROOT/../Celestia/po2/celestia_constellations.pot\n\nfor po in $SRCROOT/../Celestia/po2/*.po; do\n    f=${po##*/};f=${f%.*}\n    LANG_ROOT=$LOCALE_ROOT/$f/LC_MESSAGES\n    mkdir -p $LANG_ROOT\n    if [ $po -nt $LANG_ROOT/celestia_constellations.mo ];then\n        echo \"Create $LANG_ROOT/celestia_constellations.mo\"\n        msgmerge --quiet --output-file=$PROJECT_TEMP_DIR/$f.po --lang=$f --sort-output $po $POT\n        msgfmt -o $LANG_ROOT/celestia_constellations.mo $PROJECT_TEMP_DIR/$f.po\n        DIDBUILD=1\n    fi\ndone\nif [ $DIDBUILD -eq 1 ];then\n    echo \"Touch $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\"\n    touch -c $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\nfi\n";
+			shellScript = "CELESTIA_CORE_ROOT=$SRCROOT/../CelestiaCore\n\nSH_FILE=$CELESTIA_CORE_ROOT/convert_po.sh\n\nchmod +x $SH_FILE\n\n$SH_FILE\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
