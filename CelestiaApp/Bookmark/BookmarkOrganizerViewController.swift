@@ -11,7 +11,7 @@ import Cocoa
 import CelestiaCore
 
 class BookmarkOrganizerViewController: NSViewController {
-    private let pbIdentifier = "cc.meowssage.celestia.Bookmark"
+    private let pbIdentifier = "space.celestia.Celestia.Bookmark"
 
     @IBOutlet private weak var outlineView: NSOutlineView!
     @IBOutlet private var treeController: NSTreeController!
