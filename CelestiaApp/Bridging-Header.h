@@ -10,7 +10,6 @@
 #define BRIDGING_HEADER_H
 
 #import "NSOpenGLView+AASample.h"
-#import "CGLInfo.h"
 #import "LegacyMigrator.h"
 
 #endif /* BRIDGING_HEADER_H */

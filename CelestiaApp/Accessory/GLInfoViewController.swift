@@ -8,6 +8,8 @@
 
 import Cocoa
 
+import CelestiaCore
+
 class GLInfoViewController: NSViewController {
 
     @IBOutlet var infoTextView: NSTextView!
@@ -15,7 +17,7 @@ class GLInfoViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        infoTextView.string = CGLInfo.info
+        infoTextView.string = CelestiaAppCore.shared.renderInfo
     }
     
 }

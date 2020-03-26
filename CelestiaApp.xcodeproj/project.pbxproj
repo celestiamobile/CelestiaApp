@@ -41,7 +41,6 @@
 		97989E1823057DC2008FA466 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 97989E1A23057DC2008FA466 /* Credits.rtf */; };
 		97DBBE5922FFDDC4003D1BAF /* SetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE5722FFDDC4003D1BAF /* SetTimeViewController.swift */; };
 		97DBBE6122FFE779003D1BAF /* GLInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6022FFE779003D1BAF /* GLInfoViewController.swift */; };
-		97DBBE6422FFE887003D1BAF /* CGLInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6222FFE887003D1BAF /* CGLInfo.m */; };
 		97DBBE6822FFF2AC003D1BAF /* SplashWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6722FFF2AC003D1BAF /* SplashWindow.swift */; };
 		97DBBE6C230003DC003D1BAF /* NSAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6B230003DC003D1BAF /* NSAlert.swift */; };
 		97ED227A234C297800FA5E2D /* LegacyMigrator.m in Sources */ = {isa = PBXBuildFile; fileRef = 97ED2279234C297800FA5E2D /* LegacyMigrator.m */; };
@@ -139,8 +138,6 @@
 		97DAAB3823554DD300887A9A /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_TW; path = zh_TW.lproj/Localizable.strings; sourceTree = "<group>"; };
 		97DBBE5722FFDDC4003D1BAF /* SetTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimeViewController.swift; sourceTree = "<group>"; };
 		97DBBE6022FFE779003D1BAF /* GLInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLInfoViewController.swift; sourceTree = "<group>"; };
-		97DBBE6222FFE887003D1BAF /* CGLInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGLInfo.m; sourceTree = "<group>"; };
-		97DBBE6322FFE887003D1BAF /* CGLInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGLInfo.h; sourceTree = "<group>"; };
 		97DBBE6722FFF2AC003D1BAF /* SplashWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWindow.swift; sourceTree = "<group>"; };
 		97DBBE6B230003DC003D1BAF /* NSAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAlert.swift; sourceTree = "<group>"; };
 		97DBBE6D23000EA8003D1BAF /* liblua53.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblua53.a; path = ../../../Downloads/celestialibs/liblua53.a; sourceTree = "<group>"; };
@@ -214,8 +211,6 @@
 		972F3A3222FFC67100CEDDAC /* OpenGL */ = {
 			isa = PBXGroup;
 			children = (
-				97DBBE6322FFE887003D1BAF /* CGLInfo.h */,
-				97DBBE6222FFE887003D1BAF /* CGLInfo.m */,
 				97F251BE22FDBACA00067B06 /* CelestiaGLView.swift */,
 				970DCE3B22FE8B550044F590 /* NSOpenGLView+AASample.h */,
 				970DCE3C22FE8B550044F590 /* NSOpenGLView+AASample.m */,
@@ -511,7 +506,6 @@
 				972F3A1222FEF65300CEDDAC /* EclipseFinderViewController.swift in Sources */,
 				971A67502301A9D3009E4EA1 /* ScriptController.swift in Sources */,
 				97401C922414CF2D0015F8E8 /* UserDefaults.swift in Sources */,
-				97DBBE6422FFE887003D1BAF /* CGLInfo.m in Sources */,
 				974D27552303CEF000FDFBC0 /* InfoViewController.swift in Sources */,
 				97DBBE6C230003DC003D1BAF /* NSAlert.swift in Sources */,
 				97DBBE6822FFF2AC003D1BAF /* SplashWindow.swift in Sources */,
