@@ -14,8 +14,8 @@ class InfoViewController: NSViewController {
 
     var selection: CelestiaSelection!
 
-    @IBOutlet weak var webInfoButton: NSButton!
-    @IBOutlet weak var contentTextView: NSTextView!
+    @IBOutlet private var webInfoButton: NSButton!
+    @IBOutlet private var contentTextView: NSTextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

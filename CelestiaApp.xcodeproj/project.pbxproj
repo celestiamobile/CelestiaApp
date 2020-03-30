@@ -11,7 +11,6 @@
 		970C5625238637B900EBB157 /* BrowserItemAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970C5624238637B900EBB157 /* BrowserItemAddition.swift */; };
 		970DCE3D22FE8B550044F590 /* NSOpenGLView+AASample.m in Sources */ = {isa = PBXBuildFile; fileRef = 970DCE3C22FE8B550044F590 /* NSOpenGLView+AASample.m */; };
 		971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251A722FDB86E00067B06 /* libc++.tbd */; };
-		971A67472301A36C009E4EA1 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251BA22FDB9AD00067B06 /* libiconv.tbd */; };
 		971A67482301A370009E4EA1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251BC22FDB9BB00067B06 /* libz.tbd */; };
 		971A674A2301A376009E4EA1 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 971A67492301A376009E4EA1 /* OpenGL.framework */; };
 		971A67502301A9D3009E4EA1 /* ScriptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971A674F2301A9D3009E4EA1 /* ScriptController.swift */; };
@@ -162,7 +161,6 @@
 			files = (
 				971A674A2301A376009E4EA1 /* OpenGL.framework in Frameworks */,
 				971A67482301A370009E4EA1 /* libz.tbd in Frameworks */,
-				971A67472301A36C009E4EA1 /* libiconv.tbd in Frameworks */,
 				970C560E238507F500EBB157 /* libbz2.tbd in Frameworks */,
 				971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */,
 				97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */,
