@@ -779,6 +779,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CODE_SIGN_FLAGS = "$(inherited) --timestamp";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = space.celestia.Celestia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -811,6 +812,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CODE_SIGN_FLAGS = "$(inherited) --timestamp";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = space.celestia.Celestia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
