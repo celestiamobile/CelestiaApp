@@ -10,6 +10,10 @@ import Cocoa
 
 import CelestiaCore
 
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     static var shared: AppDelegate {
@@ -26,6 +30,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     lazy var core = CelestiaAppCore.shared
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        MSAppCenter.start("3806368d-4ccb-43c4-af45-d37da989742f", withServices:[
+            MSAnalytics.self,
+            MSCrashes.self
+        ])
+
         Migrator.tryToMigrate()
         CelestiaAppCore.setLocaleDirectory(defaultDataDirectory.path + "/locale")
     }

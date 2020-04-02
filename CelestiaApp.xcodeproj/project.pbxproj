@@ -26,6 +26,9 @@
 		974D26F72302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F62302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift */; };
 		974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */; };
 		974D27552303CEF000FDFBC0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D27532303CEF000FDFBC0 /* InfoViewController.swift */; };
+		978C14822435B34800EE4D53 /* AppCenterAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978C147F2435B34800EE4D53 /* AppCenterAnalytics.framework */; };
+		978C14842435B34800EE4D53 /* AppCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978C14802435B34800EE4D53 /* AppCenter.framework */; };
+		978C14862435B34800EE4D53 /* AppCenterCrashes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978C14812435B34800EE4D53 /* AppCenterCrashes.framework */; };
 		97916F402313F31D00925AF3 /* CelestiaViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97916F3F2313F31D00925AF3 /* CelestiaViewDelegate.swift */; };
 		97989DA423051BB9008FA466 /* Bookmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97989DA623051BB9008FA466 /* Bookmark.storyboard */; };
 		97989DA823051BBD008FA466 /* Accessory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97989DAA23051BBD008FA466 /* Accessory.storyboard */; };
@@ -80,6 +83,9 @@
 		974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkController.swift; sourceTree = "<group>"; };
 		974D27532303CEF000FDFBC0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		976BC22C23002B7700D2BF29 /* Celestia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Celestia.entitlements; sourceTree = "<group>"; };
+		978C147F2435B34800EE4D53 /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = AppCenter/AppCenterAnalytics.framework; sourceTree = "<group>"; };
+		978C14802435B34800EE4D53 /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = AppCenter/AppCenter.framework; sourceTree = "<group>"; };
+		978C14812435B34800EE4D53 /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = AppCenter/AppCenterCrashes.framework; sourceTree = "<group>"; };
 		97916F3F2313F31D00925AF3 /* CelestiaViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestiaViewDelegate.swift; sourceTree = "<group>"; };
 		97989DA523051BB9008FA466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Bookmark.storyboard; sourceTree = "<group>"; };
 		97989DA923051BBD008FA466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Accessory.storyboard; sourceTree = "<group>"; };
@@ -119,6 +125,9 @@
 		97989E1D23057DD3008FA466 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ja; path = ja.lproj/Credits.rtf; sourceTree = "<group>"; };
 		97989E1E23057DD4008FA466 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = es; path = es.lproj/Credits.rtf; sourceTree = "<group>"; };
 		97989E1F23057DD4008FA466 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = fr; path = fr.lproj/Credits.rtf; sourceTree = "<group>"; };
+		97BAACA62435AFA6009D359E /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = "../../../Downloads/AppCenter-SDK-Apple/macOS/AppCenterCrashes.framework"; sourceTree = "<group>"; };
+		97BAACA82435AFA6009D359E /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = "../../../Downloads/AppCenter-SDK-Apple/macOS/AppCenterAnalytics.framework"; sourceTree = "<group>"; };
+		97BAACA92435AFA6009D359E /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = "../../../Downloads/AppCenter-SDK-Apple/macOS/AppCenter.framework"; sourceTree = "<group>"; };
 		97DAAB3123554DD100887A9A /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_TW; path = zh_TW.lproj/Bookmark.strings; sourceTree = "<group>"; };
 		97DAAB3223554DD100887A9A /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_TW; path = zh_TW.lproj/Accessory.strings; sourceTree = "<group>"; };
 		97DAAB3323554DD200887A9A /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_TW; path = zh_TW.lproj/StarBrowser.strings; sourceTree = "<group>"; };
@@ -160,9 +169,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				971A674A2301A376009E4EA1 /* OpenGL.framework in Frameworks */,
+				978C14862435B34800EE4D53 /* AppCenterCrashes.framework in Frameworks */,
 				971A67482301A370009E4EA1 /* libz.tbd in Frameworks */,
 				970C560E238507F500EBB157 /* libbz2.tbd in Frameworks */,
 				971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */,
+				978C14842435B34800EE4D53 /* AppCenter.framework in Frameworks */,
+				978C14822435B34800EE4D53 /* AppCenterAnalytics.framework in Frameworks */,
 				97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +330,12 @@
 		97F251A522FDB79F00067B06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				97BAACA92435AFA6009D359E /* AppCenter.framework */,
+				978C14802435B34800EE4D53 /* AppCenter.framework */,
+				97BAACA82435AFA6009D359E /* AppCenterAnalytics.framework */,
+				97BAACA62435AFA6009D359E /* AppCenterCrashes.framework */,
+				978C147F2435B34800EE4D53 /* AppCenterAnalytics.framework */,
+				978C14812435B34800EE4D53 /* AppCenterCrashes.framework */,
 				970C560D238507EA00EBB157 /* libbz2.tbd */,
 				971A67492301A376009E4EA1 /* OpenGL.framework */,
 				97DBBE6D23000EA8003D1BAF /* liblua53.a */,
@@ -749,6 +767,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 22NR5428TD;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AppCenter",
+				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CelestiaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -777,6 +799,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 22NR5428TD;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AppCenter",
+				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CelestiaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
