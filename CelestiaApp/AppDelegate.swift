@@ -30,6 +30,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     lazy var core = CelestiaAppCore.shared
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true])
+
         MSAppCenter.start("3806368d-4ccb-43c4-af45-d37da989742f", withServices:[
             MSAnalytics.self,
             MSCrashes.self
