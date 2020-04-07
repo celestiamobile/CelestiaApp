@@ -25,8 +25,11 @@ class BookmarkController: NSObject {
     }
 
     func buildBookmarkMenu() {
-        // get fixedMenus
+        // get fixed menu items
         var menuItems = Array(bookmarkMenu.items[0..<2])
+
+        // clear all items
+        bookmarkMenu.removeAllItems()
 
         displayedBookmarks = []
 
@@ -40,16 +43,19 @@ class BookmarkController: NSObject {
                     displayedBookmarks.append(item)
                     return menuItem
                 }
-                let menuItem = NSMenuItem(title: item.name, action: nil, keyEquivalent: "")
-                let subItems = item.children.map { createMenuItem(for: $0) }
                 let subMenu = NSMenu(title: "")
-                subMenu.items = subItems
+                let menuItem = NSMenuItem(title: item.name, action: nil, keyEquivalent: "")
+                for child in item.children {
+                    subMenu.addItem(createMenuItem(for: child))
+                }
                 menuItem.submenu = subMenu
                 return menuItem
             }
             menuItems += storedBookmarks.map { createMenuItem(for: $0) }
         }
-        bookmarkMenu.items = menuItems
+        for item in menuItems {
+            bookmarkMenu.addItem(item)
+        }
     }
 
     @objc private func bookmarkMenuItemClicked(_ sender: NSMenuItem) {

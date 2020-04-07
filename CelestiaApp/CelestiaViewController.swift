@@ -396,7 +396,9 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
                     mItems.append(childItem)
                 } else if let menuItems = createMenuItems(for: child) {
                     let subMenu = NSMenu(title: "")
-                    subMenu.items = menuItems
+                    for item in menuItems {
+                        subMenu.addItem(item)
+                    }
                     childItem.submenu = subMenu
                     mItems.append(childItem)
                 }
@@ -419,17 +421,15 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
             altSurfaceItem.tag = 10004
             glViewMenu.insertItem(altSurfaceItem, at: glViewMenu.items.count - 2)
 
-            var items: [NSMenuItem] = []
+            let submenu = NSMenu(title: "")
             for (index, surface) in ([NSLocalizedString("Default", comment: "")] + altSurfaces).enumerated() {
                 let item = NSMenuItem(title: surface, action: #selector(changeAltSurface(_:)), keyEquivalent: "")
                 let current = core.simulation.activeObserver.displayedSurface
                 item.state = (index == 0 ? current == "" : current == surface) ? .on : .off
                 item.tag = index
-                items.append(item)
+                submenu.addItem(item)
             }
-            let submenu = NSMenu(title: "")
             altSurfaceItem.submenu = submenu
-            submenu.items = items
 
             let sep = NSMenuItem.separator()
             sep.tag = 10005
