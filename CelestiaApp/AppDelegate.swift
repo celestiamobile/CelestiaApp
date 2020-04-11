@@ -29,6 +29,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     lazy var core = CelestiaAppCore.shared
 
+    func applicationWillFinishLaunching(_ notification: Notification) {
+        NSAppleEventManager.shared().setEventHandler(self, andSelector: #selector(handleGetURLEvent(_:withReplyEvent:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
+    }
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true])
 
@@ -39,6 +43,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         Migrator.tryToMigrate()
         CelestiaAppCore.setLocaleDirectory(defaultDataDirectory.path + "/locale")
+    }
+
+    @objc private func handleGetURLEvent(_ event: NSAppleEventDescriptor, withReplyEvent: NSAppleEventDescriptor) {
+        guard let urlString = event.forKeyword(AEKeyword(keyDirectObject))?.stringValue else { return }
+        urlToRun = URL(string: urlString)
+        celestiaViewController?.checkNeedOpeningURL()
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
@@ -127,7 +137,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func application(_ sender: NSApplication, openFile filename: String) -> Bool {
-        scriptController.runScript(at: filename)
+        urlToRun = URL(fileURLWithPath: filename)
+        celestiaViewController?.checkNeedOpeningURL()
         return true
     }
 }

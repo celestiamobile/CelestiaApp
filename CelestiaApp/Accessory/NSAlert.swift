@@ -29,6 +29,16 @@ extension NSAlert {
         alert.runModal()
     }
 
+    class func confirm(message: String, text: String = "") -> Bool {
+        let alert = NSAlert()
+        alert.messageText = message
+        alert.informativeText = text
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: NSLocalizedString("OK", comment: ""))
+        alert.addButton(withTitle: NSLocalizedString("Cancel", comment: ""))
+        return alert.runModal() == .alertFirstButtonReturn
+    }
+
     class func selection(message: String, selections: [String]) -> Int? {
         let alert = NSAlert()
         alert.messageText = message

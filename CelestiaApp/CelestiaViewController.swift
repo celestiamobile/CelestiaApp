@@ -10,6 +10,8 @@ import Cocoa
 
 import CelestiaCore
 
+var urlToRun: URL?
+
 class CelestiaViewController: NSViewController {
 
     @IBOutlet weak var glView: CelestiaGLView!
@@ -61,6 +63,11 @@ class CelestiaViewController: NSViewController {
         glView.mouseProcessor = self
         glView.keyboardProcessor = self
         glView.dndProcessor = self
+
+        // we delay opening url/running script
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1)  {
+            self.checkNeedOpeningURL()
+        }
     }
 
     override func viewWillDisappear() {
@@ -309,7 +316,6 @@ class CelestiaViewController: NSViewController {
             }
         }
     }
-    
 }
 
 extension CelestiaViewController: CelestiaGLViewDelegate {
@@ -480,6 +486,25 @@ extension CelestiaViewController: CelestiaAppCoreDelegate {
             NSCursor.resizeLeftRight.set()
         default:
             NSCursor.arrow.set()
+        }
+    }
+}
+
+extension CelestiaViewController {
+    func checkNeedOpeningURL() {
+        guard let url = urlToRun else { return }
+        urlToRun = nil
+        let title = CelestiaString(url.isFileURL ? "Run script?" : "Open URL?", comment: "")
+        if NSAlert.confirm(message: title) {
+            openURL(url)
+        }
+    }
+
+    private func openURL(_ url: URL) {
+        if url.isFileURL {
+            AppDelegate.shared.scriptController.runScript(at: url.path)
+        } else {
+            core.go(to: url.absoluteString)
         }
     }
 }
