@@ -37,9 +37,9 @@ class CelestiaViewController: NSViewController {
 
         glView.openGLContext?.makeCurrentContext()
 
-        // init glew
+        // init gl
         guard CelestiaAppCore.initGL() else {
-            NSAlert.fatalError(text: NSLocalizedString("Failed to start GLEW.", comment: ""))
+            NSAlert.fatalError(text: NSLocalizedString("Failed to start OpenGL.", comment: ""))
         }
 
         glView.setAASamples(GLint(core.aaSamples))
