@@ -29,17 +29,20 @@ extension NSAlert {
         alert.runModal()
     }
 
-    class func confirm(message: String, text: String = "") -> Bool {
+    class func confirm(message: String, text: String = "", window: NSWindow, handler: @escaping () -> Void = {}) {
         let alert = NSAlert()
         alert.messageText = message
         alert.informativeText = text
         alert.alertStyle = .warning
         alert.addButton(withTitle: NSLocalizedString("OK", comment: ""))
         alert.addButton(withTitle: NSLocalizedString("Cancel", comment: ""))
-        return alert.runModal() == .alertFirstButtonReturn
+        alert.beginSheetModal(for: window) { (response) in
+            guard response == .alertFirstButtonReturn else { return }
+            handler()
+        }
     }
 
-    class func selection(message: String, selections: [String]) -> Int? {
+    class func selection(message: String, selections: [String], window: NSWindow, handler: @escaping (Int) -> Void) {
         let alert = NSAlert()
         alert.messageText = message
 
@@ -52,16 +55,15 @@ extension NSAlert {
         alert.addButton(withTitle: NSLocalizedString("OK", comment: ""))
         alert.addButton(withTitle: NSLocalizedString("Cancel", comment: ""))
         alert.layout()
-        if alert.runModal() != .alertFirstButtonReturn {
-            return nil
+        alert.beginSheetModal(for: window) { (response) in
+            guard response == .alertFirstButtonReturn else { return }
+            handler(popup.indexOfSelectedItem)
         }
-        return popup.indexOfSelectedItem
     }
 
-    class func selection<T>(message: String, cases: [(value: T, description: String)]) -> (T, String)? {
-        if let index = selection(message: message, selections: cases.map { $0.description }) {
-            return cases[index]
+    class func selection<T>(message: String, cases: [(value: T, description: String)], window: NSWindow, handler: @escaping (T, String) -> Void) {
+        selection(message: message, selections: cases.map { $0.description }, window: window) { (item) in
+            handler(cases[item].value, cases[item].description)
         }
-        return nil
     }
 }
