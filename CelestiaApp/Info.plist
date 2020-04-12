@@ -52,13 +52,13 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.education</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright (C) 2001-2019, the Celestia Development Team</string>
+	<string>Copyright (C) 2001-2020, the Celestia Development Team</string>
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
