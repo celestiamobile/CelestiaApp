@@ -11,10 +11,10 @@ import Cocoa
 extension NSAlert {
     class func fatalError(text: String) -> Never {
         let alert = NSAlert()
-        alert.messageText = NSLocalizedString("Fatal Error", comment: "")
+        alert.messageText = CelestiaString("Fatal Error", comment: "")
         alert.informativeText = text
         alert.alertStyle = .critical
-        alert.addButton(withTitle: NSLocalizedString("OK", comment: ""))
+        alert.addButton(withTitle: CelestiaString("OK", comment: ""))
         alert.runModal()
         NSApp.terminate(nil)
         Swift.fatalError()
@@ -25,7 +25,7 @@ extension NSAlert {
         alert.messageText = message
         alert.informativeText = text
         alert.alertStyle = .warning
-        alert.addButton(withTitle: NSLocalizedString("OK", comment: ""))
+        alert.addButton(withTitle: CelestiaString("OK", comment: ""))
         alert.runModal()
     }
 
@@ -34,8 +34,8 @@ extension NSAlert {
         alert.messageText = message
         alert.informativeText = text
         alert.alertStyle = .warning
-        alert.addButton(withTitle: NSLocalizedString("OK", comment: ""))
-        alert.addButton(withTitle: NSLocalizedString("Cancel", comment: ""))
+        alert.addButton(withTitle: CelestiaString("OK", comment: ""))
+        alert.addButton(withTitle: CelestiaString("Cancel", comment: ""))
         alert.beginSheetModal(for: window) { (response) in
             guard response == .alertFirstButtonReturn else { return }
             handler()
@@ -52,8 +52,8 @@ extension NSAlert {
 
         alert.accessoryView = popup
         alert.alertStyle = .warning
-        alert.addButton(withTitle: NSLocalizedString("OK", comment: ""))
-        alert.addButton(withTitle: NSLocalizedString("Cancel", comment: ""))
+        alert.addButton(withTitle: CelestiaString("OK", comment: ""))
+        alert.addButton(withTitle: CelestiaString("Cancel", comment: ""))
         alert.layout()
         alert.beginSheetModal(for: window) { (response) in
             guard response == .alertFirstButtonReturn else { return }

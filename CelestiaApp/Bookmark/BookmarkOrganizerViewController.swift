@@ -30,7 +30,7 @@ class BookmarkOrganizerViewController: NSViewController {
         treeController.content = contents
 
         let menu = NSMenu(title: "")
-        let deleteItem = NSMenuItem(title: NSLocalizedString("Delete", comment: ""), action: #selector(performDelete), keyEquivalent: "")
+        let deleteItem = NSMenuItem(title: CelestiaString("Delete", comment: ""), action: #selector(performDelete), keyEquivalent: "")
         deleteItem.target = self
         menu.addItem(deleteItem)
         outlineView.menu = menu
@@ -93,7 +93,7 @@ class BookmarkOrganizerViewController: NSViewController {
             }
         }
 
-        let node = BookmarkNode(name: NSLocalizedString("Untitled", comment: ""), url: "", isFolder: true)
+        let node = BookmarkNode(name: CelestiaString("Untitled", comment: ""), url: "", isFolder: true)
 
         // the user is adding a child node, tell the controller directly
         self.treeController.insert(node, atArrangedObjectIndexPath: indexPath)

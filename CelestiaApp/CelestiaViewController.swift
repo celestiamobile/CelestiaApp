@@ -39,13 +39,13 @@ class CelestiaViewController: NSViewController {
 
         // init gl
         guard CelestiaAppCore.initGL() else {
-            NSAlert.fatalError(text: NSLocalizedString("Failed to start OpenGL.", comment: ""))
+            NSAlert.fatalError(text: CelestiaString("Failed to start OpenGL.", comment: ""))
         }
 
         glView.setAASamples(GLint(core.aaSamples))
 
         guard core.startRenderer() else {
-            NSAlert.fatalError(text: NSLocalizedString("Failed to start renderer.", comment: ""))
+            NSAlert.fatalError(text: CelestiaString("Failed to start renderer.", comment: ""))
         }
 
         // find the dpi
@@ -169,9 +169,9 @@ class CelestiaViewController: NSViewController {
             30.0,
         ]
 
-        NSAlert.selection(message: NSLocalizedString("Resolution:", comment: ""), selections: availableResolutions.map { "\($0.width) x \($0.height)" }, window: view.window!) { [weak self] (selectedResolutionIndex) in
+        NSAlert.selection(message: CelestiaString("Resolution:", comment: ""), selections: availableResolutions.map { "\($0.width) x \($0.height)" }, window: view.window!) { [weak self] (selectedResolutionIndex) in
             guard let self = self else { return }
-            NSAlert.selection(message: NSLocalizedString("Frame rate:", comment: ""), selections: availableFPS.map { String(format: "%.2f", $0) }, window: self.view.window!) { [weak self] (selectedFPSIndex) in
+            NSAlert.selection(message: CelestiaString("Frame rate:", comment: ""), selections: availableFPS.map { String(format: "%.2f", $0) }, window: self.view.window!) { [weak self] (selectedFPSIndex) in
                 guard let self = self else { return }
 
                 let panel = NSSavePanel()
@@ -183,7 +183,7 @@ class CelestiaViewController: NSViewController {
                 let width = CGFloat(availableResolutions[selectedResolutionIndex].width)
                 let height = CGFloat(availableResolutions[selectedResolutionIndex].height)
                 guard self.core.captureMovie(to: path, size: CGSize(width: width, height: height), fps: availableFPS[selectedFPSIndex]) else {
-                    NSAlert.warning(message: NSLocalizedString("Unable to Capture Video", comment: ""), text: "")
+                    NSAlert.warning(message: CelestiaString("Unable to Capture Video", comment: ""), text: "")
                     return
                 }
             }
@@ -352,7 +352,7 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
         let browserItem: CelestiaBrowserItem?
         if let body = selection.body {
             // add ref mark
-            let refMarkMenuItem = NSMenuItem(title: NSLocalizedString("Reference Vectors", comment: ""), action: nil, keyEquivalent: "")
+            let refMarkMenuItem = NSMenuItem(title: CelestiaString("Reference Vectors", comment: ""), action: nil, keyEquivalent: "")
             refMarkMenuItem.tag = 10000
             refMarkMenuItem.submenu = refMarkMenu
             refMarkMenu.items.forEach { $0.state = core.boolValue(forTag: $0.tag) ? .on : .off }
@@ -402,12 +402,12 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
 
         if let altSurfaces = selection.body?.alternateSurfaceNames {
 
-            let altSurfaceItem = NSMenuItem(title: NSLocalizedString("Alternate Surfaces", comment: ""), action: nil, keyEquivalent: "")
+            let altSurfaceItem = NSMenuItem(title: CelestiaString("Alternate Surfaces", comment: ""), action: nil, keyEquivalent: "")
             altSurfaceItem.tag = 10004
             glViewMenu.insertItem(altSurfaceItem, at: glViewMenu.items.count - 2)
 
             let submenu = NSMenu(title: "")
-            for (index, surface) in ([NSLocalizedString("Default", comment: "")] + altSurfaces).enumerated() {
+            for (index, surface) in ([CelestiaString("Default", comment: "")] + altSurfaces).enumerated() {
                 let item = NSMenuItem(title: surface, action: #selector(changeAltSurface(_:)), keyEquivalent: "")
                 let current = core.simulation.activeObserver.displayedSurface
                 item.state = (index == 0 ? current == "" : current == surface) ? .on : .off

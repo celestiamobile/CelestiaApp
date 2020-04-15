@@ -23,9 +23,9 @@ class ConfigSelectionViewController: NSViewController {
         dataPathControl.url = currentDataDirectory().url
 
         if launchFailure {
-            cancelButton.title = NSLocalizedString("Quit", comment: "")
+            cancelButton.title = CelestiaString("Quit", comment: "")
         } else {
-            cancelButton.title = NSLocalizedString("Cancel", comment: "")
+            cancelButton.title = CelestiaString("Cancel", comment: "")
         }
     }
 

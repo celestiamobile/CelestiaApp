@@ -42,15 +42,15 @@ class EclipseFinderViewController: NSViewController {
         let receiver = eclipseReceiverTextField.stringValue
 
         guard receiver.count > 0 else {
-            NSAlert.warning(message: NSLocalizedString("Object Not Found", comment: ""),
-                            text: NSLocalizedString("Please check that the object name is correct.", comment: ""))
+            NSAlert.warning(message: CelestiaString("Object Not Found", comment: ""),
+                            text: CelestiaString("Please check that the object name is correct.", comment: ""))
             return
         }
 
         let selection = core.simulation.findObject(from: receiver)
         guard let system = selection.body?.system, !receiver.isEmpty else {
-            NSAlert.warning(message: NSLocalizedString("Object Not Found", comment: ""),
-                            text: NSLocalizedString("Please check that the object name is correct.", comment: ""))
+            NSAlert.warning(message: CelestiaString("Object Not Found", comment: ""),
+                            text: CelestiaString("Please check that the object name is correct.", comment: ""))
             return
         }
 
