@@ -183,7 +183,7 @@ class CelestiaViewController: NSViewController {
                 let width = CGFloat(availableResolutions[selectedResolutionIndex].width)
                 let height = CGFloat(availableResolutions[selectedResolutionIndex].height)
                 guard self.core.captureMovie(to: path, size: CGSize(width: width, height: height), fps: availableFPS[selectedFPSIndex]) else {
-                    NSAlert.warning(message: CelestiaString("Unable to Capture Video", comment: ""), text: "")
+                    NSAlert.warning(message: CelestiaString("Unable to capture video", comment: ""), text: "")
                     return
                 }
             }
@@ -473,7 +473,7 @@ extension CelestiaViewController {
     func checkNeedOpeningURL() {
         guard let url = urlToRun else { return }
         urlToRun = nil
-        let title = CelestiaString(url.isFileURL ? "Run script?" : "Open URL?", comment: "")
+        let title = url.isFileURL ? CelestiaString("Run script?", comment: "") : CelestiaString("Open URL?", comment: "")
         NSAlert.confirm(message: title, window: view.window!) { [weak self] in
             guard let self = self else { return }
             self.openURL(url)

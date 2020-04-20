@@ -43,14 +43,14 @@ class GotoViewController: NSViewController {
     @IBAction func go(_ sender: Any) {
         let name = objectNameComboBox.stringValue
         guard name.count > 0 else {
-            NSAlert.warning(message: CelestiaString("No Object Name Entered", comment: ""),
+            NSAlert.warning(message: CelestiaString("No object name entered", comment: ""),
                             text: CelestiaString("Please enter an object name.", comment: ""))
             return
         }
 
         let sel = core.simulation.findObject(from: name)
         if sel.isEmpty {
-            NSAlert.warning(message: CelestiaString("Object Not Found", comment: ""),
+            NSAlert.warning(message: CelestiaString("Object not found", comment: ""),
                             text: CelestiaString("Please check that the object name is correct.", comment: ""))
             return
         }
