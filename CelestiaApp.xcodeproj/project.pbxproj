@@ -49,6 +49,9 @@
 		97F2519522FDB6E700067B06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97F2519322FDB6E700067B06 /* Main.storyboard */; };
 		97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251A222FDB75400067B06 /* CelestiaCore.framework */; };
 		97F251BF22FDBACA00067B06 /* CelestiaGLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F251BE22FDBACA00067B06 /* CelestiaGLView.swift */; };
+		EA0E2A2A246393AF006F1469 /* LocalizationSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */; };
+		EA0E2A2F24639C34006F1469 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A2E24639C34006F1469 /* Localization.swift */; };
+		EA0E2A3124639DD9006F1469 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A3024639DD9006F1469 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +164,10 @@
 		97F251BA22FDB9AD00067B06 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		97F251BC22FDB9BB00067B06 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		97F251BE22FDBACA00067B06 /* CelestiaGLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestiaGLView.swift; sourceTree = "<group>"; };
+		EA0E2A28246393AF006F1469 /* LocalizationSwizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizationSwizzling.h; sourceTree = "<group>"; };
+		EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalizationSwizzling.m; sourceTree = "<group>"; };
+		EA0E2A2E24639C34006F1469 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		EA0E2A3024639DD9006F1469 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +260,9 @@
 				97ED2277234C297800FA5E2D /* LegacyMigrator.h */,
 				97ED2279234C297800FA5E2D /* LegacyMigrator.m */,
 				97ED227B234C2D6900FA5E2D /* Migrator.swift */,
+				EA0E2A28246393AF006F1469 /* LocalizationSwizzling.h */,
+				EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */,
+				EA0E2A2E24639C34006F1469 /* Localization.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -307,6 +317,7 @@
 				972F3A3122FFC66100CEDDAC /* StarBrowser */,
 				972F3A3022FFC65700CEDDAC /* Setting */,
 				972F3A2F22FFC64600CEDDAC /* EclipseFinder */,
+				EA0E2A3024639DD9006F1469 /* main.swift */,
 				97F2518D22FDB6E100067B06 /* AppDelegate.swift */,
 				97916F3F2313F31D00925AF3 /* CelestiaViewDelegate.swift */,
 				97F2518F22FDB6E100067B06 /* CelestiaViewController.swift */,
@@ -513,12 +524,15 @@
 				97458FE6232769F8009BFADF /* ConfigSelectionViewController.swift in Sources */,
 				97DBBE6122FFE779003D1BAF /* GLInfoViewController.swift in Sources */,
 				97F251BF22FDBACA00067B06 /* CelestiaGLView.swift in Sources */,
+				EA0E2A3124639DD9006F1469 /* main.swift in Sources */,
 				97401C932414CF2D0015F8E8 /* Celestia+Extension.swift in Sources */,
 				972F39E022FEAD1D00CEDDAC /* BrowserViewController.swift in Sources */,
 				972F3A2222FF96F000CEDDAC /* SettingViewController.swift in Sources */,
 				97401C912414CF2D0015F8E8 /* URL.swift in Sources */,
 				970DCE3D22FE8B550044F590 /* NSOpenGLView+AASample.m in Sources */,
+				EA0E2A2A246393AF006F1469 /* LocalizationSwizzling.m in Sources */,
 				97F2519022FDB6E100067B06 /* CelestiaViewController.swift in Sources */,
+				EA0E2A2F24639C34006F1469 /* Localization.swift in Sources */,
 				97F2518E22FDB6E100067B06 /* AppDelegate.swift in Sources */,
 				972F3A3822FFC70C00CEDDAC /* GotoViewController.swift in Sources */,
 				970C5625238637B900EBB157 /* BrowserItemAddition.swift in Sources */,

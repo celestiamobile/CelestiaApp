@@ -14,7 +14,6 @@ import AppCenter
 import AppCenterAnalytics
 import AppCenterCrashes
 
-@NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     static var shared: AppDelegate {
         return NSApp.delegate as! AppDelegate
@@ -42,7 +41,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         ])
 
         Migrator.tryToMigrate()
-        CelestiaAppCore.setLocaleDirectory(defaultDataDirectory.path + "/locale")
     }
 
     @objc private func handleGetURLEvent(_ event: NSAppleEventDescriptor, withReplyEvent: NSAppleEventDescriptor) {
