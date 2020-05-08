@@ -6,11 +6,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Preference-->
+        <!--Preferences-->
         <scene sceneID="zqY-dJ-w8x">
             <objects>
                 <customObject id="90W-Wb-uoP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <viewController title="Preference" storyboardIdentifier="Setting" id="c4N-h6-Ogk" customClass="SettingViewController" customModule="Celestia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Preferences" storyboardIdentifier="Setting" id="c4N-h6-Ogk" customClass="SettingViewController" customModule="Celestia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="gbv-Xm-RwL">
                         <rect key="frame" x="0.0" y="0.0" width="622" height="472"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -51,9 +51,9 @@
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
-                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="418" translatesAutoresizingMaskIntoConstraints="NO" id="8mm-tt-cGj">
-                                                                        <rect key="frame" x="-2" y="238" width="102" height="18"/>
-                                                                        <buttonCell key="cell" type="check" title="Dwaf Planets" bezelStyle="regularSquare" imagePosition="left" inset="2" id="nw1-2e-NUx">
+                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" misplaced="YES" tag="418" translatesAutoresizingMaskIntoConstraints="NO" id="8mm-tt-cGj">
+                                                                        <rect key="frame" x="-2" y="238" width="107" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Dwarf Planets" bezelStyle="regularSquare" imagePosition="left" inset="2" id="nw1-2e-NUx">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
@@ -611,8 +611,8 @@
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button fixedFrame="YES" tag="513" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Soo-z5-mGj">
-                                                                        <rect key="frame" x="-2" y="180" width="102" height="18"/>
-                                                                        <buttonCell key="cell" type="check" title="MInor Moons" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="513" inset="2" id="ESw-SZ-Mae">
+                                                                        <rect key="frame" x="-2" y="180" width="101" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Minor Moons" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="513" inset="2" id="ESw-SZ-Mae">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
@@ -748,8 +748,8 @@
                                                                                     </buttonCell>
                                                                                 </button>
                                                                                 <button fixedFrame="YES" tag="829" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k3v-8a-Fwu">
-                                                                                    <rect key="frame" x="-2" y="32" width="71" height="18"/>
-                                                                                    <buttonCell key="cell" type="check" title="Volcano" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="804" inset="2" id="tyH-zp-LWG">
+                                                                                    <rect key="frame" x="-2" y="32" width="85" height="18"/>
+                                                                                    <buttonCell key="cell" type="check" title="Volcanoes" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="804" inset="2" id="tyH-zp-LWG">
                                                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                                         <font key="font" metaFont="system"/>
                                                                                     </buttonCell>
