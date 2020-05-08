@@ -8,16 +8,16 @@
 
 import AppKit
 
-extension NSButtonCell: IBLocalizable {
+extension NSButton: IBLocalizable {
     public func localize() {
+        if self is NSPopUpButton { return }
         title = CelestiaString(title, comment: "")
     }
 }
 
-
-extension NSTextFieldCell: IBLocalizable {
+extension NSTextField: IBLocalizable {
     public func localize() {
-        title = CelestiaString(title, comment: "")
+        stringValue = CelestiaString(stringValue, comment: "")
     }
 }
 
@@ -45,9 +45,10 @@ extension NSMenu: IBLocalizable {
     }
 }
 
-extension NSWindow: IBLocalizable {
+extension NSViewController: IBLocalizable {
     public func localize() {
-        title = CelestiaString(title, comment: "")
+        guard let unlocalized = title else { return }
+        title = CelestiaString(unlocalized, comment: "")
     }
 }
 
@@ -58,12 +59,12 @@ extension NSTableColumn: IBLocalizable {
 }
 
 public func SetupLocalizationSwizzling() {
-    SwizzleLocalizableClass(NSButtonCell.self)
-    SwizzleLocalizableClass(NSTextFieldCell.self)
+    SwizzleLocalizableClass(NSButton.self)
+    SwizzleLocalizableClass(NSTextField.self)
     SwizzleLocalizableClass(NSBox.self)
     SwizzleLocalizableClass(NSTabViewItem.self)
     SwizzleLocalizableClass(NSMenuItem.self)
     SwizzleLocalizableClass(NSMenu.self)
-    SwizzleLocalizableClass(NSWindow.self)
+    SwizzleLocalizableClass(NSViewController.self)
     SwizzleLocalizableClass(NSTableColumn.self)
 }
