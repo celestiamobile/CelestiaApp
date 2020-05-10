@@ -51,7 +51,7 @@
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
-                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" misplaced="YES" tag="418" translatesAutoresizingMaskIntoConstraints="NO" id="8mm-tt-cGj">
+                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="418" translatesAutoresizingMaskIntoConstraints="NO" id="8mm-tt-cGj">
                                                                         <rect key="frame" x="-2" y="238" width="107" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Dwarf Planets" bezelStyle="regularSquare" imagePosition="left" inset="2" id="nw1-2e-NUx">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -89,8 +89,8 @@
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button verticalHuggingPriority="750" fixedFrame="YES" tag="435" translatesAutoresizingMaskIntoConstraints="NO" id="eVi-Nv-Lgo">
-                                                                        <rect key="frame" x="-2" y="108" width="95" height="18"/>
-                                                                        <buttonCell key="cell" type="check" title="Spacecrafts" bezelStyle="regularSquare" imagePosition="left" inset="2" id="flT-AA-QMy">
+                                                                        <rect key="frame" x="-2" y="108" width="89" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Spacecraft" bezelStyle="regularSquare" imagePosition="left" inset="2" id="flT-AA-QMy">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
@@ -406,7 +406,7 @@
                                                         <constraint firstAttribute="height" constant="146" id="dkf-hP-hC4"/>
                                                     </constraints>
                                                 </box>
-                                                <box autoresizesSubviews="NO" borderType="line" title="Orbit" translatesAutoresizingMaskIntoConstraints="NO" id="qYr-4b-e28">
+                                                <box autoresizesSubviews="NO" borderType="line" title="Orbits" translatesAutoresizingMaskIntoConstraints="NO" id="qYr-4b-e28">
                                                     <rect key="frame" x="17" y="102" width="284" height="308"/>
                                                     <view key="contentView" id="kEL-if-L6p">
                                                         <rect key="frame" x="3" y="3" width="278" height="290"/>
@@ -568,12 +568,12 @@
                                             </constraints>
                                         </view>
                                     </tabViewItem>
-                                    <tabViewItem label="Label" identifier="" id="1dw-OA-ear">
+                                    <tabViewItem label="Labels" identifier="" id="1dw-OA-ear">
                                         <view key="view" id="kRP-xG-IIc">
                                             <rect key="frame" x="10" y="33" width="616" height="430"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <box autoresizesSubviews="NO" borderType="line" title="Label" translatesAutoresizingMaskIntoConstraints="NO" id="EKw-UW-QhF">
+                                                <box autoresizesSubviews="NO" borderType="line" title="Labels" translatesAutoresizingMaskIntoConstraints="NO" id="EKw-UW-QhF">
                                                     <rect key="frame" x="17" y="16" width="228" height="394"/>
                                                     <view key="contentView" id="W9R-xA-kfb">
                                                         <rect key="frame" x="3" y="3" width="222" height="376"/>
@@ -583,8 +583,8 @@
                                                                 <rect key="frame" x="20" y="56" width="182" height="300"/>
                                                                 <beginningViews>
                                                                     <button fixedFrame="YES" tag="500" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="es3-HU-KgX">
-                                                                        <rect key="frame" x="-2" y="284" width="47" height="18"/>
-                                                                        <buttonCell key="cell" type="check" title="Star" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="500" inset="2" id="eyT-xi-8Wf">
+                                                                        <rect key="frame" x="-2" y="284" width="54" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Stars" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="500" inset="2" id="eyT-xi-8Wf">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
@@ -704,7 +704,7 @@
                                                         </constraints>
                                                     </view>
                                                 </box>
-                                                <box autoresizesSubviews="NO" borderType="line" title="Location" translatesAutoresizingMaskIntoConstraints="NO" id="uWI-og-xtz">
+                                                <box autoresizesSubviews="NO" borderType="line" title="Locations" translatesAutoresizingMaskIntoConstraints="NO" id="uWI-og-xtz">
                                                     <rect key="frame" x="259" y="16" width="340" height="394"/>
                                                     <view key="contentView" id="Zn7-PW-X2n">
                                                         <rect key="frame" x="3" y="3" width="334" height="376"/>

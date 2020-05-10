@@ -44,7 +44,7 @@ class SplashViewController: NSViewController {
                 if !result {
                     self.view.window?.close()
                     let alert = NSAlert()
-                    alert.messageText = CelestiaString("Celestia failed to load data files.", comment: "")
+                    alert.messageText = CelestiaString("Loading Celestia failed…", comment: "")
                     alert.alertStyle = .critical
                     alert.addButton(withTitle: CelestiaString("Choose Config File", comment: ""))
                     alert.addButton(withTitle: CelestiaString("Quit", comment: ""))
