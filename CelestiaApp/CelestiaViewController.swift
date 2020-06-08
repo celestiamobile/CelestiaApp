@@ -56,11 +56,13 @@ class CelestiaViewController: NSViewController {
 
         core.loadUserDefaultsWithAppDefaults(atPath: Bundle.main.path(forResource: "defaults", ofType: "plist"))
 
-        if let font = GetFontForLocale(LocalizedString("LANGUAGE", "celestia")) {
+        let locale = LocalizedString("LANGUAGE", "celestia")
+        if let font = GetFontForLocale(locale, .system),
+            let boldFont = GetFontForLocale(locale, .emphasizedSystem) {
             core.setFont(font.filePath, collectionIndex: font.collectionIndex, fontSize: 9)
-            core.setTitleFont(font.filePath, collectionIndex: font.collectionIndex, fontSize: 15)
+            core.setTitleFont(boldFont.filePath, collectionIndex: boldFont.collectionIndex, fontSize: 15)
             core.setRendererFont(font.filePath, collectionIndex: font.collectionIndex, fontSize: 9, fontStyle: .normal)
-            core.setRendererFont(font.filePath, collectionIndex: font.collectionIndex, fontSize: 15, fontStyle: .large)
+            core.setRendererFont(boldFont.filePath, collectionIndex: boldFont.collectionIndex, fontSize: 15, fontStyle: .large)
         }
 
         core.tick()
