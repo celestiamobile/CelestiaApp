@@ -51,6 +51,7 @@
 		EA0E2A2A246393AF006F1469 /* LocalizationSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */; };
 		EA0E2A2F24639C34006F1469 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A2E24639C34006F1469 /* Localization.swift */; };
 		EA0E2A3124639DD9006F1469 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A3024639DD9006F1469 /* main.swift */; };
+		EABC2462248E1BB300205B5A /* FontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC2461248E1BB300205B5A /* FontHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,8 @@
 		EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalizationSwizzling.m; sourceTree = "<group>"; };
 		EA0E2A2E24639C34006F1469 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		EA0E2A3024639DD9006F1469 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EABC245F248E1BB300205B5A /* FontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontHelper.h; sourceTree = "<group>"; };
+		EABC2461248E1BB300205B5A /* FontHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +215,8 @@
 				97401C8D2414CF2D0015F8E8 /* URL.swift */,
 				97401C8E2414CF2D0015F8E8 /* UserDefaults.swift */,
 				97401C8F2414CF2D0015F8E8 /* Celestia+Extension.swift */,
+				EABC245F248E1BB300205B5A /* FontHelper.h */,
+				EABC2461248E1BB300205B5A /* FontHelper.m */,
 			);
 			name = Helper;
 			path = ../../CelestiaCore/Helper;
@@ -492,6 +497,7 @@
 				97401C912414CF2D0015F8E8 /* URL.swift in Sources */,
 				970DCE3D22FE8B550044F590 /* NSOpenGLView+AASample.m in Sources */,
 				EA0E2A2A246393AF006F1469 /* LocalizationSwizzling.m in Sources */,
+				EABC2462248E1BB300205B5A /* FontHelper.m in Sources */,
 				97F2519022FDB6E100067B06 /* CelestiaViewController.swift in Sources */,
 				EA0E2A2F24639C34006F1469 /* Localization.swift in Sources */,
 				97F2518E22FDB6E100067B06 /* AppDelegate.swift in Sources */,

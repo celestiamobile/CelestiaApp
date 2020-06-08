@@ -56,6 +56,13 @@ class CelestiaViewController: NSViewController {
 
         core.loadUserDefaultsWithAppDefaults(atPath: Bundle.main.path(forResource: "defaults", ofType: "plist"))
 
+        if let font = GetFontForLocale(LocalizedString("LANGUAGE", "celestia")) {
+            core.setFont(font.filePath, collectionIndex: font.collectionIndex, fontSize: 9)
+            core.setTitleFont(font.filePath, collectionIndex: font.collectionIndex, fontSize: 15)
+            core.setRendererFont(font.filePath, collectionIndex: font.collectionIndex, fontSize: 9, fontStyle: .normal)
+            core.setRendererFont(font.filePath, collectionIndex: font.collectionIndex, fontSize: 15, fontStyle: .large)
+        }
+
         core.tick()
         core.start()
 

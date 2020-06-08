@@ -12,5 +12,6 @@
 #import "NSOpenGLView+AASample.h"
 #import "LegacyMigrator.h"
 #import "LocalizationSwizzling.h"
+#import "FontHelper.h"
 
 #endif /* BRIDGING_HEADER_H */
