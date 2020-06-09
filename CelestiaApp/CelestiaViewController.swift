@@ -28,12 +28,12 @@ class CelestiaViewController: NSViewController {
 
     private var pressingKey: (key: Int, time: Int)?
 
+    private var scaleFactor: CGFloat = 1
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         core.delegate = self
-
-        glView.wantsBestResolutionOpenGLSurface = false
 
         glView.openGLContext?.makeCurrentContext()
 
@@ -48,10 +48,9 @@ class CelestiaViewController: NSViewController {
             NSAlert.fatalError(text: CelestiaString("Failed to start renderer.", comment: ""))
         }
 
-        // find the dpi
-        if let displayPixelSize = NSScreen.main?.deviceDescription[.size] as? CGSize, let displayID = NSScreen.main?.deviceDescription[.init("NSScreenNumber")] as? CGDirectDisplayID {
-            let displayPhysicalSize = CGDisplayScreenSize(displayID)
-            core.setDPI(Int(displayPixelSize.width / displayPhysicalSize.width * 25.4))
+        if let contentScale = NSScreen.main?.backingScaleFactor {
+            scaleFactor = contentScale
+            core.setDPI(Int(contentScale * 96))
         }
 
         core.loadUserDefaultsWithAppDefaults(atPath: Bundle.main.path(forResource: "defaults", ofType: "plist"))
@@ -319,7 +318,7 @@ extension CelestiaViewController: CelestiaGLViewDelegate {
     }
 
     func update(in glView: CelestiaGLView) {
-        core.resize(to: glView.bounds.size)
+        core.resize(to: glView.bounds.size.scale(by: scaleFactor))
     }
 }
 
@@ -329,23 +328,23 @@ extension CelestiaGLViewMouseButton {
 
 extension CelestiaViewController: CelestiaGLViewMouseProcessor {
     func mouseUp(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton) {
-        core.mouseButtonUp(at: point, modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
+        core.mouseButtonUp(at: point.scale(by: scaleFactor), modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
     }
 
     func mouseDown(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton) {
-        core.mouseButtonDown(at: point, modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
+        core.mouseButtonDown(at: point.scale(by: scaleFactor), modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
     }
 
     func mouseDragged(to point: CGPoint) {
-        core.mouseDragged(to: point)
+        core.mouseDragged(to: point.scale(by: scaleFactor))
     }
 
     func mouseMove(by offset: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton) {
-        core.mouseMove(by: offset, modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
+        core.mouseMove(by: offset.scale(by: scaleFactor), modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
     }
 
     func mouseWheel(by motion: CGFloat, modifiers: NSEvent.ModifierFlags) {
-        core.mouseWheel(by: motion, modifiers: modifiers.rawValue)
+        core.mouseWheel(by: motion * scaleFactor, modifiers: modifiers.rawValue)
     }
 
     func requestMenu(for selection: CelestiaSelection) -> NSMenu? {
@@ -500,4 +499,16 @@ extension CelestiaViewController {
 
 class BrowserMenuItem: NSMenuItem {
     var browserItem: CelestiaBrowserItem? = nil
+}
+
+private extension CGPoint {
+    func scale(by factor: CGFloat) -> CGPoint {
+        return applying(CGAffineTransform(scaleX: factor, y: factor))
+    }
+}
+
+private extension CGSize {
+    func scale(by factor: CGFloat) -> CGSize {
+        return applying(CGAffineTransform(scaleX: factor, y: factor))
+    }
 }
