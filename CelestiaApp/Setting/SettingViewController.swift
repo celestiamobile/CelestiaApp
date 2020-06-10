@@ -10,8 +10,17 @@ import Cocoa
 
 import CelestiaCore
 
+struct PreferenceItem {
+    let key: UserDefaultsKey
+    let tag: Int
+}
+
 class SettingViewController: NSViewController {
     private let core: CelestiaAppCore = CelestiaAppCore.shared
+
+    private let preferenceItems = [
+        PreferenceItem(key: .fullDPI, tag: 2000)
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +40,12 @@ class SettingViewController: NSViewController {
 
     @objc private func activeButton(_ sender: NSButton) {
         core.setBoolValue(sender.state == .on, forTag: sender.tag)
+    }
+
+    @objc private func activePrefItemButton(_ sender: NSButton) {
+        guard let prefItem = preferenceItems.first(where: { $0.tag == sender.tag }) else { return }
+
+        UserDefaults.app[prefItem.key] = sender.state == .on
     }
 }
 
@@ -79,8 +94,13 @@ extension SettingViewController {
 
         if let control = obj as? NSButton, control.tag != 0 {
             control.target = self
-            control.action = #selector(activeButton(_:))
-            control.state = core.boolValue(forTag: control.tag) ? .on : .off
+            if let prefItem = preferenceItems.first(where: { $0.tag == control.tag }) {
+                control.action = #selector(activePrefItemButton(_:))
+                control.state = UserDefaults.app[prefItem.key] == true ? .on : .off
+            } else {
+                control.action = #selector(activeButton(_:))
+                control.state = core.boolValue(forTag: control.tag) ? .on : .off
+            }
             return
         }
 

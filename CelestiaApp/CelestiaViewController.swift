@@ -28,12 +28,14 @@ class CelestiaViewController: NSViewController {
 
     private var pressingKey: (key: Int, time: Int)?
 
-    private var scaleFactor: CGFloat = 1
+    private lazy var scaleFactor: CGFloat = (UserDefaults.app[.fullDPI] ?? false) ? (NSScreen.main?.backingScaleFactor ?? 1) : 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         core.delegate = self
+
+        glView.wantsBestResolutionOpenGLSurface = scaleFactor != 1
 
         glView.openGLContext?.makeCurrentContext()
 
@@ -48,10 +50,7 @@ class CelestiaViewController: NSViewController {
             NSAlert.fatalError(text: CelestiaString("Failed to start renderer.", comment: ""))
         }
 
-        if let contentScale = NSScreen.main?.backingScaleFactor {
-            scaleFactor = contentScale
-            core.setDPI(Int(contentScale * 96))
-        }
+        core.setDPI(Int(scaleFactor * 96))
 
         core.loadUserDefaultsWithAppDefaults(atPath: Bundle.main.path(forResource: "defaults", ofType: "plist"))
 

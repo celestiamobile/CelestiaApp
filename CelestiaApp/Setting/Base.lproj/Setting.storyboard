@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -955,14 +955,14 @@
                                                         <constraint firstAttribute="height" constant="110" id="9ZF-LD-e6U"/>
                                                     </constraints>
                                                 </box>
-                                                <box autoresizesSubviews="NO" borderType="line" title="Texture Resolution" translatesAutoresizingMaskIntoConstraints="NO" id="q79-jY-JZx">
-                                                    <rect key="frame" x="17" y="296" width="284" height="114"/>
+                                                <box autoresizesSubviews="NO" borderType="line" title="Render Parameters" translatesAutoresizingMaskIntoConstraints="NO" id="q79-jY-JZx">
+                                                    <rect key="frame" x="17" y="281" width="284" height="129"/>
                                                     <view key="contentView" id="61E-Za-V8K">
-                                                        <rect key="frame" x="3" y="3" width="278" height="96"/>
+                                                        <rect key="frame" x="3" y="3" width="278" height="111"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <popUpButton verticalHuggingPriority="750" tag="640" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8gy-5j-pRA">
-                                                                <rect key="frame" x="141" y="47" width="120" height="25"/>
+                                                                <rect key="frame" x="141" y="62" width="120" height="25"/>
                                                                 <popUpButtonCell key="cell" type="push" title="Low" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" tag="640" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="Oen-vB-p4U" id="38f-H4-yzd">
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="system"/>
@@ -976,7 +976,7 @@
                                                                 </popUpButtonCell>
                                                             </popUpButton>
                                                             <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZAH-Wd-EUw">
-                                                                <rect key="frame" x="18" y="44" width="119" height="32"/>
+                                                                <rect key="frame" x="18" y="59" width="119" height="32"/>
                                                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Texture Resolution:" id="WDE-F4-jTA">
                                                                     <font key="font" metaFont="system"/>
                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -984,14 +984,23 @@
                                                                 </textFieldCell>
                                                             </textField>
                                                             <button tag="409" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ke9-Kr-rF9">
-                                                                <rect key="frame" x="18" y="16" width="242" height="18"/>
+                                                                <rect key="frame" x="18" y="31" width="242" height="18"/>
                                                                 <buttonCell key="cell" type="check" title="Smooth Lines" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="409" inset="2" id="TPn-ae-ipF">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <button tag="2000" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UBd-dS-tzJ">
+                                                                <rect key="frame" x="18" y="11" width="242" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="HiDPI" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="409" inset="2" id="1Zq-am-CZ4">
                                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                     <font key="font" metaFont="system"/>
                                                                 </buttonCell>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="UBd-dS-tzJ" firstAttribute="trailing" secondItem="Ke9-Kr-rF9" secondAttribute="trailing" id="07H-XE-VH1"/>
+                                                            <constraint firstItem="UBd-dS-tzJ" firstAttribute="leading" secondItem="Ke9-Kr-rF9" secondAttribute="leading" id="0X7-M9-yfy"/>
                                                             <constraint firstItem="Ke9-Kr-rF9" firstAttribute="leading" secondItem="61E-Za-V8K" secondAttribute="leading" constant="20" symbolic="YES" id="3b8-Du-xH0"/>
                                                             <constraint firstAttribute="trailing" secondItem="8gy-5j-pRA" secondAttribute="trailing" constant="20" symbolic="YES" id="7aX-ZX-3L4"/>
                                                             <constraint firstItem="ZAH-Wd-EUw" firstAttribute="leading" secondItem="61E-Za-V8K" secondAttribute="leading" constant="20" symbolic="YES" id="AJu-6Z-b1k"/>
@@ -1001,14 +1010,15 @@
                                                             <constraint firstItem="Ke9-Kr-rF9" firstAttribute="top" secondItem="ZAH-Wd-EUw" secondAttribute="bottom" constant="12" id="XEs-MO-V18"/>
                                                             <constraint firstItem="ZAH-Wd-EUw" firstAttribute="top" secondItem="61E-Za-V8K" secondAttribute="top" constant="20" symbolic="YES" id="b1s-Ba-UUN"/>
                                                             <constraint firstItem="8gy-5j-pRA" firstAttribute="width" secondItem="ZAH-Wd-EUw" secondAttribute="width" id="fm3-ZE-Npa"/>
+                                                            <constraint firstItem="UBd-dS-tzJ" firstAttribute="top" secondItem="Ke9-Kr-rF9" secondAttribute="bottom" constant="6" symbolic="YES" id="msZ-tq-bak"/>
                                                         </constraints>
                                                     </view>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="110" id="drp-JE-Dik"/>
+                                                        <constraint firstAttribute="height" constant="125" id="drp-JE-Dik"/>
                                                     </constraints>
                                                 </box>
                                                 <box autoresizesSubviews="NO" borderType="line" title="Ambient Light" translatesAutoresizingMaskIntoConstraints="NO" id="FOp-dH-RAU">
-                                                    <rect key="frame" x="17" y="203" width="284" height="76"/>
+                                                    <rect key="frame" x="17" y="188" width="284" height="76"/>
                                                     <view key="contentView" id="9w6-c6-Nzp">
                                                         <rect key="frame" x="3" y="3" width="278" height="58"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1056,7 +1066,7 @@
                                                     </constraints>
                                                 </box>
                                                 <box autoresizesSubviews="NO" borderType="line" title="Info" translatesAutoresizingMaskIntoConstraints="NO" id="vha-a7-j0y">
-                                                    <rect key="frame" x="17" y="110" width="284" height="76"/>
+                                                    <rect key="frame" x="17" y="95" width="284" height="76"/>
                                                     <view key="contentView" id="aVD-TS-ER2">
                                                         <rect key="frame" x="3" y="3" width="278" height="58"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
