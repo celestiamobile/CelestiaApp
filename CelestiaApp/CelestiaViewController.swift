@@ -17,8 +17,24 @@ var urlToRun: URL?
 
 class CelestiaViewController: NSViewController {
 
-    @IBOutlet weak var glView: CelestiaGLView!
-    @IBOutlet var glViewMenu: NSMenu!
+    private lazy var pixelFmt: NSOpenGLPixelFormat? = {
+        let attributes: [UInt32]
+        if self.msaa {
+            attributes = [UInt32(NSOpenGLPFADoubleBuffer),
+                          UInt32(NSOpenGLPFADepthSize), 32,
+                          UInt32(NSOpenGLPFASampleBuffers), 1,
+                          UInt32(NSOpenGLPFASamples), 4,
+                          0]
+            msaa = true
+        } else {
+            attributes = [UInt32(NSOpenGLPFADoubleBuffer), UInt32(NSOpenGLPFADepthSize), 32, 0]
+            msaa = false
+        }
+        return NSOpenGLPixelFormat(attributes: attributes)
+    }()
+
+    private lazy var celestiaView: CelestiaView! = CelestiaView(frame: .zero, pixelFormat: self.pixelFmt, msaaEnabled: self.msaa)
+    @IBOutlet var selectionMenu: NSMenu!
     @IBOutlet var refMarkMenu: NSMenu!
     @IBOutlet var unmarkMenuItem: NSMenuItem!
 
@@ -31,58 +47,36 @@ class CelestiaViewController: NSViewController {
 
     private var pressingKey: (key: Int, time: Int)?
 
-    private lazy var scaleFactor: CGFloat = (UserDefaults.app[.fullDPI] ?? false) ? (NSScreen.main?.backingScaleFactor ?? 1) : 1
+    private lazy var fullDPI = UserDefaults.app[.fullDPI] ?? false
+    private lazy var msaa = UserDefaults.app[.msaa] ?? false
+    private lazy var scaleFactor: CGFloat = self.fullDPI ? (NSScreen.main?.backingScaleFactor ?? 1) : 1
+
+    override func loadView() {
+        super.loadView()
+
+        celestiaView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(celestiaView)
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: celestiaView!, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: celestiaView!, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: celestiaView!, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: celestiaView!, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0),
+        ])
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         core.delegate = self
 
-        glView.wantsBestResolutionOpenGLSurface = scaleFactor != 1
+        celestiaView.viewDelegate = self
+        celestiaView.mouseProcessor = self
+        celestiaView.keyboardProcessor = self
+        celestiaView.dndProcessor = self
 
-        glView.openGLContext?.makeCurrentContext()
-
-        // init gl
-        guard CelestiaAppCore.initGL() else {
-            NSAlert.fatalError(text: CelestiaString("Failed to start OpenGL.", comment: ""))
-        }
-
-        glView.setAASamples(GLint(core.aaSamples))
-
-        guard core.startRenderer() else {
-            NSAlert.fatalError(text: CelestiaString("Failed to start renderer.", comment: ""))
-        }
-
-        core.setDPI(Int(scaleFactor * 96))
-
-        core.loadUserDefaultsWithAppDefaults(atPath: Bundle.main.path(forResource: "defaults", ofType: "plist"))
-
-        let locale = LocalizedString("LANGUAGE", "celestia")
-        if let (font, boldFont) = getInstalledFontFor(locale: locale) {
-            core.setFont(font.filePath, collectionIndex: font.collectionIndex, fontSize: 9)
-            core.setTitleFont(boldFont.filePath, collectionIndex: boldFont.collectionIndex, fontSize: 15)
-            core.setRendererFont(font.filePath, collectionIndex: font.collectionIndex, fontSize: 9, fontStyle: .normal)
-            core.setRendererFont(boldFont.filePath, collectionIndex: boldFont.collectionIndex, fontSize: 15, fontStyle: .large)
-        } else if let font = GetFontForLocale(locale, .system),
-            let boldFont = GetFontForLocale(locale, .emphasizedSystem) {
-            core.setFont(font.filePath, collectionIndex: font.collectionIndex, fontSize: 9)
-            core.setTitleFont(boldFont.filePath, collectionIndex: boldFont.collectionIndex, fontSize: 15)
-            core.setRendererFont(font.filePath, collectionIndex: font.collectionIndex, fontSize: 9, fontStyle: .normal)
-            core.setRendererFont(boldFont.filePath, collectionIndex: boldFont.collectionIndex, fontSize: 15, fontStyle: .large)
-        }
-
-        core.tick()
-        core.start()
-
-        glView.delegate = self
-        glView.mouseProcessor = self
-        glView.keyboardProcessor = self
-        glView.dndProcessor = self
-
-        // we delay opening url/running script
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1)  {
-            self.checkNeedOpeningURL()
-        }
+        celestiaView.wantsBestResolutionOpenGLSurface = fullDPI
+        celestiaView.scaleFactor = scaleFactor
+        celestiaView.setupCelestia()
     }
 
     override func viewWillDisappear() {
@@ -100,6 +94,15 @@ class CelestiaViewController: NSViewController {
             pendingScript = nil
             core.runScript(at: script)
         }
+    }
+
+    deinit {
+        AppDelegate.clear(identifier: "Settings")
+        AppDelegate.clear(identifier: "Browser")
+        AppDelegate.clear(identifier: "Goto")
+        AppDelegate.clear(identifier: "SetTime")
+        AppDelegate.clear(identifier: "EclipseFinder")
+        AppDelegate.clear(identifier: "Info")
     }
 
     func runScript(at path: String) {
@@ -147,23 +150,15 @@ class CelestiaViewController: NSViewController {
     }
 
     func showSetting() {
-        if let existing = NSApp.findWindow(type: SettingViewController.self) {
-            existing.makeKeyAndOrderFront(nil)
-            return
+        AppDelegate.present(identifier: "Settings") { () -> SettingViewController in
+            return NSStoryboard(name: "Setting", bundle: nil).instantiateController(withIdentifier: "Setting") as! SettingViewController
         }
-        let setting = NSStoryboard(name: "Setting", bundle: nil).instantiateController(withIdentifier: "Setting") as! SettingViewController
-        let panel = NSPanel(contentViewController: setting)
-        panel.makeKeyAndOrderFront(self)
     }
 
     func showBrowser() {
-        if let existing = NSApp.findWindow(type: BrowserViewController.self) {
-            existing.makeKeyAndOrderFront(nil)
-            return
+        AppDelegate.present(identifier: "Browser") { () -> BrowserViewController in
+            return NSStoryboard(name: "StarBrowser", bundle: nil).instantiateController(withIdentifier: "Browser") as! BrowserViewController
         }
-        let browser = NSStoryboard(name: "StarBrowser", bundle: nil).instantiateController(withIdentifier: "Browser") as! BrowserViewController
-        let panel = NSPanel(contentViewController: browser)
-        panel.makeKeyAndOrderFront(self)
     }
 
     func showVideoCapture() {
@@ -206,35 +201,21 @@ class CelestiaViewController: NSViewController {
     }
 
     func showGoto() {
-        if let existing = NSApp.findWindow(type: GotoViewController.self) {
-            existing.makeKeyAndOrderFront(nil)
-            return
+        AppDelegate.present(identifier: "Goto") { () -> GotoViewController in
+            return NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "Goto") as! GotoViewController
         }
-        let goto = NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "Goto") as! GotoViewController
-
-        let panel = NSPanel(contentViewController: goto)
-        panel.makeKeyAndOrderFront(self)
     }
 
     func showSetTime() {
-        if let existing = NSApp.findWindow(type: SetTimeViewController.self) {
-            existing.makeKeyAndOrderFront(nil)
-            return
+        AppDelegate.present(identifier: "SetTime") { () -> SetTimeViewController in
+            return NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "SetTime") as! SetTimeViewController
         }
-        let time = NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "SetTime") as! SetTimeViewController
-
-        let panel = NSPanel(contentViewController: time)
-        panel.makeKeyAndOrderFront(self)
     }
 
     func showEclipseFinder() {
-        if let existing = NSApp.findWindow(type: EclipseFinderViewController.self) {
-            existing.makeKeyAndOrderFront(nil)
-            return
+        AppDelegate.present(identifier: "EclipseFinder") { () -> EclipseFinderViewController in
+            return NSStoryboard(name: "EclipseFinder", bundle: nil).instantiateController(withIdentifier: "EclipseFinder") as! EclipseFinderViewController
         }
-        let finder = NSStoryboard(name: "EclipseFinder", bundle: nil).instantiateController(withIdentifier: "EclipseFinder") as! EclipseFinderViewController
-        let panel = NSPanel(contentViewController: finder)
-        panel.makeKeyAndOrderFront(self)
     }
 
     @objc func copy(_ sender: Any) {
@@ -262,16 +243,13 @@ class CelestiaViewController: NSViewController {
     }
 
     @IBAction private func showInfo(_ sender: NSMenuItem) {
-        if let existing = NSApp.findWindow(type: InfoViewController.self) {
-            existing.performClose(nil)
-        }
         let selection = core.simulation.selection
-        if !selection.isEmpty {
+        AppDelegate.present(identifier: "Info", tryToReuse: false, customization: { window in
+            window.styleMask = [window.styleMask, .utilityWindow]
+        }) { () -> InfoViewController in
             let vc = NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "Info") as! InfoViewController
             vc.selection = selection
-            let panel = NSPanel(contentViewController: vc)
-            panel.styleMask = [panel.styleMask, .utilityWindow]
-            panel.makeKeyAndOrderFront(self)
+            return vc
         }
     }
 
@@ -312,8 +290,8 @@ class CelestiaViewController: NSViewController {
     }
 }
 
-extension CelestiaViewController: CelestiaGLViewDelegate {
-    func draw(in glView: CelestiaGLView) {
+extension CelestiaViewController: CelestiaViewDelegate {
+    func draw(in glView: CelestiaView) {
         NSEvent.stopPeriodicEvents()
 
         keyTick()
@@ -324,21 +302,119 @@ extension CelestiaViewController: CelestiaGLViewDelegate {
         }
     }
 
-    func update(in glView: CelestiaGLView) {
+    func update(in glView: CelestiaView) {
         core.resize(to: glView.bounds.size.scale(by: scaleFactor))
+    }
+
+    func initialize(with context: NSOpenGLContext, supportsMultiThread: Bool, callback: @escaping (Bool) -> Void) {
+        context.makeCurrentContext()
+
+        _ = CelestiaAppCore.initGL()
+
+        let dataDirectoryURL = currentDataDirectory()
+        let configFileURL = currentConfigFile()
+
+        FileManager.default.changeCurrentDirectoryPath(dataDirectoryURL.url.path)
+        CelestiaAppCore.setLocaleDirectory(dataDirectoryURL.url.path + "/locale")
+
+
+        guard supportsMultiThread else {
+            let result = core.startSimulation(configFileName: configFileURL.url.path, extraDirectories: [extraDirectory].compactMap{$0?.path}, progress: { _ in }) && core.startRenderer()
+
+            guard result else {
+                showLoadingFailed()
+                callback(false)
+                return
+            }
+
+            start()
+            callback(true)
+            return
+        }
+
+        DispatchQueue.global().async { [weak self] in
+            guard let self = self else { return }
+
+            context.makeCurrentContext()
+
+            let result = self.core.startSimulation(configFileName: configFileURL.url.path, extraDirectories: [extraDirectory].compactMap{$0?.path}, progress: { (status) in
+                // Broadcast the status
+                NotificationCenter.default.post(name: celestiaLoadingStatusNotificationName, object: nil, userInfo: [celestiaLoadingStatusNotificationKey : status])
+            }) && self.core.startRenderer()
+
+            DispatchQueue.main.async {
+                guard result else {
+                    self.showLoadingFailed()
+                    callback(false)
+                    return
+                }
+                self.start()
+                callback(true)
+            }
+        }
+    }
+
+    func showLoadingFailed() {
+        NotificationCenter.default.post(name: celestiaLoadingFinishedNotificationName, object: nil, userInfo: nil)
+
+        self.view.window?.close()
+        let alert = NSAlert()
+        alert.messageText = CelestiaString("Loading Celestia failed…", comment: "")
+        alert.alertStyle = .critical
+        alert.addButton(withTitle: CelestiaString("Choose Config File", comment: ""))
+        alert.addButton(withTitle: CelestiaString("Quit", comment: ""))
+        if alert.runModal() == .alertFirstButtonReturn {
+            AppDelegate.shared.showChangeConfigFile(launchFailure: true)
+            return
+        }
+        NSApp.terminate(nil)
+    }
+
+    func start() {
+        core.loadUserDefaultsWithAppDefaults(atPath: Bundle.main.path(forResource: "defaults", ofType: "plist"))
+
+        core.setDPI(Int(scaleFactor * 96))
+
+        let locale = LocalizedString("LANGUAGE", "celestia")
+        if let (font, boldFont) = getInstalledFontFor(locale: locale) {
+            core.setFont(font.filePath, collectionIndex: font.collectionIndex, fontSize: 9)
+            core.setTitleFont(boldFont.filePath, collectionIndex: boldFont.collectionIndex, fontSize: 15)
+            core.setRendererFont(font.filePath, collectionIndex: font.collectionIndex, fontSize: 9, fontStyle: .normal)
+            core.setRendererFont(boldFont.filePath, collectionIndex: boldFont.collectionIndex, fontSize: 15, fontStyle: .large)
+        } else if let font = GetFontForLocale(locale, .system),
+            let boldFont = GetFontForLocale(locale, .emphasizedSystem) {
+            core.setFont(font.filePath, collectionIndex: font.collectionIndex, fontSize: 9)
+            core.setTitleFont(boldFont.filePath, collectionIndex: boldFont.collectionIndex, fontSize: 15)
+            core.setRendererFont(font.filePath, collectionIndex: font.collectionIndex, fontSize: 9, fontStyle: .normal)
+            core.setRendererFont(boldFont.filePath, collectionIndex: boldFont.collectionIndex, fontSize: 15, fontStyle: .large)
+        }
+
+        core.tick()
+        core.start()
+
+        AppDelegate.shared.scriptController.buildScriptMenu()
+        AppDelegate.shared.bookmarkController.readBookmarksFromDisk()
+        AppDelegate.shared.bookmarkController.buildBookmarkMenu()
+
+        // we delay opening url/running script
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1)  {
+            self.checkNeedOpeningURL()
+        }
+
+        NotificationCenter.default.post(name: celestiaLoadingFinishedNotificationName, object: nil, userInfo: nil)
     }
 }
 
-extension CelestiaGLViewMouseButton {
+extension CelestiaViewMouseButton {
     var celestiaButtons: MouseButton { return MouseButton(rawValue: rawValue) }
 }
 
-extension CelestiaViewController: CelestiaGLViewMouseProcessor {
-    func mouseUp(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton) {
+extension CelestiaViewController: CelestiaViewMouseProcessor {
+    func mouseUp(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaViewMouseButton) {
         core.mouseButtonUp(at: point.scale(by: scaleFactor), modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
     }
 
-    func mouseDown(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton) {
+    func mouseDown(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaViewMouseButton) {
         core.mouseButtonDown(at: point.scale(by: scaleFactor), modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
     }
 
@@ -346,7 +422,7 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
         core.mouseDragged(to: point.scale(by: scaleFactor))
     }
 
-    func mouseMove(by offset: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton) {
+    func mouseMove(by offset: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaViewMouseButton) {
         core.mouseMove(by: offset.scale(by: scaleFactor), modifiers: modifiers.rawValue, with: buttons.celestiaButtons)
     }
 
@@ -358,11 +434,15 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
         if selection.isEmpty { return nil }
 
         // configure fixed items
-        glViewMenu.items[0].title = core.simulation.universe.name(for: selection)
+        selectionMenu.items[0].title = core.simulation.universe.name(for: selection)
         unmarkMenuItem.isEnabled = core.simulation.universe.isMarked(core.simulation.selection)
 
         // clear original menu items
-        glViewMenu.items.removeAll(where: { $0.tag >= 10000 })
+        selectionMenu.items.forEach({ (item) in
+            if item.tag >= 10000 {
+                selectionMenu.removeItem(item)
+            }
+        })
 
         let browserItem: CelestiaBrowserItem?
         if let body = selection.body {
@@ -371,11 +451,11 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
             refMarkMenuItem.tag = 10000
             refMarkMenuItem.submenu = refMarkMenu
             refMarkMenu.items.forEach { $0.state = core.boolValue(forTag: $0.tag) ? .on : .off }
-            glViewMenu.insertItem(refMarkMenuItem, at: glViewMenu.items.count - 2)
+            selectionMenu.insertItem(refMarkMenuItem, at: selectionMenu.items.count - 2)
 
             let sep = NSMenuItem.separator()
             sep.tag = 10001
-            glViewMenu.insertItem(sep, at: glViewMenu.items.count - 2)
+            selectionMenu.insertItem(sep, at: selectionMenu.items.count - 2)
 
             browserItem = CelestiaBrowserItem(name: body.name, catEntry: body, provider: universe)
         } else if let star = selection.star {
@@ -408,18 +488,18 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
 
         // add planet system
         if let bItem = browserItem, let planetItems = createMenuItems(for: bItem) {
-            planetItems.forEach {$0.tag = 10002; glViewMenu.insertItem($0, at: glViewMenu.items.count - 2)}
+            planetItems.forEach {$0.tag = 10002; selectionMenu.insertItem($0, at: selectionMenu.items.count - 2)}
 
             let sep = NSMenuItem.separator()
             sep.tag = 10003
-            glViewMenu.insertItem(sep, at: glViewMenu.items.count - 2)
+            selectionMenu.insertItem(sep, at: selectionMenu.items.count - 2)
         }
 
         if let altSurfaces = selection.body?.alternateSurfaceNames {
 
             let altSurfaceItem = NSMenuItem(title: CelestiaString("Alternate Surfaces", comment: ""), action: nil, keyEquivalent: "")
             altSurfaceItem.tag = 10004
-            glViewMenu.insertItem(altSurfaceItem, at: glViewMenu.items.count - 2)
+            selectionMenu.insertItem(altSurfaceItem, at: selectionMenu.items.count - 2)
 
             let submenu = NSMenu(title: "")
             for (index, surface) in ([CelestiaString("Default", comment: "")] + altSurfaces).enumerated() {
@@ -433,14 +513,14 @@ extension CelestiaViewController: CelestiaGLViewMouseProcessor {
 
             let sep = NSMenuItem.separator()
             sep.tag = 10005
-            glViewMenu.insertItem(sep, at: glViewMenu.items.count - 2)
+            selectionMenu.insertItem(sep, at: selectionMenu.items.count - 2)
         }
 
-        return glViewMenu
+        return selectionMenu
     }
 }
 
-extension CelestiaViewController: CelestiaGLViewDNDProcessor {
+extension CelestiaViewController: CelestiaViewDNDProcessor {
     func draggingType(for url: URL) -> NSDragOperation {
         if url.isFileURL && ScriptController.supportedFileExtensions.contains(url.pathExtension.lowercased()) {
             return .copy
@@ -453,7 +533,7 @@ extension CelestiaViewController: CelestiaGLViewDNDProcessor {
     }
 }
 
-extension CelestiaViewController: CelestiaGLViewKeyboardProcessor {
+extension CelestiaViewController: CelestiaViewKeyboardProcessor {
     func keyUp(modifiers: NSEvent.ModifierFlags, with input: String?) {
         core.keyUp(with: input, modifiers: modifiers.rawValue)
     }
@@ -465,7 +545,7 @@ extension CelestiaViewController: CelestiaGLViewKeyboardProcessor {
 
 extension CelestiaViewController: CelestiaAppCoreDelegate {
     func celestiaAppCoreCursorDidRequestContextMenu(at location: CGPoint, with selection: CelestiaSelection) {
-        requestMenu(for: selection)?.popUp(positioning: nil, at: location.scale(by: 1 / scaleFactor), in: glView)
+        requestMenu(for: selection)?.popUp(positioning: nil, at: location.scale(by: 1 / scaleFactor), in: celestiaView)
     }
 
     func celestiaAppCoreFatalErrorHappened(_ error: String) {

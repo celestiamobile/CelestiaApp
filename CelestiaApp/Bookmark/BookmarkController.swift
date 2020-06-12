@@ -74,13 +74,14 @@ class BookmarkController: NSObject {
     }
 
     @IBAction private func organizeBookmarks(_ sender: Any) {
-        if let existing = NSApp.findWindow(type: BookmarkOrganizerViewController.self) {
-            existing.makeKeyAndOrderFront(nil)
-            return
+        AppDelegate.present(identifier: "Bookmark") { () -> BookmarkOrganizerViewController in
+            let vc = NSStoryboard(name: "Bookmark", bundle: nil).instantiateController(withIdentifier: "Organizer") as! BookmarkOrganizerViewController
+            vc.controller = self
+            return vc
         }
-        let vc = NSStoryboard(name: "Bookmark", bundle: nil).instantiateController(withIdentifier: "Organizer") as! BookmarkOrganizerViewController
-        vc.controller = self
-        let panel = NSPanel(contentViewController: vc)
-        panel.makeKeyAndOrderFront(self)
+    }
+
+    deinit {
+        AppDelegate.clear(identifier: "Bookmark")
     }
 }

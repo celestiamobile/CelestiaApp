@@ -22,7 +22,8 @@ class SettingViewController: NSViewController {
     private let core: CelestiaAppCore = CelestiaAppCore.shared
 
     private let preferenceItems = [
-        PreferenceItem(key: .fullDPI, tag: 2000)
+        PreferenceItem(key: .fullDPI, tag: 2000),
+        PreferenceItem(key: .msaa, tag: 2001)
     ]
 
     override func viewDidLoad() {

@@ -9,10 +9,8 @@
 /* Begin PBXBuildFile section */
 		970C560E238507F500EBB157 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 970C560D238507EA00EBB157 /* libbz2.tbd */; };
 		970C5625238637B900EBB157 /* BrowserItemAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970C5624238637B900EBB157 /* BrowserItemAddition.swift */; };
-		970DCE3D22FE8B550044F590 /* NSOpenGLView+AASample.m in Sources */ = {isa = PBXBuildFile; fileRef = 970DCE3C22FE8B550044F590 /* NSOpenGLView+AASample.m */; };
 		971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251A722FDB86E00067B06 /* libc++.tbd */; };
 		971A67482301A370009E4EA1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251BC22FDB9BB00067B06 /* libz.tbd */; };
-		971A674A2301A376009E4EA1 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 971A67492301A376009E4EA1 /* OpenGL.framework */; };
 		971A67502301A9D3009E4EA1 /* ScriptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971A674F2301A9D3009E4EA1 /* ScriptController.swift */; };
 		972F39E022FEAD1D00CEDDAC /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F39DF22FEAD1D00CEDDAC /* BrowserViewController.swift */; };
 		972F3A1222FEF65300CEDDAC /* EclipseFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F3A1122FEF65300CEDDAC /* EclipseFinderViewController.swift */; };
@@ -44,7 +42,7 @@
 		97F2519222FDB6E700067B06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97F2519122FDB6E700067B06 /* Assets.xcassets */; };
 		97F2519522FDB6E700067B06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97F2519322FDB6E700067B06 /* Main.storyboard */; };
 		97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251A222FDB75400067B06 /* CelestiaCore.framework */; };
-		97F251BF22FDBACA00067B06 /* CelestiaGLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F251BE22FDBACA00067B06 /* CelestiaGLView.swift */; };
+		97F251BF22FDBACA00067B06 /* CelestiaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F251BE22FDBACA00067B06 /* CelestiaView.swift */; };
 		EA0E2A2A246393AF006F1469 /* LocalizationSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */; };
 		EA0E2A2F24639C34006F1469 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A2E24639C34006F1469 /* Localization.swift */; };
 		EA0E2A3124639DD9006F1469 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A3024639DD9006F1469 /* main.swift */; };
@@ -52,6 +50,7 @@
 		EA5F727424ACAE9D00B0237D /* AppCenter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F727024ACAE9D00B0237D /* AppCenter.xcframework */; };
 		EA5F727624ACAE9D00B0237D /* AppCenterAnalytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F727124ACAE9D00B0237D /* AppCenterAnalytics.xcframework */; };
 		EA7B07EB24B062FB00CB2A71 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = EA7B07E924B062FB00CB2A71 /* Fonts */; };
+		EA870B5724B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA870B5624B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m */; };
 		EABC2462248E1BB300205B5A /* FontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC2461248E1BB300205B5A /* FontHelper.m */; };
 /* End PBXBuildFile section */
 
@@ -69,8 +68,6 @@
 		970C560D238507EA00EBB157 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		970C5624238637B900EBB157 /* BrowserItemAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserItemAddition.swift; sourceTree = "<group>"; };
 		970DCE0C22FE58DB0044F590 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		970DCE3B22FE8B550044F590 /* NSOpenGLView+AASample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSOpenGLView+AASample.h"; sourceTree = "<group>"; };
-		970DCE3C22FE8B550044F590 /* NSOpenGLView+AASample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSOpenGLView+AASample.m"; sourceTree = "<group>"; };
 		971A67492301A376009E4EA1 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		971A674F2301A9D3009E4EA1 /* ScriptController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptController.swift; sourceTree = "<group>"; };
 		972F39DF22FEAD1D00CEDDAC /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
@@ -114,7 +111,7 @@
 		97F2519D22FDB75400067B06 /* CelestiaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CelestiaCore.xcodeproj; path = ../CelestiaCore/CelestiaCore.xcodeproj; sourceTree = "<group>"; };
 		97F251A722FDB86E00067B06 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		97F251BC22FDB9BB00067B06 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		97F251BE22FDBACA00067B06 /* CelestiaGLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestiaGLView.swift; sourceTree = "<group>"; };
+		97F251BE22FDBACA00067B06 /* CelestiaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestiaView.swift; sourceTree = "<group>"; };
 		EA0E2A28246393AF006F1469 /* LocalizationSwizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizationSwizzling.h; sourceTree = "<group>"; };
 		EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalizationSwizzling.m; sourceTree = "<group>"; };
 		EA0E2A2E24639C34006F1469 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
@@ -123,6 +120,8 @@
 		EA5F727024ACAE9D00B0237D /* AppCenter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppCenter.xcframework; path = AppCenter/AppCenter.xcframework; sourceTree = "<group>"; };
 		EA5F727124ACAE9D00B0237D /* AppCenterAnalytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppCenterAnalytics.xcframework; path = AppCenter/AppCenterAnalytics.xcframework; sourceTree = "<group>"; };
 		EA7B07E924B062FB00CB2A71 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = ../../../CelestiaCore/Fonts; sourceTree = "<group>"; };
+		EA870B5524B2BBBF00F0FC50 /* NSOpenGLContext+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSOpenGLContext+Utils.h"; sourceTree = "<group>"; };
+		EA870B5624B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSOpenGLContext+Utils.m"; sourceTree = "<group>"; };
 		EABC245F248E1BB300205B5A /* FontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontHelper.h; sourceTree = "<group>"; };
 		EABC2461248E1BB300205B5A /* FontHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,7 +132,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA5F727224ACAE9D00B0237D /* AppCenterCrashes.xcframework in Frameworks */,
-				971A674A2301A376009E4EA1 /* OpenGL.framework in Frameworks */,
 				971A67482301A370009E4EA1 /* libz.tbd in Frameworks */,
 				EA5F727424ACAE9D00B0237D /* AppCenter.xcframework in Frameworks */,
 				970C560E238507F500EBB157 /* libbz2.tbd in Frameworks */,
@@ -177,9 +175,9 @@
 		972F3A3222FFC67100CEDDAC /* OpenGL */ = {
 			isa = PBXGroup;
 			children = (
-				97F251BE22FDBACA00067B06 /* CelestiaGLView.swift */,
-				970DCE3B22FE8B550044F590 /* NSOpenGLView+AASample.h */,
-				970DCE3C22FE8B550044F590 /* NSOpenGLView+AASample.m */,
+				97F251BE22FDBACA00067B06 /* CelestiaView.swift */,
+				EA870B5524B2BBBF00F0FC50 /* NSOpenGLContext+Utils.h */,
+				EA870B5624B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m */,
 			);
 			path = OpenGL;
 			sourceTree = "<group>";
@@ -466,18 +464,18 @@
 				971A67502301A9D3009E4EA1 /* ScriptController.swift in Sources */,
 				97401C922414CF2D0015F8E8 /* UserDefaults.swift in Sources */,
 				974D27552303CEF000FDFBC0 /* InfoViewController.swift in Sources */,
+				EA870B5724B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m in Sources */,
 				97DBBE6C230003DC003D1BAF /* NSAlert.swift in Sources */,
 				97DBBE6822FFF2AC003D1BAF /* SplashWindow.swift in Sources */,
 				974D26F72302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift in Sources */,
 				97458FE6232769F8009BFADF /* ConfigSelectionViewController.swift in Sources */,
 				97DBBE6122FFE779003D1BAF /* GLInfoViewController.swift in Sources */,
-				97F251BF22FDBACA00067B06 /* CelestiaGLView.swift in Sources */,
+				97F251BF22FDBACA00067B06 /* CelestiaView.swift in Sources */,
 				EA0E2A3124639DD9006F1469 /* main.swift in Sources */,
 				97401C932414CF2D0015F8E8 /* Celestia+Extension.swift in Sources */,
 				972F39E022FEAD1D00CEDDAC /* BrowserViewController.swift in Sources */,
 				972F3A2222FF96F000CEDDAC /* SettingViewController.swift in Sources */,
 				97401C912414CF2D0015F8E8 /* URL.swift in Sources */,
-				970DCE3D22FE8B550044F590 /* NSOpenGLView+AASample.m in Sources */,
 				EA0E2A2A246393AF006F1469 /* LocalizationSwizzling.m in Sources */,
 				EABC2462248E1BB300205B5A /* FontHelper.m in Sources */,
 				97F2519022FDB6E100067B06 /* CelestiaViewController.swift in Sources */,

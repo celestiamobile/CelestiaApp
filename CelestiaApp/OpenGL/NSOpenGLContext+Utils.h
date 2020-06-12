@@ -1,5 +1,5 @@
 //
-// Bridging-Header.h
+// NSOpenGLContext+Utils.h
 //
 // Copyright © 2020 Celestia Development Team. All rights reserved.
 //
@@ -9,12 +9,15 @@
 // of the License, or (at your option) any later version.
 //
 
-#ifndef BRIDGING_HEADER_H
-#define BRIDGING_HEADER_H
+#import <Cocoa/Cocoa.h>
 
-#import "LegacyMigrator.h"
-#import "LocalizationSwizzling.h"
-#import "FontHelper.h"
-#import "NSOpenGLContext+Utils.h"
+NS_ASSUME_NONNULL_BEGIN
 
-#endif /* BRIDGING_HEADER_H */
+@interface NSOpenGLContext (Utils)
+
+- (void)enable:(GLenum)value;
+- (void)disable:(GLenum)value;
+
+@end
+
+NS_ASSUME_NONNULL_END

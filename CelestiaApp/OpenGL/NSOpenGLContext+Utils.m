@@ -1,5 +1,5 @@
 //
-// NSOpenGLView+AASample.h
+// NSOpenGLContext+Utils.m
 //
 // Copyright © 2020 Celestia Development Team. All rights reserved.
 //
@@ -9,14 +9,17 @@
 // of the License, or (at your option) any later version.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "NSOpenGLContext+Utils.h"
+#import <OpenGL/gl.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@implementation NSOpenGLContext (Utils)
 
-@interface NSOpenGLView (AASample)
+- (void)enable:(GLenum)value {
+    glEnable(value);
+}
 
-- (void)setAASamples:(GLint)aaSamples;
+- (void)disable:(GLenum)value {
+    glDisable(value);
+}
 
 @end
-
-NS_ASSUME_NONNULL_END

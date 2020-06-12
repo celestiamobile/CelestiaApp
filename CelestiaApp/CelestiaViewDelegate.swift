@@ -14,17 +14,17 @@ import Cocoa
 struct CelestiaViewMouseButton: OptionSet {
     let rawValue: UInt
 
-    static let left = CelestiaGLViewMouseButton(rawValue: 1 << 0)
-    static let middle = CelestiaGLViewMouseButton(rawValue: 1 << 1)
-    static let right = CelestiaGLViewMouseButton(rawValue: 1 << 2)
+    static let left = CelestiaViewMouseButton(rawValue: 1 << 0)
+    static let middle = CelestiaViewMouseButton(rawValue: 1 << 1)
+    static let right = CelestiaViewMouseButton(rawValue: 1 << 2)
 
-    static let all: CelestiaGLViewMouseButton = [.left, .middle, .right]
+    static let all: CelestiaViewMouseButton = [.left, .middle, .right]
 }
 
 protocol CelestiaViewMouseProcessor: class {
-    func mouseUp(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton)
-    func mouseDown(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton)
-    func mouseMove(by offset: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaGLViewMouseButton)
+    func mouseUp(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaViewMouseButton)
+    func mouseDown(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaViewMouseButton)
+    func mouseMove(by offset: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaViewMouseButton)
     func mouseDragged(to point: CGPoint)
     func mouseWheel(by motion: CGFloat, modifiers: NSEvent.ModifierFlags)
 }

@@ -104,14 +104,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func presentGLInfo(_ sender: NSMenuItem) {
-        if let existing = NSApp.findWindow(type: GLInfoViewController.self) {
-            existing.makeKeyAndOrderFront(nil)
-            return
+        AppDelegate.present(identifier: "GLInfo", customization: { window in
+            window.styleMask = [window.styleMask, .utilityWindow]
+        }) { () -> GLInfoViewController in
+            return NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "GLInfo") as! GLInfoViewController
         }
-        let vc = NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "GLInfo") as! NSViewController
-        let panel = NSPanel(contentViewController: vc)
-        panel.styleMask = [panel.styleMask, .utilityWindow]
-        panel.makeKeyAndOrderFront(self)
     }
 
     @IBAction func changeConfigFile(_ sender: Any) {
@@ -119,24 +116,48 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func showChangeConfigFile(launchFailure: Bool) {
-        if let existing = NSApp.findWindow(type: ConfigSelectionViewController.self) {
-            existing.makeKeyAndOrderFront(nil)
-            return
+        AppDelegate.present(identifier: "ConfigSelection", customization: { window in
+            window.styleMask = window.styleMask.subtracting(.closable)
+        }) { () -> ConfigSelectionViewController in
+            let vc = NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "ConfigSelectionWindow") as! ConfigSelectionViewController
+            vc.launchFailure = launchFailure
+            return vc
         }
-        let vc = NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "ConfigSelectionWindow") as! ConfigSelectionViewController
-        vc.launchFailure = launchFailure
-        let panel = NSPanel(contentViewController: vc)
-        panel.styleMask = panel.styleMask.subtracting([.resizable, .miniaturizable])
-        if launchFailure {
-            panel.styleMask = panel.styleMask.subtracting(.closable)
-        }
-        panel.makeKeyAndOrderFront(self)
+    }
+
+    deinit {
+        AppDelegate.clear(identifier: "GLInfo")
+        AppDelegate.clear(identifier: "ConfigSelection")
     }
 
     func application(_ sender: NSApplication, openFile filename: String) -> Bool {
         urlToRun = URL(fileURLWithPath: filename)
         celestiaViewController?.checkNeedOpeningURL()
         return true
+    }
+
+    private static var savedWindows: [String : NSWindow] = [:]
+
+    static func present<VC: NSViewController>(identifier: String, tryToReuse: Bool = true, customization: (NSWindow) -> Void = { _ in }, vcProvider: () -> VC) {
+        let window = NSApp.findWindow(type: VC.self)
+        if window != nil {
+            if tryToReuse {
+                window?.makeKeyAndOrderFront(nil)
+                return
+            } else {
+                window?.performClose(nil)
+            }
+        }
+
+        let vc = vcProvider()
+        let panel = NSPanel(contentViewController: vc)
+        customization(panel)
+        savedWindows[identifier] = panel
+        panel.makeKeyAndOrderFront(nil)
+    }
+
+    static func clear(identifier: String) {
+        savedWindows[identifier] = nil
     }
 }
 

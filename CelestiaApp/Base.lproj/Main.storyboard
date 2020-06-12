@@ -570,22 +570,10 @@ CA
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <openGLView wantsLayer="YES" useAuxiliaryDepthBufferStencil="NO" allowOffline="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggi-fp-OSg" customClass="CelestiaGLView" customModule="Celestia" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                            </openGLView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ggi-fp-OSg" secondAttribute="trailing" id="3Td-Q5-lVr"/>
-                            <constraint firstItem="ggi-fp-OSg" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="c2r-w5-s6d"/>
-                            <constraint firstAttribute="bottom" secondItem="ggi-fp-OSg" secondAttribute="bottom" id="cLD-dK-wbC"/>
-                            <constraint firstItem="ggi-fp-OSg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="oaT-Yc-rLC"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="glView" destination="ggi-fp-OSg" id="xpF-3o-x8V"/>
-                        <outlet property="glViewMenu" destination="Dny-Ca-Av0" id="0Kt-4l-krC"/>
                         <outlet property="refMarkMenu" destination="RFA-7p-BIu" id="kWu-B4-u5z"/>
+                        <outlet property="selectionMenu" destination="Dny-Ca-Av0" id="0Kt-4l-krC"/>
                         <outlet property="unmarkMenuItem" destination="KoR-2q-BSU" id="ieS-Du-KVS"/>
                     </connections>
                 </viewController>
@@ -824,7 +812,7 @@ CA
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dw5-XD-Uzb">
                                         <rect key="frame" x="648" y="44" width="8" height="14"/>
                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title=" " id="csL-Ov-fg4">
-                                            <font key="font" metaFont="message" size="11"/>
+                                            <font key="font" metaFont="label" size="11"/>
                                             <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -832,7 +820,7 @@ CA
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hWj-ws-cYN">
                                         <rect key="frame" x="652" y="60" width="4" height="14"/>
                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" id="PVI-tP-Egi">
-                                            <font key="font" metaFont="message" size="11"/>
+                                            <font key="font" metaFont="label" size="11"/>
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>

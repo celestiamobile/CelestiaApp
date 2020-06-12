@@ -11,48 +11,59 @@
 
 import Cocoa
 
-typealias CelestiaGLViewMouseButton = CelestiaViewMouseButton;
-typealias CelestiaGLViewMouseProcessor = CelestiaViewMouseProcessor;
-typealias CelestiaGLViewKeyboardProcessor = CelestiaViewKeyboardProcessor;
-typealias CelestiaGLViewDNDProcessor = CelestiaViewDNDProcessor;
-
-protocol CelestiaGLViewDelegate: class {
-    func draw(in glView: CelestiaGLView)
-    func update(in glView: CelestiaGLView)
+protocol CelestiaViewDelegate: class {
+    func draw(in glView: CelestiaView)
+    func update(in glView: CelestiaView)
+    func initialize(with context: NSOpenGLContext, supportsMultiThread: Bool, callback: @escaping (Bool) -> Void)
 }
 
-class CelestiaGLView: NSOpenGLView {
-    weak var delegate: CelestiaGLViewDelegate?
-    weak var mouseProcessor: CelestiaGLViewMouseProcessor?
-    weak var keyboardProcessor: CelestiaGLViewKeyboardProcessor?
-    weak var dndProcessor: CelestiaGLViewDNDProcessor?
+class CelestiaView: NSOpenGLView {
+    weak var viewDelegate: CelestiaViewDelegate?
+    weak var mouseProcessor: CelestiaViewMouseProcessor?
+    weak var keyboardProcessor: CelestiaViewKeyboardProcessor?
+    weak var dndProcessor: CelestiaViewDNDProcessor?
 
     private let mouseDragThreshold: CGFloat = 3
     private var mouseMotion: CGFloat = 0
 
     private var cursorVisible: Bool = true
+    private var supportsMultiThread: Bool = false
+    private var msaaEnabled: Bool = false
 
     private var displayLink: CVDisplayLink?
 
-    required init?(coder decoder: NSCoder) {
-        super.init(coder: decoder)
+    private var currentSize: CGSize = .zero
+    private var ready = false
+
+    private var displaySource: DispatchSourceUserDataAdd?
+
+    var scaleFactor: CGFloat {
+        get { return layer?.contentsScale ?? 1.0 }
+        set { layer?.contentsScale = newValue }
+    }
+
+    init?(frame frameRect: NSRect, pixelFormat format: NSOpenGLPixelFormat?, msaaEnabled: Bool) {
+        super.init(frame: frameRect, pixelFormat: format)
+
+        self.msaaEnabled = msaaEnabled
 
         setupGL()
-        setupDisplayLink()
         setupDND()
     }
-
-    override func draw(_ dirtyRect: NSRect) {
-        if let context = openGLContext {
-            delegate?.draw(in: self)
-            context.flushBuffer()
-        }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-
-    override func update() {
-        delegate?.update(in: self)
-
-        super.update()
+    
+    override func viewWillMove(toWindow newWindow: NSWindow?) {
+        if let link = displayLink {
+            CVDisplayLinkStop(link)
+            displaySource?.cancel()
+            displaySource = nil
+        }
+        if let window = newWindow {
+            setupDisplayLink(with: window)
+        }
     }
 
     override var isFlipped: Bool {
@@ -60,7 +71,9 @@ class CelestiaGLView: NSOpenGLView {
     }
 
     override func viewDidMoveToWindow() {
-        window?.acceptsMouseMovedEvents = true
+        super.viewDidMoveToWindow()
+
+        window?.acceptsMouseMovedEvents = window != nil
     }
 
     // MARK: Mouse
@@ -199,47 +212,64 @@ class CelestiaGLView: NSOpenGLView {
         return true
     }
 
-    override func viewWillMove(toWindow newWindow: NSWindow?) {
-        if newWindow == nil, let link = displayLink {
-            CVDisplayLinkStop(link)
+    override func draw(_ dirtyRect: NSRect) {
+        if let context = openGLContext {
+            viewDelegate?.draw(in: self)
+            context.flushBuffer()
         }
     }
 
-    func displayLinkCallback() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            self.needsDisplay = true
-        }
+    override func update() {
+        viewDelegate?.update(in: self)
+
+        super.update()
+    }
+
+    @objc private func displayLinkCallback() {
+        guard ready else { return }
+
+        needsDisplay = true
     }
 }
 
-extension CelestiaGLView {
+extension CelestiaView {
     private func setupGL() {
-        let attributes = [UInt32(NSOpenGLPFADoubleBuffer), UInt32(NSOpenGLPFADepthSize), 32, 0]
-        let format = NSOpenGLPixelFormat(attributes: attributes)
-        pixelFormat = format
+        guard let context = openGLContext else { return }
 
-        if let cglContext = openGLContext?.cglContextObj, CGLEnable(cglContext, CGLContextEnable.init(313)).rawValue == 0 {
+        if let obj = context.cglContextObj, CGLEnable(obj, CGLContextEnable(313)).rawValue == 0 {
             print("Multithreaded OpenGL enabled.")
-        } else {
-            print("Multithreaded OpenGL not supported on your system.")
+            supportsMultiThread = true
         }
 
         var swapInterval: GLint = 1
-        openGLContext?.setValues(&swapInterval, for: .swapInterval)
+        context.setValues(&swapInterval, for: NSOpenGLContext.Parameter.swapInterval)
+
+        context.makeCurrentContext()
+
+        if msaaEnabled {
+            context.enable(0x809D)
+        }
     }
 
-    private func setupDisplayLink() {
+    private func setupDisplayLink(with window: NSWindow) {
         CVDisplayLinkCreateWithActiveCGDisplays(&displayLink)
         if let link = displayLink {
+            if displaySource == nil {
+                let source = DispatchSource.makeUserDataAddSource(queue: .main)
+                source.setEventHandler() { [weak self] in
+                    self?.displayLinkCallback()
+                }
+                source.resume()
+                displaySource = source
+            }
             CVDisplayLinkSetOutputCallback(link, { (link, now, outputTime, flagsIn, flagsOut, context) -> CVReturn in
-                let view = Unmanaged<CelestiaGLView>.fromOpaque(context!).takeUnretainedValue()
-                view.displayLinkCallback()
+                let displaySource = Unmanaged<DispatchSourceUserDataAdd>.fromOpaque(context!).takeUnretainedValue()
+                displaySource.add(data: 1)
                 return kCVReturnSuccess
-            }, Unmanaged.passUnretained(self).toOpaque())
+            }, Unmanaged.passUnretained(displaySource!).toOpaque())
 
-            if let cglContext = openGLContext?.cglContextObj, let cglPixelFormat = pixelFormat?.cglPixelFormatObj {
-                CVDisplayLinkSetCurrentCGDisplayFromOpenGLContext(link, cglContext, cglPixelFormat)
+            if let displayID = window.screen?.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")] as? CGDirectDisplayID {
+                CVDisplayLinkSetCurrentCGDisplay(link, displayID)
                 CVDisplayLinkStart(link)
             }
         }
@@ -247,5 +277,11 @@ extension CelestiaGLView {
 
     private func setupDND() {
         registerForDraggedTypes([.init(kUTTypeFileURL as String)])
+    }
+
+    func setupCelestia() {
+        viewDelegate?.initialize(with: openGLContext!, supportsMultiThread: supportsMultiThread) { (success) in
+            self.ready = success
+        }
     }
 }

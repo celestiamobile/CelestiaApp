@@ -11,10 +11,13 @@
 
 import Cocoa
 
-import CelestiaCore
+let celestiaLoadingStatusNotificationName = Notification.Name("CelestiaLoadingStatus")
+let celestiaLoadingStatusNotificationKey = "CelestiaLoadingStatusKey"
+let celestiaLoadingFinishedNotificationName = Notification.Name("CelestiaLoadingFinished")
 
-private var dataDirectoryURL: UniformedURL!
-private var configFileURL: UniformedURL!
+private var celestiaWC: NSWindowController? = {
+    return NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "Main") as? NSWindowController
+}()
 
 class SplashViewController: NSViewController {
     @IBOutlet private weak var versionLabel: NSTextField!
@@ -26,51 +29,26 @@ class SplashViewController: NSViewController {
         let shortVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
         versionLabel.stringValue = shortVersion
 
-        dataDirectoryURL = currentDataDirectory()
-        configFileURL = currentConfigFile()
+        // Load thw window so we have a rendering context
+        _ = celestiaWC?.window
 
-        setupResourceDirectory()
+        NotificationCenter.default.addObserver(self, selector: #selector(loadingStatusUpdate(_:)), name: celestiaLoadingStatusNotificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadingFinished(_:)), name: celestiaLoadingFinishedNotificationName, object: nil)
+    }
 
-        let core = CelestiaAppCore.shared
-        DispatchQueue.global().async { [weak self] in
-            guard let self = self else { return }
-            // create a context in case it's needed by Celestia
-            let context = NSOpenGLContext(format: NSOpenGLPixelFormat(), share: nil)
-            context?.makeCurrentContext()
-            let result = core.startSimulation(configFileName: configFileURL.url.path, extraDirectories: [extraDirectory].compactMap{$0?.path}, progress: { (status) in
-                DispatchQueue.main.async {
-                    self.statusLabel.stringValue = status
-                }
-            })
-            NSOpenGLContext.clearCurrentContext()
-            DispatchQueue.main.async {
-                if !result {
-                    self.view.window?.close()
-                    let alert = NSAlert()
-                    alert.messageText = CelestiaString("Loading Celestia failed…", comment: "")
-                    alert.alertStyle = .critical
-                    alert.addButton(withTitle: CelestiaString("Choose Config File", comment: ""))
-                    alert.addButton(withTitle: CelestiaString("Quit", comment: ""))
-                    if alert.runModal() == .alertFirstButtonReturn {
-                        AppDelegate.shared.showChangeConfigFile(launchFailure: true)
-                        return
-                    }
-                    NSApp.terminate(nil)
-                    return
-                }
-                AppDelegate.shared.scriptController.buildScriptMenu()
-                AppDelegate.shared.bookmarkController.readBookmarksFromDisk()
-                AppDelegate.shared.bookmarkController.buildBookmarkMenu()
-                let wc = self.storyboard?.instantiateController(withIdentifier: "Main") as! NSWindowController
-                wc.showWindow(nil)
-                self.view.window?.close()
-            }
+    @objc private func loadingStatusUpdate(_ notification: Notification) {
+        guard let status = notification.userInfo?[celestiaLoadingStatusNotificationKey] as? String else { return }
+
+        DispatchQueue.main.async { [weak self] in
+            self?.statusLabel.stringValue = status
         }
     }
 
-    func setupResourceDirectory() {
-        FileManager.default.changeCurrentDirectoryPath(dataDirectoryURL.url.path)
-        CelestiaAppCore.setLocaleDirectory(dataDirectoryURL.url.path + "/locale")
+    @objc private func loadingFinished(_ notification: Notification) {
+        DispatchQueue.main.async { [weak self] in
+            self?.view.window?.close()
+            celestiaWC?.showWindow(nil)
+        }
     }
 }
 
