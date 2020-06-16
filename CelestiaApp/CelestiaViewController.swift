@@ -474,6 +474,8 @@ extension CelestiaViewController: CelestiaAppCoreDelegate {
             NSCursor.arrow.set()
         }
     }
+
+    func celestiaAppCoreWatchedFlagDidChange(_ changedFlag: CelestiaWatcherFlag) {}
 }
 
 extension CelestiaViewController {
