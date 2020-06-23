@@ -457,7 +457,7 @@ extension CelestiaViewController: CelestiaGLViewKeyboardProcessor {
 
 extension CelestiaViewController: CelestiaAppCoreDelegate {
     func celestiaAppCoreCursorDidRequestContextMenu(at location: CGPoint, with selection: CelestiaSelection) {
-        requestMenu(for: selection)?.popUp(positioning: nil, at: location, in: glView)
+        requestMenu(for: selection)?.popUp(positioning: nil, at: location.scale(by: 1 / scaleFactor), in: glView)
     }
 
     func celestiaAppCoreFatalErrorHappened(_ error: String) {
