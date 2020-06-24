@@ -16,7 +16,7 @@ class EclipseFinderViewController: NSViewController {
 
     var currentFinder: CelestiaEclipseFinder?
 
-    var results: [EclipseResult] = []
+    var results: [CelestiaEclipse] = []
 
     @IBOutlet weak var eclipseList: NSTableView!
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
@@ -54,7 +54,7 @@ class EclipseFinderViewController: NSViewController {
             return
         }
 
-        let parameter: (body: CelestiaBody, kind: EclipseKind)
+        let parameter: (body: CelestiaBody, kind: CelestiaEclipseKind)
 
         if let primary = system.primaryObject {
             // Eclipse receiver is a moon -> find lunar eclipses
@@ -89,10 +89,7 @@ class EclipseFinderViewController: NSViewController {
         guard selected >= 0 else { return }
 
         let eclipse = results[selected]
-        core.simulation.time = eclipse.startTime
-        let target = CelestiaSelection(object: eclipse.receiver)!
-        let ref = CelestiaSelection(object: eclipse.receiver.system!.star!)!
-        core.simulation.goToEclipse(occulter: ref, receiver: target)
+        core.simulation.goToEclipse(eclipse)
     }
 }
 
