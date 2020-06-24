@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -304,16 +304,16 @@ DQ
                                         </textFieldCell>
                                     </textField>
                                     <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Esu-eA-i5r">
-                                        <rect key="frame" x="146" y="90" width="54" height="16"/>
-                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Latitude" id="Voa-EQ-UOx">
+                                        <rect key="frame" x="116" y="90" width="114" height="16"/>
+                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Latitude" id="Voa-EQ-UOx">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
                                     <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rdo-s8-WP2">
-                                        <rect key="frame" x="258" y="90" width="65" height="16"/>
-                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Longitude" id="5aY-uw-TXk">
+                                        <rect key="frame" x="234" y="90" width="113" height="16"/>
+                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Longitude" id="5aY-uw-TXk">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -408,6 +408,7 @@ DQ
                                     <constraint firstItem="RW8-4X-Xlg" firstAttribute="leading" secondItem="MFT-rp-XpX" secondAttribute="leading" id="Hrz-wt-qes"/>
                                     <constraint firstItem="MFT-rp-XpX" firstAttribute="leading" secondItem="9fW-Ng-Rac" secondAttribute="leading" constant="20" symbolic="YES" id="IFq-TW-jLc"/>
                                     <constraint firstItem="RW8-4X-Xlg" firstAttribute="centerY" secondItem="XPr-xV-1Wu" secondAttribute="centerY" id="LkD-N7-SJa"/>
+                                    <constraint firstItem="Esu-eA-i5r" firstAttribute="leading" secondItem="BQ9-qg-kgm" secondAttribute="leading" id="P9q-ai-bEp"/>
                                     <constraint firstItem="p3j-C8-udW" firstAttribute="trailing" secondItem="fWx-6u-6RL" secondAttribute="trailing" id="PmD-7w-KDm"/>
                                     <constraint firstItem="5Xw-RX-gXS" firstAttribute="trailing" secondItem="p3j-C8-udW" secondAttribute="trailing" id="Trx-rM-a8C"/>
                                     <constraint firstItem="5Xw-RX-gXS" firstAttribute="top" secondItem="Rdo-s8-WP2" secondAttribute="bottom" constant="8" symbolic="YES" id="U2U-hX-DBv"/>
@@ -421,6 +422,7 @@ DQ
                                     <constraint firstItem="XPr-xV-1Wu" firstAttribute="centerY" secondItem="5Xw-RX-gXS" secondAttribute="centerY" id="ajh-10-2Fb"/>
                                     <constraint firstItem="Rdo-s8-WP2" firstAttribute="top" secondItem="p3j-C8-udW" secondAttribute="bottom" constant="8" symbolic="YES" id="dRR-eb-MzI"/>
                                     <constraint firstAttribute="trailing" secondItem="fWx-6u-6RL" secondAttribute="trailing" constant="20" symbolic="YES" id="did-Mg-Fr3"/>
+                                    <constraint firstItem="Rdo-s8-WP2" firstAttribute="leading" secondItem="p3j-C8-udW" secondAttribute="leading" id="h9j-8M-NbZ"/>
                                     <constraint firstItem="OHR-Bf-Zwc" firstAttribute="trailing" secondItem="5Xw-RX-gXS" secondAttribute="trailing" id="hn6-jr-OTW"/>
                                     <constraint firstItem="fWx-6u-6RL" firstAttribute="top" secondItem="9fW-Ng-Rac" secondAttribute="top" constant="20" symbolic="YES" id="hsy-ku-WKa"/>
                                     <constraint firstItem="MFT-rp-XpX" firstAttribute="width" secondItem="52r-Qa-2RJ" secondAttribute="width" id="lO3-Sv-dyW"/>

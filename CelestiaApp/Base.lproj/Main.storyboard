@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="F8w-LJ-0Tu">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="F8w-LJ-0Tu">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -224,13 +224,11 @@ DQ
                                             <menu key="submenu" title="Pitch" id="dBZ-It-qOe">
                                                 <items>
                                                     <menuItem title="Up" tag="-26" keyEquivalent="2" id="aUD-b6-6F8">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
                                                         <connections>
                                                             <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="2Tg-V0-VoO"/>
                                                         </connections>
                                                     </menuItem>
                                                     <menuItem title="Down" tag="-32" keyEquivalent="8" id="vu1-Cw-mw8">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
                                                         <connections>
                                                             <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="M0q-yi-JxR"/>
                                                         </connections>
@@ -243,13 +241,11 @@ DQ
                                             <menu key="submenu" title="Yaw" id="N4N-97-x8l">
                                                 <items>
                                                     <menuItem title="Left" tag="-28" keyEquivalent="4" id="YpQ-2P-F9S">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
                                                         <connections>
                                                             <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="3AJ-XT-5LB"/>
                                                         </connections>
                                                     </menuItem>
                                                     <menuItem title="Right" tag="-30" keyEquivalent="6" id="tGC-s4-oTB">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
                                                         <connections>
                                                             <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="Dvz-fR-BwC"/>
                                                         </connections>
@@ -262,13 +258,11 @@ DQ
                                             <menu key="submenu" title="Roll" id="Jsw-dr-xAx">
                                                 <items>
                                                     <menuItem title="Left" tag="-31" keyEquivalent="7" id="h80-fh-tKg">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
                                                         <connections>
                                                             <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="AEH-dx-sDn"/>
                                                         </connections>
                                                     </menuItem>
                                                     <menuItem title="Right" tag="-33" keyEquivalent="9" id="oJa-nc-zLK">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
                                                         <connections>
                                                             <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="i86-kx-Jfu"/>
                                                         </connections>
@@ -567,7 +561,7 @@ CA
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="75" y="350"/>
         </scene>
         <!--Celestia View Controller-->
         <scene sceneID="hIz-AP-VOD">
