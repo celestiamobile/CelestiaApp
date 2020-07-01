@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,9 +26,6 @@
 		974D26F72302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F62302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift */; };
 		974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */; };
 		974D27552303CEF000FDFBC0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D27532303CEF000FDFBC0 /* InfoViewController.swift */; };
-		978C14822435B34800EE4D53 /* AppCenterAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978C147F2435B34800EE4D53 /* AppCenterAnalytics.framework */; };
-		978C14842435B34800EE4D53 /* AppCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978C14802435B34800EE4D53 /* AppCenter.framework */; };
-		978C14862435B34800EE4D53 /* AppCenterCrashes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978C14812435B34800EE4D53 /* AppCenterCrashes.framework */; };
 		97916F402313F31D00925AF3 /* CelestiaViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97916F3F2313F31D00925AF3 /* CelestiaViewDelegate.swift */; };
 		97989DA423051BB9008FA466 /* Bookmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97989DA623051BB9008FA466 /* Bookmark.storyboard */; };
 		97989DA823051BBD008FA466 /* Accessory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97989DAA23051BBD008FA466 /* Accessory.storyboard */; };
@@ -51,6 +48,9 @@
 		EA0E2A2A246393AF006F1469 /* LocalizationSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */; };
 		EA0E2A2F24639C34006F1469 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A2E24639C34006F1469 /* Localization.swift */; };
 		EA0E2A3124639DD9006F1469 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A3024639DD9006F1469 /* main.swift */; };
+		EA5F727224ACAE9D00B0237D /* AppCenterCrashes.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F726F24ACAE9C00B0237D /* AppCenterCrashes.xcframework */; };
+		EA5F727424ACAE9D00B0237D /* AppCenter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F727024ACAE9D00B0237D /* AppCenter.xcframework */; };
+		EA5F727624ACAE9D00B0237D /* AppCenterAnalytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F727124ACAE9D00B0237D /* AppCenterAnalytics.xcframework */; };
 		EABC2462248E1BB300205B5A /* FontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC2461248E1BB300205B5A /* FontHelper.m */; };
 /* End PBXBuildFile section */
 
@@ -85,9 +85,6 @@
 		974D26F82302AEAA00FDFBC0 /* BookmarkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkController.swift; sourceTree = "<group>"; };
 		974D27532303CEF000FDFBC0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		976BC22C23002B7700D2BF29 /* Celestia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Celestia.entitlements; sourceTree = "<group>"; };
-		978C147F2435B34800EE4D53 /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = AppCenter/AppCenterAnalytics.framework; sourceTree = "<group>"; };
-		978C14802435B34800EE4D53 /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = AppCenter/AppCenter.framework; sourceTree = "<group>"; };
-		978C14812435B34800EE4D53 /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = AppCenter/AppCenterCrashes.framework; sourceTree = "<group>"; };
 		97916F3F2313F31D00925AF3 /* CelestiaViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestiaViewDelegate.swift; sourceTree = "<group>"; };
 		97989DA523051BB9008FA466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Bookmark.storyboard; sourceTree = "<group>"; };
 		97989DA923051BBD008FA466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Accessory.storyboard; sourceTree = "<group>"; };
@@ -99,15 +96,11 @@
 		97989E1D23057DD3008FA466 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ja; path = ja.lproj/Credits.rtf; sourceTree = "<group>"; };
 		97989E1E23057DD4008FA466 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = es; path = es.lproj/Credits.rtf; sourceTree = "<group>"; };
 		97989E1F23057DD4008FA466 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = fr; path = fr.lproj/Credits.rtf; sourceTree = "<group>"; };
-		97BAACA62435AFA6009D359E /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = "../../../Downloads/AppCenter-SDK-Apple/macOS/AppCenterCrashes.framework"; sourceTree = "<group>"; };
-		97BAACA82435AFA6009D359E /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = "../../../Downloads/AppCenter-SDK-Apple/macOS/AppCenterAnalytics.framework"; sourceTree = "<group>"; };
-		97BAACA92435AFA6009D359E /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = "../../../Downloads/AppCenter-SDK-Apple/macOS/AppCenter.framework"; sourceTree = "<group>"; };
 		97DAAB3723554DD300887A9A /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = zh_TW; path = zh_TW.lproj/Credits.rtf; sourceTree = "<group>"; };
 		97DBBE5722FFDDC4003D1BAF /* SetTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimeViewController.swift; sourceTree = "<group>"; };
 		97DBBE6022FFE779003D1BAF /* GLInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLInfoViewController.swift; sourceTree = "<group>"; };
 		97DBBE6722FFF2AC003D1BAF /* SplashWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWindow.swift; sourceTree = "<group>"; };
 		97DBBE6B230003DC003D1BAF /* NSAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAlert.swift; sourceTree = "<group>"; };
-		97DBBE6D23000EA8003D1BAF /* liblua53.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblua53.a; path = ../../../Downloads/celestialibs/liblua53.a; sourceTree = "<group>"; };
 		97ED2277234C297800FA5E2D /* LegacyMigrator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegacyMigrator.h; sourceTree = "<group>"; };
 		97ED2279234C297800FA5E2D /* LegacyMigrator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegacyMigrator.m; sourceTree = "<group>"; };
 		97ED227B234C2D6900FA5E2D /* Migrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migrator.swift; sourceTree = "<group>"; };
@@ -119,19 +112,15 @@
 		97F2519722FDB6E700067B06 /* CelestiaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CelestiaApp.entitlements; sourceTree = "<group>"; };
 		97F2519D22FDB75400067B06 /* CelestiaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CelestiaCore.xcodeproj; path = ../CelestiaCore/CelestiaCore.xcodeproj; sourceTree = "<group>"; };
 		97F251A722FDB86E00067B06 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		97F251A922FDB8D800067B06 /* libpng16.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpng16.a; path = ../../../Downloads/celestialibs/libpng16.a; sourceTree = "<group>"; };
-		97F251AA22FDB8D800067B06 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../Downloads/celestialibs/libGLEW.a; sourceTree = "<group>"; };
-		97F251AB22FDB8D800067B06 /* cspice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = cspice.a; path = ../../../Downloads/celestialibs/cspice.a; sourceTree = "<group>"; };
-		97F251AC22FDB8D800067B06 /* libfmt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfmt.a; path = ../../../Downloads/celestialibs/libfmt.a; sourceTree = "<group>"; };
-		97F251AD22FDB8D800067B06 /* libintl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libintl.a; path = ../../../Downloads/celestialibs/libintl.a; sourceTree = "<group>"; };
-		97F251AE22FDB8D800067B06 /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjpeg.a; path = ../../../Downloads/celestialibs/libjpeg.a; sourceTree = "<group>"; };
-		97F251BA22FDB9AD00067B06 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		97F251BC22FDB9BB00067B06 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		97F251BE22FDBACA00067B06 /* CelestiaGLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestiaGLView.swift; sourceTree = "<group>"; };
 		EA0E2A28246393AF006F1469 /* LocalizationSwizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizationSwizzling.h; sourceTree = "<group>"; };
 		EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalizationSwizzling.m; sourceTree = "<group>"; };
 		EA0E2A2E24639C34006F1469 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		EA0E2A3024639DD9006F1469 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EA5F726F24ACAE9C00B0237D /* AppCenterCrashes.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppCenterCrashes.xcframework; path = AppCenter/AppCenterCrashes.xcframework; sourceTree = "<group>"; };
+		EA5F727024ACAE9D00B0237D /* AppCenter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppCenter.xcframework; path = AppCenter/AppCenter.xcframework; sourceTree = "<group>"; };
+		EA5F727124ACAE9D00B0237D /* AppCenterAnalytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppCenterAnalytics.xcframework; path = AppCenter/AppCenterAnalytics.xcframework; sourceTree = "<group>"; };
 		EABC245F248E1BB300205B5A /* FontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontHelper.h; sourceTree = "<group>"; };
 		EABC2461248E1BB300205B5A /* FontHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,14 +130,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5F727224ACAE9D00B0237D /* AppCenterCrashes.xcframework in Frameworks */,
 				971A674A2301A376009E4EA1 /* OpenGL.framework in Frameworks */,
-				978C14862435B34800EE4D53 /* AppCenterCrashes.framework in Frameworks */,
 				971A67482301A370009E4EA1 /* libz.tbd in Frameworks */,
+				EA5F727424ACAE9D00B0237D /* AppCenter.xcframework in Frameworks */,
 				970C560E238507F500EBB157 /* libbz2.tbd in Frameworks */,
 				971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */,
-				978C14842435B34800EE4D53 /* AppCenter.framework in Frameworks */,
-				978C14822435B34800EE4D53 /* AppCenterAnalytics.framework in Frameworks */,
 				97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */,
+				EA5F727624ACAE9D00B0237D /* AppCenterAnalytics.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,23 +297,12 @@
 		97F251A522FDB79F00067B06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				97BAACA92435AFA6009D359E /* AppCenter.framework */,
-				978C14802435B34800EE4D53 /* AppCenter.framework */,
-				97BAACA82435AFA6009D359E /* AppCenterAnalytics.framework */,
-				97BAACA62435AFA6009D359E /* AppCenterCrashes.framework */,
-				978C147F2435B34800EE4D53 /* AppCenterAnalytics.framework */,
-				978C14812435B34800EE4D53 /* AppCenterCrashes.framework */,
+				EA5F727024ACAE9D00B0237D /* AppCenter.xcframework */,
+				EA5F727124ACAE9D00B0237D /* AppCenterAnalytics.xcframework */,
+				EA5F726F24ACAE9C00B0237D /* AppCenterCrashes.xcframework */,
 				970C560D238507EA00EBB157 /* libbz2.tbd */,
 				971A67492301A376009E4EA1 /* OpenGL.framework */,
-				97DBBE6D23000EA8003D1BAF /* liblua53.a */,
 				97F251BC22FDB9BB00067B06 /* libz.tbd */,
-				97F251BA22FDB9AD00067B06 /* libiconv.tbd */,
-				97F251AB22FDB8D800067B06 /* cspice.a */,
-				97F251AC22FDB8D800067B06 /* libfmt.a */,
-				97F251AA22FDB8D800067B06 /* libGLEW.a */,
-				97F251AD22FDB8D800067B06 /* libintl.a */,
-				97F251AE22FDB8D800067B06 /* libjpeg.a */,
-				97F251A922FDB8D800067B06 /* libpng16.a */,
 				97F251A722FDB86E00067B06 /* libc++.tbd */,
 			);
 			name = Frameworks;
