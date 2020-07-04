@@ -338,7 +338,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1100;
-				ORGANIZATIONNAME = "李林峰";
+				ORGANIZATIONNAME = "Celestia Development Team";
 				TargetAttributes = {
 					97F2518922FDB6E100067B06 = {
 						CreatedOnToolsVersion = 10.3;
