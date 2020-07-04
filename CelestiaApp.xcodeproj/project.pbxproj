@@ -51,6 +51,7 @@
 		EA5F727224ACAE9D00B0237D /* AppCenterCrashes.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F726F24ACAE9C00B0237D /* AppCenterCrashes.xcframework */; };
 		EA5F727424ACAE9D00B0237D /* AppCenter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F727024ACAE9D00B0237D /* AppCenter.xcframework */; };
 		EA5F727624ACAE9D00B0237D /* AppCenterAnalytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F727124ACAE9D00B0237D /* AppCenterAnalytics.xcframework */; };
+		EA7B07EB24B062FB00CB2A71 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = EA7B07E924B062FB00CB2A71 /* Fonts */; };
 		EABC2462248E1BB300205B5A /* FontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC2461248E1BB300205B5A /* FontHelper.m */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,7 @@
 		EA5F726F24ACAE9C00B0237D /* AppCenterCrashes.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppCenterCrashes.xcframework; path = AppCenter/AppCenterCrashes.xcframework; sourceTree = "<group>"; };
 		EA5F727024ACAE9D00B0237D /* AppCenter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppCenter.xcframework; path = AppCenter/AppCenter.xcframework; sourceTree = "<group>"; };
 		EA5F727124ACAE9D00B0237D /* AppCenterAnalytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppCenterAnalytics.xcframework; path = AppCenter/AppCenterAnalytics.xcframework; sourceTree = "<group>"; };
+		EA7B07E924B062FB00CB2A71 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = ../../../CelestiaCore/Fonts; sourceTree = "<group>"; };
 		EABC245F248E1BB300205B5A /* FontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontHelper.h; sourceTree = "<group>"; };
 		EABC2461248E1BB300205B5A /* FontHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,6 +239,7 @@
 		97989D4C2304EEE6008FA466 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EA7B07E924B062FB00CB2A71 /* Fonts */,
 				973E2F03240135F500B0F059 /* defaults.plist */,
 				97989E1A23057DC2008FA466 /* Credits.rtf */,
 			);
@@ -402,6 +405,7 @@
 				97989DB123051BCE008FA466 /* EclipseFinder.storyboard in Resources */,
 				97989DA823051BBD008FA466 /* Accessory.storyboard in Resources */,
 				97989E1823057DC2008FA466 /* Credits.rtf in Resources */,
+				EA7B07EB24B062FB00CB2A71 /* Fonts in Resources */,
 				97F2519222FDB6E700067B06 /* Assets.xcassets in Resources */,
 				97989DAE23051BCA008FA466 /* Setting.storyboard in Resources */,
 				97F2519522FDB6E700067B06 /* Main.storyboard in Resources */,
