@@ -18,6 +18,8 @@
 			<string>Celestia script</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
 			<key>LSTypeIsPackage</key>
 			<false/>
 		</dict>
