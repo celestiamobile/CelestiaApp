@@ -22,12 +22,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return NSApp.delegate as! AppDelegate
     }
 
+    var isCelestiaLoaded: Bool {
+        return celestiaViewController.isViewLoaded
+    }
+
     @IBOutlet var scriptController: ScriptController!
     @IBOutlet var bookmarkController: BookmarkController!
 
-    var celestiaViewController: CelestiaViewController? {
-        return NSApp.windows.first?.contentView?.nextResponder as? CelestiaViewController
-    }
+    lazy var celestiaViewController = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "Main") as! CelestiaViewController
 
     lazy var core = CelestiaAppCore.shared
 
@@ -48,8 +50,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc private func handleGetURLEvent(_ event: NSAppleEventDescriptor, withReplyEvent: NSAppleEventDescriptor) {
         guard let urlString = event.forKeyword(AEKeyword(keyDirectObject))?.stringValue else { return }
+        guard isCelestiaLoaded else { return }
+
         urlToRun = URL(string: urlString)
-        celestiaViewController?.checkNeedOpeningURL()
+        celestiaViewController.checkNeedOpeningURL()
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
@@ -64,46 +68,68 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func captureMovie(_ sender: Any) {
-        celestiaViewController?.showVideoCapture()
+        guard isCelestiaLoaded else { return }
+
+        celestiaViewController.showVideoCapture()
     }
 
     @IBAction func forward(_ sender: Any) {
-        celestiaViewController?.forward()
+        guard isCelestiaLoaded else { return }
+
+        celestiaViewController.forward()
     }
 
     @IBAction func back(_ sender: Any) {
-        celestiaViewController?.back()
+        guard isCelestiaLoaded else { return }
+
+        celestiaViewController.back()
     }
 
     @IBAction func commonMenuItemHandler(_ sender: NSMenuItem) {
-        celestiaViewController?.handleMenuItem(sender)
+        guard isCelestiaLoaded else { return }
+
+        celestiaViewController.handleMenuItem(sender)
     }
 
     @IBAction func presentBrowser(_ sender: NSMenuItem) {
-        celestiaViewController?.showBrowser()
+        guard isCelestiaLoaded else { return }
+
+        celestiaViewController.showBrowser()
     }
 
     @IBAction func presentEclipseFinder(_ sender: NSMenuItem) {
-        celestiaViewController?.showEclipseFinder()
+        guard isCelestiaLoaded else { return }
+
+        celestiaViewController.showEclipseFinder()
     }
 
     @IBAction func presentSetting(_ sender: NSMenuItem) {
-        celestiaViewController?.showSetting()
+        guard isCelestiaLoaded else { return }
+
+        celestiaViewController.showSetting()
     }
 
     @IBAction func presentGoto(_ sender: NSMenuItem) {
-        celestiaViewController?.showGoto()
+        guard isCelestiaLoaded else { return }
+
+        celestiaViewController.showGoto()
     }
 
     @IBAction func presentSetTime(_ sender: NSMenuItem) {
-        celestiaViewController?.showSetTime()
+        guard isCelestiaLoaded else { return }
+
+        celestiaViewController.showSetTime()
     }
 
     @IBAction func presentHelp(_ sender: NSMenuItem) {
+        guard isCelestiaLoaded else { return }
+
         NSWorkspace.shared.open(URL(string: "https://en.wikibooks.org/wiki/Celestia")!)
     }
 
     @IBAction func presentGLInfo(_ sender: NSMenuItem) {
+        guard isCelestiaLoaded else { return }
+
         AppDelegate.present(identifier: "GLInfo", customization: { window in
             window.styleMask = [window.styleMask, .utilityWindow]
         }) { () -> GLInfoViewController in
@@ -131,8 +157,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func application(_ sender: NSApplication, openFile filename: String) -> Bool {
+        guard isCelestiaLoaded else { return true }
+
         urlToRun = URL(fileURLWithPath: filename)
-        celestiaViewController?.checkNeedOpeningURL()
+        celestiaViewController.checkNeedOpeningURL()
         return true
     }
 

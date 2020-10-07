@@ -39,8 +39,10 @@ class ScriptController: NSObject {
     }
 
     func runScript(at path: String) {
+        guard AppDelegate.shared.isCelestiaLoaded else { return }
+
         lastScriptPath = path
-        AppDelegate.shared.celestiaViewController?.runScript(at: path)
+        AppDelegate.shared.celestiaViewController.runScript(at: path)
     }
 
     func buildScriptMenu() {

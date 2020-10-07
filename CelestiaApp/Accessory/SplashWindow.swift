@@ -15,13 +15,11 @@ let celestiaLoadingStatusNotificationName = Notification.Name("CelestiaLoadingSt
 let celestiaLoadingStatusNotificationKey = "CelestiaLoadingStatusKey"
 let celestiaLoadingFinishedNotificationName = Notification.Name("CelestiaLoadingFinished")
 
-private var celestiaWC: NSWindowController? = {
-    return NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "Main") as? NSWindowController
-}()
-
 class SplashViewController: NSViewController {
     @IBOutlet private weak var versionLabel: NSTextField!
     @IBOutlet private weak var statusLabel: NSTextField!
+
+    private var celestiaWindow: NSWindow?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +28,17 @@ class SplashViewController: NSViewController {
         versionLabel.stringValue = shortVersion
 
         // Load thw window so we have a rendering context
-        _ = celestiaWC?.window
+        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 640, height: 480),
+                              styleMask: [.titled, .closable, .resizable, .miniaturizable],
+                              backing: .buffered, defer: true)
+        if #available(OSX 10.12, *) {
+            window.tabbingMode = .disallowed
+        }
+        window.minSize = NSSize(width: 640, height: 480)
+        window.title = CelestiaString("Celestia", comment: "")
+        window.contentViewController = AppDelegate.shared.celestiaViewController
+        window.isRestorable = false
+        celestiaWindow = window
 
         NotificationCenter.default.addObserver(self, selector: #selector(loadingStatusUpdate(_:)), name: celestiaLoadingStatusNotificationName, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(loadingFinished(_:)), name: celestiaLoadingFinishedNotificationName, object: nil)
@@ -47,7 +55,8 @@ class SplashViewController: NSViewController {
     @objc private func loadingFinished(_ notification: Notification) {
         DispatchQueue.main.async { [weak self] in
             self?.view.window?.close()
-            celestiaWC?.showWindow(nil)
+            self?.celestiaWindow?.makeKeyAndOrderFront(self)
+            self?.celestiaWindow?.center()
         }
     }
 }
