@@ -93,6 +93,12 @@
                                             <menu key="submenu" title="Scripts" id="b55-CL-1HX"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="EMn-fN-e7d"/>
+                                        <menuItem title="Close Window" keyEquivalent="w" id="jKe-01-5qW">
+                                            <connections>
+                                                <action selector="performClose:" target="Ady-hI-5gd" id="0tc-8Z-ziT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="RIK-DW-H7Q"/>
                                         <menuItem title="Capture Video" id="Bct-wG-tlW">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
@@ -432,6 +438,13 @@ CA
                                             <modifierMask key="keyEquivalentModifierMask" control="YES"/>
                                             <connections>
                                                 <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="4YH-o9-gUo"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="4IG-db-KvY"/>
+                                        <menuItem title="Enter Full Screen" keyEquivalent="f" id="YeF-mK-YUn">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="toggleFullScreen:" target="Ady-hI-5gd" id="VND-f7-plo"/>
                                             </connections>
                                         </menuItem>
                                     </items>
