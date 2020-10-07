@@ -220,9 +220,15 @@ class CelestiaView: NSOpenGLView {
     }
 
     override func update() {
-        viewDelegate?.update(in: self)
-
         super.update()
+
+        viewDelegate?.update(in: self)
+    }
+
+    override func reshape() {
+        super.reshape()
+
+        viewDelegate?.update(in: self)
     }
 
     @objc private func displayLinkCallback() {
