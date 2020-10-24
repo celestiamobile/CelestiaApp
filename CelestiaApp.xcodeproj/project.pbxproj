@@ -46,11 +46,15 @@
 		EA0E2A2A246393AF006F1469 /* LocalizationSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */; };
 		EA0E2A2F24639C34006F1469 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A2E24639C34006F1469 /* Localization.swift */; };
 		EA0E2A3124639DD9006F1469 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A3024639DD9006F1469 /* main.swift */; };
+		EA31E27025446637009E59FF /* BaseResultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31E26C25446637009E59FF /* BaseResultHandler.swift */; };
+		EA31E27125446637009E59FF /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31E26D25446637009E59FF /* RequestHandler.swift */; };
+		EA31E27225446637009E59FF /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31E26E25446637009E59FF /* Request.swift */; };
 		EA5F727224ACAE9D00B0237D /* AppCenterCrashes.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F726F24ACAE9C00B0237D /* AppCenterCrashes.xcframework */; };
 		EA5F727424ACAE9D00B0237D /* AppCenter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F727024ACAE9D00B0237D /* AppCenter.xcframework */; };
 		EA5F727624ACAE9D00B0237D /* AppCenterAnalytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F727124ACAE9D00B0237D /* AppCenterAnalytics.xcframework */; };
 		EA7B07EB24B062FB00CB2A71 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = EA7B07E924B062FB00CB2A71 /* Fonts */; };
 		EA870B5724B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA870B5624B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m */; };
+		EAA8F9C62536EEC600096A32 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA8F9C52536EEC600096A32 /* CloudKit.framework */; };
 		EABC2462248E1BB300205B5A /* FontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC2461248E1BB300205B5A /* FontHelper.m */; };
 /* End PBXBuildFile section */
 
@@ -116,12 +120,16 @@
 		EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalizationSwizzling.m; sourceTree = "<group>"; };
 		EA0E2A2E24639C34006F1469 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		EA0E2A3024639DD9006F1469 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EA31E26C25446637009E59FF /* BaseResultHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResultHandler.swift; sourceTree = "<group>"; };
+		EA31E26D25446637009E59FF /* RequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
+		EA31E26E25446637009E59FF /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		EA5F726F24ACAE9C00B0237D /* AppCenterCrashes.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppCenterCrashes.xcframework; path = AppCenter/AppCenterCrashes.xcframework; sourceTree = "<group>"; };
 		EA5F727024ACAE9D00B0237D /* AppCenter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppCenter.xcframework; path = AppCenter/AppCenter.xcframework; sourceTree = "<group>"; };
 		EA5F727124ACAE9D00B0237D /* AppCenterAnalytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppCenterAnalytics.xcframework; path = AppCenter/AppCenterAnalytics.xcframework; sourceTree = "<group>"; };
 		EA7B07E924B062FB00CB2A71 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = ../../../CelestiaCore/Fonts; sourceTree = "<group>"; };
 		EA870B5524B2BBBF00F0FC50 /* NSOpenGLContext+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSOpenGLContext+Utils.h"; sourceTree = "<group>"; };
 		EA870B5624B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSOpenGLContext+Utils.m"; sourceTree = "<group>"; };
+		EAA8F9C52536EEC600096A32 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		EABC245F248E1BB300205B5A /* FontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontHelper.h; sourceTree = "<group>"; };
 		EABC2461248E1BB300205B5A /* FontHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +144,7 @@
 				EA5F727424ACAE9D00B0237D /* AppCenter.xcframework in Frameworks */,
 				970C560E238507F500EBB157 /* libbz2.tbd in Frameworks */,
 				971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */,
+				EAA8F9C62536EEC600096A32 /* CloudKit.framework in Frameworks */,
 				97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */,
 				EA5F727624ACAE9D00B0237D /* AppCenterAnalytics.xcframework in Frameworks */,
 			);
@@ -214,6 +223,7 @@
 		97458FE723276B43009BFADF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EA31E26B25446637009E59FF /* Request */,
 				97ED2277234C297800FA5E2D /* LegacyMigrator.h */,
 				97ED2279234C297800FA5E2D /* LegacyMigrator.m */,
 				97ED227B234C2D6900FA5E2D /* Migrator.swift */,
@@ -298,6 +308,7 @@
 		97F251A522FDB79F00067B06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EAA8F9C52536EEC600096A32 /* CloudKit.framework */,
 				EA5F727024ACAE9D00B0237D /* AppCenter.xcframework */,
 				EA5F727124ACAE9D00B0237D /* AppCenterAnalytics.xcframework */,
 				EA5F726F24ACAE9C00B0237D /* AppCenterCrashes.xcframework */,
@@ -307,6 +318,16 @@
 				97F251A722FDB86E00067B06 /* libc++.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA31E26B25446637009E59FF /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				EA31E26C25446637009E59FF /* BaseResultHandler.swift */,
+				EA31E26D25446637009E59FF /* RequestHandler.swift */,
+				EA31E26E25446637009E59FF /* Request.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,12 +486,14 @@
 				97401C922414CF2D0015F8E8 /* UserDefaults.swift in Sources */,
 				974D27552303CEF000FDFBC0 /* InfoViewController.swift in Sources */,
 				EA870B5724B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m in Sources */,
+				EA31E27225446637009E59FF /* Request.swift in Sources */,
 				97DBBE6C230003DC003D1BAF /* NSAlert.swift in Sources */,
 				97DBBE6822FFF2AC003D1BAF /* SplashWindow.swift in Sources */,
 				974D26F72302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift in Sources */,
 				97458FE6232769F8009BFADF /* ConfigSelectionViewController.swift in Sources */,
 				97DBBE6122FFE779003D1BAF /* GLInfoViewController.swift in Sources */,
 				97F251BF22FDBACA00067B06 /* CelestiaView.swift in Sources */,
+				EA31E27025446637009E59FF /* BaseResultHandler.swift in Sources */,
 				EA0E2A3124639DD9006F1469 /* main.swift in Sources */,
 				97401C932414CF2D0015F8E8 /* Celestia+Extension.swift in Sources */,
 				972F39E022FEAD1D00CEDDAC /* BrowserViewController.swift in Sources */,
@@ -484,6 +507,7 @@
 				972F3A3822FFC70C00CEDDAC /* GotoViewController.swift in Sources */,
 				970C5625238637B900EBB157 /* BrowserItemAddition.swift in Sources */,
 				974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */,
+				EA31E27125446637009E59FF /* RequestHandler.swift in Sources */,
 				97ED227A234C297800FA5E2D /* LegacyMigrator.m in Sources */,
 				97916F402313F31D00925AF3 /* CelestiaViewDelegate.swift in Sources */,
 				97ED227C234C2D6900FA5E2D /* Migrator.swift in Sources */,
