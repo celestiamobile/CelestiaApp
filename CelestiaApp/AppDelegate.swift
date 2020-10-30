@@ -208,7 +208,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Make request to the server to resolve the URL
         let requestURL = apiPrefix + "/resolve"
-        _ = RequestHandler.get(url: requestURL, params: ["path" : path, "id" : id], success: { [weak self] (response: Response) in
+        _ = RequestHandler.get(url: requestURL, parameters: ["path" : path, "id" : id], success: { [weak self] (response: Response) in
             guard let self = self else { return }
             urlToRun = response.resolvedURL
             self.celestiaViewController.checkNeedOpeningURL()

@@ -43,12 +43,11 @@
 		97F2519522FDB6E700067B06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97F2519322FDB6E700067B06 /* Main.storyboard */; };
 		97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251A222FDB75400067B06 /* CelestiaCore.framework */; };
 		97F251BF22FDBACA00067B06 /* CelestiaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F251BE22FDBACA00067B06 /* CelestiaView.swift */; };
+		EA09B5F7254BBA6900DACC1D /* MWRequest in Frameworks */ = {isa = PBXBuildFile; productRef = EA09B5F6254BBA6900DACC1D /* MWRequest */; };
 		EA0E2A2A246393AF006F1469 /* LocalizationSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */; };
 		EA0E2A2F24639C34006F1469 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A2E24639C34006F1469 /* Localization.swift */; };
 		EA0E2A3124639DD9006F1469 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A3024639DD9006F1469 /* main.swift */; };
 		EA31E27025446637009E59FF /* BaseResultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31E26C25446637009E59FF /* BaseResultHandler.swift */; };
-		EA31E27125446637009E59FF /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31E26D25446637009E59FF /* RequestHandler.swift */; };
-		EA31E27225446637009E59FF /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31E26E25446637009E59FF /* Request.swift */; };
 		EA5F727224ACAE9D00B0237D /* AppCenterCrashes.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F726F24ACAE9C00B0237D /* AppCenterCrashes.xcframework */; };
 		EA5F727424ACAE9D00B0237D /* AppCenter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F727024ACAE9D00B0237D /* AppCenter.xcframework */; };
 		EA5F727624ACAE9D00B0237D /* AppCenterAnalytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F727124ACAE9D00B0237D /* AppCenterAnalytics.xcframework */; };
@@ -121,8 +120,6 @@
 		EA0E2A2E24639C34006F1469 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		EA0E2A3024639DD9006F1469 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA31E26C25446637009E59FF /* BaseResultHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResultHandler.swift; sourceTree = "<group>"; };
-		EA31E26D25446637009E59FF /* RequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
-		EA31E26E25446637009E59FF /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		EA5F726F24ACAE9C00B0237D /* AppCenterCrashes.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppCenterCrashes.xcframework; path = AppCenter/AppCenterCrashes.xcframework; sourceTree = "<group>"; };
 		EA5F727024ACAE9D00B0237D /* AppCenter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppCenter.xcframework; path = AppCenter/AppCenter.xcframework; sourceTree = "<group>"; };
 		EA5F727124ACAE9D00B0237D /* AppCenterAnalytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppCenterAnalytics.xcframework; path = AppCenter/AppCenterAnalytics.xcframework; sourceTree = "<group>"; };
@@ -146,6 +143,7 @@
 				971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */,
 				EAA8F9C62536EEC600096A32 /* CloudKit.framework in Frameworks */,
 				97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */,
+				EA09B5F7254BBA6900DACC1D /* MWRequest in Frameworks */,
 				EA5F727624ACAE9D00B0237D /* AppCenterAnalytics.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,8 +322,6 @@
 			isa = PBXGroup;
 			children = (
 				EA31E26C25446637009E59FF /* BaseResultHandler.swift */,
-				EA31E26D25446637009E59FF /* RequestHandler.swift */,
-				EA31E26E25446637009E59FF /* Request.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -348,6 +344,9 @@
 			dependencies = (
 			);
 			name = Celestia;
+			packageProductDependencies = (
+				EA09B5F6254BBA6900DACC1D /* MWRequest */,
+			);
 			productName = CelestiaApp;
 			productReference = 97F2518A22FDB6E100067B06 /* Celestia.app */;
 			productType = "com.apple.product-type.application";
@@ -389,6 +388,9 @@
 				zh_TW,
 			);
 			mainGroup = 97F2518122FDB6E000067B06;
+			packageReferences = (
+				EA09B5F5254BBA6900DACC1D /* XCRemoteSwiftPackageReference "mwrequest" */,
+			);
 			productRefGroup = 97F2518B22FDB6E100067B06 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -486,7 +488,6 @@
 				97401C922414CF2D0015F8E8 /* UserDefaults.swift in Sources */,
 				974D27552303CEF000FDFBC0 /* InfoViewController.swift in Sources */,
 				EA870B5724B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m in Sources */,
-				EA31E27225446637009E59FF /* Request.swift in Sources */,
 				97DBBE6C230003DC003D1BAF /* NSAlert.swift in Sources */,
 				97DBBE6822FFF2AC003D1BAF /* SplashWindow.swift in Sources */,
 				974D26F72302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift in Sources */,
@@ -507,7 +508,6 @@
 				972F3A3822FFC70C00CEDDAC /* GotoViewController.swift in Sources */,
 				970C5625238637B900EBB157 /* BrowserItemAddition.swift in Sources */,
 				974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */,
-				EA31E27125446637009E59FF /* RequestHandler.swift in Sources */,
 				97ED227A234C297800FA5E2D /* LegacyMigrator.m in Sources */,
 				97916F402313F31D00925AF3 /* CelestiaViewDelegate.swift in Sources */,
 				97ED227C234C2D6900FA5E2D /* Migrator.swift in Sources */,
@@ -792,6 +792,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EA09B5F5254BBA6900DACC1D /* XCRemoteSwiftPackageReference "mwrequest" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/levinli303/mwrequest.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EA09B5F6254BBA6900DACC1D /* MWRequest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA09B5F5254BBA6900DACC1D /* XCRemoteSwiftPackageReference "mwrequest" */;
+			productName = MWRequest;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 97F2518222FDB6E000067B06 /* Project object */;
 }
