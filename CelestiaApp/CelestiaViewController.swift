@@ -355,8 +355,6 @@ extension CelestiaViewController: CelestiaViewDelegate {
     }
 
     func showLoadingFailed() {
-        NotificationCenter.default.post(name: celestiaLoadingFinishedNotificationName, object: nil, userInfo: nil)
-
         self.view.window?.close()
         let alert = NSAlert()
         alert.messageText = CelestiaString("Loading Celestia failed…", comment: "")
@@ -549,7 +547,9 @@ extension CelestiaViewController: CelestiaAppCoreDelegate {
     }
 
     func celestiaAppCoreFatalErrorHappened(_ error: String) {
-        NSAlert.warning(message: error, text: "")
+        DispatchQueue.main.async {
+            NSAlert.warning(message: error, text: "")
+        }
     }
 
     func celestiaAppCoreCursorShapeChanged(_ shape: CursorShape) {
