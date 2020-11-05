@@ -372,6 +372,7 @@ extension CelestiaViewController: CelestiaViewDelegate {
         core.loadUserDefaultsWithAppDefaults(atPath: Bundle.main.path(forResource: "defaults", ofType: "plist"))
 
         core.setDPI(Int(scaleFactor * 96))
+        core.setPickTolerance(scaleFactor * 4)
 
         let locale = LocalizedString("LANGUAGE", "celestia")
         if let (font, boldFont) = getInstalledFontFor(locale: locale) {
