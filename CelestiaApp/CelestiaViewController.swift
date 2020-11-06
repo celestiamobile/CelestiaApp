@@ -16,6 +16,8 @@ import CelestiaCore
 var urlToRun: URL?
 
 class CelestiaViewController: NSViewController {
+    private lazy var dataDirectoryURL = currentDataDirectory()
+    private lazy var configFileURL = currentConfigFile()
 
     private lazy var pixelFmt: NSOpenGLPixelFormat? = {
         let attributes: [UInt32]
@@ -311,9 +313,6 @@ extension CelestiaViewController: CelestiaViewDelegate {
 
         _ = CelestiaAppCore.initGL()
 
-        let dataDirectoryURL = currentDataDirectory()
-        let configFileURL = currentConfigFile()
-
         FileManager.default.changeCurrentDirectoryPath(dataDirectoryURL.url.path)
         CelestiaAppCore.setLocaleDirectory(dataDirectoryURL.url.path + "/locale")
 
@@ -337,7 +336,7 @@ extension CelestiaViewController: CelestiaViewDelegate {
 
             context.makeCurrentContext()
 
-            let result = self.core.startSimulation(configFileName: configFileURL.url.path, extraDirectories: [extraDirectory].compactMap{$0?.path}, progress: { (status) in
+            let result = self.core.startSimulation(configFileName: self.configFileURL.url.path, extraDirectories: [extraDirectory].compactMap{$0?.path}, progress: { (status) in
                 // Broadcast the status
                 NotificationCenter.default.post(name: celestiaLoadingStatusNotificationName, object: nil, userInfo: [celestiaLoadingStatusNotificationKey : status])
             }) && self.core.startRenderer()
