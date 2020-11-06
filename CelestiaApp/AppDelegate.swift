@@ -180,7 +180,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 window?.makeKeyAndOrderFront(nil)
                 return
             } else {
-                window?.performClose(nil)
+                window?.close()
             }
         }
 

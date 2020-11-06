@@ -36,7 +36,7 @@ class ConfigSelectionViewController: NSViewController {
         if launchFailure {
             NSApp.terminate(nil)
         } else {
-            view.window?.performClose(nil)
+            view.window?.close()
         }
     }
 
