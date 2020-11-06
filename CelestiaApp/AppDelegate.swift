@@ -13,9 +13,11 @@ import Cocoa
 
 import CelestiaCore
 
+#if arch(x86_64)
 import AppCenter
 import AppCenterAnalytics
 import AppCenterCrashes
+#endif
 
 let apiPrefix = "https://celestia.mobi/api"
 
@@ -42,10 +44,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true])
 
+        #if arch(x86_64)
         MSAppCenter.start("3806368d-4ccb-43c4-af45-d37da989742f", withServices:[
             MSAnalytics.self,
             MSCrashes.self
         ])
+        #endif
 
         Migrator.tryToMigrate()
     }
