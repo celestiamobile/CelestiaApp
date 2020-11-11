@@ -163,45 +163,6 @@ class CelestiaViewController: NSViewController {
         }
     }
 
-    func showVideoCapture() {
-        let availableResolutions: [(width: Int, height: Int)] = [
-            (160, 120),
-            (320, 240),
-            (640, 480),
-            (720, 576),
-            (1024, 768),
-            (1280, 720),
-            (1920, 1080),
-        ]
-        let availableFPS: [Float] = [
-            15,
-            24,
-            25,
-            29.97,
-            30.0,
-        ]
-
-        NSAlert.selection(message: CelestiaString("Resolution:", comment: ""), selections: availableResolutions.map { "\($0.width) x \($0.height)" }, window: view.window!) { [weak self] (selectedResolutionIndex) in
-            guard let self = self else { return }
-            NSAlert.selection(message: CelestiaString("Frame rate:", comment: ""), selections: availableFPS.map { String(format: "%.2f", $0) }, window: self.view.window!) { [weak self] (selectedFPSIndex) in
-                guard let self = self else { return }
-
-                let panel = NSSavePanel()
-                panel.allowedFileTypes = ["ogv"]
-                panel.nameFieldStringValue = "CelestiaMovie"
-                let result = panel.runModal()
-                guard result == .OK, let path = panel.url?.path else { return }
-
-                let width = CGFloat(availableResolutions[selectedResolutionIndex].width)
-                let height = CGFloat(availableResolutions[selectedResolutionIndex].height)
-                guard self.core.captureMovie(to: path, size: CGSize(width: width, height: height), fps: availableFPS[selectedFPSIndex]) else {
-                    NSAlert.warning(message: CelestiaString("Unable to capture video", comment: ""), text: "")
-                    return
-                }
-            }
-        }
-    }
-
     func showGoto() {
         AppDelegate.present(identifier: "Goto") { () -> GotoViewController in
             return NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "Goto") as! GotoViewController

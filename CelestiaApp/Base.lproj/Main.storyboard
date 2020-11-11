@@ -99,13 +99,6 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="RIK-DW-H7Q"/>
-                                        <menuItem title="Capture Video" id="Bct-wG-tlW">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="captureMovie:" target="Voe-Tx-rLC" id="5Us-uZ-eLC"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="A0i-gR-T2e"/>
                                         <menuItem title="Copy URL" keyEquivalent="c" id="AKb-oe-EhM">
                                             <connections>
                                                 <action selector="copy:" target="Ady-hI-5gd" id="IOt-OW-tY2"/>

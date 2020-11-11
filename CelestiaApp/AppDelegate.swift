@@ -78,12 +78,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 
-    @IBAction func captureMovie(_ sender: Any) {
-        guard isCelestiaLoaded else { return }
-
-        celestiaViewController.showVideoCapture()
-    }
-
     @IBAction func forward(_ sender: Any) {
         guard isCelestiaLoaded else { return }
 
