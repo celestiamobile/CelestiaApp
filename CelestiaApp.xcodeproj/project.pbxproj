@@ -48,13 +48,12 @@
 		EA0E2A2F24639C34006F1469 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A2E24639C34006F1469 /* Localization.swift */; };
 		EA0E2A3124639DD9006F1469 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A3024639DD9006F1469 /* main.swift */; };
 		EA31E27025446637009E59FF /* BaseResultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31E26C25446637009E59FF /* BaseResultHandler.swift */; };
-		EA5F727224ACAE9D00B0237D /* AppCenterCrashes.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F726F24ACAE9C00B0237D /* AppCenterCrashes.xcframework */; };
-		EA5F727424ACAE9D00B0237D /* AppCenter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F727024ACAE9D00B0237D /* AppCenter.xcframework */; };
-		EA5F727624ACAE9D00B0237D /* AppCenterAnalytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F727124ACAE9D00B0237D /* AppCenterAnalytics.xcframework */; };
 		EA7B07EB24B062FB00CB2A71 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = EA7B07E924B062FB00CB2A71 /* Fonts */; };
 		EA870B5724B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA870B5624B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m */; };
 		EAA8F9C62536EEC600096A32 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA8F9C52536EEC600096A32 /* CloudKit.framework */; };
 		EABC2462248E1BB300205B5A /* FontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC2461248E1BB300205B5A /* FontHelper.m */; };
+		EAE83A4E255E52B500607EBC /* AppCenterCrashes in Frameworks */ = {isa = PBXBuildFile; productRef = EAE83A4D255E52B500607EBC /* AppCenterCrashes */; };
+		EAE83A50255E52B500607EBC /* AppCenterAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EAE83A4F255E52B500607EBC /* AppCenterAnalytics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,9 +119,6 @@
 		EA0E2A2E24639C34006F1469 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		EA0E2A3024639DD9006F1469 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA31E26C25446637009E59FF /* BaseResultHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResultHandler.swift; sourceTree = "<group>"; };
-		EA5F726F24ACAE9C00B0237D /* AppCenterCrashes.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppCenterCrashes.xcframework; path = AppCenter/AppCenterCrashes.xcframework; sourceTree = "<group>"; };
-		EA5F727024ACAE9D00B0237D /* AppCenter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppCenter.xcframework; path = AppCenter/AppCenter.xcframework; sourceTree = "<group>"; };
-		EA5F727124ACAE9D00B0237D /* AppCenterAnalytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppCenterAnalytics.xcframework; path = AppCenter/AppCenterAnalytics.xcframework; sourceTree = "<group>"; };
 		EA7B07E924B062FB00CB2A71 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = ../../../CelestiaCore/Fonts; sourceTree = "<group>"; };
 		EA870B5524B2BBBF00F0FC50 /* NSOpenGLContext+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSOpenGLContext+Utils.h"; sourceTree = "<group>"; };
 		EA870B5624B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSOpenGLContext+Utils.m"; sourceTree = "<group>"; };
@@ -136,15 +132,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA5F727224ACAE9D00B0237D /* AppCenterCrashes.xcframework in Frameworks */,
+				EAE83A4E255E52B500607EBC /* AppCenterCrashes in Frameworks */,
 				971A67482301A370009E4EA1 /* libz.tbd in Frameworks */,
-				EA5F727424ACAE9D00B0237D /* AppCenter.xcframework in Frameworks */,
 				970C560E238507F500EBB157 /* libbz2.tbd in Frameworks */,
 				971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */,
 				EAA8F9C62536EEC600096A32 /* CloudKit.framework in Frameworks */,
 				97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */,
 				EA09B5F7254BBA6900DACC1D /* MWRequest in Frameworks */,
-				EA5F727624ACAE9D00B0237D /* AppCenterAnalytics.xcframework in Frameworks */,
+				EAE83A50255E52B500607EBC /* AppCenterAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,9 +302,6 @@
 			isa = PBXGroup;
 			children = (
 				EAA8F9C52536EEC600096A32 /* CloudKit.framework */,
-				EA5F727024ACAE9D00B0237D /* AppCenter.xcframework */,
-				EA5F727124ACAE9D00B0237D /* AppCenterAnalytics.xcframework */,
-				EA5F726F24ACAE9C00B0237D /* AppCenterCrashes.xcframework */,
 				970C560D238507EA00EBB157 /* libbz2.tbd */,
 				971A67492301A376009E4EA1 /* OpenGL.framework */,
 				97F251BC22FDB9BB00067B06 /* libz.tbd */,
@@ -346,6 +338,8 @@
 			name = Celestia;
 			packageProductDependencies = (
 				EA09B5F6254BBA6900DACC1D /* MWRequest */,
+				EAE83A4D255E52B500607EBC /* AppCenterCrashes */,
+				EAE83A4F255E52B500607EBC /* AppCenterAnalytics */,
 			);
 			productName = CelestiaApp;
 			productReference = 97F2518A22FDB6E100067B06 /* Celestia.app */;
@@ -390,6 +384,7 @@
 			mainGroup = 97F2518122FDB6E000067B06;
 			packageReferences = (
 				EA09B5F5254BBA6900DACC1D /* XCRemoteSwiftPackageReference "mwrequest" */,
+				EAE83A4C255E52B500607EBC /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */,
 			);
 			productRefGroup = 97F2518B22FDB6E100067B06 /* Products */;
 			projectDirPath = "";
@@ -798,6 +793,14 @@
 				minimumVersion = 0.2.2;
 			};
 		};
+		EAE83A4C255E52B500607EBC /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/microsoft/appcenter-sdk-apple.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -805,6 +808,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EA09B5F5254BBA6900DACC1D /* XCRemoteSwiftPackageReference "mwrequest" */;
 			productName = MWRequest;
+		};
+		EAE83A4D255E52B500607EBC /* AppCenterCrashes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EAE83A4C255E52B500607EBC /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */;
+			productName = AppCenterCrashes;
+		};
+		EAE83A4F255E52B500607EBC /* AppCenterAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EAE83A4C255E52B500607EBC /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */;
+			productName = AppCenterAnalytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
