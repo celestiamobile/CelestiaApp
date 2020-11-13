@@ -24,9 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return NSApp.delegate as! AppDelegate
     }
 
-    var isCelestiaLoaded: Bool {
-        return celestiaViewController.isViewLoaded
-    }
+    var isCelestiaLoaded: Bool = false
 
     @IBOutlet var scriptController: ScriptController!
     @IBOutlet var bookmarkController: BookmarkController!

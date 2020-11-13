@@ -351,6 +351,7 @@ extension CelestiaViewController: CelestiaViewDelegate {
         core.tick()
         core.start()
 
+        AppDelegate.shared.isCelestiaLoaded = true
         AppDelegate.shared.scriptController.buildScriptMenu()
         AppDelegate.shared.bookmarkController.readBookmarksFromDisk()
         AppDelegate.shared.bookmarkController.buildBookmarkMenu()
