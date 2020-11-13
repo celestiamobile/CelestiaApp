@@ -78,6 +78,6 @@ class ConfigSelectionViewController: NSViewController {
         saveConfigFile(configBookmark)
         NSApp.terminate(nil)
 
-        NSWorkspace.shared.launchApplication(withBundleIdentifier: Bundle.main.bundleIdentifier!, options: .async, additionalEventParamDescriptor: nil, launchIdentifier: nil)
+        NSWorkspace.shared.launchApplication(withBundleIdentifier: Bundle.app.bundleIdentifier!, options: .async, additionalEventParamDescriptor: nil, launchIdentifier: nil)
     }
 }

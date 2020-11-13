@@ -24,7 +24,7 @@ class SplashViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let shortVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+        let shortVersion = Bundle.app.infoDictionary!["CFBundleShortVersionString"] as! String
         versionLabel.stringValue = shortVersion
 
         // Load thw window so we have a rendering context
