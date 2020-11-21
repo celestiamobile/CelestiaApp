@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="F8w-LJ-0Tu">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="F8w-LJ-0Tu">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -93,7 +93,7 @@
                                             <menu key="submenu" title="Scripts" id="b55-CL-1HX"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="EMn-fN-e7d"/>
-                                        <menuItem title="Close Window" keyEquivalent="w" id="jKe-01-5qW">
+                                        <menuItem title="Close" keyEquivalent="w" id="jKe-01-5qW">
                                             <connections>
                                                 <action selector="performClose:" target="Ady-hI-5gd" id="0tc-8Z-ziT"/>
                                             </connections>
