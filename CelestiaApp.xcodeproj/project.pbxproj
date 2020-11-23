@@ -50,7 +50,6 @@
 		EA31E27025446637009E59FF /* BaseResultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31E26C25446637009E59FF /* BaseResultHandler.swift */; };
 		EA7B07EB24B062FB00CB2A71 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = EA7B07E924B062FB00CB2A71 /* Fonts */; };
 		EA870B5724B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA870B5624B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m */; };
-		EAA8F9C62536EEC600096A32 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA8F9C52536EEC600096A32 /* CloudKit.framework */; };
 		EABC2462248E1BB300205B5A /* FontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC2461248E1BB300205B5A /* FontHelper.m */; };
 		EAE83A4E255E52B500607EBC /* AppCenterCrashes in Frameworks */ = {isa = PBXBuildFile; productRef = EAE83A4D255E52B500607EBC /* AppCenterCrashes */; };
 		EAE83A50255E52B500607EBC /* AppCenterAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EAE83A4F255E52B500607EBC /* AppCenterAnalytics */; };
@@ -136,7 +135,6 @@
 				971A67482301A370009E4EA1 /* libz.tbd in Frameworks */,
 				970C560E238507F500EBB157 /* libbz2.tbd in Frameworks */,
 				971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */,
-				EAA8F9C62536EEC600096A32 /* CloudKit.framework in Frameworks */,
 				97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */,
 				EA09B5F7254BBA6900DACC1D /* MWRequest in Frameworks */,
 				EAE83A50255E52B500607EBC /* AppCenterAnalytics in Frameworks */,
@@ -705,10 +703,6 @@
 				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_TEAM = 22NR5428TD;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/AppCenter",
-				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CelestiaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -739,10 +733,6 @@
 				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_TEAM = 22NR5428TD;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/AppCenter",
-				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CelestiaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
