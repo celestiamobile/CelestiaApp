@@ -49,7 +49,7 @@ class CelestiaViewController: NSViewController {
 
     private var pressingKey: (key: Int, time: Int)?
 
-    private lazy var fullDPI = UserDefaults.app[.fullDPI] ?? false
+    private lazy var fullDPI = UserDefaults.app[.fullDPI] ?? true
     private lazy var msaa = UserDefaults.app[.msaa] ?? false
     private lazy var scaleFactor: CGFloat = self.fullDPI ? (NSScreen.main?.backingScaleFactor ?? 1) : 1
 

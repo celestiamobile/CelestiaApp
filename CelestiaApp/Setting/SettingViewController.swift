@@ -13,17 +13,18 @@ import Cocoa
 
 import CelestiaCore
 
-struct PreferenceItem {
+struct PreferenceItem<Value> {
     let key: UserDefaultsKey
     let tag: Int
+    let defaultValue: Value
 }
 
 class SettingViewController: NSViewController {
     private let core: CelestiaAppCore = CelestiaAppCore.shared
 
     private let preferenceItems = [
-        PreferenceItem(key: .fullDPI, tag: 2000),
-        PreferenceItem(key: .msaa, tag: 2001)
+        PreferenceItem(key: .fullDPI, tag: 2000, defaultValue: true),
+        PreferenceItem(key: .msaa, tag: 2001, defaultValue: false)
     ]
 
     override func viewDidLoad() {
@@ -100,7 +101,7 @@ extension SettingViewController {
             control.target = self
             if let prefItem = preferenceItems.first(where: { $0.tag == control.tag }) {
                 control.action = #selector(activePrefItemButton(_:))
-                control.state = UserDefaults.app[prefItem.key] == true ? .on : .off
+                control.state = UserDefaults.app[prefItem.key] ?? prefItem.defaultValue ? .on : .off
             } else {
                 control.action = #selector(activeButton(_:))
                 control.state = core.boolValue(forTag: control.tag) ? .on : .off
