@@ -71,6 +71,7 @@ steps:
     contents: '**/*.dSYM/**'
     targetFolder: '$(build.artifactStagingDirectory)'
 
+
 - task: AppCenterDistribute@3
   inputs:
     serverEndpoint: 'MacCelestiaAppCenter'
