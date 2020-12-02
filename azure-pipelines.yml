@@ -1,0 +1,82 @@
+resources:
+  repositories:
+  - repository: Celestia
+    type: github
+    endpoint: GithubAuth
+    name: levinli303/Celestia
+  - repository: CelestiaCore
+    type: github
+    endpoint: GithubAuth
+    name: levinli303/CelestiaCore
+
+trigger:
+- master
+
+pool:
+  vmImage: 'macos-latest'
+
+steps:
+- checkout: Celestia
+- checkout: CelestiaCore
+  submodules: true
+- checkout: self
+
+- task: CmdLine@2
+  inputs:
+    script: |
+      ln -sf libs/dependency/mac CelestiaCore/thirdparty
+      brew install gettext
+- task: InstallAppleCertificate@2
+  inputs:
+    certSecureFile: 'app-release.p12'
+    certPwd: $(P12Password)
+
+- task: InstallAppleProvisioningProfile@1
+  inputs:
+    provProfileSecureFile: 'appkit_celestia.provisionprofile'
+
+- task: ios-bundle-version@1
+  inputs:
+    sourcePath: '$(system.defaultworkingdirectory)/CelestiaApp/CelestiaApp/Info.plist'
+    versionCodeOption: 'buildid'
+    versionCode: '$(Build.BuildId)'
+    versionCodeOffset: '20'
+    versionName: 
+    printFile: true
+
+- task: Xcode@5
+  inputs:
+    actions: 'build'
+    packageApp: true
+    signingOption: manual
+    signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
+    provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
+    scheme: 'CelestiaApp'
+    sdk: 'macosx'
+    configuration: 'Release'
+    xcWorkspacePath: '$(system.defaultworkingdirectory)/CelestiaApp/CelestiaApp.xcodeproj/project.xcworkspace'
+    xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath
+    exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
+    archivePath: '$(system.defaultworkingdirectory)/archive'
+
+- task: CopyFiles@2
+  inputs:
+    sourceFolder: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
+    contents: '**/*.pkg'
+    targetFolder: '$(build.artifactStagingDirectory)'
+
+- task: CopyFiles@2
+  inputs:
+    sourceFolder: "$(system.defaultworkingdirectory)/archive"
+    contents: '**/*.dSYM/**'
+    targetFolder: '$(build.artifactStagingDirectory)'
+
+- task: AppCenterDistribute@3
+  inputs:
+    serverEndpoint: 'MacCelestiaAppCenter'
+    appSlug: 'CelestiaProject/Celestia-2'
+    appFile: '$(build.artifactstagingdirectory)/**/*.pkg'
+    symbolsDsymFiles: '$(build.artifactstagingdirectory)/**/*.dSYM'
+    releaseNotesOption: 'input'
+    releaseNotesInput: 'Internal testing only.'
+    destinationType: 'groups'
