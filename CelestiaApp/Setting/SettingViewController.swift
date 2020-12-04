@@ -33,6 +33,12 @@ class SettingViewController: NSViewController {
         scan(for: view)
     }
 
+    override func viewDidDisappear() {
+        super.viewDidDisappear()
+
+        core.storeUserDefaults()
+    }
+
     @objc private func activeMenuItem(_ sender: NSMenuItem) {
         let buttonTag = sender.tag / 10 * 10
         let value = sender.tag - buttonTag

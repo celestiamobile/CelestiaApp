@@ -62,13 +62,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return core.isInitialized
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-        if core.isInitialized {
-            core.storeUserDefaults()
-            bookmarkController.storeBookmarksToDisk()
-        }
-    }
-
     func application(_ application: NSApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([NSUserActivityRestoring]) -> Void) -> Bool {
         handleUserActivity(userActivity)
         return true
