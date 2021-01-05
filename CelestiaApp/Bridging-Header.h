@@ -15,6 +15,6 @@
 #import "LegacyMigrator.h"
 #import "LocalizationSwizzling.h"
 #import "FontHelper.h"
-#import "NSOpenGLContext+Utils.h"
+#import <MetalANGLE/MGLKit.h>
 
 #endif /* BRIDGING_HEADER_H */

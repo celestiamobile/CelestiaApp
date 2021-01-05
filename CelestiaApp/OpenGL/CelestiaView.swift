@@ -14,14 +14,16 @@ import Cocoa
 protocol CelestiaViewDelegate: class {
     func draw(in glView: CelestiaView)
     func update(in glView: CelestiaView)
-    func initialize(with context: NSOpenGLContext, supportsMultiThread: Bool, callback: @escaping (Bool) -> Void)
+    func initialize(with context: MGLContext, callback: @escaping (Bool) -> Void)
 }
 
-class CelestiaView: NSOpenGLView {
+class CelestiaView: NSView {
     weak var viewDelegate: CelestiaViewDelegate?
     weak var mouseProcessor: CelestiaViewMouseProcessor?
     weak var keyboardProcessor: CelestiaViewKeyboardProcessor?
     weak var dndProcessor: CelestiaViewDNDProcessor?
+
+    private lazy var glView = MGLKView(frame: .zero)
 
     private let mouseDragThreshold: CGFloat = 3
     private var mouseMotion: CGFloat = 0
@@ -38,14 +40,15 @@ class CelestiaView: NSOpenGLView {
     private var displaySource: DispatchSourceUserDataAdd?
 
     var scaleFactor: CGFloat {
-        get { return layer?.contentsScale ?? 1.0 }
-        set { layer?.contentsScale = newValue }
+        get { return glView.layer!.contentsScale }
+        set { glView.layer?.contentsScale = newValue }
     }
 
-    init?(frame frameRect: NSRect, pixelFormat format: NSOpenGLPixelFormat?, msaaEnabled: Bool) {
-        super.init(frame: frameRect, pixelFormat: format)
+    override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
 
-        self.msaaEnabled = msaaEnabled
+        wantsLayer = true
+        layer?.backgroundColor = NSColor.black.cgColor
 
         setupGL()
         setupDND()
@@ -211,50 +214,36 @@ class CelestiaView: NSOpenGLView {
         }
         return true
     }
-
-    override func draw(_ dirtyRect: NSRect) {
-        if let context = openGLContext {
-            viewDelegate?.draw(in: self)
-            context.flushBuffer()
-        }
-    }
-
-    override func update() {
-        super.update()
-
-        viewDelegate?.update(in: self)
-    }
-
-    override func reshape() {
-        super.reshape()
-
-        viewDelegate?.update(in: self)
-    }
-
     @objc private func displayLinkCallback() {
         guard ready else { return }
 
-        needsDisplay = true
+        glView.display()
+    }
+}
+
+extension CelestiaView: MGLKViewDelegate {
+    func mglkView(_ view: MGLKView!, drawIn rect: CGRect) {
+        let size = CGSize(width: view.drawableSize.width * view.layer!.contentsScale, height: view.drawableSize.height * view.layer!.contentsScale)
+        if size != currentSize {
+            currentSize = size
+            viewDelegate?.update(in: self)
+        }
+
+        viewDelegate?.draw(in: self)
     }
 }
 
 extension CelestiaView {
     private func setupGL() {
-        guard let context = openGLContext else { return }
+        addSubview(glView)
+        glView.frame = bounds
+        glView.autoresizingMask = [.width, .height]
 
-        if let obj = context.cglContextObj, CGLEnable(obj, CGLContextEnable(313)).rawValue == 0 {
-            print("Multithreaded OpenGL enabled.")
-            supportsMultiThread = true
-        }
-
-        var swapInterval: GLint = 1
-        context.setValues(&swapInterval, for: NSOpenGLContext.Parameter.swapInterval)
-
-        context.makeCurrentContext()
-
-        if msaaEnabled {
-            context.enable(0x809D)
-        }
+        let context = MGLContext(api: kMGLRenderingAPIOpenGLES2)
+        glView.context = context
+        glView.drawableDepthFormat = MGLDrawableDepthFormat24
+        glView.drawableMultisample = MGLDrawableMultisampleNone
+        glView.delegate = self
     }
 
     private func setupDisplayLink(with window: NSWindow) {
@@ -286,7 +275,7 @@ extension CelestiaView {
     }
 
     func setupCelestia() {
-        viewDelegate?.initialize(with: openGLContext!, supportsMultiThread: supportsMultiThread) { (success) in
+        viewDelegate?.initialize(with: glView.context) { (success) in
             self.ready = success
         }
     }

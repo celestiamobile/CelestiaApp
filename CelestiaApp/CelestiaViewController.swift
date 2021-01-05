@@ -35,7 +35,7 @@ class CelestiaViewController: NSViewController {
         return NSOpenGLPixelFormat(attributes: attributes)
     }()
 
-    private lazy var celestiaView: CelestiaView! = CelestiaView(frame: .zero, pixelFormat: self.pixelFmt, msaaEnabled: self.msaa)
+    private lazy var celestiaView: CelestiaView! = CelestiaView(frame: .zero)
     @IBOutlet var selectionMenu: NSMenu!
     @IBOutlet var refMarkMenu: NSMenu!
     @IBOutlet var unmarkMenuItem: NSMenuItem!
@@ -76,7 +76,6 @@ class CelestiaViewController: NSViewController {
         celestiaView.keyboardProcessor = self
         celestiaView.dndProcessor = self
 
-        celestiaView.wantsBestResolutionOpenGLSurface = fullDPI
         celestiaView.scaleFactor = scaleFactor
         celestiaView.setupCelestia()
     }
@@ -269,33 +268,16 @@ extension CelestiaViewController: CelestiaViewDelegate {
         core.resize(to: glView.bounds.size.scale(by: scaleFactor))
     }
 
-    func initialize(with context: NSOpenGLContext, supportsMultiThread: Bool, callback: @escaping (Bool) -> Void) {
-        context.makeCurrentContext()
+    func initialize(with context: MGLContext, callback: @escaping (Bool) -> Void) {
+        MGLContext.setCurrent(context)
 
         _ = CelestiaAppCore.initGL()
 
         FileManager.default.changeCurrentDirectoryPath(dataDirectoryURL.url.path)
         CelestiaAppCore.setLocaleDirectory(dataDirectoryURL.url.path + "/locale")
 
-
-        guard supportsMultiThread else {
-            let result = core.startSimulation(configFileName: configFileURL.url.path, extraDirectories: [extraDirectory].compactMap{$0?.path}, progress: { _ in }) && core.startRenderer()
-
-            guard result else {
-                showLoadingFailed()
-                callback(false)
-                return
-            }
-
-            start()
-            callback(true)
-            return
-        }
-
         DispatchQueue.global().async { [weak self] in
             guard let self = self else { return }
-
-            context.makeCurrentContext()
 
             let result = self.core.startSimulation(configFileName: self.configFileURL.url.path, extraDirectories: [extraDirectory].compactMap{$0?.path}, progress: { (status) in
                 // Broadcast the status

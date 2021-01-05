@@ -49,10 +49,11 @@
 		EA0E2A3124639DD9006F1469 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A3024639DD9006F1469 /* main.swift */; };
 		EA31E27025446637009E59FF /* BaseResultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31E26C25446637009E59FF /* BaseResultHandler.swift */; };
 		EA7B07EB24B062FB00CB2A71 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = EA7B07E924B062FB00CB2A71 /* Fonts */; };
-		EA870B5724B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA870B5624B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m */; };
 		EABC2462248E1BB300205B5A /* FontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC2461248E1BB300205B5A /* FontHelper.m */; };
 		EAE83A4E255E52B500607EBC /* AppCenterCrashes in Frameworks */ = {isa = PBXBuildFile; productRef = EAE83A4D255E52B500607EBC /* AppCenterCrashes */; };
 		EAE83A50255E52B500607EBC /* AppCenterAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EAE83A4F255E52B500607EBC /* AppCenterAnalytics */; };
+		EAF48B5025A49AF500F0E9F9 /* MetalANGLE.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF48B4F25A49AF500F0E9F9 /* MetalANGLE.xcframework */; };
+		EAF48B5125A49AF500F0E9F9 /* MetalANGLE.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAF48B4F25A49AF500F0E9F9 /* MetalANGLE.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,20 @@
 			remoteInfo = CelestiaCore;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EAF48B5225A49AF500F0E9F9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EAF48B5125A49AF500F0E9F9 /* MetalANGLE.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		970C560D238507EA00EBB157 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
@@ -117,12 +132,12 @@
 		EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalizationSwizzling.m; sourceTree = "<group>"; };
 		EA0E2A2E24639C34006F1469 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		EA0E2A3024639DD9006F1469 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EA1EF06E2493AB5E0039F493 /* MetalANGLE.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MetalANGLE.xcframework; path = ../CelestiaCore/Frameworks/MetalANGLE.xcframework; sourceTree = "<group>"; };
 		EA31E26C25446637009E59FF /* BaseResultHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResultHandler.swift; sourceTree = "<group>"; };
 		EA7B07E924B062FB00CB2A71 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = ../../../CelestiaCore/Fonts; sourceTree = "<group>"; };
-		EA870B5524B2BBBF00F0FC50 /* NSOpenGLContext+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSOpenGLContext+Utils.h"; sourceTree = "<group>"; };
-		EA870B5624B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSOpenGLContext+Utils.m"; sourceTree = "<group>"; };
 		EABC245F248E1BB300205B5A /* FontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontHelper.h; sourceTree = "<group>"; };
 		EABC2461248E1BB300205B5A /* FontHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontHelper.m; sourceTree = "<group>"; };
+		EAF48B4F25A49AF500F0E9F9 /* MetalANGLE.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MetalANGLE.xcframework; path = ../CelestiaCore/libs/dependency/xcframeworks/MetalANGLE.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +152,7 @@
 				97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */,
 				EA09B5F7254BBA6900DACC1D /* MWRequest in Frameworks */,
 				EAE83A50255E52B500607EBC /* AppCenterAnalytics in Frameworks */,
+				EAF48B5025A49AF500F0E9F9 /* MetalANGLE.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,8 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				97F251BE22FDBACA00067B06 /* CelestiaView.swift */,
-				EA870B5524B2BBBF00F0FC50 /* NSOpenGLContext+Utils.h */,
-				EA870B5624B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m */,
 			);
 			path = OpenGL;
 			sourceTree = "<group>";
@@ -298,6 +312,8 @@
 		97F251A522FDB79F00067B06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA1EF06E2493AB5E0039F493 /* MetalANGLE.xcframework */,
+				EAF48B4F25A49AF500F0E9F9 /* MetalANGLE.xcframework */,
 				970C560D238507EA00EBB157 /* libbz2.tbd */,
 				971A67492301A376009E4EA1 /* OpenGL.framework */,
 				97F251BC22FDB9BB00067B06 /* libz.tbd */,
@@ -326,6 +342,7 @@
 				97F2518822FDB6E100067B06 /* Resources */,
 				970C560B2385009E00EBB157 /* Copy General Data */,
 				9751DC4023594EF100299997 /* Convert PO */,
+				EAF48B5225A49AF500F0E9F9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -478,7 +495,6 @@
 				971A67502301A9D3009E4EA1 /* ScriptController.swift in Sources */,
 				97401C922414CF2D0015F8E8 /* UserDefaults.swift in Sources */,
 				974D27552303CEF000FDFBC0 /* InfoViewController.swift in Sources */,
-				EA870B5724B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m in Sources */,
 				97DBBE6C230003DC003D1BAF /* NSAlert.swift in Sources */,
 				97DBBE6822FFF2AC003D1BAF /* SplashWindow.swift in Sources */,
 				974D26F72302AD5600FDFBC0 /* BookmarkOrganizerViewController.swift in Sources */,
