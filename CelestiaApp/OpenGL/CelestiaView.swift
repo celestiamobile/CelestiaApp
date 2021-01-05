@@ -50,11 +50,11 @@ class CelestiaView: NSOpenGLView {
         setupGL()
         setupDND()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewWillMove(toWindow newWindow: NSWindow?) {
         if let link = displayLink {
             CVDisplayLinkStop(link)

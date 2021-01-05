@@ -121,7 +121,6 @@
 		EA7B07E924B062FB00CB2A71 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = ../../../CelestiaCore/Fonts; sourceTree = "<group>"; };
 		EA870B5524B2BBBF00F0FC50 /* NSOpenGLContext+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSOpenGLContext+Utils.h"; sourceTree = "<group>"; };
 		EA870B5624B2BBBF00F0FC50 /* NSOpenGLContext+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSOpenGLContext+Utils.m"; sourceTree = "<group>"; };
-		EAA8F9C52536EEC600096A32 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		EABC245F248E1BB300205B5A /* FontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontHelper.h; sourceTree = "<group>"; };
 		EABC2461248E1BB300205B5A /* FontHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -299,7 +298,6 @@
 		97F251A522FDB79F00067B06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EAA8F9C52536EEC600096A32 /* CloudKit.framework */,
 				970C560D238507EA00EBB157 /* libbz2.tbd */,
 				971A67492301A376009E4EA1 /* OpenGL.framework */,
 				97F251BC22FDB9BB00067B06 /* libz.tbd */,
