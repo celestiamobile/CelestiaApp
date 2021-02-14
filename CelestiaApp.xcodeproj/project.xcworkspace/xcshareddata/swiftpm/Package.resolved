@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "App Center",
+        "package": "AppCenter",
         "repositoryURL": "https://github.com/microsoft/appcenter-sdk-apple.git",
         "state": {
           "branch": null,
-          "revision": "79d99eaff599d1b38adf81884fe220c75fd38867",
-          "version": "4.0.0"
+          "revision": "484dead179e6d7edd534d0d7defdf65c14a5b426",
+          "version": "4.1.0"
         }
       },
       {
@@ -15,13 +15,13 @@
         "repositoryURL": "https://github.com/levinli303/mwrequest.git",
         "state": {
           "branch": null,
-          "revision": "96e5f2c037d60709f877be8506d2d6c101e58f13",
+          "revision": "3963c7870d7fe1448de4a244d116e4eb332fdf0e",
           "version": "0.2.3"
         }
       },
       {
         "package": "PLCrashReporter",
-        "repositoryURL": "https://github.com/microsoft/plcrashreporter.git",
+        "repositoryURL": "https://github.com/microsoft/PLCrashReporter.git",
         "state": {
           "branch": null,
           "revision": "de6b8f9db4b2a0aa859a5507550a70548e4da936",

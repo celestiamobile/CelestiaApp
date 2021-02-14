@@ -173,6 +173,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         let vc = vcProvider()
         let panel = NSPanel(contentViewController: vc)
+        panel.hidesOnDeactivate = false
         customization(panel)
         savedWindows[identifier] = panel
         panel.makeKeyAndOrderFront(nil)
