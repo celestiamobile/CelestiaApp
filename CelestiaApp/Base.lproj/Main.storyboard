@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="F8w-LJ-0Tu">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="F8w-LJ-0Tu">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -150,7 +149,7 @@ DQ
                                                 <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="GdR-AM-4go"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Orbit Synchronously" tag="121" keyEquivalent="y" id="OwZ-pR-RlU">
+                                        <menuItem title="Sync Orbit" tag="121" keyEquivalent="y" id="OwZ-pR-RlU">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="7PG-B4-01W"/>
@@ -620,7 +619,7 @@ CA
                                 <action selector="glViewMenuClicked:" target="XfG-lQ-9wD" id="Xcc-Pa-j72"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Orbit Synchronously" tag="121" keyEquivalent="y" id="4JE-DU-m5g">
+                        <menuItem title="Sync Orbit" tag="121" keyEquivalent="y" id="4JE-DU-m5g">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="glViewMenuClicked:" target="XfG-lQ-9wD" id="EsL-6q-oLs"/>
