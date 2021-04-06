@@ -37,8 +37,8 @@ class GotoViewController: NSViewController {
 
         if let current = core.simulation.currentLocation {
             objectNameComboBox.stringValue = core.simulation.universe.name(for: current.selection)
-            longitudeTextField.doubleValue = current.longitude
-            latitudeTextField.doubleValue = current.latitude
+            longitudeTextField.floatValue = current.longitude
+            latitudeTextField.floatValue = current.latitude
             distanceTextField.doubleValue = current.distance
         }
     }
@@ -66,8 +66,8 @@ class GotoViewController: NSViewController {
 
             if longitudeTextField.stringValue.count > 0 && latitudeTextField.stringValue.count > 0 {
                 location = CelestiaGoToLocation(selection: sel,
-                                                longitude: longitudeTextField.doubleValue,
-                                                latitude: latitudeTextField.doubleValue,
+                                                longitude: longitudeTextField.floatValue,
+                                                latitude: latitudeTextField.floatValue,
                                                 distance: distanceTextField.doubleValue,
                                                 unit: unit)
             } else {
@@ -78,8 +78,8 @@ class GotoViewController: NSViewController {
         } else {
             if longitudeTextField.stringValue.count > 0 && latitudeTextField.stringValue.count > 0 {
                 location = CelestiaGoToLocation(selection: sel,
-                                                longitude: longitudeTextField.doubleValue,
-                                                latitude: latitudeTextField.doubleValue)
+                                                longitude: longitudeTextField.floatValue,
+                                                latitude: latitudeTextField.floatValue)
             } else {
                 location = CelestiaGoToLocation(selection: sel)
             }
