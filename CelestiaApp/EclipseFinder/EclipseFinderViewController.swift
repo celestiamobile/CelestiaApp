@@ -23,7 +23,7 @@ class EclipseFinderViewController: NSViewController {
 
     @IBOutlet weak var eclipseList: NSTableView!
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
-    @IBOutlet weak var eclipseReceiverTextField: NSTextField!
+    @IBOutlet weak var objectNameComboBox: NSComboBox!
     @IBOutlet weak var eclipseStartDatePicker: NSDatePicker!
     @IBOutlet weak var eclipseEndDatePicker: NSDatePicker!
     @IBOutlet weak var findButton: NSButton!
@@ -34,6 +34,9 @@ class EclipseFinderViewController: NSViewController {
         eclipseList.target = self
         eclipseList.doubleAction = #selector(go(_:))
 
+        objectNameComboBox.addItem(withObjectValue: CelestiaString("Earth", comment: "", domain: "celestia"))
+        objectNameComboBox.addItem(withObjectValue: CelestiaString("Jupiter", comment: "", domain: "celestia"))
+
         eclipseStartDatePicker.dateValue = Date()
         eclipseEndDatePicker.dateValue = Date()
     }
@@ -42,37 +45,27 @@ class EclipseFinderViewController: NSViewController {
         let startDate = eclipseStartDatePicker.dateValue
         let endDate = eclipseEndDatePicker.dateValue
 
-        let receiver = eclipseReceiverTextField.stringValue
+        let receiver = objectNameComboBox.stringValue
 
-        guard receiver.count > 0 else {
+        guard !receiver.isEmpty  else {
             NSAlert.warning(message: CelestiaString("Object not found", comment: ""),
                             text: CelestiaString("Please check that the object name is correct.", comment: ""))
             return
         }
 
         let selection = core.simulation.findObject(from: receiver)
-        guard let system = selection.body?.system, !receiver.isEmpty else {
+        guard let body = selection.body else {
             NSAlert.warning(message: CelestiaString("Object not found", comment: ""),
                             text: CelestiaString("Please check that the object name is correct.", comment: ""))
             return
         }
 
-        let parameter: (body: CelestiaBody, kind: CelestiaEclipseKind)
-
-        if let primary = system.primaryObject {
-            // Eclipse receiver is a moon -> find lunar eclipses
-            parameter = (primary, .lunar)
-        } else {
-            // Solar eclipse
-            parameter = (selection.body!, .solar)
-        }
-
         progressIndicator.startAnimation(self)
         findButton.isEnabled = false
         DispatchQueue.global().async { [weak self] in
-            let finder = CelestiaEclipseFinder(body: parameter.body)
+            let finder = CelestiaEclipseFinder(body: body)
             self?.currentFinder = finder
-            let results = finder.search(kind: parameter.kind, from: startDate, to: endDate)
+            let results = finder.search(kind: [.solar, .lunar], from: startDate, to: endDate)
             self?.currentFinder = nil
             DispatchQueue.main.async {
                 self?.findButton.isEnabled = true
