@@ -828,7 +828,7 @@
                                                                     </constraints>
                                                                 </view>
                                                             </box>
-                                                            <box borderType="line" title="Label Density" translatesAutoresizingMaskIntoConstraints="NO" id="ifJ-Ay-dHf">
+                                                            <box borderType="line" title="Minimum Labeled Feature Size" translatesAutoresizingMaskIntoConstraints="NO" id="ifJ-Ay-dHf">
                                                                 <rect key="frame" x="13" y="209" width="308" height="74"/>
                                                                 <view key="contentView" id="0o9-Xu-591">
                                                                     <rect key="frame" x="3" y="3" width="302" height="56"/>
@@ -854,13 +854,13 @@
                                                             <constraint firstItem="Vt3-UG-5W9" firstAttribute="top" secondItem="ifJ-Ay-dHf" secondAttribute="bottom" constant="20" id="2eA-4b-ELr"/>
                                                             <constraint firstAttribute="trailing" secondItem="Vt3-UG-5W9" secondAttribute="trailing" constant="16" symbolic="YES" id="8uS-gH-tnl"/>
                                                             <constraint firstAttribute="bottom" secondItem="Vt3-UG-5W9" secondAttribute="bottom" constant="11" symbolic="YES" id="Bfq-M1-Sjp"/>
-                                                            <constraint firstAttribute="trailing" secondItem="ifJ-Ay-dHf" secondAttribute="trailing" constant="20" symbolic="YES" id="Jri-4b-nvf"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ifJ-Ay-dHf" secondAttribute="trailing" constant="16" symbolic="YES" id="Jri-4b-nvf"/>
                                                             <constraint firstItem="yXF-Vc-f5G" firstAttribute="top" secondItem="Zn7-PW-X2n" secondAttribute="top" constant="20" symbolic="YES" id="Oil-AP-Uch"/>
                                                             <constraint firstAttribute="trailing" secondItem="yXF-Vc-f5G" secondAttribute="trailing" constant="20" symbolic="YES" id="RBu-OZ-bu7"/>
                                                             <constraint firstItem="yXF-Vc-f5G" firstAttribute="leading" secondItem="Zn7-PW-X2n" secondAttribute="leading" constant="20" symbolic="YES" id="Utd-NO-PLW"/>
                                                             <constraint firstItem="ifJ-Ay-dHf" firstAttribute="top" secondItem="yXF-Vc-f5G" secondAttribute="bottom" constant="20" id="UyU-sk-KDs"/>
                                                             <constraint firstItem="Vt3-UG-5W9" firstAttribute="leading" secondItem="Zn7-PW-X2n" secondAttribute="leading" constant="16" symbolic="YES" id="chA-Po-MZN"/>
-                                                            <constraint firstItem="ifJ-Ay-dHf" firstAttribute="leading" secondItem="Zn7-PW-X2n" secondAttribute="leading" constant="20" symbolic="YES" id="xLc-Ks-FSd"/>
+                                                            <constraint firstItem="ifJ-Ay-dHf" firstAttribute="leading" secondItem="Zn7-PW-X2n" secondAttribute="leading" constant="16" symbolic="YES" id="xLc-Ks-FSd"/>
                                                         </constraints>
                                                     </view>
                                                 </box>
