@@ -12,11 +12,11 @@
                 <customObject id="90W-Wb-uoP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <viewController title="Preferences" storyboardIdentifier="Setting" id="c4N-h6-Ogk" customClass="SettingViewController" customModule="Celestia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="gbv-Xm-RwL">
-                        <rect key="frame" x="0.0" y="0.0" width="622" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="622" height="534"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tabView translatesAutoresizingMaskIntoConstraints="NO" id="ZJ9-fx-O3y">
-                                <rect key="frame" x="-7" y="-10" width="636" height="504"/>
+                                <rect key="frame" x="-7" y="-10" width="636" height="538"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="622" id="9CI-gw-RRt"/>
                                 </constraints>
@@ -270,41 +270,41 @@
                                     </tabViewItem>
                                     <tabViewItem label="Guides" identifier="" id="JBT-yv-95U">
                                         <view key="view" id="SCE-Zd-22V">
-                                            <rect key="frame" x="10" y="33" width="616" height="458"/>
+                                            <rect key="frame" x="10" y="33" width="616" height="492"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <box borderType="line" title="Constellations" translatesAutoresizingMaskIntoConstraints="NO" id="0gT-Uo-y9W">
-                                                    <rect key="frame" x="315" y="288" width="284" height="150"/>
+                                                    <rect key="frame" x="315" y="315" width="284" height="157"/>
                                                     <view key="contentView" id="uEx-u3-pKd">
-                                                        <rect key="frame" x="3" y="3" width="278" height="132"/>
+                                                        <rect key="frame" x="3" y="3" width="278" height="139"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <stackView orientation="vertical" alignment="leading" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" translatesAutoresizingMaskIntoConstraints="NO" id="mLX-Z6-sIa">
-                                                                <rect key="frame" x="20" y="20" width="238" height="92"/>
+                                                                <rect key="frame" x="20" y="20" width="238" height="99"/>
                                                                 <beginningViews>
                                                                     <button fixedFrame="YES" tag="403" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vIl-cy-Ldh">
-                                                                        <rect key="frame" x="-2" y="76" width="145" height="18"/>
+                                                                        <rect key="frame" x="-2" y="82" width="149" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Show Constellations" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="403" inset="2" id="QmG-QR-ITo">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button fixedFrame="YES" tag="503" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6iJ-Cp-zxB">
-                                                                        <rect key="frame" x="-2" y="50" width="182" height="18"/>
+                                                                        <rect key="frame" x="-2" y="54" width="186" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Show Constellation Labels" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="503" inset="2" id="0tM-dG-P9E">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button fixedFrame="YES" tag="511" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qce-BJ-E67">
-                                                                        <rect key="frame" x="-2" y="24" width="147" height="18"/>
+                                                                        <rect key="frame" x="-2" y="26.5" width="151" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Constellations in Latin" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="511" inset="2" id="9fx-R9-SeK">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="label" size="12"/>
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button fixedFrame="YES" tag="413" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="49r-M4-pzB">
-                                                                        <rect key="frame" x="-2" y="-2" width="127" height="18"/>
+                                                                        <rect key="frame" x="-2" y="-1" width="131" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Show Boundaries" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="413" inset="2" id="fQW-zY-huJ">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
@@ -334,37 +334,37 @@
                                                     </view>
                                                 </box>
                                                 <box borderType="line" title="Grids" translatesAutoresizingMaskIntoConstraints="NO" id="rR7-8Q-tgd">
-                                                    <rect key="frame" x="315" y="122" width="284" height="150"/>
+                                                    <rect key="frame" x="315" y="153" width="284" height="158"/>
                                                     <view key="contentView" id="HXz-5v-Uhl">
-                                                        <rect key="frame" x="3" y="3" width="278" height="132"/>
+                                                        <rect key="frame" x="3" y="3" width="278" height="140"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <stackView orientation="vertical" alignment="leading" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" translatesAutoresizingMaskIntoConstraints="NO" id="cCd-4Y-s0J">
-                                                                <rect key="frame" x="20" y="20" width="238" height="92"/>
+                                                                <rect key="frame" x="20" y="20" width="238" height="100"/>
                                                                 <beginningViews>
                                                                     <button fixedFrame="YES" tag="406" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rbj-FX-2WS">
-                                                                        <rect key="frame" x="-2" y="76" width="83" height="18"/>
+                                                                        <rect key="frame" x="-2" y="83" width="87" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Equatorial" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="406" inset="2" id="xwR-9A-wcm">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button fixedFrame="YES" tag="420" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HMZ-ST-fAp">
-                                                                        <rect key="frame" x="-2" y="50" width="67" height="18"/>
+                                                                        <rect key="frame" x="-2" y="55" width="71" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Ecliptic" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="406" inset="2" id="GCc-dz-Faa">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button fixedFrame="YES" tag="421" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="frG-eV-6G6">
-                                                                        <rect key="frame" x="-2" y="24" width="84" height="18"/>
+                                                                        <rect key="frame" x="-2" y="27" width="88" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Horizontal" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="406" inset="2" id="bQg-Cr-n1k">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button fixedFrame="YES" tag="422" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gpk-gr-o4T">
-                                                                        <rect key="frame" x="-2" y="-2" width="72" height="18"/>
+                                                                        <rect key="frame" x="-2" y="-1" width="76" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Galactic" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="406" inset="2" id="mZw-zi-UKy">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
@@ -394,72 +394,65 @@
                                                     </view>
                                                 </box>
                                                 <box borderType="line" title="Orbits" translatesAutoresizingMaskIntoConstraints="NO" id="qYr-4b-e28">
-                                                    <rect key="frame" x="17" y="150" width="284" height="288"/>
+                                                    <rect key="frame" x="17" y="110" width="284" height="362"/>
                                                     <view key="contentView" id="kEL-if-L6p">
-                                                        <rect key="frame" x="3" y="3" width="278" height="270"/>
+                                                        <rect key="frame" x="3" y="3" width="278" height="344"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
-                                                            <button tag="405" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k5p-9L-D4k">
-                                                                <rect key="frame" x="18" y="234" width="242" height="18"/>
-                                                                <buttonCell key="cell" type="check" title="Show Orbits" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="405" inset="2" id="tC9-t1-Ndi">
-                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                                    <font key="font" metaFont="system"/>
-                                                                </buttonCell>
-                                                            </button>
                                                             <stackView orientation="vertical" alignment="leading" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" translatesAutoresizingMaskIntoConstraints="NO" id="xCZ-9d-Md3">
-                                                                <rect key="frame" x="20" y="20" width="238" height="196"/>
+                                                                <rect key="frame" x="20" y="20" width="238" height="212"/>
                                                                 <beginningViews>
                                                                     <button fixedFrame="YES" tag="705" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8b5-V8-Wqe">
-                                                                        <rect key="frame" x="-2" y="180" width="54" height="18"/>
+                                                                        <rect key="frame" x="-2" y="195" width="58" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Stars" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="705" inset="2" id="8SA-SU-7or">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button fixedFrame="YES" tag="700" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vyQ-ba-hgB">
-                                                                        <rect key="frame" x="-2" y="154" width="67" height="18"/>
+                                                                        <rect key="frame" x="-2" y="167" width="71" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Planets" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="700" inset="2" id="qBl-a3-d7N">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button fixedFrame="YES" tag="706" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7J0-Fz-LQG">
-                                                                        <rect key="frame" x="-2" y="128" width="107" height="18"/>
+                                                                        <rect key="frame" x="-2" y="139" width="111" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Dwarf Planets" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="706" inset="2" id="ZrX-9i-1Vh">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button fixedFrame="YES" tag="701" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i0R-RM-cQo">
-                                                                        <rect key="frame" x="-2" y="102" width="63" height="18"/>
+                                                                        <rect key="frame" x="-2" y="111" width="67" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Moons" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="701" inset="2" id="vMG-w9-YbB">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button fixedFrame="YES" tag="707" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n5O-F8-YPe">
-                                                                        <rect key="frame" x="-2" y="76" width="101" height="18"/>
+                                                                        <rect key="frame" x="-2" y="83" width="105" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Minor Moons" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="707" inset="2" id="B8z-Ij-L7y">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button fixedFrame="YES" tag="702" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tfP-rl-RIh">
-                                                                        <rect key="frame" x="-2" y="50" width="80" height="18"/>
+                                                                        <rect key="frame" x="-2" y="55" width="84" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Asteroids" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="702" inset="2" id="rlC-lF-VJI">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button fixedFrame="YES" tag="703" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w4a-HF-kNn">
-                                                                        <rect key="frame" x="-2" y="24" width="69" height="18"/>
+                                                                        <rect key="frame" x="-2" y="27" width="73" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Comets" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="703" inset="2" id="Ttn-YP-Dyh">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button fixedFrame="YES" tag="704" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jkS-Vq-FST">
-                                                                        <rect key="frame" x="-2" y="-2" width="89" height="18"/>
+                                                                        <rect key="frame" x="-2" y="-1" width="93" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Spacecraft" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="704" inset="2" id="ZbK-H3-ncy">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
@@ -487,30 +480,26 @@
                                                                     <real value="3.4028234663852886e+38"/>
                                                                 </customSpacing>
                                                             </stackView>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="xCZ-9d-Md3" firstAttribute="leading" secondItem="kEL-if-L6p" secondAttribute="leading" constant="20" symbolic="YES" id="08u-zc-OVM"/>
-                                                            <constraint firstItem="xCZ-9d-Md3" firstAttribute="top" secondItem="k5p-9L-D4k" secondAttribute="bottom" constant="20" id="21D-zy-b9K"/>
-                                                            <constraint firstItem="k5p-9L-D4k" firstAttribute="top" secondItem="kEL-if-L6p" secondAttribute="top" constant="20" symbolic="YES" id="Gar-Ct-CpS"/>
-                                                            <constraint firstItem="k5p-9L-D4k" firstAttribute="leading" secondItem="kEL-if-L6p" secondAttribute="leading" constant="20" symbolic="YES" id="Qbr-tI-wAx"/>
-                                                            <constraint firstAttribute="bottom" secondItem="xCZ-9d-Md3" secondAttribute="bottom" constant="20" symbolic="YES" id="TCG-0X-L8Q"/>
-                                                            <constraint firstAttribute="trailing" secondItem="xCZ-9d-Md3" secondAttribute="trailing" constant="20" symbolic="YES" id="mzb-Qj-Tax"/>
-                                                            <constraint firstAttribute="trailing" secondItem="k5p-9L-D4k" secondAttribute="trailing" constant="20" symbolic="YES" id="yFU-s1-mNm"/>
-                                                        </constraints>
-                                                    </view>
-                                                </box>
-                                                <box borderType="line" title="Markers" translatesAutoresizingMaskIntoConstraints="NO" id="oai-uz-FuA">
-                                                    <rect key="frame" x="17" y="61" width="284" height="72"/>
-                                                    <view key="contentView" id="keY-t7-kqq">
-                                                        <rect key="frame" x="3" y="3" width="278" height="54"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                        <subviews>
-                                                            <stackView orientation="vertical" alignment="leading" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" translatesAutoresizingMaskIntoConstraints="NO" id="udg-Vo-Trg">
-                                                                <rect key="frame" x="20" y="20" width="238" height="14"/>
+                                                            <stackView orientation="vertical" alignment="leading" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" translatesAutoresizingMaskIntoConstraints="NO" id="Wpv-yp-YUb">
+                                                                <rect key="frame" x="20" y="252" width="238" height="72"/>
                                                                 <beginningViews>
-                                                                    <button fixedFrame="YES" tag="416" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zum-H6-AeO">
-                                                                        <rect key="frame" x="-2" y="-2" width="108" height="18"/>
-                                                                        <buttonCell key="cell" type="check" title="Show Markers" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="416" inset="2" id="Xqb-ZG-LI0">
+                                                                    <button fixedFrame="YES" tag="405" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ikS-93-xjb">
+                                                                        <rect key="frame" x="-2" y="55" width="100" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Show Orbits" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="705" inset="2" id="bwQ-KN-eyE">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" tag="411" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0zV-lj-jsP">
+                                                                        <rect key="frame" x="-2" y="27" width="108" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Fading Orbits" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="700" inset="2" id="v99-SP-dLU">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" tag="423" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oyb-rr-Cfq">
+                                                                        <rect key="frame" x="-2" y="-1" width="140" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Partial Trajectories" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="706" inset="2" id="YdO-7P-YM2">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
@@ -518,8 +507,57 @@
                                                                 </beginningViews>
                                                                 <visibilityPriorities>
                                                                     <integer value="1000"/>
+                                                                    <integer value="1000"/>
+                                                                    <integer value="1000"/>
                                                                 </visibilityPriorities>
                                                                 <customSpacing>
+                                                                    <real value="3.4028234663852886e+38"/>
+                                                                    <real value="3.4028234663852886e+38"/>
+                                                                    <real value="3.4028234663852886e+38"/>
+                                                                </customSpacing>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="xCZ-9d-Md3" firstAttribute="leading" secondItem="kEL-if-L6p" secondAttribute="leading" constant="20" symbolic="YES" id="08u-zc-OVM"/>
+                                                            <constraint firstItem="Wpv-yp-YUb" firstAttribute="leading" secondItem="kEL-if-L6p" secondAttribute="leading" constant="20" symbolic="YES" id="Imc-S8-Nuf"/>
+                                                            <constraint firstItem="xCZ-9d-Md3" firstAttribute="top" secondItem="Wpv-yp-YUb" secondAttribute="bottom" constant="20" id="PCp-de-dwo"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Wpv-yp-YUb" secondAttribute="trailing" constant="20" symbolic="YES" id="Rba-2M-ia3"/>
+                                                            <constraint firstAttribute="bottom" secondItem="xCZ-9d-Md3" secondAttribute="bottom" constant="20" symbolic="YES" id="TCG-0X-L8Q"/>
+                                                            <constraint firstItem="Wpv-yp-YUb" firstAttribute="top" secondItem="kEL-if-L6p" secondAttribute="top" constant="20" symbolic="YES" id="m3r-1P-HK6"/>
+                                                            <constraint firstAttribute="trailing" secondItem="xCZ-9d-Md3" secondAttribute="trailing" constant="20" symbolic="YES" id="mzb-Qj-Tax"/>
+                                                        </constraints>
+                                                    </view>
+                                                </box>
+                                                <box borderType="line" title="Miscellaneous" translatesAutoresizingMaskIntoConstraints="NO" id="oai-uz-FuA">
+                                                    <rect key="frame" x="315" y="47" width="284" height="102"/>
+                                                    <view key="contentView" id="keY-t7-kqq">
+                                                        <rect key="frame" x="3" y="3" width="278" height="84"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <stackView orientation="vertical" alignment="leading" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" translatesAutoresizingMaskIntoConstraints="NO" id="udg-Vo-Trg">
+                                                                <rect key="frame" x="20" y="20" width="238" height="44"/>
+                                                                <beginningViews>
+                                                                    <button fixedFrame="YES" tag="416" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LBb-Sh-Mag">
+                                                                        <rect key="frame" x="-2" y="27" width="75" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Markers" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="406" inset="2" id="tMv-52-FEn">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <button fixedFrame="YES" tag="425" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zum-H6-AeO">
+                                                                        <rect key="frame" x="-2" y="-1" width="112" height="18"/>
+                                                                        <buttonCell key="cell" type="check" title="Ecliptic Line" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="416" inset="2" id="Xqb-ZG-LI0">
+                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                </beginningViews>
+                                                                <visibilityPriorities>
+                                                                    <integer value="1000"/>
+                                                                    <integer value="1000"/>
+                                                                </visibilityPriorities>
+                                                                <customSpacing>
+                                                                    <real value="3.4028234663852886e+38"/>
                                                                     <real value="3.4028234663852886e+38"/>
                                                                 </customSpacing>
                                                             </stackView>
@@ -535,19 +573,19 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="rR7-8Q-tgd" firstAttribute="trailing" secondItem="0gT-Uo-y9W" secondAttribute="trailing" id="3LZ-GD-k4q"/>
-                                                <constraint firstItem="rR7-8Q-tgd" firstAttribute="top" secondItem="0gT-Uo-y9W" secondAttribute="bottom" constant="20" id="68j-eK-Vqb"/>
-                                                <constraint firstItem="oai-uz-FuA" firstAttribute="top" secondItem="kEL-if-L6p" secondAttribute="bottom" constant="20" id="6Ew-ap-aih"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qYr-4b-e28" secondAttribute="bottom" constant="20" symbolic="YES" id="3qq-n7-D1p"/>
+                                                <constraint firstItem="rR7-8Q-tgd" firstAttribute="top" secondItem="0gT-Uo-y9W" secondAttribute="bottom" constant="8" symbolic="YES" id="68j-eK-Vqb"/>
                                                 <constraint firstItem="rR7-8Q-tgd" firstAttribute="leading" secondItem="0gT-Uo-y9W" secondAttribute="leading" id="Fh0-sD-0xF"/>
-                                                <constraint firstItem="oai-uz-FuA" firstAttribute="leading" secondItem="kEL-if-L6p" secondAttribute="leading" id="Fli-5V-HLR"/>
                                                 <constraint firstItem="qYr-4b-e28" firstAttribute="leading" secondItem="SCE-Zd-22V" secondAttribute="leading" constant="20" symbolic="YES" id="J0F-VE-WWE"/>
                                                 <constraint firstItem="qYr-4b-e28" firstAttribute="width" secondItem="0gT-Uo-y9W" secondAttribute="width" id="J7L-9i-2Wa"/>
+                                                <constraint firstItem="oai-uz-FuA" firstAttribute="trailing" secondItem="HXz-5v-Uhl" secondAttribute="trailing" id="KKJ-UE-h5X"/>
                                                 <constraint firstItem="qYr-4b-e28" firstAttribute="top" secondItem="SCE-Zd-22V" secondAttribute="top" constant="20" symbolic="YES" id="Lnr-D8-7qi"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="rR7-8Q-tgd" secondAttribute="bottom" constant="20" symbolic="YES" id="Xco-1v-ad8"/>
                                                 <constraint firstAttribute="trailing" secondItem="0gT-Uo-y9W" secondAttribute="trailing" constant="20" symbolic="YES" id="akE-8O-slF"/>
                                                 <constraint firstItem="0gT-Uo-y9W" firstAttribute="top" secondItem="qYr-4b-e28" secondAttribute="top" id="eEK-Lo-OFS"/>
+                                                <constraint firstItem="oai-uz-FuA" firstAttribute="leading" secondItem="HXz-5v-Uhl" secondAttribute="leading" id="nBr-0D-TYw"/>
+                                                <constraint firstItem="oai-uz-FuA" firstAttribute="top" secondItem="rR7-8Q-tgd" secondAttribute="bottom" constant="8" symbolic="YES" id="p5X-qY-JkJ"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oai-uz-FuA" secondAttribute="bottom" constant="20" symbolic="YES" id="px8-QQ-uvO"/>
                                                 <constraint firstItem="uEx-u3-pKd" firstAttribute="leading" secondItem="qYr-4b-e28" secondAttribute="trailing" constant="20" id="slA-AZ-xoF"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oai-uz-FuA" secondAttribute="bottom" constant="20" symbolic="YES" id="tO0-Ml-f5u"/>
-                                                <constraint firstItem="oai-uz-FuA" firstAttribute="trailing" secondItem="kEL-if-L6p" secondAttribute="trailing" id="ttp-5j-lBP"/>
                                             </constraints>
                                         </view>
                                     </tabViewItem>
@@ -879,24 +917,24 @@
                                     </tabViewItem>
                                     <tabViewItem label="Renderer" identifier="" id="b5Z-Pm-7oJ">
                                         <view key="view" id="HrG-Hk-gf7">
-                                            <rect key="frame" x="10" y="33" width="616" height="458"/>
+                                            <rect key="frame" x="10" y="33" width="616" height="492"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <box borderType="line" title="Star Style" translatesAutoresizingMaskIntoConstraints="NO" id="nai-yf-Ybb">
-                                                    <rect key="frame" x="315" y="325" width="284" height="113"/>
+                                                    <rect key="frame" x="315" y="358" width="284" height="114"/>
                                                     <view key="contentView" id="iij-xp-0gb">
-                                                        <rect key="frame" x="3" y="3" width="278" height="95"/>
+                                                        <rect key="frame" x="3" y="3" width="278" height="96"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <button tag="414" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xLv-UL-PfU">
-                                                                <rect key="frame" x="18" y="59" width="242" height="18"/>
+                                                                <rect key="frame" x="18" y="59" width="240" height="18"/>
                                                                 <buttonCell key="cell" type="check" title="Auto Mag" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="414" inset="2" id="ack-PX-wkF">
                                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                     <font key="font" metaFont="system"/>
                                                                 </buttonCell>
                                                             </button>
                                                             <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4w2-da-iXz">
-                                                                <rect key="frame" x="18" y="23" width="119" height="16"/>
+                                                                <rect key="frame" x="18" y="22" width="119" height="16"/>
                                                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Star Style:" id="crl-iI-9CV">
                                                                     <font key="font" metaFont="system"/>
                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -904,7 +942,7 @@
                                                                 </textFieldCell>
                                                             </textField>
                                                             <popUpButton verticalHuggingPriority="750" tag="620" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KtY-Jj-S0U">
-                                                                <rect key="frame" x="141" y="17" width="120" height="25"/>
+                                                                <rect key="frame" x="140" y="16" width="122" height="25"/>
                                                                 <popUpButtonCell key="cell" type="push" title="Fuzzy Points" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" tag="620" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="iP9-eP-sI5" id="Ptz-S4-TRY">
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="menu"/>
@@ -933,13 +971,13 @@
                                                     </view>
                                                 </box>
                                                 <box borderType="line" title="Render Parameters" translatesAutoresizingMaskIntoConstraints="NO" id="q79-jY-JZx">
-                                                    <rect key="frame" x="17" y="285" width="284" height="153"/>
+                                                    <rect key="frame" x="17" y="314" width="284" height="158"/>
                                                     <view key="contentView" id="61E-Za-V8K">
-                                                        <rect key="frame" x="3" y="3" width="278" height="135"/>
+                                                        <rect key="frame" x="3" y="3" width="278" height="140"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <popUpButton verticalHuggingPriority="750" tag="640" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8gy-5j-pRA">
-                                                                <rect key="frame" x="141" y="91" width="120" height="25"/>
+                                                                <rect key="frame" x="140" y="96" width="122" height="25"/>
                                                                 <popUpButtonCell key="cell" type="push" title="Low" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" tag="640" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="Oen-vB-p4U" id="38f-H4-yzd">
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="menu"/>
@@ -953,7 +991,7 @@
                                                                 </popUpButtonCell>
                                                             </popUpButton>
                                                             <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZAH-Wd-EUw">
-                                                                <rect key="frame" x="18" y="97" width="119" height="16"/>
+                                                                <rect key="frame" x="18" y="102" width="119" height="16"/>
                                                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Texture Resolution:" id="WDE-F4-jTA">
                                                                     <font key="font" metaFont="system"/>
                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -961,24 +999,24 @@
                                                                 </textFieldCell>
                                                             </textField>
                                                             <stackView orientation="vertical" alignment="leading" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" translatesAutoresizingMaskIntoConstraints="NO" id="ONy-Sl-VNW">
-                                                                <rect key="frame" x="20" y="20" width="238" height="66"/>
+                                                                <rect key="frame" x="20" y="20" width="238" height="72"/>
                                                                 <beginningViews>
                                                                     <button fixedFrame="YES" tag="409" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ke9-Kr-rF9">
-                                                                        <rect key="frame" x="-2" y="50" width="105" height="18"/>
+                                                                        <rect key="frame" x="-2" y="55" width="109" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Smooth Lines" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="409" inset="2" id="TPn-ae-ipF">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button fixedFrame="YES" tag="2000" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UBd-dS-tzJ">
-                                                                        <rect key="frame" x="-2" y="24" width="56" height="18"/>
+                                                                        <rect key="frame" x="-2" y="27" width="60" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="HiDPI" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="409" inset="2" id="1Zq-am-CZ4">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button fixedFrame="YES" tag="2001" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rv2-ja-rN0">
-                                                                        <rect key="frame" x="-2" y="-2" width="98" height="18"/>
+                                                                        <rect key="frame" x="-2" y="-1" width="102" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Anti-aliasing" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="409" inset="2" id="Bdx-Po-c1w">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
@@ -1012,34 +1050,44 @@
                                                     </view>
                                                 </box>
                                                 <box borderType="line" title="Ambient Light" translatesAutoresizingMaskIntoConstraints="NO" id="FOp-dH-RAU">
-                                                    <rect key="frame" x="17" y="192" width="284" height="76"/>
+                                                    <rect key="frame" x="17" y="191" width="284" height="106"/>
                                                     <view key="contentView" id="9w6-c6-Nzp">
-                                                        <rect key="frame" x="3" y="3" width="278" height="58"/>
+                                                        <rect key="frame" x="3" y="3" width="278" height="88"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <slider verticalHuggingPriority="750" tag="900" translatesAutoresizingMaskIntoConstraints="NO" id="Q3w-il-LaX">
-                                                                <rect key="frame" x="20" y="20" width="238" height="18"/>
+                                                                <rect key="frame" x="18" y="50" width="242" height="20"/>
                                                                 <sliderCell key="cell" controlSize="small" continuous="YES" alignment="left" tag="900" maxValue="0.98999999999999999" tickMarkPosition="below" numberOfTickMarks="12" sliderType="linear" id="2QD-PT-U4A">
                                                                     <font key="font" usesAppearanceFont="YES"/>
                                                                 </sliderCell>
                                                             </slider>
+                                                            <button tag="414" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EUI-EW-QTL">
+                                                                <rect key="frame" x="18" y="19" width="240" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="Tinted Illumination" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="424" inset="2" id="TwH-Eb-Qmy">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="Q3w-il-LaX" firstAttribute="leading" secondItem="9w6-c6-Nzp" secondAttribute="leading" constant="20" symbolic="YES" id="1LY-BP-8ur"/>
+                                                            <constraint firstItem="EUI-EW-QTL" firstAttribute="leading" secondItem="9w6-c6-Nzp" secondAttribute="leading" constant="20" symbolic="YES" id="2Xq-hd-lp9"/>
                                                             <constraint firstAttribute="trailing" secondItem="Q3w-il-LaX" secondAttribute="trailing" constant="20" symbolic="YES" id="NXG-Ss-Npw"/>
                                                             <constraint firstItem="Q3w-il-LaX" firstAttribute="top" secondItem="9w6-c6-Nzp" secondAttribute="top" constant="20" symbolic="YES" id="Nzh-iw-hcN"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Q3w-il-LaX" secondAttribute="bottom" constant="20" symbolic="YES" id="UCL-RR-eWz"/>
+                                                            <constraint firstAttribute="trailing" secondItem="EUI-EW-QTL" secondAttribute="trailing" constant="20" symbolic="YES" id="PKO-Dy-iHa"/>
+                                                            <constraint firstAttribute="bottom" secondItem="EUI-EW-QTL" secondAttribute="bottom" constant="20" symbolic="YES" id="YeV-zv-CQL"/>
+                                                            <constraint firstItem="EUI-EW-QTL" firstAttribute="top" secondItem="Q3w-il-LaX" secondAttribute="bottom" constant="16" id="x2h-LZ-Ev4"/>
                                                         </constraints>
                                                     </view>
                                                 </box>
                                                 <box borderType="line" title="Faintest Stars" translatesAutoresizingMaskIntoConstraints="NO" id="o39-HG-ngE">
-                                                    <rect key="frame" x="315" y="232" width="284" height="76"/>
+                                                    <rect key="frame" x="315" y="267" width="284" height="74"/>
                                                     <view key="contentView" id="CKM-tD-wdk">
-                                                        <rect key="frame" x="3" y="3" width="278" height="58"/>
+                                                        <rect key="frame" x="3" y="3" width="278" height="56"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <slider verticalHuggingPriority="750" tag="902" translatesAutoresizingMaskIntoConstraints="NO" id="5he-wf-e46">
-                                                                <rect key="frame" x="20" y="20" width="238" height="18"/>
+                                                                <rect key="frame" x="18" y="18" width="242" height="20"/>
                                                                 <sliderCell key="cell" controlSize="small" continuous="YES" alignment="left" tag="902" minValue="3" maxValue="12" doubleValue="3" tickMarkPosition="below" numberOfTickMarks="12" sliderType="linear" id="kJr-WX-076">
                                                                     <font key="font" usesAppearanceFont="YES"/>
                                                                 </sliderCell>
@@ -1054,13 +1102,13 @@
                                                     </view>
                                                 </box>
                                                 <box borderType="line" title="Info" translatesAutoresizingMaskIntoConstraints="NO" id="vha-a7-j0y">
-                                                    <rect key="frame" x="17" y="96" width="284" height="79"/>
+                                                    <rect key="frame" x="17" y="96" width="284" height="78"/>
                                                     <view key="contentView" id="aVD-TS-ER2">
-                                                        <rect key="frame" x="3" y="3" width="278" height="61"/>
+                                                        <rect key="frame" x="3" y="3" width="278" height="60"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kYH-lE-81d">
-                                                                <rect key="frame" x="18" y="23" width="119" height="16"/>
+                                                                <rect key="frame" x="18" y="22" width="119" height="16"/>
                                                                 <textFieldCell key="cell" lineBreakMode="charWrapping" sendsActionOnEndEditing="YES" alignment="left" title="Info Display:" id="otB-dg-vlg">
                                                                     <font key="font" metaFont="system"/>
                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -1068,7 +1116,7 @@
                                                                 </textFieldCell>
                                                             </textField>
                                                             <popUpButton verticalHuggingPriority="750" tag="610" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2RB-5i-7RR">
-                                                                <rect key="frame" x="141" y="17" width="120" height="25"/>
+                                                                <rect key="frame" x="140" y="16" width="122" height="25"/>
                                                                 <popUpButtonCell key="cell" type="push" title="Terse" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" tag="611" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="PfB-I6-IB1" id="Wnm-Tt-1fg">
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="menu"/>
@@ -1094,13 +1142,13 @@
                                                     </view>
                                                 </box>
                                                 <box borderType="line" title="Time" translatesAutoresizingMaskIntoConstraints="NO" id="LWi-vC-lWr">
-                                                    <rect key="frame" x="315" y="106" width="284" height="110"/>
+                                                    <rect key="frame" x="315" y="143" width="284" height="108"/>
                                                     <view key="contentView" id="EzN-pL-gta">
-                                                        <rect key="frame" x="3" y="3" width="278" height="92"/>
+                                                        <rect key="frame" x="3" y="3" width="278" height="90"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <popUpButton verticalHuggingPriority="750" tag="660" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nDQ-vx-mcK">
-                                                                <rect key="frame" x="106" y="17" width="155" height="25"/>
+                                                                <rect key="frame" x="105" y="16" width="157" height="25"/>
                                                                 <popUpButtonCell key="cell" type="push" title="Default" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="660" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="Asw-Yn-dDS" id="Qk9-FK-FaL">
                                                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="menu"/>
@@ -1114,7 +1162,7 @@
                                                                 </popUpButtonCell>
                                                             </popUpButton>
                                                             <popUpButton verticalHuggingPriority="750" tag="650" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ckB-aA-IlB">
-                                                                <rect key="frame" x="106" y="48" width="155" height="25"/>
+                                                                <rect key="frame" x="105" y="46" width="157" height="25"/>
                                                                 <popUpButtonCell key="cell" type="push" title="Local Time" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="650" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="P5R-xx-T5L" id="A6f-AE-Jab">
                                                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="menu"/>
@@ -1127,7 +1175,7 @@
                                                                 </popUpButtonCell>
                                                             </popUpButton>
                                                             <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sqf-iQ-vWe">
-                                                                <rect key="frame" x="18" y="23" width="84" height="16"/>
+                                                                <rect key="frame" x="18" y="22" width="84" height="16"/>
                                                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Format:" usesSingleLineMode="YES" id="DUK-1A-SQV">
                                                                     <font key="font" metaFont="system"/>
                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -1135,7 +1183,7 @@
                                                                 </textFieldCell>
                                                             </textField>
                                                             <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ocl-Aa-kE4">
-                                                                <rect key="frame" x="18" y="54" width="84" height="16"/>
+                                                                <rect key="frame" x="18" y="52" width="84" height="16"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="5zf-97-7ua"/>
                                                                 </constraints>
@@ -1199,7 +1247,7 @@
                     </view>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1433" y="-601"/>
+            <point key="canvasLocation" x="1433" y="-635"/>
         </scene>
     </scenes>
 </document>
