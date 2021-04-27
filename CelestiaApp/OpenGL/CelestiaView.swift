@@ -11,7 +11,7 @@
 
 import Cocoa
 
-protocol CelestiaViewDelegate: class {
+protocol CelestiaViewDelegate: AnyObject {
     func draw(in glView: CelestiaView)
     func update(in glView: CelestiaView)
     func initialize(with context: NSOpenGLContext, supportsMultiThread: Bool, callback: @escaping (Bool) -> Void)

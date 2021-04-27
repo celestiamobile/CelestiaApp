@@ -21,7 +21,7 @@ struct CelestiaViewMouseButton: OptionSet {
     static let all: CelestiaViewMouseButton = [.left, .middle, .right]
 }
 
-protocol CelestiaViewMouseProcessor: class {
+protocol CelestiaViewMouseProcessor: AnyObject {
     func mouseUp(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaViewMouseButton)
     func mouseDown(at point: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaViewMouseButton)
     func mouseMove(by offset: CGPoint, modifiers: NSEvent.ModifierFlags, with buttons: CelestiaViewMouseButton)
@@ -29,12 +29,12 @@ protocol CelestiaViewMouseProcessor: class {
     func mouseWheel(by motion: CGFloat, modifiers: NSEvent.ModifierFlags)
 }
 
-protocol CelestiaViewKeyboardProcessor: class {
+protocol CelestiaViewKeyboardProcessor: AnyObject {
     func keyUp(modifiers: NSEvent.ModifierFlags, with input: String?)
     func keyDown(modifiers: NSEvent.ModifierFlags, with input: String?)
 }
 
-protocol CelestiaViewDNDProcessor: class {
+protocol CelestiaViewDNDProcessor: AnyObject {
     func draggingType(for url: URL) -> NSDragOperation
     func performDrop(for url: URL)
 }
