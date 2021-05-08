@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     lazy var celestiaViewController = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "Main") as! CelestiaViewController
 
-    lazy var core = CelestiaAppCore.shared
+    private lazy var core = CelestiaAppCore.shared
 
     func applicationWillFinishLaunching(_ notification: Notification) {
         NSAppleEventManager.shared().setEventHandler(self, andSelector: #selector(handleGetURLEvent(_:withReplyEvent:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
@@ -52,9 +52,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc private func handleGetURLEvent(_ event: NSAppleEventDescriptor, withReplyEvent: NSAppleEventDescriptor) {
         guard let urlString = event.forKeyword(AEKeyword(keyDirectObject))?.stringValue else { return }
-        guard isCelestiaLoaded else { return }
-
         urlToRun = URL(string: urlString)
+
+        guard isCelestiaLoaded else { return }
         celestiaViewController.checkNeedOpeningURL()
     }
 
@@ -151,9 +151,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func application(_ sender: NSApplication, openFile filename: String) -> Bool {
-        guard isCelestiaLoaded else { return true }
-
         urlToRun = URL(fileURLWithPath: filename)
+
+        guard isCelestiaLoaded else { return true }
         celestiaViewController.checkNeedOpeningURL()
         return true
     }
@@ -199,6 +199,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         _ = RequestHandler.get(url: requestURL, parameters: ["path" : path, "id" : id], success: { [weak self] (response: Response) in
             guard let self = self else { return }
             urlToRun = response.resolvedURL
+            guard self.isCelestiaLoaded else { return }
             self.celestiaViewController.checkNeedOpeningURL()
         })
         return true
