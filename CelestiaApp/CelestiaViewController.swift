@@ -557,6 +557,8 @@ private extension CGSize {
     }
 }
 
+typealias FallbackFont = (filePath: String, collectionIndex: Int)
+
 private func getInstalledFontFor(locale: String) -> (font: FallbackFont, boldFont: FallbackFont) {
     let fontDir = Bundle.app.path(forResource: "Fonts", ofType: nil)!
     let fontFallback = [

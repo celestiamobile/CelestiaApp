@@ -14,7 +14,6 @@
 
 #import "LegacyMigrator.h"
 #import "LocalizationSwizzling.h"
-#import "FontHelper.h"
 #import "NSOpenGLContext+Utils.h"
 
 #endif /* BRIDGING_HEADER_H */
