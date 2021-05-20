@@ -52,7 +52,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc private func handleGetURLEvent(_ event: NSAppleEventDescriptor, withReplyEvent: NSAppleEventDescriptor) {
         guard let urlString = event.forKeyword(AEKeyword(keyDirectObject))?.stringValue else { return }
-        urlToRun = URL(string: urlString)
+        CelestiaViewController.urlToRun = URL(string: urlString)
 
         guard isCelestiaLoaded else { return }
         celestiaViewController.checkNeedOpeningURL()
@@ -151,7 +151,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func application(_ sender: NSApplication, openFile filename: String) -> Bool {
-        urlToRun = URL(fileURLWithPath: filename)
+        CelestiaViewController.urlToRun = URL(fileURLWithPath: filename)
 
         guard isCelestiaLoaded else { return true }
         celestiaViewController.checkNeedOpeningURL()
@@ -198,7 +198,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let requestURL = apiPrefix + "/resolve"
         _ = RequestHandler.get(url: requestURL, parameters: ["path" : path, "id" : id], success: { [weak self] (response: Response) in
             guard let self = self else { return }
-            urlToRun = response.resolvedURL
+            CelestiaViewController.urlToRun = response.resolvedURL
             guard self.isCelestiaLoaded else { return }
             self.celestiaViewController.checkNeedOpeningURL()
         })

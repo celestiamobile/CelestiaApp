@@ -85,7 +85,7 @@ class EclipseFinderViewController: NSViewController {
         guard selected >= 0 else { return }
 
         let eclipse = results[selected]
-        core.simulation.goToEclipse(eclipse)
+        core.run { $0.simulation.goToEclipse(eclipse) }
     }
 }
 

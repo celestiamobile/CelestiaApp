@@ -51,9 +51,11 @@ class BrowserViewController: NSViewController {
 
     @IBAction private func commonAction(_ sender: NSButton) {
         if let sel = currentSelection {
-            core.simulation.selection = sel
-            if sender.tag != 0 {
-                core.charEnter(Int8(sender.tag))
+            let tag = sender.tag
+            if sender.tag == 0 {
+                core.selectAsync(sel)
+            } else {
+                core.selectAndCharEnterAsync(sel, char: Int8(tag))
             }
         }
     }
@@ -63,8 +65,7 @@ class BrowserViewController: NSViewController {
         guard clickedRow >= 0 else { return }
 
         if let item = (sender.item(atRow: clickedRow) as? NSTreeNode)?.representedObject as? CelestiaBrowserItem, let sel = CelestiaSelection(item: item) {
-            core.simulation.selection = sel
-            core.charEnter(103)
+            core.selectAndCharEnterAsync(sel, char: 103)
         }
     }
 }

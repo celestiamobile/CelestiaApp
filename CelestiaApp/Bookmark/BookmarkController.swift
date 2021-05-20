@@ -14,6 +14,8 @@ import Cocoa
 import CelestiaCore
 
 class BookmarkController: NSObject {
+    private var isConfigured = false
+
     var storedBookmarks: [BookmarkNode] = []
     var displayedBookmarks: [BookmarkNode] = []
 
@@ -59,6 +61,7 @@ class BookmarkController: NSObject {
         for item in menuItems {
             bookmarkMenu.addItem(item)
         }
+        isConfigured = true
     }
 
     @objc private func bookmarkMenuItemClicked(_ sender: NSMenuItem) {
@@ -67,6 +70,8 @@ class BookmarkController: NSObject {
     }
 
     @IBAction private func addBookmark(_ sender: Any) {
+        guard isConfigured else { return }
+
         guard let newBookmark = CelestiaAppCore.shared.currentBookmark else { return }
 
         storedBookmarks.append(newBookmark)
@@ -74,6 +79,8 @@ class BookmarkController: NSObject {
     }
 
     @IBAction private func organizeBookmarks(_ sender: Any) {
+        guard isConfigured else { return }
+
         AppDelegate.present(identifier: "Bookmark") { () -> BookmarkOrganizerViewController in
             let vc = NSStoryboard(name: "Bookmark", bundle: nil).instantiateController(withIdentifier: "Organizer") as! BookmarkOrganizerViewController
             vc.controller = self

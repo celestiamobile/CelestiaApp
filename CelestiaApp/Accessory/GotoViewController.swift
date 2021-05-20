@@ -84,7 +84,7 @@ class GotoViewController: NSViewController {
                 location = CelestiaGoToLocation(selection: sel)
             }
         }
-        core.simulation.go(to: location)
+        core.run { $0.simulation.go(to: location) }
     }
 }
 

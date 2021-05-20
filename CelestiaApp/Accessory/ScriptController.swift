@@ -42,7 +42,8 @@ class ScriptController: NSObject {
         guard AppDelegate.shared.isCelestiaLoaded else { return }
 
         lastScriptPath = path
-        AppDelegate.shared.celestiaViewController.runScript(at: path)
+        CelestiaViewController.urlToRun = URL(fileURLWithPath: path)
+        AppDelegate.shared.celestiaViewController.checkNeedOpeningURL()
     }
 
     func buildScriptMenu() {

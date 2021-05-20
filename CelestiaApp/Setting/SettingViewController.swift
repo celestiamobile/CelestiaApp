@@ -36,21 +36,25 @@ class SettingViewController: NSViewController {
     override func viewDidDisappear() {
         super.viewDidDisappear()
 
-        core.storeUserDefaults()
+        core.run { $0.storeUserDefaults() }
     }
 
     @objc private func activeMenuItem(_ sender: NSMenuItem) {
         let buttonTag = sender.tag / 10 * 10
         let value = sender.tag - buttonTag
-        core.setIntegerValue(value, forTag: buttonTag)
+        core.run { $0.setIntegerValue(value, forTag: buttonTag) }
     }
 
     @objc private func activeSlider(_ sender: NSSlider) {
-        core.setFloatValue(sender.floatValue, forTag: sender.tag)
+        let value = sender.floatValue
+        let tag = sender.tag
+        core.run { $0.setFloatValue(value, forTag: tag) }
     }
 
     @objc private func activeButton(_ sender: NSButton) {
-        core.setBoolValue(sender.state == .on, forTag: sender.tag)
+        let tag = sender.tag
+        let on = sender.state == .on
+        core.run { $0.setBoolValue(on, forTag: tag) }
     }
 
     @objc private func activePrefItemButton(_ sender: NSButton) {

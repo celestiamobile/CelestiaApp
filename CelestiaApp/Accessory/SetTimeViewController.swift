@@ -30,7 +30,8 @@ class SetTimeViewController: NSViewController {
     }
     
     @IBAction func setTime(_ sender: Any) {
-        core.simulation.time = currentTime()
+        let current = currentTime()
+        core.run { $0.simulation.time = current }
     }
 
     @IBAction func dateChange(_ sender: Any) {
