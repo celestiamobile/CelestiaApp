@@ -44,7 +44,7 @@ class CelestiaDisplayController: AsyncGLViewController {
 
     override func prepareGL(_ size: CGSize) {
         DispatchQueue.main.sync {
-            self.view.layer?.contentsScale = self.scaleFactor
+            self.glView?.contentScaleFactor = scaleFactor
         }
 
         FileManager.default.changeCurrentDirectoryPath(dataDirectoryURL.url.path)
@@ -63,8 +63,10 @@ class CelestiaDisplayController: AsyncGLViewController {
             delegate?.celestiaDisplayControllerLoadingFailed(self)
         }
     }
+}
 
-    func start() {
+extension CelestiaDisplayController {
+    private func start() {
         core.loadUserDefaultsWithAppDefaults(atPath: Bundle.app.path(forResource: "defaults", ofType: "plist"))
 
         core.setDPI(Int(scaleFactor * 96))

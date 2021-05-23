@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "AsyncGL",
+        "repositoryURL": "git@github.com:levinli303/AsyncGL.git",
+        "state": {
+          "branch": "main",
+          "revision": "9887b0bc3f37ff47c0547154f630537f1990d17d",
+          "version": null
+        }
+      },
+      {
         "package": "MWRequest",
         "repositoryURL": "https://github.com/levinli303/mwrequest.git",
         "state": {
