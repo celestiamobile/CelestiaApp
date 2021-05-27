@@ -20,6 +20,8 @@ class CelestiaViewController: NSViewController {
     @IBOutlet private var refMarkMenu: NSMenu!
     @IBOutlet private var unmarkMenuItem: NSMenuItem!
 
+    private var currentSelection: CelestiaSelection?
+
     private lazy var core: CelestiaAppCore = CelestiaAppCore.shared
     private lazy var universe: CelestiaUniverse = self.core.simulation.universe
 
@@ -148,14 +150,11 @@ class CelestiaViewController: NSViewController {
     }
 
     @IBAction private func showInfo(_ sender: NSMenuItem) {
-        core.getSelectionAsync { selection, core in
-            AppDelegate.present(identifier: "Info", tryToReuse: false, customization: { window in
-                window.styleMask = [window.styleMask, .utilityWindow]
-            }) { () -> InfoViewController in
-                let vc = NSStoryboard(name: "Accessory", bundle: nil).instantiateController(withIdentifier: "Info") as! InfoViewController
-                vc.selection = selection
-                return vc
-            }
+        guard let selection = currentSelection else { return }
+        AppDelegate.present(identifier: "InfoViewController", tryToReuse: false) { window in
+            window.styleMask = [window.styleMask, .utilityWindow]
+        } vcProvider: {
+            return InfoViewController(selection: selection)
         }
     }
 
@@ -288,6 +287,7 @@ extension CelestiaViewController: CelestiaViewMouseProcessor {
 
     func requestMenu(for selection: CelestiaSelection) -> NSMenu? {
         if selection.isEmpty { return nil }
+        currentSelection = selection
 
         // configure fixed items
         selectionMenu.items[0].title = core.simulation.universe.name(for: selection)
