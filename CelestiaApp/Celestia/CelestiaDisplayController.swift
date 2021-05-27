@@ -62,6 +62,43 @@ class CelestiaDisplayController: AsyncGLViewController {
         } else {
             delegate?.celestiaDisplayControllerLoadingFailed(self)
         }
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.startObservingLiveResizeNotifications()
+        }
+    }
+
+    override func viewWillAppear() {
+        super.viewWillAppear()
+
+        startObservingLiveResizeNotifications()
+    }
+
+    override func viewWillDisappear() {
+        super.viewWillDisappear()
+
+        stopObservingLiveResizeNotifications()
+    }
+
+    private func startObservingLiveResizeNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(windowWillStartLiveResize(_:)), name: NSWindow.willStartLiveResizeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(windowDidEndLiveResize(_:)), name: NSWindow.didEndLiveResizeNotification, object: nil)
+    }
+
+    private func stopObservingLiveResizeNotifications() {
+        NotificationCenter.default.removeObserver(self, name: NSWindow.willStartLiveResizeNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSWindow.didEndLiveResizeNotification, object: nil)
+    }
+
+    @objc private func windowWillStartLiveResize(_ notification: Notification) {
+        guard let window = notification.object as? NSWindow, window == view.window else { return }
+        isPaused = true
+    }
+
+    @objc private func windowDidEndLiveResize(_ notification: Notification) {
+        guard let window = notification.object as? NSWindow, window == view.window else { return }
+        isPaused = false
     }
 }
 
@@ -169,7 +206,10 @@ extension CelestiaAppCore {
 
     func getSelectionAsync(_ completion: @escaping (CelestiaSelection, CelestiaAppCore) -> Void) {
         run { core in
-            completion(core.simulation.selection, core)
+            let selection = core.simulation.selection
+            DispatchQueue.main.async {
+                completion(selection, core)
+            }
         }
     }
 

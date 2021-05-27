@@ -246,11 +246,12 @@ extension CelestiaViewController: CelestiaDisplayControllerDelegate {
         interactionView.dndProcessor = self
         interactionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(interactionView)
+
         NSLayoutConstraint.activate([
-            interactionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            interactionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            interactionView.topAnchor.constraint(equalTo: view.topAnchor),
-            interactionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            NSLayoutConstraint(item: interactionView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: interactionView, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: interactionView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: interactionView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0),
         ])
     }
 }
