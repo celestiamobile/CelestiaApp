@@ -162,12 +162,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     static func present<VC: NSViewController>(identifier: String, tryToReuse: Bool = true, customization: (NSWindow) -> Void = { _ in }, vcProvider: () -> VC) {
         let window = NSApp.findWindow(type: VC.self)
-        if window != nil {
-            if tryToReuse {
-                window?.makeKeyAndOrderFront(nil)
+        if let w = window {
+            if tryToReuse && w.isVisible {
+                w.makeKeyAndOrderFront(nil)
                 return
             } else {
-                window?.close()
+                w.close()
             }
         }
 
