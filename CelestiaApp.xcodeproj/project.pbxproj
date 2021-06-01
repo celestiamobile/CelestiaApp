@@ -47,7 +47,7 @@
 		EA0E2A2A246393AF006F1469 /* LocalizationSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */; };
 		EA0E2A2F24639C34006F1469 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A2E24639C34006F1469 /* Localization.swift */; };
 		EA0E2A3124639DD9006F1469 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A3024639DD9006F1469 /* main.swift */; };
-		EA313EAF2657FC2A0007FDCC /* AsyncGL in Frameworks */ = {isa = PBXBuildFile; productRef = EA313EAE2657FC2A0007FDCC /* AsyncGL */; };
+		EA2C4C602665C95C007B903F /* AsyncGL in Frameworks */ = {isa = PBXBuildFile; productRef = EA2C4C5F2665C95C007B903F /* AsyncGL */; };
 		EA31E27025446637009E59FF /* BaseResultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31E26C25446637009E59FF /* BaseResultHandler.swift */; };
 		EA7B07EB24B062FB00CB2A71 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = EA7B07E924B062FB00CB2A71 /* Fonts */; };
 		EACF9A38265694990099CA86 /* CelestiaInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF9A37265694990099CA86 /* CelestiaInteractionView.swift */; };
@@ -126,7 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA313EAF2657FC2A0007FDCC /* AsyncGL in Frameworks */,
+				EA2C4C602665C95C007B903F /* AsyncGL in Frameworks */,
 				EAE83A4E255E52B500607EBC /* AppCenterCrashes in Frameworks */,
 				971A67482301A370009E4EA1 /* libz.tbd in Frameworks */,
 				970C560E238507F500EBB157 /* libbz2.tbd in Frameworks */,
@@ -329,7 +329,7 @@
 				EA09B5F6254BBA6900DACC1D /* MWRequest */,
 				EAE83A4D255E52B500607EBC /* AppCenterCrashes */,
 				EAE83A4F255E52B500607EBC /* AppCenterAnalytics */,
-				EA313EAE2657FC2A0007FDCC /* AsyncGL */,
+				EA2C4C5F2665C95C007B903F /* AsyncGL */,
 			);
 			productName = CelestiaApp;
 			productReference = 97F2518A22FDB6E100067B06 /* Celestia.app */;
@@ -375,7 +375,7 @@
 			packageReferences = (
 				EA09B5F5254BBA6900DACC1D /* XCRemoteSwiftPackageReference "mwrequest" */,
 				EAE83A4C255E52B500607EBC /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */,
-				EA313EAD2657FC2A0007FDCC /* XCRemoteSwiftPackageReference "AsyncGL" */,
+				EA2C4C5E2665C95C007B903F /* XCRemoteSwiftPackageReference "AsyncGL" */,
 			);
 			productRefGroup = 97F2518B22FDB6E100067B06 /* Products */;
 			projectDirPath = "";
@@ -615,7 +615,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -669,7 +669,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -686,7 +686,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 55;
+				CURRENT_PROJECT_VERSION = 57;
 				DEVELOPMENT_TEAM = 22NR5428TD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CelestiaApp/Info.plist;
@@ -694,7 +694,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.7.17;
+				MARKETING_VERSION = 1.7.18;
 				OTHER_CODE_SIGN_FLAGS = "$(inherited) --timestamp";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = space.celestia.Celestia;
@@ -713,7 +713,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 55;
+				CURRENT_PROJECT_VERSION = 57;
 				DEVELOPMENT_TEAM = 22NR5428TD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CelestiaApp/Info.plist;
@@ -721,7 +721,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.7.17;
+				MARKETING_VERSION = 1.7.18;
 				OTHER_CODE_SIGN_FLAGS = "$(inherited) --timestamp";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = space.celestia.Celestia;
@@ -764,12 +764,12 @@
 				minimumVersion = 0.2.2;
 			};
 		};
-		EA313EAD2657FC2A0007FDCC /* XCRemoteSwiftPackageReference "AsyncGL" */ = {
+		EA2C4C5E2665C95C007B903F /* XCRemoteSwiftPackageReference "AsyncGL" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:levinli303/AsyncGL.git";
+			repositoryURL = "https://github.com/levinli303/AsyncGL.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
 			};
 		};
 		EAE83A4C255E52B500607EBC /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */ = {
@@ -788,9 +788,9 @@
 			package = EA09B5F5254BBA6900DACC1D /* XCRemoteSwiftPackageReference "mwrequest" */;
 			productName = MWRequest;
 		};
-		EA313EAE2657FC2A0007FDCC /* AsyncGL */ = {
+		EA2C4C5F2665C95C007B903F /* AsyncGL */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EA313EAD2657FC2A0007FDCC /* XCRemoteSwiftPackageReference "AsyncGL" */;
+			package = EA2C4C5E2665C95C007B903F /* XCRemoteSwiftPackageReference "AsyncGL" */;
 			productName = AsyncGL;
 		};
 		EAE83A4D255E52B500607EBC /* AppCenterCrashes */ = {
