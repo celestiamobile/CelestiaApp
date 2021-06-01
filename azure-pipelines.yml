@@ -18,22 +18,45 @@ pool:
 steps:
 - checkout: Celestia
 - checkout: CelestiaCore
-  submodules: true
 - checkout: self
 
-- task: CmdLine@2
-  inputs:
-    script: |
-      ln -sf libs/dependency/mac CelestiaCore/thirdparty
-      brew install gettext
+- script: |
+    cd Celestia
+    git checkout origin/$(Build.SourceBranchName)
+    git submodule update --init
+    cd ../CelestiaCore
+    git checkout origin/$(Build.SourceBranchName)
+    git submodule update --init
+  displayName: 'Checkout Branch'
+  condition: ne( variables['Build.Reason'], 'PullRequest' )
+
+- script: |
+    cd Celestia
+    git checkout origin/$(System.PullRequest.TargetBranch)
+    git submodule update --init
+    cd ../CelestiaCore
+    git checkout origin/$(System.PullRequest.TargetBranch)
+    git submodule update --init
+  displayName: 'Checkout Branch (PR)'
+  condition: eq( variables['Build.Reason'], 'PullRequest' )
+
+- script: |
+    cd CelestiaCore/libs/dependency
+    git reset --hard 43735316698933c20d51406454af80b5ccced6c0
+  displayName: 'Downgrade Thirdparty Dependencies'
+
+- script: |
+    brew install gettext
+  displayName: 'Install Gettext'
+
 - task: InstallAppleCertificate@2
   inputs:
-    certSecureFile: 'app-release.p12'
+    certSecureFile: '20210508.p12'
     certPwd: $(P12Password)
 
 - task: InstallAppleProvisioningProfile@1
   inputs:
-    provProfileSecureFile: 'appkit_celestia.provisionprofile'
+    provProfileSecureFile: 'CelestiaAppDistribution20210508.provisionprofile'
 
 - task: ios-bundle-version@1
   inputs:
@@ -48,14 +71,12 @@ steps:
   inputs:
     actions: 'build'
     packageApp: true
-    signingOption: manual
-    signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
-    provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
+    signingOption: auto
     scheme: 'CelestiaApp'
     sdk: 'macosx'
     configuration: 'Release'
     xcWorkspacePath: '$(system.defaultworkingdirectory)/CelestiaApp/CelestiaApp.xcodeproj/project.xcworkspace'
-    xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath
+    xcodeVersion: 'default'
     exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
     archivePath: '$(system.defaultworkingdirectory)/archive'
 
