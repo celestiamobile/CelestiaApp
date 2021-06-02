@@ -59,10 +59,12 @@ steps:
   inputs:
     certSecureFile: '20210508.p12'
     certPwd: $(P12Password)
+  displayName: 'Install Certificate'
 
 - task: InstallAppleProvisioningProfile@1
   inputs:
     provProfileSecureFile: 'CelestiaAppDistribution20210508.provisionprofile'
+  displayName: 'Install Provision File'
 
 - task: ios-bundle-version@1
   inputs:
@@ -72,6 +74,7 @@ steps:
     versionCodeOffset: '20'
     versionName: 
     printFile: true
+  displayName: 'Update Bundle Version'
 
 - task: Xcode@5
   inputs:
@@ -87,19 +90,28 @@ steps:
     xcodeVersion: 'default'
     exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
     archivePath: '$(system.defaultworkingdirectory)/archive'
+  displayName: 'Build'
 
 - task: CopyFiles@2
   inputs:
     sourceFolder: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
     contents: '**/*.pkg'
     targetFolder: '$(build.artifactStagingDirectory)'
+  displayName: 'Copy .pkg'
 
 - task: CopyFiles@2
   inputs:
     sourceFolder: "$(system.defaultworkingdirectory)/archive"
     contents: '**/*.dSYM/**'
     targetFolder: '$(build.artifactStagingDirectory)'
+  displayName: 'Copy .dsym'
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: '$(sdk)'
+    publishLocation: 'Container'
+  displayName: 'Publish Build Artifacts'
 
 - task: AppCenterDistribute@3
   inputs:
@@ -110,3 +122,4 @@ steps:
     releaseNotesOption: 'input'
     releaseNotesInput: 'Internal testing only.'
     destinationType: 'groups'
+  displayName: 'Publish to App Center'
