@@ -47,7 +47,7 @@ steps:
 
 - script: |
     cd CelestiaApp
-    pod reintegrate
+    pod deintegrate
     pod install
   displayName: 'Reintegrate CocoaPods'
 
