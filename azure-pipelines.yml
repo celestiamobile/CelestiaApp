@@ -109,7 +109,7 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: '$(sdk)'
+    ArtifactName: 'macosx'
     publishLocation: 'Container'
   displayName: 'Publish Build Artifacts'
 
