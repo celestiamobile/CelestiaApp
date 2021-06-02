@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-Celestia/Pods-Celestia-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AsyncGL/AsyncGL.framework
+${BUILT_PRODUCTS_DIR}/MWRequest/MWRequest.framework

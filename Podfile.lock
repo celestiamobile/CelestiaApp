@@ -1,0 +1,43 @@
+PODS:
+  - AppCenter/Analytics (4.1.1):
+    - AppCenter/Core
+  - AppCenter/Core (4.1.1)
+  - AppCenter/Crashes (4.1.1):
+    - AppCenter/Core
+  - AsyncGL (0.0.4)
+  - MWRequest (0.2.4)
+
+DEPENDENCIES:
+  - AppCenter/Analytics
+  - AppCenter/Crashes
+  - AsyncGL (from `https://github.com/levinli303/AsyncGL.git`, tag `0.0.4`)
+  - MWRequest (from `https://github.com/levinli303/mwrequest.git`, tag `0.2.4`)
+
+SPEC REPOS:
+  trunk:
+    - AppCenter
+
+EXTERNAL SOURCES:
+  AsyncGL:
+    :git: https://github.com/levinli303/AsyncGL.git
+    :tag: 0.0.4
+  MWRequest:
+    :git: https://github.com/levinli303/mwrequest.git
+    :tag: 0.2.4
+
+CHECKOUT OPTIONS:
+  AsyncGL:
+    :git: https://github.com/levinli303/AsyncGL.git
+    :tag: 0.0.4
+  MWRequest:
+    :git: https://github.com/levinli303/mwrequest.git
+    :tag: 0.2.4
+
+SPEC CHECKSUMS:
+  AppCenter: cd53e3ed3563cc720bcb806c9731a12389b40d44
+  AsyncGL: aaa468d14456a1cee49e30da434f0456ff399fe7
+  MWRequest: 8cbe368d811864da8c7398aa5007be520e685274
+
+PODFILE CHECKSUM: bb11d53a772eac0534eb716039926820b492e5e8
+
+COCOAPODS: 1.10.1

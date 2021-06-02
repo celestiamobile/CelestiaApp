@@ -1,0 +1,6 @@
+framework module Pods_Celestia {
+  umbrella header "Pods-Celestia-umbrella.h"
+
+  export *
+  module * { export * }
+}

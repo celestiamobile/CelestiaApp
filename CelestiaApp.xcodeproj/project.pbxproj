@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -43,16 +43,13 @@
 		97F2519522FDB6E700067B06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97F2519322FDB6E700067B06 /* Main.storyboard */; };
 		97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251A222FDB75400067B06 /* CelestiaCore.framework */; };
 		97F251BF22FDBACA00067B06 /* CelestiaDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F251BE22FDBACA00067B06 /* CelestiaDisplayController.swift */; };
-		EA09B5F7254BBA6900DACC1D /* MWRequest in Frameworks */ = {isa = PBXBuildFile; productRef = EA09B5F6254BBA6900DACC1D /* MWRequest */; };
+		BC090B3EDA53846D00913347 /* Pods_Celestia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CDF1307CCE90C70FDD8CEF /* Pods_Celestia.framework */; };
 		EA0E2A2A246393AF006F1469 /* LocalizationSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */; };
 		EA0E2A2F24639C34006F1469 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A2E24639C34006F1469 /* Localization.swift */; };
 		EA0E2A3124639DD9006F1469 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A3024639DD9006F1469 /* main.swift */; };
-		EA2C4C602665C95C007B903F /* AsyncGL in Frameworks */ = {isa = PBXBuildFile; productRef = EA2C4C5F2665C95C007B903F /* AsyncGL */; };
 		EA31E27025446637009E59FF /* BaseResultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31E26C25446637009E59FF /* BaseResultHandler.swift */; };
 		EA7B07EB24B062FB00CB2A71 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = EA7B07E924B062FB00CB2A71 /* Fonts */; };
 		EACF9A38265694990099CA86 /* CelestiaInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF9A37265694990099CA86 /* CelestiaInteractionView.swift */; };
-		EAE83A4E255E52B500607EBC /* AppCenterCrashes in Frameworks */ = {isa = PBXBuildFile; productRef = EAE83A4D255E52B500607EBC /* AppCenterCrashes */; };
-		EAE83A50255E52B500607EBC /* AppCenterAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EAE83A4F255E52B500607EBC /* AppCenterAnalytics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		955D40569F9B8624826E08A0 /* Pods-Celestia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celestia.debug.xcconfig"; path = "Target Support Files/Pods-Celestia/Pods-Celestia.debug.xcconfig"; sourceTree = "<group>"; };
 		970C560D238507EA00EBB157 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		970C5624238637B900EBB157 /* BrowserItemAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserItemAddition.swift; sourceTree = "<group>"; };
 		970DCE0C22FE58DB0044F590 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
@@ -112,6 +110,8 @@
 		97F251A722FDB86E00067B06 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		97F251BC22FDB9BB00067B06 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		97F251BE22FDBACA00067B06 /* CelestiaDisplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestiaDisplayController.swift; sourceTree = "<group>"; };
+		AFD94B110697E9F6C2380420 /* Pods-Celestia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celestia.release.xcconfig"; path = "Target Support Files/Pods-Celestia/Pods-Celestia.release.xcconfig"; sourceTree = "<group>"; };
+		B7CDF1307CCE90C70FDD8CEF /* Pods_Celestia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Celestia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0E2A28246393AF006F1469 /* LocalizationSwizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizationSwizzling.h; sourceTree = "<group>"; };
 		EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalizationSwizzling.m; sourceTree = "<group>"; };
 		EA0E2A2E24639C34006F1469 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
@@ -126,20 +126,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA2C4C602665C95C007B903F /* AsyncGL in Frameworks */,
-				EAE83A4E255E52B500607EBC /* AppCenterCrashes in Frameworks */,
 				971A67482301A370009E4EA1 /* libz.tbd in Frameworks */,
 				970C560E238507F500EBB157 /* libbz2.tbd in Frameworks */,
 				971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */,
 				97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */,
-				EA09B5F7254BBA6900DACC1D /* MWRequest in Frameworks */,
-				EAE83A50255E52B500607EBC /* AppCenterAnalytics in Frameworks */,
+				BC090B3EDA53846D00913347 /* Pods_Celestia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		169D207E4A48F84626FF3D2E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				955D40569F9B8624826E08A0 /* Pods-Celestia.debug.xcconfig */,
+				AFD94B110697E9F6C2380420 /* Pods-Celestia.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		972F3A2F22FFC64600CEDDAC /* EclipseFinder */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +252,7 @@
 				97F2518C22FDB6E100067B06 /* CelestiaApp */,
 				97F2518B22FDB6E100067B06 /* Products */,
 				97F251A522FDB79F00067B06 /* Frameworks */,
+				169D207E4A48F84626FF3D2E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -295,6 +302,7 @@
 				970C560D238507EA00EBB157 /* libbz2.tbd */,
 				97F251BC22FDB9BB00067B06 /* libz.tbd */,
 				97F251A722FDB86E00067B06 /* libc++.tbd */,
+				B7CDF1307CCE90C70FDD8CEF /* Pods_Celestia.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -314,6 +322,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97F2519A22FDB6E700067B06 /* Build configuration list for PBXNativeTarget "Celestia" */;
 			buildPhases = (
+				D3C218DC1DDD7A0C803D94CD /* [CP] Check Pods Manifest.lock */,
 				97F2518622FDB6E100067B06 /* Sources */,
 				97F2518722FDB6E100067B06 /* Frameworks */,
 				97F2518822FDB6E100067B06 /* Resources */,
@@ -325,12 +334,6 @@
 			dependencies = (
 			);
 			name = Celestia;
-			packageProductDependencies = (
-				EA09B5F6254BBA6900DACC1D /* MWRequest */,
-				EAE83A4D255E52B500607EBC /* AppCenterCrashes */,
-				EAE83A4F255E52B500607EBC /* AppCenterAnalytics */,
-				EA2C4C5F2665C95C007B903F /* AsyncGL */,
-			);
 			productName = CelestiaApp;
 			productReference = 97F2518A22FDB6E100067B06 /* Celestia.app */;
 			productType = "com.apple.product-type.application";
@@ -372,11 +375,6 @@
 				zh_TW,
 			);
 			mainGroup = 97F2518122FDB6E000067B06;
-			packageReferences = (
-				EA09B5F5254BBA6900DACC1D /* XCRemoteSwiftPackageReference "mwrequest" */,
-				EAE83A4C255E52B500607EBC /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */,
-				EA2C4C5E2665C95C007B903F /* XCRemoteSwiftPackageReference "AsyncGL" */,
-			);
 			productRefGroup = 97F2518B22FDB6E100067B06 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -459,6 +457,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "CELESTIA_CORE_ROOT=$SRCROOT/../CelestiaCore\n\nSH_FILE=$CELESTIA_CORE_ROOT/convert_po.sh\n\nchmod +x $SH_FILE\n\n$SH_FILE\n";
+			showEnvVarsInLog = 0;
+		};
+		D3C218DC1DDD7A0C803D94CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Celestia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -680,6 +700,7 @@
 		};
 		97F2519B22FDB6E700067B06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 955D40569F9B8624826E08A0 /* Pods-Celestia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Celestia.entitlements;
@@ -696,7 +717,6 @@
 				);
 				MARKETING_VERSION = 1.7.19;
 				OTHER_CODE_SIGN_FLAGS = "$(inherited) --timestamp";
-				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = space.celestia.Celestia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -707,6 +727,7 @@
 		};
 		97F2519C22FDB6E700067B06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFD94B110697E9F6C2380420 /* Pods-Celestia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Celestia.entitlements;
@@ -723,7 +744,6 @@
 				);
 				MARKETING_VERSION = 1.7.19;
 				OTHER_CODE_SIGN_FLAGS = "$(inherited) --timestamp";
-				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = space.celestia.Celestia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -754,56 +774,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		EA09B5F5254BBA6900DACC1D /* XCRemoteSwiftPackageReference "mwrequest" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/levinli303/mwrequest.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.2;
-			};
-		};
-		EA2C4C5E2665C95C007B903F /* XCRemoteSwiftPackageReference "AsyncGL" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/levinli303/AsyncGL.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.3;
-			};
-		};
-		EAE83A4C255E52B500607EBC /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/microsoft/appcenter-sdk-apple.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		EA09B5F6254BBA6900DACC1D /* MWRequest */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EA09B5F5254BBA6900DACC1D /* XCRemoteSwiftPackageReference "mwrequest" */;
-			productName = MWRequest;
-		};
-		EA2C4C5F2665C95C007B903F /* AsyncGL */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EA2C4C5E2665C95C007B903F /* XCRemoteSwiftPackageReference "AsyncGL" */;
-			productName = AsyncGL;
-		};
-		EAE83A4D255E52B500607EBC /* AppCenterCrashes */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EAE83A4C255E52B500607EBC /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */;
-			productName = AppCenterCrashes;
-		};
-		EAE83A4F255E52B500607EBC /* AppCenterAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EAE83A4C255E52B500607EBC /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */;
-			productName = AppCenterAnalytics;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 97F2518222FDB6E000067B06 /* Project object */;
 }
