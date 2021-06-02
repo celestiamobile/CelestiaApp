@@ -46,6 +46,12 @@ steps:
   displayName: 'Downgrade Thirdparty Dependencies'
 
 - script: |
+    cd CelestiaApp
+    pod reintegrate
+    pod install
+  displayName: 'Reintegrate CocoaPods'
+
+- script: |
     brew install gettext
   displayName: 'Install Gettext'
 
