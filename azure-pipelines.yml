@@ -123,7 +123,7 @@ steps:
   inputs:
     serverEndpoint: 'MacCelestiaAppCenter'
     appSlug: 'CelestiaProject/Celestia-2'
-    appFile: '$(build.artifactstagingdirectory)/**/*.pkg'
+    appFile: '$(Build.ArtifactStagingDirectory)/App.zip'
     symbolsDsymFiles: '$(build.artifactstagingdirectory)/**/*.dSYM'
     releaseNotesOption: 'input'
     releaseNotesInput: 'Internal testing only.'
