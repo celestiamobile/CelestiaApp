@@ -99,7 +99,7 @@ steps:
 
 - script: |
     cd $(system.defaultworkingdirectory)/output
-    zip -r -v -y $(Build.ArtifactStagingDirectory)/App.zip *
+    zip -r -v -y $(Build.ArtifactStagingDirectory)/App.zip *.app
   displayName: 'Create .zip Archive for .app'
 
 - task: PublishBuildArtifacts@1
