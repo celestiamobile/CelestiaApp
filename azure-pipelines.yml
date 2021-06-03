@@ -124,8 +124,12 @@ steps:
     serverEndpoint: 'MacCelestiaAppCenter'
     appSlug: 'CelestiaProject/Celestia-2'
     appFile: '$(Build.ArtifactStagingDirectory)/App.zip'
-    symbolsDsymFiles: '$(build.artifactstagingdirectory)/**/*.dSYM'
+    symbolsDsymFiles: '$(system.defaultworkingdirectory)/archive/**/*.dSYM'
     releaseNotesOption: 'input'
     releaseNotesInput: 'Internal testing only.'
     destinationType: 'groups'
   displayName: 'Publish to App Center'
+
+- script: |
+    xcrun altool --notarize-app --primary-bundle-id space.celestia.Celestia --username $(AC_ACCOUNT_NAME) --password $(AC_ACCOUNT_PASSWORD) -f $(Build.ArtifactStagingDirectory)/App.zip
+  displayName: "Notarize App"
