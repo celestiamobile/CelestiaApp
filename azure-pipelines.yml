@@ -98,7 +98,7 @@ steps:
   displayName: 'Create .zip for .xcarchive'
 
 - script: |
-    cd $(system.defaultworkingdirectory)/output
+    cd $(agent.buildDirectory)/output
     zip -r -v -y $(Build.ArtifactStagingDirectory)/App.zip *.app
   displayName: 'Create .zip Archive for .app'
 
