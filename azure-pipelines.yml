@@ -57,13 +57,13 @@ steps:
 
 - task: InstallAppleCertificate@2
   inputs:
-    certSecureFile: '20210508.p12'
+    certSecureFile: 'DeveloperID.p12'
     certPwd: $(P12Password)
   displayName: 'Install Certificate'
 
 - task: InstallAppleProvisioningProfile@1
   inputs:
-    provProfileSecureFile: 'CelestiaAppDistribution20210508.provisionprofile'
+    provProfileSecureFile: 'CelestiaAppDeveloperID20250605.provisionprofile'
   displayName: 'Install Provision File'
 
 - task: ios-bundle-version@1
@@ -88,23 +88,29 @@ steps:
     configuration: 'Release'
     xcWorkspacePath: '$(system.defaultworkingdirectory)/CelestiaApp/CelestiaApp.xcworkspace'
     xcodeVersion: 'default'
-    exportPath: '$(agent.buildDirectory)/output/macosx/$(configuration)'
+    exportPath: '$(agent.buildDirectory)/output'
     archivePath: '$(system.defaultworkingdirectory)/archive'
   displayName: 'Build'
 
-- task: CopyFiles@2
+- task: ArchiveFiles@2
+  displayName: 'Create .zip Archive for .xcarchive'
   inputs:
-    sourceFolder: '$(agent.buildDirectory)/output/macosx/$(configuration)'
-    contents: '**/*.pkg'
-    targetFolder: '$(build.artifactStagingDirectory)'
-  displayName: 'Copy .pkg'
+    rootFolderOrFile: $(system.defaultworkingdirectory)/archive
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/Archive.zip'
+    replaceExistingArchive: true
+    verbose: true
 
-- task: CopyFiles@2
+- task: ArchiveFiles@2
+  displayName: 'Create .zip Archive for .app'
   inputs:
-    sourceFolder: "$(system.defaultworkingdirectory)/archive"
-    contents: '**/*.dSYM/**'
-    targetFolder: '$(build.artifactStagingDirectory)'
-  displayName: 'Copy .dsym'
+    rootFolderOrFile: $(agent.buildDirectory)/output
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/App.zip'
+    replaceExistingArchive: true
+    verbose: true
 
 - task: PublishBuildArtifacts@1
   inputs:
