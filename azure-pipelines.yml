@@ -95,7 +95,7 @@ steps:
 - script: |
     cd $(system.defaultworkingdirectory)/archive
     zip -r -v -y $(Build.ArtifactStagingDirectory)/Archive.zip *.xcarchive
-  displayName: 'Create Archive for .xcarchive'
+  displayName: 'Create .zip for .xcarchive'
 
 - script: |
     cd $(system.defaultworkingdirectory)/output
