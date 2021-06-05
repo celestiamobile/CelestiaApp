@@ -44,7 +44,7 @@ class BrowserViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        solarSystemTree.content = NSArray(array: [sol])
+        solarSystemTree.content = NSArray(array: [sol].compactMap { $0 })
         starTree.content = NSArray(array: stars.children)
         dsoTree.content = NSArray(array: dso.children)
     }
