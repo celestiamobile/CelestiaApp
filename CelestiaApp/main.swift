@@ -12,6 +12,9 @@
 import AppKit
 import CelestiaCore
 
+setlocale(LC_ALL, "")
+setlocale(LC_NUMERIC, "C")
+
 CelestiaAppCore.setLocaleDirectory(defaultDataDirectory.path + "/locale")
 SetupLocalizationSwizzling()
 
