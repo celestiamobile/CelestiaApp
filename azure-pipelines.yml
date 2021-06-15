@@ -1,0 +1,104 @@
+resources:
+  repositories:
+  - repository: Celestia
+    type: github
+    endpoint: GithubAuth
+    name: levinli303/Celestia
+  - repository: CelestiaCore
+    type: github
+    endpoint: GithubAuth
+    name: levinli303/CelestiaCore
+
+trigger:
+- master
+
+pool:
+  vmImage: 'macos-latest'
+
+steps:
+- checkout: Celestia
+- checkout: CelestiaCore
+- checkout: self
+
+- script: |
+    cd Celestia
+    git checkout master
+    git submodule update --init
+    cd ../CelestiaCore
+    git checkout master
+    git submodule update --init
+  displayName: 'Checkout Branch'
+
+- script: |
+    cd CelestiaCore/libs/dependency
+    git reset --hard 43735316698933c20d51406454af80b5ccced6c0
+  displayName: 'Downgrade Thirdparty Dependencies'
+
+- script: |
+    cd CelestiaApp
+    pod deintegrate
+    pod install
+  displayName: 'Reintegrate CocoaPods'
+
+- script: |
+    brew install gettext
+  displayName: 'Install Gettext'
+
+- task: InstallAppleCertificate@2
+  inputs:
+    certSecureFile: 'DeveloperID.p12'
+    certPwd: $(P12Password)
+  displayName: 'Install Certificate'
+
+- task: InstallAppleProvisioningProfile@1
+  inputs:
+    provProfileSecureFile: 'CelestiaAppDeveloperID20250605.provisionprofile'
+  displayName: 'Install Provision File'
+
+- task: Xcode@5
+  inputs:
+    actions: 'build'
+    packageApp: true
+    signingOption: manual
+    signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
+    provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
+    scheme: 'CelestiaApp'
+    sdk: 'macosx'
+    configuration: 'Release'
+    xcWorkspacePath: '$(system.defaultworkingdirectory)/CelestiaApp/CelestiaApp.xcworkspace'
+    xcodeVersion: 'default'
+    exportPath: '$(agent.buildDirectory)/output'
+    archivePath: '$(system.defaultworkingdirectory)/archive'
+  displayName: 'Build'
+
+- script: |
+    cd $(system.defaultworkingdirectory)/archive
+    zip -r -v -y $(Build.ArtifactStagingDirectory)/Archive.zip *.xcarchive
+  displayName: 'Create .zip for .xcarchive'
+
+- script: |
+    cd $(agent.buildDirectory)/output
+    zip -r -v -y $(Build.ArtifactStagingDirectory)/App.zip *.app
+  displayName: 'Create .zip Archive for .app'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'macosx'
+    publishLocation: 'Container'
+  displayName: 'Publish Build Artifacts'
+
+- task: AppCenterDistribute@3
+  inputs:
+    serverEndpoint: 'MacCelestiaAppCenter'
+    appSlug: 'CelestiaProject/Celestia-2'
+    appFile: '$(Build.ArtifactStagingDirectory)/App.zip'
+    symbolsDsymFiles: '$(system.defaultworkingdirectory)/archive/**/*.dSYM'
+    releaseNotesOption: 'input'
+    releaseNotesInput: 'Internal testing only.'
+    destinationType: 'groups'
+  displayName: 'Publish to App Center'
+
+- script: |
+    xcrun altool --notarize-app --primary-bundle-id space.celestia.Celestia --username $(AC_ACCOUNT_NAME) --password $(AC_ACCOUNT_PASSWORD) -f $(Build.ArtifactStagingDirectory)/App.zip
+  displayName: "Notarize App"
