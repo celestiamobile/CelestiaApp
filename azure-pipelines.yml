@@ -61,7 +61,7 @@ steps:
     sdk: 'macosx'
     configuration: 'Release'
     xcWorkspacePath: '$(system.defaultworkingdirectory)/CelestiaApp/CelestiaApp.xcworkspace'
-    xcodeVersion: 'default'
+    xcodeVersion: '13'
     exportPath: '$(agent.buildDirectory)/output'
     archivePath: '$(system.defaultworkingdirectory)/archive'
   displayName: 'Build'
