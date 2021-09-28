@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19162"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,11 +24,11 @@
                                 <tabViewItems>
                                     <tabViewItem label="General" identifier="" id="I39-YQ-tz2">
                                         <view key="view" id="PDZ-5C-W0R">
-                                            <rect key="frame" x="10" y="33" width="616" height="458"/>
+                                            <rect key="frame" x="10" y="33" width="616" height="492"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <box borderType="line" title="Display" translatesAutoresizingMaskIntoConstraints="NO" id="fMw-5J-W58">
-                                                    <rect key="frame" x="17" y="56" width="284" height="382"/>
+                                                    <rect key="frame" x="17" y="90" width="284" height="382"/>
                                                     <view key="contentView" id="tAg-GI-ln8">
                                                         <rect key="frame" x="3" y="3" width="278" height="364"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,7 +160,7 @@
                                                     </view>
                                                 </box>
                                                 <box borderType="line" title="Features" translatesAutoresizingMaskIntoConstraints="NO" id="LGQ-M8-Tn9">
-                                                    <rect key="frame" x="315" y="168" width="284" height="270"/>
+                                                    <rect key="frame" x="315" y="202" width="284" height="270"/>
                                                     <view key="contentView" id="VUm-83-mfx">
                                                         <rect key="frame" x="3" y="3" width="278" height="252"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -545,7 +545,7 @@
                                                                         </buttonCell>
                                                                     </button>
                                                                     <button fixedFrame="YES" tag="425" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zum-H6-AeO">
-                                                                        <rect key="frame" x="-2" y="-1" width="112" height="18"/>
+                                                                        <rect key="frame" x="-2" y="-1" width="99" height="18"/>
                                                                         <buttonCell key="cell" type="check" title="Ecliptic Line" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="416" inset="2" id="Xqb-ZG-LI0">
                                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                             <font key="font" metaFont="system"/>
@@ -591,11 +591,11 @@
                                     </tabViewItem>
                                     <tabViewItem label="Labels" identifier="" id="1dw-OA-ear">
                                         <view key="view" id="kRP-xG-IIc">
-                                            <rect key="frame" x="10" y="33" width="616" height="458"/>
+                                            <rect key="frame" x="10" y="33" width="616" height="492"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <box borderType="line" title="Labels" translatesAutoresizingMaskIntoConstraints="NO" id="EKw-UW-QhF">
-                                                    <rect key="frame" x="17" y="56" width="228" height="382"/>
+                                                    <rect key="frame" x="17" y="90" width="228" height="382"/>
                                                     <view key="contentView" id="W9R-xA-kfb">
                                                         <rect key="frame" x="3" y="3" width="222" height="364"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -727,7 +727,7 @@
                                                     </view>
                                                 </box>
                                                 <box borderType="line" title="Locations" translatesAutoresizingMaskIntoConstraints="NO" id="uWI-og-xtz">
-                                                    <rect key="frame" x="259" y="81" width="340" height="357"/>
+                                                    <rect key="frame" x="259" y="115" width="340" height="357"/>
                                                     <view key="contentView" id="Zn7-PW-X2n">
                                                         <rect key="frame" x="3" y="3" width="334" height="339"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1102,13 +1102,13 @@
                                                     </view>
                                                 </box>
                                                 <box borderType="line" title="Info" translatesAutoresizingMaskIntoConstraints="NO" id="vha-a7-j0y">
-                                                    <rect key="frame" x="17" y="96" width="284" height="78"/>
+                                                    <rect key="frame" x="17" y="66" width="284" height="108"/>
                                                     <view key="contentView" id="aVD-TS-ER2">
-                                                        <rect key="frame" x="3" y="3" width="278" height="60"/>
+                                                        <rect key="frame" x="3" y="3" width="278" height="90"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kYH-lE-81d">
-                                                                <rect key="frame" x="18" y="22" width="119" height="16"/>
+                                                                <rect key="frame" x="18" y="52" width="119" height="16"/>
                                                                 <textFieldCell key="cell" lineBreakMode="charWrapping" sendsActionOnEndEditing="YES" alignment="left" title="Info Display:" id="otB-dg-vlg">
                                                                     <font key="font" metaFont="system"/>
                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -1116,7 +1116,7 @@
                                                                 </textFieldCell>
                                                             </textField>
                                                             <popUpButton verticalHuggingPriority="750" tag="610" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2RB-5i-7RR">
-                                                                <rect key="frame" x="140" y="16" width="122" height="25"/>
+                                                                <rect key="frame" x="140" y="46" width="122" height="25"/>
                                                                 <popUpButtonCell key="cell" type="push" title="Terse" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" tag="611" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="PfB-I6-IB1" id="Wnm-Tt-1fg">
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="menu"/>
@@ -1129,15 +1129,42 @@
                                                                     </menu>
                                                                 </popUpButtonCell>
                                                             </popUpButton>
+                                                            <popUpButton verticalHuggingPriority="750" tag="670" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9mT-dj-7Po">
+                                                                <rect key="frame" x="140" y="16" width="122" height="25"/>
+                                                                <popUpButtonCell key="cell" type="push" title="Metric" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" tag="670" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="ll0-Oo-ZSf" id="zKz-RJ-VKM">
+                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                    <font key="font" metaFont="menu"/>
+                                                                    <menu key="menu" title="OtherViews" id="e8s-Fg-Hd4">
+                                                                        <items>
+                                                                            <menuItem title="Metric" state="on" tag="670" id="ll0-Oo-ZSf"/>
+                                                                            <menuItem title="Imperial" state="on" tag="671" id="QgG-F6-xhy"/>
+                                                                        </items>
+                                                                    </menu>
+                                                                </popUpButtonCell>
+                                                            </popUpButton>
+                                                            <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="28x-rG-vfz">
+                                                                <rect key="frame" x="18" y="22" width="119" height="16"/>
+                                                                <textFieldCell key="cell" lineBreakMode="charWrapping" sendsActionOnEndEditing="YES" alignment="left" title="Measure Units" id="UMc-jX-z7G">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="9mT-dj-7Po" secondAttribute="bottom" constant="20" symbolic="YES" id="1LE-v3-soM"/>
                                                             <constraint firstItem="2RB-5i-7RR" firstAttribute="leading" secondItem="kYH-lE-81d" secondAttribute="trailing" constant="8" symbolic="YES" id="2rc-sz-b5J"/>
+                                                            <constraint firstItem="28x-rG-vfz" firstAttribute="trailing" secondItem="kYH-lE-81d" secondAttribute="trailing" id="37i-gn-t1V"/>
+                                                            <constraint firstItem="9mT-dj-7Po" firstAttribute="top" secondItem="2RB-5i-7RR" secondAttribute="bottom" constant="10" symbolic="YES" id="4qI-dX-ScO"/>
                                                             <constraint firstItem="2RB-5i-7RR" firstAttribute="top" secondItem="aVD-TS-ER2" secondAttribute="top" constant="20" symbolic="YES" id="4rM-IL-cBO"/>
-                                                            <constraint firstAttribute="bottom" secondItem="2RB-5i-7RR" secondAttribute="bottom" constant="20" symbolic="YES" id="965-uX-8FP"/>
                                                             <constraint firstItem="2RB-5i-7RR" firstAttribute="centerY" secondItem="kYH-lE-81d" secondAttribute="centerY" id="I1o-ti-CaH"/>
+                                                            <constraint firstItem="28x-rG-vfz" firstAttribute="centerY" secondItem="9mT-dj-7Po" secondAttribute="centerY" id="IrL-xi-19N"/>
+                                                            <constraint firstItem="28x-rG-vfz" firstAttribute="leading" secondItem="kYH-lE-81d" secondAttribute="leading" id="LBu-F8-Qxz"/>
                                                             <constraint firstItem="2RB-5i-7RR" firstAttribute="width" secondItem="kYH-lE-81d" secondAttribute="width" id="bhs-YE-W7W"/>
                                                             <constraint firstAttribute="trailing" secondItem="2RB-5i-7RR" secondAttribute="trailing" constant="20" symbolic="YES" id="gaW-ch-Q9s"/>
+                                                            <constraint firstItem="9mT-dj-7Po" firstAttribute="trailing" secondItem="2RB-5i-7RR" secondAttribute="trailing" id="i8x-bX-t9r"/>
                                                             <constraint firstItem="kYH-lE-81d" firstAttribute="leading" secondItem="aVD-TS-ER2" secondAttribute="leading" constant="20" symbolic="YES" id="nUb-be-jiX"/>
+                                                            <constraint firstItem="9mT-dj-7Po" firstAttribute="leading" secondItem="2RB-5i-7RR" secondAttribute="leading" id="snS-dJ-Q6b"/>
                                                         </constraints>
                                                     </view>
                                                 </box>
