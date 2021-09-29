@@ -11,6 +11,7 @@
 
 import AsyncGL
 import CelestiaCore
+import GameController
 
 class CelestiaViewController: NSViewController {
     private lazy var displayController = CelestiaDisplayController(msaaEnabled: UserDefaults.app[.msaa] ?? false)
@@ -28,6 +29,8 @@ class CelestiaViewController: NSViewController {
     static var urlToRun: URL?
 
     private var pressingKey: (key: Int, time: Int)?
+
+    private var connectedGameController: GCController?
 
     override func loadView() {
         super.loadView()
@@ -218,6 +221,7 @@ extension CelestiaViewController: CelestiaDisplayControllerDelegate {
             NotificationCenter.default.post(name: celestiaLoadingFinishedNotificationName, object: nil, userInfo: nil)
 
             self?.addInteractionView()
+            self?.startObservingGameControllerConnection()
         }
     }
 
@@ -446,6 +450,95 @@ extension CelestiaViewController {
             core.run { $0.runScript(at: url.path) }
         } else {
             core.run { $0.go(to: url.absoluteString) }
+        }
+    }
+}
+
+private extension CelestiaViewController {
+    func startObservingGameControllerConnection() {
+        if #available(macOS 11, *), let current = GCController.current {
+            gameControllerChanged(current)
+        } else if let firstController = GCController.controllers().first {
+            gameControllerChanged(firstController)
+        }
+
+        NotificationCenter.default.addObserver(self, selector: #selector(gameControllerConnected(_:)), name: .GCControllerDidConnect, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(gameControllerDisconnected(_:)), name: .GCControllerDidDisconnect, object: nil)
+    }
+
+    @objc func gameControllerConnected(_ notification: Notification) {
+        guard let controller = notification.object as? GCController else { return }
+
+        gameControllerChanged(controller)
+    }
+
+    private func gameControllerChanged(_ controller: GCController) {
+        var buttonA: GCDeviceButtonInput?
+        var buttonB: GCDeviceButtonInput?
+        var leftThumbstick: GCControllerDirectionPad?
+        var rightThumbstick: GCControllerDirectionPad?
+        var leftTrigger: GCDeviceButtonInput?
+        var rightTrigger: GCDeviceButtonInput?
+
+        if let extendedGamepad = controller.extendedGamepad {
+            buttonA = extendedGamepad.buttonA
+            buttonB = extendedGamepad.buttonB
+            leftThumbstick = extendedGamepad.leftThumbstick
+            rightThumbstick = extendedGamepad.rightThumbstick
+            leftTrigger = extendedGamepad.leftTrigger
+            rightTrigger = extendedGamepad.rightTrigger
+        } else if let microGamepad = controller.microGamepad {
+            buttonA = microGamepad.buttonA
+            buttonB = microGamepad.buttonB
+        }
+
+        buttonA?.valueChangedHandler = { [weak self] _, _, pressed in
+            guard let self = self else { return }
+            self.core.run { core in
+                pressed ? core.joystickButtonDown(.button1) : core.joystickButtonUp(.button1)
+            }
+        }
+        buttonB?.valueChangedHandler = { [weak self] _, _, pressed in
+            guard let self = self else { return }
+            self.core.run { core in
+                pressed ? core.joystickButtonDown(.button2) : core.joystickButtonUp(.button2)
+            }
+        }
+        leftThumbstick?.valueChangedHandler = { [weak self] _, xValue, yValue in
+            guard let self = self else { return }
+            self.core.run { core in
+                core.joystickAxis(.X, amount: xValue)
+                core.joystickAxis(.Y, amount: yValue)
+            }
+        }
+        rightThumbstick?.valueChangedHandler = { [weak self] _, xValue, yValue in
+            guard let self = self else { return }
+            self.core.run { core in
+                core.joystickAxis(.X, amount: xValue)
+                core.joystickAxis(.Y, amount: yValue)
+            }
+        }
+        leftTrigger?.valueChangedHandler = { [weak self] _, _, pressed in
+            guard let self = self else { return }
+            self.core.run { core in
+                pressed ? core.joystickButtonDown(.button7) : core.joystickButtonUp(.button7)
+            }
+        }
+        rightTrigger?.valueChangedHandler = { [weak self] _, _, pressed in
+            guard let self = self else { return }
+            self.core.run { core in
+                pressed ? core.joystickButtonDown(.button8) : core.joystickButtonUp(.button8)
+            }
+        }
+
+        connectedGameController = controller
+    }
+
+    @objc func gameControllerDisconnected(_ notification: Notification) {
+        guard let controller = notification.object as? GCController else { return }
+
+        if connectedGameController == controller {
+            connectedGameController = nil
         }
     }
 }
