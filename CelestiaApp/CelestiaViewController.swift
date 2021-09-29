@@ -474,7 +474,7 @@ private extension CelestiaViewController {
 
     private func gameControllerChanged(_ controller: GCController) {
         var buttonA: GCDeviceButtonInput?
-        var buttonB: GCDeviceButtonInput?
+        var buttonX: GCDeviceButtonInput?
         var leftThumbstick: GCControllerDirectionPad?
         var rightThumbstick: GCControllerDirectionPad?
         var leftTrigger: GCDeviceButtonInput?
@@ -482,14 +482,14 @@ private extension CelestiaViewController {
 
         if let extendedGamepad = controller.extendedGamepad {
             buttonA = extendedGamepad.buttonA
-            buttonB = extendedGamepad.buttonB
+            buttonX = extendedGamepad.buttonX
             leftThumbstick = extendedGamepad.leftThumbstick
             rightThumbstick = extendedGamepad.rightThumbstick
             leftTrigger = extendedGamepad.leftTrigger
             rightTrigger = extendedGamepad.rightTrigger
         } else if let microGamepad = controller.microGamepad {
             buttonA = microGamepad.buttonA
-            buttonB = microGamepad.buttonB
+            buttonX = microGamepad.buttonX
         }
 
         buttonA?.valueChangedHandler = { [weak self] _, _, pressed in
@@ -498,7 +498,7 @@ private extension CelestiaViewController {
                 pressed ? core.joystickButtonDown(.button1) : core.joystickButtonUp(.button1)
             }
         }
-        buttonB?.valueChangedHandler = { [weak self] _, _, pressed in
+        buttonX?.valueChangedHandler = { [weak self] _, _, pressed in
             guard let self = self else { return }
             self.core.run { core in
                 pressed ? core.joystickButtonDown(.button2) : core.joystickButtonUp(.button2)
