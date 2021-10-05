@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="F8w-LJ-0Tu">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="F8w-LJ-0Tu">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19162"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -387,7 +387,7 @@ DQ
                                                 <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="Sxw-YZ-15V"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Reverse Time" tag="113" keyEquivalent="q" id="wbD-Cj-buD">
+                                        <menuItem title="Reverse Direction" tag="113" keyEquivalent="q" id="wbD-Cj-buD">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="commonMenuItemHandler:" target="Voe-Tx-rLC" id="6oh-Xg-K3o"/>
