@@ -1,0 +1,133 @@
+jobs:
+- job: Build
+  displayName: 'Build'
+  pool:
+    vmImage: 'macos-11'
+
+  variables:
+    signing: ${{ parameters.signing }}
+
+  steps:
+  - checkout: Celestia
+  - checkout: CelestiaCore
+  - checkout: self
+
+  - script: |
+      cd Celestia
+      git checkout master
+      git submodule update --init
+      cd ../CelestiaCore
+      git checkout master
+      git submodule update --init
+    displayName: 'Checkout Branch'
+
+  - script: |
+      cd CelestiaApp
+      pod deintegrate
+      pod install
+    displayName: 'Reintegrate CocoaPods'
+
+  - script: |
+      brew install gettext
+    displayName: 'Install Gettext'
+
+  - task: InstallAppleCertificate@2
+    inputs:
+      certSecureFile: 'MacInstaller20210729.p12'
+      certPwd: $(MAC_INSTALLER_P12_PASSWORD)
+    displayName: 'Install Mac Installer Certificate'
+    condition: eq( variables['signing'], 'appStore' )
+
+  - task: InstallAppleCertificate@2
+    inputs:
+      certSecureFile: 'DeveloperID.p12'
+      certPwd: $(P12Password)
+    displayName: 'Install Developer ID Certificate'
+    condition: eq( variables['signing'], 'developerID' )
+
+  - task: InstallAppleCertificate@2
+    inputs:
+      certSecureFile: '20210508.p12'
+      certPwd: $(P12Password)
+    displayName: 'Install Distribution Certificate'
+    condition: eq( variables['signing'], 'appStore' )
+
+  - task: InstallAppleProvisioningProfile@1
+    inputs:
+      provProfileSecureFile: 'CelestiaAppDeveloperID20250605.provisionprofile'
+    displayName: 'Install Provision File (Developer ID)'
+    condition: eq( variables['signing'], 'developerID' )
+
+  - task: InstallAppleProvisioningProfile@1
+    inputs:
+      provProfileSecureFile: 'Ado_Celestia_App_20211009.provisionprofile'
+    displayName: 'Install Provision File (App Store)'
+    condition: eq( variables['signing'], 'appStore' )
+
+  - task: Xcode@5
+    inputs:
+      actions: 'build'
+      packageApp: true
+      signingOption: manual
+      signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
+      provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
+      scheme: 'CelestiaApp'
+      sdk: 'macosx'
+      configuration: 'Release'
+      xcWorkspacePath: '$(system.defaultworkingdirectory)/CelestiaApp/CelestiaApp.xcworkspace'
+      xcodeVersion: '13'
+      exportPath: '$(agent.buildDirectory)/output'
+      archivePath: '$(system.defaultworkingdirectory)/archive'
+    displayName: 'Build'
+
+  - script: |
+      cd $(system.defaultworkingdirectory)/archive
+      zip -r -v -y $(Build.ArtifactStagingDirectory)/Archive.zip *.xcarchive
+    displayName: 'Create .zip for .xcarchive'
+
+  - script: |
+      cd $(agent.buildDirectory)/output
+      zip -r -v -y $(Build.ArtifactStagingDirectory)/App.zip *.app
+    displayName: 'Create .zip Archive for .app'
+    condition: eq( variables['signing'], 'developerID' )
+
+  - script: |
+      cp -r $(agent.buildDirectory)/output/**/*.pkg $(Build.ArtifactStagingDirectory)
+    displayName: 'Copy .pkg'
+    condition: eq( variables['signing'], 'developerID' )
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: '$(signing)'
+      publishLocation: 'Container'
+    displayName: 'Publish Build Artifacts'
+
+  - task: AppCenterDistribute@3
+    inputs:
+      serverEndpoint: 'MacCelestiaAppCenter'
+      appSlug: 'CelestiaProject/Celestia-2'
+      appFile: '$(Build.ArtifactStagingDirectory)/App.zip'
+      symbolsDsymFiles: '$(system.defaultworkingdirectory)/archive/**/*.dSYM'
+      releaseNotesOption: 'input'
+      releaseNotesInput: 'Internal testing only.'
+      destinationType: 'groups'
+    displayName: 'Publish to App Center'
+    condition: eq( variables['signing'], 'developerID' )
+
+  - task: AppCenterDistribute@3
+    inputs:
+      serverEndpoint: 'MacCelestiaAppCenter'
+      appSlug: 'CelestiaProject/Celestia-2'
+      appFile: '$(build.artifactstagingdirectory)/**/*.pkg'
+      symbolsDsymFiles: '$(system.defaultworkingdirectory)/archive/**/*.dSYM'
+      releaseNotesOption: 'input'
+      releaseNotesInput: 'Internal testing only.'
+      destinationType: 'groups'
+    displayName: 'Publish to App Center'
+    condition: eq( variables['signing'], 'appStore' )
+
+  - script: |
+      xcrun altool --notarize-app --primary-bundle-id space.celestia.Celestia --username $(AC_ACCOUNT_NAME) --password $(AC_ACCOUNT_PASSWORD) -f $(Build.ArtifactStagingDirectory)/App.zip
+    displayName: "Notarize App"
+    condition: eq( variables['signing'], 'developerID' )

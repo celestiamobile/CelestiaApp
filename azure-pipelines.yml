@@ -10,90 +10,23 @@ resources:
     name: levinli303/CelestiaCore
 
 trigger:
-- master
+  branches:
+    include:
+    - master
 
-pool:
-  vmImage: 'macos-11'
+stages:
+- stage: Build_Mac_DeveloperID
+  displayName: 'Build Mac (Developer ID)'
+  dependsOn: []
+  jobs:
+  - template: jobs/build.yml
+    parameters:
+      signing: developerID
 
-steps:
-- checkout: Celestia
-- checkout: CelestiaCore
-- checkout: self
-
-- script: |
-    cd Celestia
-    git checkout master
-    git submodule update --init
-    cd ../CelestiaCore
-    git checkout master
-    git submodule update --init
-  displayName: 'Checkout Branch'
-
-- script: |
-    cd CelestiaApp
-    pod deintegrate
-    pod install
-  displayName: 'Reintegrate CocoaPods'
-
-- script: |
-    brew install gettext
-  displayName: 'Install Gettext'
-
-- task: InstallAppleCertificate@2
-  inputs:
-    certSecureFile: 'DeveloperID.p12'
-    certPwd: $(P12Password)
-  displayName: 'Install Certificate'
-
-- task: InstallAppleProvisioningProfile@1
-  inputs:
-    provProfileSecureFile: 'CelestiaAppDeveloperID20250605.provisionprofile'
-  displayName: 'Install Provision File'
-
-- task: Xcode@5
-  inputs:
-    actions: 'build'
-    packageApp: true
-    signingOption: manual
-    signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
-    provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
-    scheme: 'CelestiaApp'
-    sdk: 'macosx'
-    configuration: 'Release'
-    xcWorkspacePath: '$(system.defaultworkingdirectory)/CelestiaApp/CelestiaApp.xcworkspace'
-    xcodeVersion: '13'
-    exportPath: '$(agent.buildDirectory)/output'
-    archivePath: '$(system.defaultworkingdirectory)/archive'
-  displayName: 'Build'
-
-- script: |
-    cd $(system.defaultworkingdirectory)/archive
-    zip -r -v -y $(Build.ArtifactStagingDirectory)/Archive.zip *.xcarchive
-  displayName: 'Create .zip for .xcarchive'
-
-- script: |
-    cd $(agent.buildDirectory)/output
-    zip -r -v -y $(Build.ArtifactStagingDirectory)/App.zip *.app
-  displayName: 'Create .zip Archive for .app'
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'macosx'
-    publishLocation: 'Container'
-  displayName: 'Publish Build Artifacts'
-
-- task: AppCenterDistribute@3
-  inputs:
-    serverEndpoint: 'MacCelestiaAppCenter'
-    appSlug: 'CelestiaProject/Celestia-2'
-    appFile: '$(Build.ArtifactStagingDirectory)/App.zip'
-    symbolsDsymFiles: '$(system.defaultworkingdirectory)/archive/**/*.dSYM'
-    releaseNotesOption: 'input'
-    releaseNotesInput: 'Internal testing only.'
-    destinationType: 'groups'
-  displayName: 'Publish to App Center'
-
-- script: |
-    xcrun altool --notarize-app --primary-bundle-id space.celestia.Celestia --username $(AC_ACCOUNT_NAME) --password $(AC_ACCOUNT_PASSWORD) -f $(Build.ArtifactStagingDirectory)/App.zip
-  displayName: "Notarize App"
+- stage: Build_Mac_App_Store
+  displayName: 'Build Mac (App Store)'
+  dependsOn: []
+  jobs:
+  - template: jobs/build.yml
+    parameters:
+      signing: appStore
