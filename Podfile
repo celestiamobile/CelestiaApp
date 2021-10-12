@@ -7,7 +7,7 @@ target 'Celestia' do
   pod 'AppCenter/Crashes', '~> 4.3.0'
 
   pod "MWRequest", :git => "https://github.com/levinli303/mwrequest.git", :tag => "0.2.4"
-  pod "AsyncGL", :git => "https://github.com/levinli303/AsyncGL.git", :tag => "0.0.9"
+  pod "AsyncGL", :git => "https://github.com/levinli303/AsyncGL.git", :tag => "0.0.10"
 end
 
 post_install do |installer|
