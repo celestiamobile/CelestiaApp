@@ -20,8 +20,8 @@ class GLInfoViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        infoTextView.string = CelestiaAppCore.shared.get { core in
-            CelestiaAppCore.makeRenderContextCurrent()
+        infoTextView.string = AppCore.shared.get { core in
+            AppCore.makeRenderContextCurrent()
             return core.renderInfo
         }
     }

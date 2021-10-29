@@ -13,9 +13,9 @@ import Cocoa
 import CelestiaCore
 
 class InfoViewController: NSViewController {
-    private let core: CelestiaAppCore = CelestiaAppCore.shared
+    private let core: AppCore = AppCore.shared
 
-    private let selection: CelestiaSelection
+    private let selection: Selection
 
     private lazy var webInfoButton: NSButton = {
         let button = NSButton()
@@ -37,7 +37,7 @@ class InfoViewController: NSViewController {
         return view
     }()
 
-    init(selection: CelestiaSelection) {
+    init(selection: Selection) {
         self.selection = selection
         super.init(nibName: nil, bundle: nil)
     }

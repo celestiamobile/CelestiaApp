@@ -15,11 +15,11 @@ import CelestiaCore
 
 class EclipseFinderViewController: NSViewController {
 
-    private let core: CelestiaAppCore = CelestiaAppCore.shared
+    private let core: AppCore = AppCore.shared
 
-    var currentFinder: CelestiaEclipseFinder?
+    var currentFinder: EcipseFinder?
 
-    var results: [CelestiaEclipse] = []
+    var results: [Eclipse] = []
 
     @IBOutlet weak var eclipseList: NSTableView!
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
@@ -63,7 +63,7 @@ class EclipseFinderViewController: NSViewController {
         progressIndicator.startAnimation(self)
         findButton.isEnabled = false
         DispatchQueue.global().async { [weak self] in
-            let finder = CelestiaEclipseFinder(body: body)
+            let finder = EcipseFinder(body: body)
             self?.currentFinder = finder
             let results = finder.search(kind: [.solar, .lunar], from: startDate, to: endDate)
             self?.currentFinder = nil

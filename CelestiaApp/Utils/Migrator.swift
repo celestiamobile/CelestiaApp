@@ -38,7 +38,7 @@ class Migrator {
         guard dbVersion == 1 else { return }
 
         let legacyRawBookmarks = UserDefaults.standard.array(forKey: "favorites") as? [[AnyHashable : Any]] ?? []
-        let legacyBookmarks = legacyRawBookmarks.map { CelestiaFavorite(dictionary: $0) }
+        let legacyBookmarks = legacyRawBookmarks.map { Favorite(dictionary: $0) }
         let newBookmarks = legacyBookmarks.map { BookmarkNode(legacy: $0) }
         AppDelegate.shared.bookmarkController.storedBookmarks = newBookmarks
         AppDelegate.shared.bookmarkController.storeBookmarksToDisk()
@@ -50,7 +50,7 @@ class Migrator {
 }
 
 extension BookmarkNode {
-    convenience init(legacy: CelestiaFavorite) {
+    convenience init(legacy: Favorite) {
         self.init(name: legacy.name, url: legacy.url ?? "", isFolder: legacy.children != nil, children: (legacy.children ?? []).map { BookmarkNode(legacy: $0) })
     }
 }

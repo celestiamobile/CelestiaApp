@@ -35,7 +35,7 @@
 		97DBBE6122FFE779003D1BAF /* GLInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6022FFE779003D1BAF /* GLInfoViewController.swift */; };
 		97DBBE6822FFF2AC003D1BAF /* SplashWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6722FFF2AC003D1BAF /* SplashWindow.swift */; };
 		97DBBE6C230003DC003D1BAF /* NSAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBBE6B230003DC003D1BAF /* NSAlert.swift */; };
-		97ED227A234C297800FA5E2D /* LegacyMigrator.m in Sources */ = {isa = PBXBuildFile; fileRef = 97ED2279234C297800FA5E2D /* LegacyMigrator.m */; };
+		97ED227A234C297800FA5E2D /* CelestiaLegacyMigrator.m in Sources */ = {isa = PBXBuildFile; fileRef = 97ED2279234C297800FA5E2D /* CelestiaLegacyMigrator.m */; };
 		97ED227C234C2D6900FA5E2D /* Migrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ED227B234C2D6900FA5E2D /* Migrator.swift */; };
 		97F2518E22FDB6E100067B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F2518D22FDB6E100067B06 /* AppDelegate.swift */; };
 		97F2519022FDB6E100067B06 /* CelestiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F2518F22FDB6E100067B06 /* CelestiaViewController.swift */; };
@@ -97,8 +97,8 @@
 		97DBBE6022FFE779003D1BAF /* GLInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLInfoViewController.swift; sourceTree = "<group>"; };
 		97DBBE6722FFF2AC003D1BAF /* SplashWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWindow.swift; sourceTree = "<group>"; };
 		97DBBE6B230003DC003D1BAF /* NSAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAlert.swift; sourceTree = "<group>"; };
-		97ED2277234C297800FA5E2D /* LegacyMigrator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegacyMigrator.h; sourceTree = "<group>"; };
-		97ED2279234C297800FA5E2D /* LegacyMigrator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegacyMigrator.m; sourceTree = "<group>"; };
+		97ED2277234C297800FA5E2D /* CelestiaLegacyMigrator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CelestiaLegacyMigrator.h; sourceTree = "<group>"; };
+		97ED2279234C297800FA5E2D /* CelestiaLegacyMigrator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CelestiaLegacyMigrator.m; sourceTree = "<group>"; };
 		97ED227B234C2D6900FA5E2D /* Migrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migrator.swift; sourceTree = "<group>"; };
 		97F2518A22FDB6E100067B06 /* Celestia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Celestia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F2518D22FDB6E100067B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -214,8 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				EA31E26B25446637009E59FF /* Request */,
-				97ED2277234C297800FA5E2D /* LegacyMigrator.h */,
-				97ED2279234C297800FA5E2D /* LegacyMigrator.m */,
+				97ED2277234C297800FA5E2D /* CelestiaLegacyMigrator.h */,
+				97ED2279234C297800FA5E2D /* CelestiaLegacyMigrator.m */,
 				97ED227B234C2D6900FA5E2D /* Migrator.swift */,
 				EA0E2A28246393AF006F1469 /* LocalizationSwizzling.h */,
 				EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */,
@@ -513,7 +513,7 @@
 				972F3A3822FFC70C00CEDDAC /* GotoViewController.swift in Sources */,
 				970C5625238637B900EBB157 /* BrowserItemAddition.swift in Sources */,
 				974D26F92302AEAA00FDFBC0 /* BookmarkController.swift in Sources */,
-				97ED227A234C297800FA5E2D /* LegacyMigrator.m in Sources */,
+				97ED227A234C297800FA5E2D /* CelestiaLegacyMigrator.m in Sources */,
 				97916F402313F31D00925AF3 /* CelestiaViewDelegate.swift in Sources */,
 				97ED227C234C2D6900FA5E2D /* Migrator.swift in Sources */,
 			);

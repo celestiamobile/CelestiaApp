@@ -32,14 +32,14 @@ class BrowserViewController: NSViewController {
         ][tabView.selectedTabViewItem?.identifier as! String]!
     }
 
-    private var currentSelection: CelestiaSelection? {
-        guard let object = currentTree.selectedObjects.first as? CelestiaBrowserItem else { return nil }
+    private var currentSelection: Selection? {
+        guard let object = currentTree.selectedObjects.first as? BrowserItem else { return nil }
 
-        return CelestiaSelection(item: object)
+        return Selection(item: object)
     }
 
-    private let core: CelestiaAppCore = CelestiaAppCore.shared
-    private lazy var universe: CelestiaUniverse = self.core.simulation.universe
+    private let core: AppCore = AppCore.shared
+    private lazy var universe: Universe = self.core.simulation.universe
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +64,7 @@ class BrowserViewController: NSViewController {
         let clickedRow = sender.clickedRow
         guard clickedRow >= 0 else { return }
 
-        if let item = (sender.item(atRow: clickedRow) as? NSTreeNode)?.representedObject as? CelestiaBrowserItem, let sel = CelestiaSelection(item: item) {
+        if let item = (sender.item(atRow: clickedRow) as? NSTreeNode)?.representedObject as? BrowserItem, let sel = Selection(item: item) {
             core.selectAndCharEnterAsync(sel, char: 103)
         }
     }

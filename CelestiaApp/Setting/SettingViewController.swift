@@ -20,7 +20,7 @@ struct PreferenceItem<Value> {
 }
 
 class SettingViewController: NSViewController {
-    private let core: CelestiaAppCore = CelestiaAppCore.shared
+    private let core: AppCore = AppCore.shared
 
     private let preferenceItems = [
         PreferenceItem(key: .fullDPI, tag: 2000, defaultValue: true),

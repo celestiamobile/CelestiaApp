@@ -1,5 +1,5 @@
 //
-// LegacyMigrator.m
+// CelestiaLegacyMigrator.m
 //
 // Copyright © 2020 Celestia Development Team. All rights reserved.
 //
@@ -9,10 +9,10 @@
 // of the License, or (at your option) any later version.
 //
 
-#import "LegacyMigrator.h"
+#import "CelestiaLegacyMigrator.h"
 #include <pwd.h>
 
-@implementation LegacyMigrator
+@implementation CelestiaLegacyMigrator
 
 + (NSInteger)supportedDataBaseVersion {
     return 1;

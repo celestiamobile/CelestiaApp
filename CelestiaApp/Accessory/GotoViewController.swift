@@ -14,7 +14,7 @@ import Cocoa
 import CelestiaCore
 
 class GotoViewController: NSViewController {
-    private let core: CelestiaAppCore = CelestiaAppCore.shared
+    private let core: AppCore = AppCore.shared
 
     private var searchOperationQueue = OperationQueue()
 
@@ -58,30 +58,30 @@ class GotoViewController: NSViewController {
             return
         }
 
-        let location: CelestiaGoToLocation
+        let location: GoToLocation
         if distanceTextField.stringValue.count > 0 {
 
             let selectedItem = unitPopupButton.indexOfSelectedItem
-            let unit = CelestiaSimulationDistanceUnit(rawValue: UInt(selectedItem))!
+            let unit = DistanceUnit(rawValue: UInt(selectedItem))!
 
             if longitudeTextField.stringValue.count > 0 && latitudeTextField.stringValue.count > 0 {
-                location = CelestiaGoToLocation(selection: sel,
+                location = GoToLocation(selection: sel,
                                                 longitude: longitudeTextField.floatValue,
                                                 latitude: latitudeTextField.floatValue,
                                                 distance: distanceTextField.doubleValue,
                                                 unit: unit)
             } else {
-                location = CelestiaGoToLocation(selection: sel,
+                location = GoToLocation(selection: sel,
                                                 distance: distanceTextField.doubleValue,
                                                 unit: unit)
             }
         } else {
             if longitudeTextField.stringValue.count > 0 && latitudeTextField.stringValue.count > 0 {
-                location = CelestiaGoToLocation(selection: sel,
+                location = GoToLocation(selection: sel,
                                                 longitude: longitudeTextField.floatValue,
                                                 latitude: latitudeTextField.floatValue)
             } else {
-                location = CelestiaGoToLocation(selection: sel)
+                location = GoToLocation(selection: sel)
             }
         }
         core.run { $0.simulation.go(to: location) }

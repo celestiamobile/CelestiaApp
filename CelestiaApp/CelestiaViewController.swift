@@ -21,10 +21,10 @@ class CelestiaViewController: NSViewController {
     @IBOutlet private var refMarkMenu: NSMenu!
     @IBOutlet private var unmarkMenuItem: NSMenuItem!
 
-    private var currentSelection: CelestiaSelection?
+    private var currentSelection: Selection?
 
-    private lazy var core: CelestiaAppCore = CelestiaAppCore.shared
-    private lazy var universe: CelestiaUniverse = self.core.simulation.universe
+    private lazy var core: AppCore = AppCore.shared
+    private lazy var universe: Universe = self.core.simulation.universe
 
     static var urlToRun: URL?
 
@@ -174,7 +174,7 @@ class CelestiaViewController: NSViewController {
     @IBAction func handleMark(_ sender: NSMenuItem) {
         if let index = sender.menu?.items.firstIndex(of: sender) {
             core.run { core in
-                core.simulation.universe.mark(core.simulation.selection, with: CelestiaMarkerRepresentation(rawValue: UInt(index))!)
+                core.simulation.universe.mark(core.simulation.selection, with: MarkerRepresentation(rawValue: UInt(index))!)
                 core.showMarkers = true
             }
         }
@@ -182,7 +182,7 @@ class CelestiaViewController: NSViewController {
 
     @IBAction private func selectObject(_ sender: BrowserMenuItem) {
         if let item = sender.browserItem, let cat = item.entry {
-            if let sel = CelestiaSelection(object: cat) {
+            if let sel = Selection(object: cat) {
                 core.run { $0.simulation.selection = sel }
             }
         }
@@ -260,7 +260,7 @@ extension CelestiaViewController: CelestiaDisplayControllerDelegate {
 }
 
 extension CelestiaViewMouseButton {
-    var celestiaButtons: CelestiaMouseButton { return CelestiaMouseButton(rawValue: rawValue) }
+    var celestiaButtons: MouseButton { return MouseButton(rawValue: rawValue) }
 }
 
 extension CelestiaViewController: CelestiaViewMouseProcessor {
@@ -289,7 +289,7 @@ extension CelestiaViewController: CelestiaViewMouseProcessor {
         core.run { $0.mouseWheel(by: motion * scale, modifiers: modifiers.rawValue) }
     }
 
-    func requestMenu(for selection: CelestiaSelection) -> NSMenu? {
+    func requestMenu(for selection: Selection) -> NSMenu? {
         if selection.isEmpty { return nil }
         currentSelection = selection
 
@@ -304,7 +304,7 @@ extension CelestiaViewController: CelestiaViewMouseProcessor {
             }
         })
 
-        let browserItem: CelestiaBrowserItem?
+        let browserItem: BrowserItem?
         if let body = selection.body {
             // add ref mark
             let refMarkMenuItem = NSMenuItem(title: CelestiaString("Reference Vectors", comment: ""), action: nil, keyEquivalent: "")
@@ -317,14 +317,14 @@ extension CelestiaViewController: CelestiaViewMouseProcessor {
             sep.tag = 10001
             selectionMenu.insertItem(sep, at: selectionMenu.items.count - 2)
 
-            browserItem = CelestiaBrowserItem(name: body.name, catEntry: body, provider: universe)
+            browserItem = BrowserItem(name: body.name, catEntry: body, provider: universe)
         } else if let star = selection.star {
-            browserItem = CelestiaBrowserItem(name: universe.starCatalog.starName(star), catEntry: star, provider: universe)
+            browserItem = BrowserItem(name: universe.starCatalog.starName(star), catEntry: star, provider: universe)
         } else {
             browserItem = nil
         }
 
-        func createMenuItems(for item: CelestiaBrowserItem) -> [NSMenuItem]? {
+        func createMenuItems(for item: BrowserItem) -> [NSMenuItem]? {
             var mItems = [BrowserMenuItem]()
             for i in 0..<item.children.count {
                 let subItemName = item.childName(at: Int(i))!
@@ -403,8 +403,8 @@ extension CelestiaViewController: CelestiaViewKeyboardProcessor {
     }
 }
 
-extension CelestiaViewController: CelestiaAppCoreDelegate {
-    func celestiaAppCoreCursorDidRequestContextMenu(at location: CGPoint, with selection: CelestiaSelection) {
+extension CelestiaViewController: AppCoreDelegate {
+    func celestiaAppCoreCursorDidRequestContextMenu(at location: CGPoint, with selection: Selection) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             let scale = self.displayController.scaleFactor
@@ -418,7 +418,7 @@ extension CelestiaViewController: CelestiaAppCoreDelegate {
         }
     }
 
-    func celestiaAppCoreCursorShapeChanged(_ shape: CelestiaCursorShape) {
+    func celestiaAppCoreCursorShapeChanged(_ shape: CursorShape) {
         DispatchQueue.main.async {
             switch shape {
             case .sizeVer:
@@ -431,7 +431,7 @@ extension CelestiaViewController: CelestiaAppCoreDelegate {
         }
     }
 
-    func celestiaAppCoreWatchedFlagDidChange(_ changedFlag: CelestiaWatcherFlag) {}
+    func celestiaAppCoreWatchedFlagDidChange(_ changedFlag: WatcherFlag) {}
 }
 
 extension CelestiaViewController {
@@ -544,7 +544,7 @@ private extension CelestiaViewController {
 }
 
 class BrowserMenuItem: NSMenuItem {
-    var browserItem: CelestiaBrowserItem? = nil
+    var browserItem: BrowserItem? = nil
 }
 
 private extension CGPoint {

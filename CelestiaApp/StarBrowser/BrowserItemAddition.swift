@@ -11,24 +11,24 @@
 
 import CelestiaCore
 
-extension CelestiaBrowserItem {
+extension BrowserItem {
     @objc var isLeaf: Bool {
         return children.count == 0
     }
 
-    @objc var solarSystemObject: CelestiaBody? {
-        return entry as? CelestiaBody
+    @objc var solarSystemObject: Body? {
+        return entry as? Body
     }
 
-    @objc var locationObject: CelestiaLocation? {
-        return entry as? CelestiaLocation
+    @objc var locationObject: Location? {
+        return entry as? Location
     }
 
-    @objc var dsoObject: CelestiaDSO? {
-        return entry as? CelestiaDSO
+    @objc var dsoObject: DSO? {
+        return entry as? DSO
     }
 
-    @objc var starObject: CelestiaStar? {
-        return entry as? CelestiaStar
+    @objc var starObject: Star? {
+        return entry as? Star
     }
 }

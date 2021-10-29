@@ -1,5 +1,5 @@
 //
-// LegacyMigrator.h
+// CelestiaLegacyMigrator.h
 //
 // Copyright © 2020 Celestia Development Team. All rights reserved.
 //
@@ -13,7 +13,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LegacyMigrator : NSObject
+NS_SWIFT_NAME(LegacyMigrator)
+@interface CelestiaLegacyMigrator : NSObject
 
 + (void)tryToMigrate;
 

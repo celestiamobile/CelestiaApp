@@ -24,7 +24,7 @@ class CelestiaDisplayController: AsyncGLViewController {
     private lazy var dataDirectoryURL = currentDataDirectory()
     private lazy var configFileURL = currentConfigFile()
 
-    private lazy var core: CelestiaAppCore = CelestiaAppCore.shared
+    private lazy var core: AppCore = AppCore.shared
 
     private var currentSize: CGSize = .zero
 
@@ -48,7 +48,7 @@ class CelestiaDisplayController: AsyncGLViewController {
         }
 
         FileManager.default.changeCurrentDirectoryPath(dataDirectoryURL.url.path)
-        CelestiaAppCore.setLocaleDirectory(dataDirectoryURL.url.path + "/locale")
+        AppCore.setLocaleDirectory(dataDirectoryURL.url.path + "/locale")
 
         let result = core.startSimulation(configFileName: configFileURL.url.path, extraDirectories: [extraDirectory].compactMap{$0?.path}, progress: { (status) in
             // Broadcast the status
@@ -57,7 +57,7 @@ class CelestiaDisplayController: AsyncGLViewController {
 
         if result {
             start()
-            CelestiaAppCore.renderViewController = self
+            AppCore.renderViewController = self
             delegate?.celestiaDisplayControllerLoadingSucceeded(self)
         } else {
             delegate?.celestiaDisplayControllerLoadingFailed(self)
@@ -155,14 +155,14 @@ private func getInstalledFontFor(locale: String) -> (font: FallbackFont, boldFon
 }
 
 
-extension CelestiaAppCore {
+extension AppCore {
     fileprivate static var renderQueue: DispatchQueue? {
         return renderViewController?.glView?.renderQueue
     }
 
     fileprivate static weak var renderViewController: AsyncGLViewController?
 
-    func run(_ task: @escaping (CelestiaAppCore) -> Void) {
+    func run(_ task: @escaping (AppCore) -> Void) {
         guard let queue = Self.renderQueue else { return }
         queue.async { [weak self] in
             guard let self = self else { return }
@@ -174,7 +174,7 @@ extension CelestiaAppCore {
         Self.renderViewController?.makeRenderContextCurrent()
     }
 
-    func get<T>(_ task: (CelestiaAppCore) -> T) -> T {
+    func get<T>(_ task: (AppCore) -> T) -> T {
         guard let queue = Self.renderQueue else { fatalError() }
         var item: T?
         queue.sync { [weak self] in
@@ -191,20 +191,20 @@ extension CelestiaAppCore {
         }
     }
 
-    func selectAsync(_ selection: CelestiaSelection) {
+    func selectAsync(_ selection: Selection) {
         run {
             $0.simulation.selection = selection
         }
     }
 
-    func selectAndCharEnterAsync(_ selection: CelestiaSelection, char: Int8) {
+    func selectAndCharEnterAsync(_ selection: Selection, char: Int8) {
         run {
             $0.simulation.selection = selection
             $0.charEnter(char)
         }
     }
 
-    func getSelectionAsync(_ completion: @escaping (CelestiaSelection, CelestiaAppCore) -> Void) {
+    func getSelectionAsync(_ completion: @escaping (Selection, AppCore) -> Void) {
         run { core in
             let selection = core.simulation.selection
             DispatchQueue.main.async {
@@ -213,7 +213,7 @@ extension CelestiaAppCore {
         }
     }
 
-    func markAsync(_ selection: CelestiaSelection, markerType: CelestiaMarkerRepresentation) {
+    func markAsync(_ selection: Selection, markerType: MarkerRepresentation) {
         run { core in
             core.simulation.universe.mark(selection, with: markerType)
             core.showMarkers = true

@@ -55,7 +55,7 @@ class BookmarkOrganizerViewController: NSViewController {
         guard clickedRow >= 0 else { return }
 
         if let item = (outlineView.item(atRow: clickedRow) as? NSTreeNode)?.representedObject as? BookmarkNode, !item.url.isEmpty {
-            CelestiaAppCore.shared.go(to: item.url)
+            AppCore.shared.go(to: item.url)
         }
     }
 

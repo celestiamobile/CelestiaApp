@@ -18,7 +18,7 @@ class ScriptController: NSObject {
 
     static let supportedFileExtensions = ["cel", "celx"]
 
-    private var savedScripts: [CelestiaScript] = []
+    private var savedScripts: [Script] = []
 
     private var lastScriptPath: String?
 

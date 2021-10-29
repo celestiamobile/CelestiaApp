@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     lazy var celestiaViewController = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "Main") as! CelestiaViewController
 
-    private lazy var core = CelestiaAppCore.shared
+    private lazy var core = AppCore.shared
 
     func applicationWillFinishLaunching(_ notification: Notification) {
         NSAppleEventManager.shared().setEventHandler(self, andSelector: #selector(handleGetURLEvent(_:withReplyEvent:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
