@@ -62,7 +62,7 @@ class GotoViewController: NSViewController {
         if distanceTextField.stringValue.count > 0 {
 
             let selectedItem = unitPopupButton.indexOfSelectedItem
-            let unit = SimulationDistanceUnit(rawValue: UInt(selectedItem))!
+            let unit = CelestiaSimulationDistanceUnit(rawValue: UInt(selectedItem))!
 
             if longitudeTextField.stringValue.count > 0 && latitudeTextField.stringValue.count > 0 {
                 location = CelestiaGoToLocation(selection: sel,

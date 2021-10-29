@@ -260,7 +260,7 @@ extension CelestiaViewController: CelestiaDisplayControllerDelegate {
 }
 
 extension CelestiaViewMouseButton {
-    var celestiaButtons: MouseButton { return MouseButton(rawValue: rawValue) }
+    var celestiaButtons: CelestiaMouseButton { return CelestiaMouseButton(rawValue: rawValue) }
 }
 
 extension CelestiaViewController: CelestiaViewMouseProcessor {
@@ -418,7 +418,7 @@ extension CelestiaViewController: CelestiaAppCoreDelegate {
         }
     }
 
-    func celestiaAppCoreCursorShapeChanged(_ shape: CursorShape) {
+    func celestiaAppCoreCursorShapeChanged(_ shape: CelestiaCursorShape) {
         DispatchQueue.main.async {
             switch shape {
             case .sizeVer:
