@@ -11,63 +11,63 @@
 
 import AppKit
 
-extension NSButton: IBLocalizable {
+extension NSButton: Localizable {
     public func localize() {
         if self is NSPopUpButton { return }
         title = CelestiaString(title, comment: "")
     }
 }
 
-extension NSTextField: IBLocalizable {
+extension NSTextField: Localizable {
     public func localize() {
         stringValue = CelestiaString(stringValue, comment: "")
     }
 }
 
-extension NSBox: IBLocalizable {
+extension NSBox: Localizable {
     public func localize() {
         title = CelestiaString(title, comment: "")
     }
 }
 
-extension NSTabViewItem: IBLocalizable {
+extension NSTabViewItem: Localizable {
     public func localize() {
         label = CelestiaString(label, comment: "")
     }
 }
 
-extension NSMenuItem: IBLocalizable {
+extension NSMenuItem: Localizable {
     public func localize() {
         title = CelestiaString(title, comment: "")
     }
 }
 
-extension NSMenu: IBLocalizable {
+extension NSMenu: Localizable {
     public func localize() {
         title = CelestiaString(title, comment: "")
     }
 }
 
-extension NSViewController: IBLocalizable {
+extension NSViewController: Localizable {
     public func localize() {
         guard let unlocalized = title else { return }
         title = CelestiaString(unlocalized, comment: "")
     }
 }
 
-extension NSTableColumn: IBLocalizable {
+extension NSTableColumn: Localizable {
     public func localize() {
         title = CelestiaString(title, comment: "")
     }
 }
 
-public func SetupLocalizationSwizzling() {
-    SwizzleLocalizableClass(NSButton.self)
-    SwizzleLocalizableClass(NSTextField.self)
-    SwizzleLocalizableClass(NSBox.self)
-    SwizzleLocalizableClass(NSTabViewItem.self)
-    SwizzleLocalizableClass(NSMenuItem.self)
-    SwizzleLocalizableClass(NSMenu.self)
-    SwizzleLocalizableClass(NSViewController.self)
-    SwizzleLocalizableClass(NSTableColumn.self)
+ func SetupLocalizationSwizzling() {
+    LocalizationUtils.swizzleLocalizableClass(NSButton.self)
+    LocalizationUtils.swizzleLocalizableClass(NSTextField.self)
+    LocalizationUtils.swizzleLocalizableClass(NSBox.self)
+    LocalizationUtils.swizzleLocalizableClass(NSTabViewItem.self)
+    LocalizationUtils.swizzleLocalizableClass(NSMenuItem.self)
+    LocalizationUtils.swizzleLocalizableClass(NSMenu.self)
+    LocalizationUtils.swizzleLocalizableClass(NSViewController.self)
+    LocalizationUtils.swizzleLocalizableClass(NSTableColumn.self)
 }

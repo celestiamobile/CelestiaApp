@@ -1,5 +1,5 @@
 //
-// LocalizationSwizzling.m
+// CelestiaLocalizationUtils.m
 //
 // Copyright © 2020 Celestia Development Team. All rights reserved.
 //
@@ -9,7 +9,7 @@
 // of the License, or (at your option) any later version.
 //
 
-#import "LocalizationSwizzling.h"
+#import "CelestiaLocalizationUtils.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 
@@ -74,13 +74,16 @@ _Nullable IMP custom_swizzleSelectorWithBlock(Class clazz, SEL selector, id newI
     return custom_swizzleSelector(clazz, selector, newImplementation);
 }
 
-void SwizzleLocalizableClass(Class cls)
-{
+@implementation CelestiaLocalizationUtils
+
++ (void)swizzleLocalizableClass:(Class)cls {
     if (![cls instancesRespondToSelector:NSSelectorFromString(@"awakeFromNib")]) {
         NSLog(@"Trying to swizzle unsupported class %@.", NSStringFromClass(cls));
         return;
     }
-    custom_swizzleSelectorWithBlock(cls, NSSelectorFromString(@"awakeFromNib"), ^(id<IBLocalizable> self) {
+    custom_swizzleSelectorWithBlock(cls, NSSelectorFromString(@"awakeFromNib"), ^(id<CelestiaLocalizable> self) {
         [self localize];
     });
 }
+
+@end

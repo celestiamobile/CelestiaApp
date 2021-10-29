@@ -13,6 +13,6 @@
 #define BRIDGING_HEADER_H
 
 #import "CelestiaLegacyMigrator.h"
-#import "LocalizationSwizzling.h"
+#import "CelestiaLocalizationUtils.h"
 
 #endif /* BRIDGING_HEADER_H */

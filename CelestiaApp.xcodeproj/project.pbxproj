@@ -44,7 +44,7 @@
 		97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F251A222FDB75400067B06 /* CelestiaCore.framework */; };
 		97F251BF22FDBACA00067B06 /* CelestiaDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F251BE22FDBACA00067B06 /* CelestiaDisplayController.swift */; };
 		BC090B3EDA53846D00913347 /* Pods_Celestia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CDF1307CCE90C70FDD8CEF /* Pods_Celestia.framework */; };
-		EA0E2A2A246393AF006F1469 /* LocalizationSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */; };
+		EA0E2A2A246393AF006F1469 /* CelestiaLocalizationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A29246393AF006F1469 /* CelestiaLocalizationUtils.m */; };
 		EA0E2A2F24639C34006F1469 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A2E24639C34006F1469 /* Localization.swift */; };
 		EA0E2A3124639DD9006F1469 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A3024639DD9006F1469 /* main.swift */; };
 		EA31E27025446637009E59FF /* BaseResultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31E26C25446637009E59FF /* BaseResultHandler.swift */; };
@@ -112,8 +112,8 @@
 		97F251BE22FDBACA00067B06 /* CelestiaDisplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestiaDisplayController.swift; sourceTree = "<group>"; };
 		AFD94B110697E9F6C2380420 /* Pods-Celestia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celestia.release.xcconfig"; path = "Target Support Files/Pods-Celestia/Pods-Celestia.release.xcconfig"; sourceTree = "<group>"; };
 		B7CDF1307CCE90C70FDD8CEF /* Pods_Celestia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Celestia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA0E2A28246393AF006F1469 /* LocalizationSwizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizationSwizzling.h; sourceTree = "<group>"; };
-		EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalizationSwizzling.m; sourceTree = "<group>"; };
+		EA0E2A28246393AF006F1469 /* CelestiaLocalizationUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CelestiaLocalizationUtils.h; sourceTree = "<group>"; };
+		EA0E2A29246393AF006F1469 /* CelestiaLocalizationUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CelestiaLocalizationUtils.m; sourceTree = "<group>"; };
 		EA0E2A2E24639C34006F1469 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		EA0E2A3024639DD9006F1469 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA31E26C25446637009E59FF /* BaseResultHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResultHandler.swift; sourceTree = "<group>"; };
@@ -217,8 +217,8 @@
 				97ED2277234C297800FA5E2D /* CelestiaLegacyMigrator.h */,
 				97ED2279234C297800FA5E2D /* CelestiaLegacyMigrator.m */,
 				97ED227B234C2D6900FA5E2D /* Migrator.swift */,
-				EA0E2A28246393AF006F1469 /* LocalizationSwizzling.h */,
-				EA0E2A29246393AF006F1469 /* LocalizationSwizzling.m */,
+				EA0E2A28246393AF006F1469 /* CelestiaLocalizationUtils.h */,
+				EA0E2A29246393AF006F1469 /* CelestiaLocalizationUtils.m */,
 				EA0E2A2E24639C34006F1469 /* Localization.swift */,
 			);
 			path = Utils;
@@ -506,7 +506,7 @@
 				972F3A2222FF96F000CEDDAC /* SettingViewController.swift in Sources */,
 				97401C912414CF2D0015F8E8 /* URL.swift in Sources */,
 				EACF9A38265694990099CA86 /* CelestiaInteractionView.swift in Sources */,
-				EA0E2A2A246393AF006F1469 /* LocalizationSwizzling.m in Sources */,
+				EA0E2A2A246393AF006F1469 /* CelestiaLocalizationUtils.m in Sources */,
 				97F2519022FDB6E100067B06 /* CelestiaViewController.swift in Sources */,
 				EA0E2A2F24639C34006F1469 /* Localization.swift in Sources */,
 				97F2518E22FDB6E100067B06 /* AppDelegate.swift in Sources */,

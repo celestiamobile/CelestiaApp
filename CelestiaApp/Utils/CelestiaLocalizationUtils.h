@@ -13,13 +13,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(Localizable)
 @protocol CelestiaLocalizable <NSObject, NSCoding>
 
 - (void)localize;
 
 @end
 
-@interface CelestiaLocalizationUtils
+NS_SWIFT_NAME(LocalizationUtils)
+@interface CelestiaLocalizationUtils : NSObject
 
 + (void)swizzleLocalizableClass:(Class<CelestiaLocalizable>)cls;
 
