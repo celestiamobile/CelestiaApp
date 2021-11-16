@@ -49,7 +49,7 @@ class CelestiaDisplayController: AsyncGLViewController {
 
         FileManager.default.changeCurrentDirectoryPath(dataDirectoryURL.url.path)
         DispatchQueue.main.sync {
-            AppCore.setLocaleDirectory(dataDirectoryURL.url.path + "/locale")
+            AppCore.setLocaleDirectory(self.dataDirectoryURL.url.path + "/locale")
         }
 
         let result = core.startSimulation(configFileName: configFileURL.url.path, extraDirectories: [extraDirectory].compactMap{$0?.path}, progress: { (status) in
