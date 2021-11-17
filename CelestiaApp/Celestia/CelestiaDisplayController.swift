@@ -43,6 +43,8 @@ class CelestiaDisplayController: AsyncGLViewController {
     }
 
     override func prepareGL(_ size: CGSize) {
+        _ = AppCore.initGL()
+
         DispatchQueue.main.sync {
             self.glView?.contentScaleFactor = scaleFactor
         }
