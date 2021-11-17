@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -47,6 +47,8 @@
 		EA0E2A2A246393AF006F1469 /* CelestiaLocalizationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A29246393AF006F1469 /* CelestiaLocalizationUtils.m */; };
 		EA0E2A2F24639C34006F1469 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A2E24639C34006F1469 /* Localization.swift */; };
 		EA0E2A3124639DD9006F1469 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A3024639DD9006F1469 /* main.swift */; };
+		EA43A4EB2744FB8D00F1BDB1 /* MetalANGLE.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA43A4E92744FB8D00F1BDB1 /* MetalANGLE.xcframework */; };
+		EA43A4EC2744FB8D00F1BDB1 /* MetalANGLE.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA43A4E92744FB8D00F1BDB1 /* MetalANGLE.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA7B07EB24B062FB00CB2A71 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = EA7B07E924B062FB00CB2A71 /* Fonts */; };
 		EACF9A38265694990099CA86 /* CelestiaInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF9A37265694990099CA86 /* CelestiaInteractionView.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,20 @@
 			remoteInfo = CelestiaCore;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EA43A4ED2744FB8D00F1BDB1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EA43A4EC2744FB8D00F1BDB1 /* MetalANGLE.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		955D40569F9B8624826E08A0 /* Pods-Celestia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celestia.debug.xcconfig"; path = "Target Support Files/Pods-Celestia/Pods-Celestia.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +131,7 @@
 		EA0E2A29246393AF006F1469 /* CelestiaLocalizationUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CelestiaLocalizationUtils.m; sourceTree = "<group>"; };
 		EA0E2A2E24639C34006F1469 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		EA0E2A3024639DD9006F1469 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EA43A4E92744FB8D00F1BDB1 /* MetalANGLE.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MetalANGLE.xcframework; path = ../CelestiaCore/libs/dependency/xcframeworks/MetalANGLE.xcframework; sourceTree = "<group>"; };
 		EA7B07E924B062FB00CB2A71 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = ../../../CelestiaCore/Fonts; sourceTree = "<group>"; };
 		EAC6A33527D1F25E000AC764 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = bg; path = bg.lproj/Credits.rtf; sourceTree = "<group>"; };
 		EACF9A37265694990099CA86 /* CelestiaInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestiaInteractionView.swift; sourceTree = "<group>"; };
@@ -128,6 +145,7 @@
 				971A67482301A370009E4EA1 /* libz.tbd in Frameworks */,
 				970C560E238507F500EBB157 /* libbz2.tbd in Frameworks */,
 				971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */,
+				EA43A4EB2744FB8D00F1BDB1 /* MetalANGLE.xcframework in Frameworks */,
 				97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */,
 				BC090B3EDA53846D00913347 /* Pods_Celestia.framework in Frameworks */,
 			);
@@ -297,6 +315,7 @@
 		97F251A522FDB79F00067B06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA43A4E92744FB8D00F1BDB1 /* MetalANGLE.xcframework */,
 				970C560D238507EA00EBB157 /* libbz2.tbd */,
 				97F251BC22FDB9BB00067B06 /* libz.tbd */,
 				97F251A722FDB86E00067B06 /* libc++.tbd */,
@@ -319,6 +338,7 @@
 				97F2518822FDB6E100067B06 /* Resources */,
 				970C560B2385009E00EBB157 /* Copy General Data */,
 				9751DC4023594EF100299997 /* Convert PO */,
+				EA43A4ED2744FB8D00F1BDB1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

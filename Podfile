@@ -16,6 +16,10 @@ post_install do |installer|
             config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = ""
             config.build_settings['CODE_SIGNING_REQUIRED'] = "NO"
             config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
+
+            if target.name == 'AsyncGL'
+                config.build_settings['OTHER_CFLAGS[sdk=macosx*]'] = ['$(inherited)', '-DUSE_EGL']
+            end
         end
     end
 end
