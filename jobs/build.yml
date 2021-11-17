@@ -4,6 +4,9 @@ jobs:
   pool:
     vmImage: 'macos-11'
 
+  variables:
+     backend: ${{ parameters.backend }}
+
   steps:
   - checkout: Celestia
   - checkout: CelestiaCore
@@ -17,6 +20,24 @@ jobs:
       git checkout master
       git submodule update --init
     displayName: 'Checkout Branch'
+
+  - script: |
+      cd Celestia
+      git cherry-pick origin/angle
+    displayName: 'Cherry-Pick ANGLE Commit'
+    condition: eq( variables['backend'], 'metalAngle' )
+
+  - script: |
+      cd CelestiaCore
+      git cherry-pick origin/angle-for-all
+    displayName: 'Cherry-Pick ANGLE for All Commit (1)'
+    condition: eq( variables['backend'], 'metalAngle' )
+
+  - script: |
+      cd CelestiaApp
+      git cherry-pick origin/angle-for-all
+    displayName: 'Cherry-Pick ANGLE for All Commit (2)'
+    condition: eq( variables['backend'], 'metalAngle' )
 
   - script: |
       cd CelestiaApp
@@ -69,7 +90,7 @@ jobs:
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-      ArtifactName: 'macosx'
+      ArtifactName: '$(backend)'
       publishLocation: 'Container'
     displayName: 'Publish Build Artifacts'
 
