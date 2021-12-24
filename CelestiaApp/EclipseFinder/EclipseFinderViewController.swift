@@ -34,8 +34,8 @@ class EclipseFinderViewController: NSViewController {
         eclipseList.target = self
         eclipseList.doubleAction = #selector(go(_:))
 
-        objectNameComboBox.addItem(withObjectValue: CelestiaString("Earth", comment: "", domain: "celestia"))
-        objectNameComboBox.addItem(withObjectValue: CelestiaString("Jupiter", comment: "", domain: "celestia"))
+        objectNameComboBox.addItem(withObjectValue: CelestiaString("Earth", comment: "", domain: "celestia-data"))
+        objectNameComboBox.addItem(withObjectValue: CelestiaString("Jupiter", comment: "", domain: "celestia-data"))
 
         eclipseStartDatePicker.dateValue = Date()
         eclipseEndDatePicker.dateValue = Date()
