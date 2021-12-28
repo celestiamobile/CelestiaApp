@@ -7,12 +7,13 @@ jobs:
   steps:
   - checkout: Celestia
   - checkout: CelestiaCore
+  - checkout: CelestiaContent
+    fetchDepth: 1
   - checkout: self
 
   - script: |
       cd Celestia
       git checkout master
-      git submodule update --init
       cd ../CelestiaCore
       git checkout master
       git submodule update --init
