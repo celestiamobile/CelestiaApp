@@ -3,8 +3,8 @@ platform :osx, '10.11'
 use_frameworks! :linkage => :static
 
 target 'Celestia' do
-  pod 'AppCenter/Analytics', '~> 4.3.0'
-  pod 'AppCenter/Crashes', '~> 4.3.0'
+  pod 'AppCenter/Analytics', '~> 4.4.1'
+  pod 'AppCenter/Crashes', '~> 4.4.1'
 
   pod "MWRequest", :git => "https://github.com/levinli303/mwrequest.git", :tag => "0.2.4"
   pod "AsyncGL", :git => "https://github.com/levinli303/AsyncGL.git", :tag => "0.0.13"
