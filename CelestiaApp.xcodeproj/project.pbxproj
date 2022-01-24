@@ -707,7 +707,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 76;
+				CURRENT_PROJECT_VERSION = 77;
 				DEVELOPMENT_TEAM = 22NR5428TD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CelestiaApp/Info.plist;
@@ -715,7 +715,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.7.30;
+				MARKETING_VERSION = 1.7.31;
 				OTHER_CODE_SIGN_FLAGS = "$(inherited) --timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = space.celestia.Celestia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -734,7 +734,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 76;
+				CURRENT_PROJECT_VERSION = 77;
 				DEVELOPMENT_TEAM = 22NR5428TD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CelestiaApp/Info.plist;
@@ -742,7 +742,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.7.30;
+				MARKETING_VERSION = 1.7.31;
 				OTHER_CODE_SIGN_FLAGS = "$(inherited) --timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = space.celestia.Celestia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
