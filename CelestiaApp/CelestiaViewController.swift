@@ -108,8 +108,10 @@ class CelestiaViewController: NSViewController {
             createStaticBrowserItems()
             createDynamicBrowserItems()
 
-            AppDelegate.present(identifier: "Browser") { () -> BrowserViewController in
-                return NSStoryboard(name: "StarBrowser", bundle: nil).instantiateController(withIdentifier: "Browser") as! BrowserViewController
+            DispatchQueue.main.async {
+                AppDelegate.present(identifier: "Browser") { () -> BrowserViewController in
+                    return NSStoryboard(name: "StarBrowser", bundle: nil).instantiateController(withIdentifier: "Browser") as! BrowserViewController
+                }
             }
         }
     }
