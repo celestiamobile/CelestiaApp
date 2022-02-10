@@ -104,8 +104,13 @@ class CelestiaViewController: NSViewController {
     }
 
     func showBrowser() {
-        AppDelegate.present(identifier: "Browser") { () -> BrowserViewController in
-            return NSStoryboard(name: "StarBrowser", bundle: nil).instantiateController(withIdentifier: "Browser") as! BrowserViewController
+        core.run { _ in
+            createStaticBrowserItems()
+            createDynamicBrowserItems()
+
+            AppDelegate.present(identifier: "Browser") { () -> BrowserViewController in
+                return NSStoryboard(name: "StarBrowser", bundle: nil).instantiateController(withIdentifier: "Browser") as! BrowserViewController
+            }
         }
     }
 

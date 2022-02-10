@@ -21,8 +21,8 @@ class BrowserViewController: NSViewController {
     @IBOutlet private var dsoTree: NSTreeController!
 
     private lazy var sol = solBrowserRoot
-    private lazy var stars = starBrowserRoot
-    private lazy var dso = dsoBrowserRoot
+    private lazy var stars = starBrowserRoot!
+    private lazy var dso = dsoBrowserRoot!
 
     private var currentTree: NSTreeController {
         return [
