@@ -322,6 +322,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97F2519A22FDB6E700067B06 /* Build configuration list for PBXNativeTarget "Celestia" */;
 			buildPhases = (
+				EA9FB24327B7B5A600E0DC1F /* Copy Localized Files */,
 				D3C218DC1DDD7A0C803D94CD /* [CP] Check Pods Manifest.lock */,
 				97F2518622FDB6E100067B06 /* Sources */,
 				97F2518722FDB6E100067B06 /* Frameworks */,
@@ -480,6 +481,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		EA9FB24327B7B5A600E0DC1F /* Copy Localized Files */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Localized Files";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SH_FILE=$SRCROOT/copy_localized_files.sh\n\nchmod +x $SH_FILE\n\n$SH_FILE\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
