@@ -42,6 +42,13 @@ jobs:
       provProfileSecureFile: 'CelestiaAppDeveloperID20250605.provisionprofile'
     displayName: 'Install Provision File'
 
+  - script: |
+      sed -i '' 's/APPCENTER-APP-ID/3806368d-4ccb-43c4-af45-d37da989742f/g' CelestiaApp/AppDelegate.swift
+      echo "New Content:"
+      cat CelestiaApp/AppDelegate.swift
+    workingDirectory: '$(System.DefaultWorkingDirectory)/CelestiaApp'
+    displayName: 'Replace AppCenter Placeholders'
+
   - task: Xcode@5
     inputs:
       actions: 'build'

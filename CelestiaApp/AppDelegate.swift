@@ -41,7 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true])
 
         #if !DEBUG
-        AppCenter.start(withAppSecret: "3806368d-4ccb-43c4-af45-d37da989742f", services: [
+        AppCenter.start(withAppSecret: "APPCENTER-APP-ID", services: [
             Analytics.self,
             Crashes.self
         ])
