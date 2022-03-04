@@ -113,7 +113,7 @@ extension CelestiaDisplayController {
         core.setDPI(Int(scaleFactor * 96))
         core.setPickTolerance(scaleFactor * 4)
 
-        let locale = LocalizedString("LANGUAGE", "celestia")
+        let locale = AppCore.language
         let (font, boldFont) = getInstalledFontFor(locale: locale)
         core.setFont(font.filePath, collectionIndex: font.collectionIndex, fontSize: 9)
         core.setTitleFont(boldFont.filePath, collectionIndex: boldFont.collectionIndex, fontSize: 15)

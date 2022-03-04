@@ -118,6 +118,7 @@
 		EA0E2A3024639DD9006F1469 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA31E26C25446637009E59FF /* BaseResultHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResultHandler.swift; sourceTree = "<group>"; };
 		EA7B07E924B062FB00CB2A71 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = ../../../CelestiaCore/Fonts; sourceTree = "<group>"; };
+		EAC6A33527D1F25E000AC764 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = bg; path = bg.lproj/Credits.rtf; sourceTree = "<group>"; };
 		EACF9A37265694990099CA86 /* CelestiaInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestiaInteractionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -374,6 +375,7 @@
 				es,
 				fr,
 				zh_TW,
+				bg,
 			);
 			mainGroup = 97F2518122FDB6E000067B06;
 			productRefGroup = 97F2518B22FDB6E100067B06 /* Products */;
@@ -590,6 +592,7 @@
 				97989E1E23057DD4008FA466 /* es */,
 				97989E1F23057DD4008FA466 /* fr */,
 				97DAAB3723554DD300887A9A /* zh_TW */,
+				EAC6A33527D1F25E000AC764 /* bg */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -726,7 +729,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 79;
+				CURRENT_PROJECT_VERSION = 80;
 				DEVELOPMENT_TEAM = 22NR5428TD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CelestiaApp/Info.plist;
@@ -734,7 +737,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.7.33;
+				MARKETING_VERSION = 1.7.34;
 				OTHER_CODE_SIGN_FLAGS = "$(inherited) --timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = space.celestia.Celestia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -753,7 +756,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 79;
+				CURRENT_PROJECT_VERSION = 80;
 				DEVELOPMENT_TEAM = 22NR5428TD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CelestiaApp/Info.plist;
@@ -761,7 +764,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.7.33;
+				MARKETING_VERSION = 1.7.34;
 				OTHER_CODE_SIGN_FLAGS = "$(inherited) --timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = space.celestia.Celestia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
