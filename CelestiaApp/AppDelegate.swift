@@ -62,11 +62,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return core.isInitialized
     }
 
-    func application(_ application: NSApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([NSUserActivityRestoring]) -> Void) -> Bool {
-        handleUserActivity(userActivity)
-        return true
-    }
-
     @IBAction func forward(_ sender: Any) {
         guard isCelestiaLoaded else { return }
 
@@ -181,28 +176,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     static func clear(identifier: String) {
         savedWindows[identifier] = nil
-    }
-
-    @discardableResult private func handleUserActivity(_ userActivity: NSUserActivity) -> Bool {
-        guard let url = userActivity.webpageURL else { return false }
-        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false) else { return false }
-        // Path and ID are needed to resolve a URL with API
-        guard let id = components.queryItems?.first(where: { $0.name == "id" })?.value else { return false }
-        let path = components.path
-
-        struct Response: Decodable {
-            let resolvedURL: URL
-        }
-
-        // Make request to the server to resolve the URL
-        let requestURL = apiPrefix + "/resolve"
-        _ = RequestHandler.get(url: requestURL, parameters: ["path" : path, "id" : id], success: { [weak self] (response: Response) in
-            guard let self = self else { return }
-            CelestiaViewController.urlToRun = response.resolvedURL
-            guard self.isCelestiaLoaded else { return }
-            self.celestiaViewController.checkNeedOpeningURL()
-        })
-        return true
     }
 }
 
