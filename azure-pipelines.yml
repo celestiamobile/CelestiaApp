@@ -26,7 +26,17 @@ pool:
   vmImage: 'macos-11'
 
 stages:
-- stage: Build_Mac
-  displayName: 'Build Mac'
+- stage: Build_Mac_OpenGL
+  displayName: 'Build Mac OpenGL'
   jobs:
   - template: jobs/build.yml
+    parameters:
+      backend: openGL
+
+- stage: Build_Mac_MetalANGLE
+  displayName: 'Build Mac MetalANGLE'
+  dependsOn: []
+  jobs:
+  - template: jobs/build.yml
+    parameters:
+      backend: metalAngle
