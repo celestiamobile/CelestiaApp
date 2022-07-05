@@ -47,9 +47,11 @@
 		EA0E2A2A246393AF006F1469 /* CelestiaLocalizationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A29246393AF006F1469 /* CelestiaLocalizationUtils.m */; };
 		EA0E2A2F24639C34006F1469 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A2E24639C34006F1469 /* Localization.swift */; };
 		EA0E2A3124639DD9006F1469 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2A3024639DD9006F1469 /* main.swift */; };
-		EA43A4EB2744FB8D00F1BDB1 /* MetalANGLE.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA43A4E92744FB8D00F1BDB1 /* MetalANGLE.xcframework */; };
-		EA43A4EC2744FB8D00F1BDB1 /* MetalANGLE.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA43A4E92744FB8D00F1BDB1 /* MetalANGLE.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA7B07EB24B062FB00CB2A71 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = EA7B07E924B062FB00CB2A71 /* Fonts */; };
+		EAA3DE1628709ABA00E955EC /* libEGL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA3DE0B2870862600E955EC /* libEGL.xcframework */; };
+		EAA3DE1728709ABA00E955EC /* libEGL.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAA3DE0B2870862600E955EC /* libEGL.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EAA3DE1828709ABA00E955EC /* libGLESv2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA3DE0A2870862600E955EC /* libGLESv2.xcframework */; };
+		EAA3DE1928709ABA00E955EC /* libGLESv2.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAA3DE0A2870862600E955EC /* libGLESv2.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EACF9A38265694990099CA86 /* CelestiaInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF9A37265694990099CA86 /* CelestiaInteractionView.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,13 +66,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		EA43A4ED2744FB8D00F1BDB1 /* Embed Frameworks */ = {
+		EAA3DE1A28709ABA00E955EC /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EA43A4EC2744FB8D00F1BDB1 /* MetalANGLE.xcframework in Embed Frameworks */,
+				EAA3DE1928709ABA00E955EC /* libGLESv2.xcframework in Embed Frameworks */,
+				EAA3DE1728709ABA00E955EC /* libEGL.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +136,8 @@
 		EA0E2A3024639DD9006F1469 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA43A4E92744FB8D00F1BDB1 /* MetalANGLE.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MetalANGLE.xcframework; path = ../CelestiaCore/libs/dependency/xcframeworks/MetalANGLE.xcframework; sourceTree = "<group>"; };
 		EA7B07E924B062FB00CB2A71 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = ../../../CelestiaCore/Fonts; sourceTree = "<group>"; };
+		EAA3DE0A2870862600E955EC /* libGLESv2.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libGLESv2.xcframework; path = ../CelestiaCore/libs/dependency/xcframeworks/libGLESv2.xcframework; sourceTree = "<group>"; };
+		EAA3DE0B2870862600E955EC /* libEGL.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libEGL.xcframework; path = ../CelestiaCore/libs/dependency/xcframeworks/libEGL.xcframework; sourceTree = "<group>"; };
 		EAC6A33527D1F25E000AC764 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = bg; path = bg.lproj/Credits.rtf; sourceTree = "<group>"; };
 		EACF9A37265694990099CA86 /* CelestiaInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestiaInteractionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,11 +147,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAA3DE1628709ABA00E955EC /* libEGL.xcframework in Frameworks */,
 				971A67482301A370009E4EA1 /* libz.tbd in Frameworks */,
 				970C560E238507F500EBB157 /* libbz2.tbd in Frameworks */,
 				971A67462301A367009E4EA1 /* libc++.tbd in Frameworks */,
-				EA43A4EB2744FB8D00F1BDB1 /* MetalANGLE.xcframework in Frameworks */,
 				97F251A622FDB79F00067B06 /* CelestiaCore.framework in Frameworks */,
+				EAA3DE1828709ABA00E955EC /* libGLESv2.xcframework in Frameworks */,
 				BC090B3EDA53846D00913347 /* Pods_Celestia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +321,8 @@
 		97F251A522FDB79F00067B06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EAA3DE0B2870862600E955EC /* libEGL.xcframework */,
+				EAA3DE0A2870862600E955EC /* libGLESv2.xcframework */,
 				EA43A4E92744FB8D00F1BDB1 /* MetalANGLE.xcframework */,
 				970C560D238507EA00EBB157 /* libbz2.tbd */,
 				97F251BC22FDB9BB00067B06 /* libz.tbd */,
@@ -338,7 +346,7 @@
 				97F2518822FDB6E100067B06 /* Resources */,
 				970C560B2385009E00EBB157 /* Copy General Data */,
 				9751DC4023594EF100299997 /* Convert PO */,
-				EA43A4ED2744FB8D00F1BDB1 /* Embed Frameworks */,
+				EAA3DE1A28709ABA00E955EC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

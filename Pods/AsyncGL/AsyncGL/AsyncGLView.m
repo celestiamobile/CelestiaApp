@@ -41,6 +41,21 @@ typedef enum EGLRenderingAPI : int
 #endif
 #endif
 
+#ifdef USE_EGL
+extern EGLBoolean EGLAPIENTRY EGL_ChooseConfig (EGLDisplay dpy, const EGLint *attrib_list, EGLConfig *configs, EGLint config_size, EGLint *num_config);
+extern EGLint EGLAPIENTRY EGL_GetError (void);
+extern EGLBoolean EGLAPIENTRY EGL_Initialize (EGLDisplay dpy, EGLint *major, EGLint *minor);
+extern EGLBoolean EGLAPIENTRY EGL_MakeCurrent (EGLDisplay dpy, EGLSurface draw, EGLSurface read, EGLContext ctx);
+extern EGLBoolean EGLAPIENTRY EGL_SwapBuffers (EGLDisplay dpy, EGLSurface surface);
+extern EGLBoolean EGLAPIENTRY EGL_Terminate (EGLDisplay dpy);
+extern EGLDisplay EGLAPIENTRY EGL_GetPlatformDisplay (EGLenum platform, void *native_display, const EGLAttrib *attrib_list);
+extern EGLContext EGLAPIENTRY EGL_CreateContext (EGLDisplay dpy, EGLConfig config, EGLContext share_context, const EGLint *attrib_list);
+extern EGLBoolean EGLAPIENTRY EGL_SwapInterval (EGLDisplay dpy, EGLint interval);
+extern EGLSurface EGLAPIENTRY EGL_CreateWindowSurface (EGLDisplay dpy, EGLConfig config, EGLNativeWindowType win, const EGLint *attrib_list);
+extern EGLBoolean EGLAPIENTRY EGL_DestroyContext (EGLDisplay dpy, EGLContext ctx);
+extern EGLBoolean EGLAPIENTRY EGL_DestroySurface (EGLDisplay dpy, EGLSurface surface);
+#endif
+
 #ifndef USE_EGL
 #if TARGET_OSX_OR_CATALYST
 @interface PassthroughGLLayer : CAOpenGLLayer
@@ -275,7 +290,7 @@ typedef enum EGLRenderingAPI : int
 - (void)makeRenderContextCurrent
 {
 #ifdef USE_EGL
-    eglMakeCurrent(_display, _renderSurface, _renderSurface, _renderContext);
+    EGL_MakeCurrent(_display, _renderSurface, _renderSurface, _renderContext);
 #else
 #if !TARGET_OSX_OR_CATALYST
     [EAGLContext setCurrentContext:_renderContext];
@@ -308,7 +323,7 @@ typedef enum EGLRenderingAPI : int
     [self makeRenderContextCurrent];
     [self _drawGL:CGSizeMake(width, height)];
 #ifdef USE_EGL
-    eglSwapBuffers(_display, _renderSurface);
+    EGL_SwapBuffers(_display, _renderSurface);
 #else
     [self flush];
 #if !TARGET_OSX_OR_CATALYST
@@ -397,17 +412,17 @@ typedef enum EGLRenderingAPI : int
     EGLint numConfigs;
     if (*msaa) {
         // Try to enable multisample but fallback if not available
-        if (!eglChooseConfig(display, multisampleAttribs, config, 1, &numConfigs)) {
+        if (!EGL_ChooseConfig(display, multisampleAttribs, config, 1, &numConfigs)) {
             *msaa = NO;
-            NSLog(@"eglChooseConfig() returned error %d", eglGetError());
-            if (!eglChooseConfig(display, attribs, config, 1, &numConfigs)) {
-                NSLog(@"eglChooseConfig() returned error %d", eglGetError());
+            NSLog(@"eglChooseConfig() returned error %d", EGL_GetError());
+            if (!EGL_ChooseConfig(display, attribs, config, 1, &numConfigs)) {
+                NSLog(@"eglChooseConfig() returned error %d", EGL_GetError());
                 return EGL_NO_CONTEXT;
             }
         }
     } else {
-        if (!eglChooseConfig(display, attribs, config, 1, &numConfigs)) {
-            NSLog(@"eglChooseConfig() returned error %d", eglGetError());
+        if (!EGL_ChooseConfig(display, attribs, config, 1, &numConfigs)) {
+            NSLog(@"eglChooseConfig() returned error %d", EGL_GetError());
             return EGL_NO_CONTEXT;
         }
     }
@@ -435,9 +450,9 @@ typedef enum EGLRenderingAPI : int
     }
     EGLint ctxAttribs[] = { EGL_CONTEXT_MAJOR_VERSION, ctxMajorVersion, EGL_CONTEXT_MINOR_VERSION, ctxMinorVersion, EGL_NONE };
 
-    EGLContext eglContext = eglCreateContext(display, *config, sharedContext, ctxAttribs);
+    EGLContext eglContext = EGL_CreateContext(display, *config, sharedContext, ctxAttribs);
     if (eglContext == EGL_NO_CONTEXT) {
-        NSLog(@"eglCreateContext() returned error %d", eglGetError());
+        NSLog(@"eglCreateContext() returned error %d", EGL_GetError());
         return EGL_NO_CONTEXT;
     }
     return eglContext;
@@ -486,18 +501,18 @@ typedef enum EGLRenderingAPI : int
 {
 #ifdef USE_EGL
     EGLAttrib displayAttribs[] = { EGL_NONE };
-    _display = eglGetPlatformDisplay(EGL_PLATFORM_ANGLE_ANGLE, NULL, displayAttribs);
+    _display = EGL_GetPlatformDisplay(EGL_PLATFORM_ANGLE_ANGLE, NULL, displayAttribs);
     if (_display == EGL_NO_DISPLAY) {
-        NSLog(@"eglGetPlatformDisplay() returned error %d", eglGetError());
+        NSLog(@"eglGetPlatformDisplay() returned error %d", EGL_GetError());
         return;
     }
 
-    if (!eglInitialize(_display, NULL, NULL)) {
-        NSLog(@"eglInitialize() returned error %d", eglGetError());
+    if (!EGL_Initialize(_display, NULL, NULL)) {
+        NSLog(@"eglInitialize() returned error %d", EGL_GetError());
         return;
     }
 
-    eglSwapInterval(_display, 0);
+    EGL_SwapInterval(_display, 0);
 
     _renderContext = [self createEGLContextWithDisplay:_display api:_api sharedContext:EGL_NO_CONTEXT config:&_renderConfig depthSize:24 msaa:&_msaaEnabled];
 
@@ -505,10 +520,10 @@ typedef enum EGLRenderingAPI : int
         return;
     }
 
-    _renderSurface = eglCreateWindowSurface(_display, _renderConfig, (__bridge EGLNativeWindowType)(_metalLayer), NULL);
+    _renderSurface = EGL_CreateWindowSurface(_display, _renderConfig, (__bridge EGLNativeWindowType)(_metalLayer), NULL);
 
     if (_renderSurface == EGL_NO_SURFACE) {
-        NSLog(@"eglCreateWindowSurface() returned error %d", eglGetError());
+        NSLog(@"eglCreateWindowSurface() returned error %d", EGL_GetError());
         return;
     }
 
@@ -947,18 +962,18 @@ typedef enum EGLRenderingAPI : int
 {
 #ifdef USE_EGL
     if (_renderSurface != EGL_NO_SURFACE) {
-        eglDestroySurface(_display, _renderSurface);
+        EGL_DestroySurface(_display, _renderSurface);
         _renderSurface = EGL_NO_SURFACE;
     }
 
     if (_renderContext != EGL_NO_CONTEXT) {
-        eglMakeCurrent(_display, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
-        eglDestroyContext(_display, _renderContext);
+        EGL_MakeCurrent(_display, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
+        EGL_DestroyContext(_display, _renderContext);
         _renderContext = EGL_NO_CONTEXT;
     }
 
     if (_display != EGL_NO_DISPLAY) {
-        eglTerminate(_display);
+        EGL_Terminate(_display);
         _display = EGL_NO_DISPLAY;
     }
 #else
